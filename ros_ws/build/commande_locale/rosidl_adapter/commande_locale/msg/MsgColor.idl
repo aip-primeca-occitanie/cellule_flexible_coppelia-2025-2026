@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from commande_locale/msg/MsgColor.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module commande_locale {
+  module msg {
+    struct MsgColor {
+      std_msgs::msg::Header header;
+
+      int32 handle;
+
+      int32 color;
+    };
+  };
+};

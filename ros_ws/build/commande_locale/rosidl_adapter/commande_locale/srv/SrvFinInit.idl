@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from commande_locale/srv/SrvFinInit.srv
+// generated code does not contain a copyright notice
+
+
+module commande_locale {
+  module srv {
+    struct SrvFinInit_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct SrvFinInit_Response {
+      boolean success;
+    };
+  };
+};

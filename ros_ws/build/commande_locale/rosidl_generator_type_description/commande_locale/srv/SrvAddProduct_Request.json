@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "commande_locale/srv/SrvAddProduct_Request",
+      "fields": [
+        {
+          "name": "choixposte",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "choixproduit",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "commande_locale/srv/SrvAddProduct_Request",
+      "hash_string": "RIHS01_e0c209c2b5c6a421140bcd79e588fd0e49e8da26147f3a1ed8ad7b0df78a6400"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+[0.015s] Invoking command in '/home/user/celluleflexible/ros_ws/build/commande_locale': AMENT_PREFIX_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/user/celluleflexible/ros_ws/src/commande_locale -DCMAKE_INSTALL_PREFIX=/home/user/celluleflexible/ros_ws/install/commande_locale
+[0.064s] -- The C compiler identification is GNU 13.3.0
+[0.118s] -- The CXX compiler identification is GNU 13.3.0
+[0.135s] -- Detecting C compiler ABI info
+[0.218s] -- Detecting C compiler ABI info - done
+[0.223s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.223s] -- Detecting C compile features
+[0.224s] -- Detecting C compile features - done
+[0.235s] -- Detecting CXX compiler ABI info
+[0.331s] -- Detecting CXX compiler ABI info - done
+[0.337s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.338s] -- Detecting CXX compile features
+[0.338s] -- Detecting CXX compile features - done
+[0.340s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.439s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.496s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.516s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.523s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.531s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.541s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.580s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.582s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.648s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.661s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.677s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.718s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.728s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.759s] -- Found image_transport: 5.1.7 (/opt/ros/jazzy/share/image_transport/cmake)
+[0.774s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[0.780s] -- Found aiguillages: 3.1.2 (/home/user/celluleflexible/ros_ws/install/aiguillages/share/aiguillages/cmake)
+[0.790s] -- Found OpenCV: /usr (found version "4.6.0") 
+[0.791s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.798s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.234s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[1.768s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.976s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.978s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[2.072s] -- Found PythonExtra: /usr/bin/python3  
+[2.367s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.401s] -- Configuring done (2.4s)
+[2.437s] -- Generating done (0.0s)
+[2.445s] -- Build files have been written to: /home/user/celluleflexible/ros_ws/build/commande_locale
+[2.455s] Invoked command in '/home/user/celluleflexible/ros_ws/build/commande_locale' returned '0': AMENT_PREFIX_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/user/celluleflexible/ros_ws/src/commande_locale -DCMAKE_INSTALL_PREFIX=/home/user/celluleflexible/ros_ws/install/commande_locale
+[2.456s] Invoking command in '/home/user/celluleflexible/ros_ws/build/commande_locale': AMENT_PREFIX_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/user/celluleflexible/ros_ws/build/commande_locale -- -j8 -l8
+[2.513s] [  0%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[2.519s] [  0%] Built target ament_cmake_python_copy_commande_locale
+[2.648s] running egg_info
+[2.649s] creating commande_locale.egg-info
+[2.660s] writing commande_locale.egg-info/PKG-INFO
+[2.660s] writing dependency_links to commande_locale.egg-info/dependency_links.txt
+[2.660s] writing top-level names to commande_locale.egg-info/top_level.txt
+[2.660s] writing manifest file 'commande_locale.egg-info/SOURCES.txt'
+[2.700s] [  0%] Built target commande_locale__rosidl_generator_type_description
+[2.704s] reading manifest file 'commande_locale.egg-info/SOURCES.txt'
+[2.704s] writing manifest file 'commande_locale.egg-info/SOURCES.txt'
+[2.714s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.723s] [  1%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.727s] [  1%] Built target ament_cmake_python_build_commande_locale_egg
+[3.135s] [  1%] Built target commande_locale__cpp
+[3.270s] [  2%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_fin_init__description.c.o[0m
+[3.271s] [  3%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_add_product__description.c.o[0m
+[3.271s] [  4%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_fin_init__functions.c.o[0m
+[3.271s] [  5%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_fin_init__type_support.c.o[0m
+[3.272s] [  5%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_add_product__functions.c.o[0m
+[3.273s] [  6%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_add_product__type_support.c.o[0m
+[3.274s] [  6%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_add_product_push_back__description.c.o[0m
+[3.275s] [  7%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_add_product_push_back__functions.c.o[0m
+[3.352s] [  8%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/srv/detail/srv_add_product_push_back__type_support.c.o[0m
+[3.352s] [  8%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_add_product__functions.c.o[0m
+[3.353s] [  9%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_add_product__description.c.o[0m
+[3.362s] [ 10%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_add_product__type_support.c.o[0m
+[3.362s] [ 11%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_stop_control__description.c.o[0m
+[3.376s] [ 12%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_stop_control__functions.c.o[0m
+[3.386s] [ 13%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_stop_control__type_support.c.o[0m
+[3.393s] [ 13%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_color__description.c.o[0m
+[3.416s] [ 14%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_color__functions.c.o[0m
+[3.444s] [ 15%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_color__type_support.c.o[0m
+[3.444s] [ 15%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_switch_control__functions.c.o[0m
+[3.444s] [ 16%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_switch_control__description.c.o[0m
+[3.444s] [ 17%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_switch_control__type_support.c.o[0m
+[3.447s] [ 18%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_pin_control__description.c.o[0m
+[3.458s] [ 19%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_pin_control__functions.c.o[0m
+[3.465s] [ 20%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_pin_control__type_support.c.o[0m
+[3.475s] [ 20%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_erreur__description.c.o[0m
+[3.477s] [ 21%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_erreur__functions.c.o[0m
+[3.485s] [ 22%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_erreur__type_support.c.o[0m
+[3.489s] [ 23%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_choix_mode__description.c.o[0m
+[3.492s] [ 24%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_choix_mode__functions.c.o[0m
+[3.492s] [ 24%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_c.dir/rosidl_generator_c/commande_locale/msg/detail/msg_choix_mode__type_support.c.o[0m
+[3.532s] [ 25%] [32m[1mLinking C shared library libcommande_locale__rosidl_generator_c.so[0m
+[3.573s] [ 25%] Built target commande_locale__rosidl_generator_c
+[3.587s] [ 28%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.588s] [ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.589s] [ 28%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.589s] [ 30%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.589s] [ 29%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.589s] [ 30%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.920s] [ 31%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/srv/srv_fin_init__type_support.cpp.o[0m
+[3.920s] [ 32%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/srv/srv_add_product__type_support.cpp.o[0m
+[3.923s] [ 32%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/srv/srv_add_product__type_support.cpp.o[0m
+[3.925s] [ 33%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/srv/srv_add_product_push_back__type_support.cpp.o[0m
+[3.955s] [ 33%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/msg/msg_add_product__type_support.cpp.o[0m
+[3.957s] [ 34%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/msg/msg_stop_control__type_support.cpp.o[0m
+[3.998s] [ 35%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/msg/msg_color__type_support.cpp.o[0m
+[4.032s] [ 36%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/msg/msg_switch_control__type_support.cpp.o[0m
+[4.033s] [ 36%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/msg/msg_pin_control__type_support.cpp.o[0m
+[4.037s] [ 37%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/msg/msg_erreur__type_support.cpp.o[0m
+[4.075s] [ 38%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/srv/srv_fin_init__type_support.cpp.o[0m
+[4.093s] [ 39%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_c.dir/rosidl_typesupport_c/commande_locale/msg/msg_choix_mode__type_support.cpp.o[0m
+[4.149s] [ 40%] [32m[1mLinking CXX shared library libcommande_locale__rosidl_typesupport_c.so[0m
+[4.153s] [ 41%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/srv/srv_add_product_push_back__type_support.cpp.o[0m
+[4.160s] [ 42%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/srv/detail/srv_add_product__type_support.cpp.o[0m
+[4.197s] [ 43%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/srv/detail/srv_add_product__type_support.c.o[0m
+[4.228s] [ 43%] Built target commande_locale__rosidl_typesupport_c
+[4.251s] [ 43%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/srv/detail/srv_fin_init__type_support.c.o[0m
+[4.316s] [ 44%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/msg/msg_add_product__type_support.cpp.o[0m
+[4.325s] [ 45%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/srv/detail/srv_add_product_push_back__type_support.c.o[0m
+[4.332s] [ 46%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/msg/msg_stop_control__type_support.cpp.o[0m
+[4.353s] [ 47%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/srv/detail/dds_fastrtps/srv_add_product__type_support.cpp.o[0m
+[4.390s] [ 48%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/msg/detail/msg_add_product__type_support.c.o[0m
+[4.423s] [ 49%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/srv/detail/srv_add_product__type_support_c.cpp.o[0m
+[4.427s] [ 50%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/msg/detail/msg_stop_control__type_support.c.o[0m
+[4.468s] [ 50%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/msg/detail/msg_color__type_support.c.o[0m
+[4.473s] [ 50%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/msg/msg_color__type_support.cpp.o[0m
+[4.505s] [ 51%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/msg/detail/msg_switch_control__type_support.c.o[0m
+[4.515s] [ 52%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/srv/detail/srv_fin_init__type_support.cpp.o[0m
+[4.528s] [ 53%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/srv/detail/dds_fastrtps/srv_fin_init__type_support.cpp.o[0m
+[4.546s] [ 54%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/msg/detail/msg_pin_control__type_support.c.o[0m
+[4.549s] [ 55%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/msg/detail/msg_erreur__type_support.c.o[0m
+[4.554s] [ 56%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/commande_locale/msg/detail/msg_choix_mode__type_support.c.o[0m
+[4.582s] [ 57%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/srv/detail/dds_fastrtps/srv_add_product_push_back__type_support.cpp.o[0m
+[4.582s] [ 57%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/srv/detail/srv_add_product_push_back__type_support.cpp.o[0m
+[4.665s] [ 57%] [32m[1mLinking C shared library libcommande_locale__rosidl_typesupport_introspection_c.so[0m
+[4.696s] [ 58%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/msg/msg_switch_control__type_support.cpp.o[0m
+[4.707s] [ 58%] Built target commande_locale__rosidl_typesupport_introspection_c
+[4.716s] [ 59%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/msg/msg_pin_control__type_support.cpp.o[0m
+[4.752s] [ 60%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/srv/detail/srv_fin_init__type_support_c.cpp.o[0m
+[4.772s] [ 61%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/msg/detail/msg_add_product__type_support.cpp.o[0m
+[4.800s] [ 61%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/msg/detail/dds_fastrtps/msg_add_product__type_support.cpp.o[0m
+[4.831s] [ 62%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/msg/detail/msg_stop_control__type_support.cpp.o[0m
+[4.925s] [ 63%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/msg/msg_erreur__type_support.cpp.o[0m
+[4.933s] [ 63%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/commande_locale/msg/msg_choix_mode__type_support.cpp.o[0m
+[4.948s] [ 64%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/msg/detail/dds_fastrtps/msg_stop_control__type_support.cpp.o[0m
+[5.019s] [ 65%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/msg/detail/dds_fastrtps/msg_color__type_support.cpp.o[0m
+[5.024s] [ 66%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/msg/detail/msg_color__type_support.cpp.o[0m
+[5.080s] [ 67%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/msg/detail/msg_switch_control__type_support.cpp.o[0m
+[5.108s] [ 67%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/srv/detail/srv_add_product_push_back__type_support_c.cpp.o[0m
+[5.142s] [ 68%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/msg/detail/msg_add_product__type_support_c.cpp.o[0m
+[5.144s] [ 69%] [32m[1mLinking CXX shared library libcommande_locale__rosidl_typesupport_cpp.so[0m
+[5.151s] [ 70%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/msg/detail/dds_fastrtps/msg_switch_control__type_support.cpp.o[0m
+[5.225s] [ 70%] Built target commande_locale__rosidl_typesupport_cpp
+[5.241s] [ 70%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/msg/detail/msg_pin_control__type_support.cpp.o[0m
+[5.253s] [ 71%] [32mBuilding CXX object CMakeFiles/simulation.dir/src/commande_locale.cpp.o[0m
+[5.285s] [ 72%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/msg/detail/dds_fastrtps/msg_pin_control__type_support.cpp.o[0m
+[5.319s] [ 73%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/msg/detail/msg_stop_control__type_support_c.cpp.o[0m
+[5.331s] [ 73%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/msg/detail/dds_fastrtps/msg_erreur__type_support.cpp.o[0m
+[5.449s] [ 74%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/msg/detail/msg_color__type_support_c.cpp.o[0m
+[5.456s] [ 75%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/msg/detail/msg_erreur__type_support.cpp.o[0m
+[5.460s] [ 76%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/commande_locale/msg/detail/dds_fastrtps/msg_choix_mode__type_support.cpp.o[0m
+[5.465s] [ 77%] [32mBuilding CXX object CMakeFiles/simulation.dir/src/vrepController.cpp.o[0m
+[5.595s] [ 78%] [32mBuilding CXX object CMakeFiles/simulation.dir/src/inOutController.cpp.o[0m
+[5.619s] [ 78%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/msg/detail/msg_switch_control__type_support_c.cpp.o[0m
+[5.637s] [ 79%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/msg/detail/msg_pin_control__type_support_c.cpp.o[0m
+[5.730s] [ 80%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/commande_locale/msg/detail/msg_choix_mode__type_support.cpp.o[0m
+[5.734s] [ 81%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/msg/detail/msg_erreur__type_support_c.cpp.o[0m
+[5.751s] [ 82%] [32m[1mLinking CXX shared library libcommande_locale__rosidl_typesupport_fastrtps_cpp.so[0m
+[5.807s] [ 82%] Built target commande_locale__rosidl_typesupport_fastrtps_cpp
+[5.818s] [ 83%] [32mBuilding CXX object CMakeFiles/commande_locale__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/commande_locale/msg/detail/msg_choix_mode__type_support_c.cpp.o[0m
+[5.876s] [ 84%] [32m[1mLinking CXX shared library libcommande_locale__rosidl_typesupport_introspection_cpp.so[0m
+[5.932s] [ 84%] Built target commande_locale__rosidl_typesupport_introspection_cpp
+[6.039s] [ 85%] [32m[1mLinking CXX shared library libcommande_locale__rosidl_typesupport_fastrtps_c.so[0m
+[6.135s] [ 85%] Built target commande_locale__rosidl_typesupport_fastrtps_c
+[6.154s] [ 85%] Built target commande_locale
+[6.176s] [ 86%] [34m[1mGenerating Python code for ROS interfaces[0m
+[6.677s] [ 86%] Built target commande_locale__py
+[6.698s] [ 87%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/srv/_srv_add_product_s.c.o[0m
+[6.699s] [ 88%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/srv/_srv_add_product_push_back_s.c.o[0m
+[6.699s] [ 89%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/msg/_msg_stop_control_s.c.o[0m
+[6.699s] [ 90%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/msg/_msg_add_product_s.c.o[0m
+[6.699s] [ 90%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/srv/_srv_fin_init_s.c.o[0m
+[6.765s] [ 91%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/msg/_msg_color_s.c.o[0m
+[6.766s] [ 92%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/msg/_msg_switch_control_s.c.o[0m
+[6.773s] [ 92%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/msg/_msg_pin_control_s.c.o[0m
+[6.774s] [ 93%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/msg/_msg_erreur_s.c.o[0m
+[6.774s] [ 94%] [32mBuilding C object CMakeFiles/commande_locale__rosidl_generator_py.dir/rosidl_generator_py/commande_locale/msg/_msg_choix_mode_s.c.o[0m
+[6.841s] [ 95%] [32m[1mLinking C shared library libcommande_locale__rosidl_generator_py.so[0m
+[6.877s] [ 95%] Built target commande_locale__rosidl_generator_py
+[6.897s] [ 97%] [32mBuilding C object CMakeFiles/commande_locale_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/commande_locale/_commande_locale_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[6.897s] [ 97%] [32mBuilding C object CMakeFiles/commande_locale_s__rosidl_typesupport_c.dir/rosidl_generator_py/commande_locale/_commande_locale_s.ep.rosidl_typesupport_c.c.o[0m
+[6.897s] [ 97%] [32mBuilding C object CMakeFiles/commande_locale_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/commande_locale/_commande_locale_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[6.956s] [01m[K/home/user/celluleflexible/ros_ws/src/commande_locale/src/inOutController.cpp:[m[K In member function ‘[01m[Kvoid inOutController::[01;32m[KStatePinCallBack[m[K(commande_locale::msg::MsgPinControl_<std::allocator<void> >::SharedPtr)[m[K’:
+[6.956s] [01m[K/home/user/celluleflexible/ros_ws/src/commande_locale/src/inOutController.cpp:125:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing aiguillages::msg::MsgSensorState = struct aiguillages::msg::MsgSensorState_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct aiguillages::msg::MsgSensorState_<std::allocator<void> >[m[K’} has no member named ‘[01m[KCPI[m[K’
+[6.956s]   125 |         SensorState.[01;31m[KCPI[m[K[i] = (PinOn.data & (int32_t)pow(2,i-1)) > 0;
+[6.956s]       |                     [01;31m[K^~~[m[K
+[6.973s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/commande_locale/commande_locale_s__rosidl_typesupport_c.so[0m
+[6.978s] [ 99%] [32m[1mLinking C shared module rosidl_generator_py/commande_locale/commande_locale_s__rosidl_typesupport_fastrtps_c.so[0m
+[6.978s] [ 99%] [32m[1mLinking C shared module rosidl_generator_py/commande_locale/commande_locale_s__rosidl_typesupport_introspection_c.so[0m
+[7.009s] [ 99%] Built target commande_locale_s__rosidl_typesupport_introspection_c
+[7.009s] [ 99%] Built target commande_locale_s__rosidl_typesupport_c
+[7.009s] [01m[K/home/user/celluleflexible/ros_ws/src/commande_locale/src/inOutController.cpp:[m[K In member function ‘[01m[Kvoid inOutController::[01;32m[Kinit[m[K(rclcpp::Node::SharedPtr)[m[K’:
+[7.009s] [01m[K/home/user/celluleflexible/ros_ws/src/commande_locale/src/inOutController.cpp:172:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing aiguillages::msg::MsgSensorState = struct aiguillages::msg::MsgSensorState_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct aiguillages::msg::MsgSensorState_<std::allocator<void> >[m[K’} has no member named ‘[01m[KCPI[m[K’
+[7.009s]   172 |         SensorState.[01;31m[KCPI[m[K[i] = 0;
+[7.009s]       |                     [01;31m[K^~~[m[K
+[7.014s] [ 99%] Built target commande_locale_s__rosidl_typesupport_fastrtps_c
+[11.030s] gmake[2]: *** [CMakeFiles/simulation.dir/build.make:104: CMakeFiles/simulation.dir/src/inOutController.cpp.o] Error 1
+[11.031s] gmake[2]: *** Waiting for unfinished jobs....
+[13.617s] gmake[1]: *** [CMakeFiles/Makefile2:625: CMakeFiles/simulation.dir/all] Error 2
+[13.619s] gmake: *** [Makefile:146: all] Error 2
+[13.621s] Invoked command in '/home/user/celluleflexible/ros_ws/build/commande_locale' returned '2': AMENT_PREFIX_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/user/celluleflexible/ros_ws/build/commande_locale -- -j8 -l8

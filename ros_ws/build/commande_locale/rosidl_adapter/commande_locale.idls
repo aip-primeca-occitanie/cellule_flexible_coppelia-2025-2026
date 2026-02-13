@@ -1,0 +1,10 @@
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:srv/SrvAddProduct.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:srv/SrvFinInit.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:srv/SrvAddProductPushBack.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgAddProduct.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgStopControl.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgColor.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgSwitchControl.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgPinControl.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgErreur.idl
+/home/user/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgChoixMode.idl
