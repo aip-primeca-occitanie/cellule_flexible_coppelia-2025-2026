@@ -1,3 +1,5 @@
+-- lua
+
 function sysCall_threadmain()
 
 end

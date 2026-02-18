@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "aiguillages/msg/Actionneurs",
+      "fields": [
+        {
+          "name": "actionneurs",
+          "type": {
+            "type_id": 8,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "aiguillages/msg/Actionneurs",
+      "hash_string": "RIHS01_cc267213444d77d8c29fbcef9a6df86326fd1948e9e21b20bc1adb63621cf38b"
+    }
+  ]
+}

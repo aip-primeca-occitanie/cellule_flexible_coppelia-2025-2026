@@ -1,0 +1,12 @@
+from commande_locale.srv._srv_add_product import SrvAddProduct  # noqa: F401
+from commande_locale.srv._srv_add_product import SrvAddProduct_Event  # noqa: F401
+from commande_locale.srv._srv_add_product import SrvAddProduct_Request  # noqa: F401
+from commande_locale.srv._srv_add_product import SrvAddProduct_Response  # noqa: F401
+from commande_locale.srv._srv_add_product_push_back import SrvAddProductPushBack  # noqa: F401
+from commande_locale.srv._srv_add_product_push_back import SrvAddProductPushBack_Event  # noqa: F401
+from commande_locale.srv._srv_add_product_push_back import SrvAddProductPushBack_Request  # noqa: F401
+from commande_locale.srv._srv_add_product_push_back import SrvAddProductPushBack_Response  # noqa: F401
+from commande_locale.srv._srv_fin_init import SrvFinInit  # noqa: F401
+from commande_locale.srv._srv_fin_init import SrvFinInit_Event  # noqa: F401
+from commande_locale.srv._srv_fin_init import SrvFinInit_Request  # noqa: F401
+from commande_locale.srv._srv_fin_init import SrvFinInit_Response  # noqa: F401

@@ -8,9 +8,7 @@ while [ -L "$thisscript" ]; do
 done
 
 dirname=`dirname "$thisscript"`
-if [ $dirname = "." ]; then
-        dirname="$PWD"
-fi
+dirname=`realpath "$dirname"`
 
 appname="`basename "$thisscript" | sed 's,\.sh$,,'`"
 

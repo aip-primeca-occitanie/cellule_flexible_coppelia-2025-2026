@@ -1,0 +1,53 @@
+[  1%] Built target robots__rosidl_generator_type_description
+[  1%] Built target ament_cmake_python_copy_robots
+[  3%] Built target robots__cpp
+[ 22%] Built target robots__rosidl_generator_c
+[ 39%] Built target robots__rosidl_typesupport_introspection_cpp
+[ 37%] Built target robots__rosidl_typesupport_fastrtps_cpp
+[ 56%] Built target robots__rosidl_typesupport_fastrtps_c
+[ 55%] Built target robots__rosidl_typesupport_c
+[ 67%] Built target robots__rosidl_typesupport_introspection_c
+[ 74%] Built target robots__rosidl_typesupport_cpp
+[ 74%] Built target robots
+[ 75%] Built target robots__py
+[ 77%] [32mBuilding CXX object CMakeFiles/robot.dir/src/Robot.cpp.o[0m
+[ 84%] Built target robots__rosidl_generator_py
+[ 87%] Built target robots_s__rosidl_typesupport_fastrtps_c
+[ 91%] Built target robots_s__rosidl_typesupport_introspection_c
+[ 94%] Built target robots_s__rosidl_typesupport_c
+running egg_info
+writing robots.egg-info/PKG-INFO
+writing dependency_links to robots.egg-info/dependency_links.txt
+writing top-level names to robots.egg-info/top_level.txt
+reading manifest file 'robots.egg-info/SOURCES.txt'
+writing manifest file 'robots.egg-info/SOURCES.txt'
+[ 94%] Built target ament_cmake_python_build_robots_egg
+[ 96%] [32m[1mLinking CXX executable robot[0m
+/usr/bin/ld: CMakeFiles/robot.dir/src/Robot.cpp.o: warning: relocation against `_ZTV5Robot' in read-only section `.text'
+/usr/bin/ld: CMakeFiles/robot.dir/src/main_robot.cpp.o: in function `main':
+main_robot.cpp:(.text+0x5c6): undefined reference to `Robot::~Robot()'
+/usr/bin/ld: main_robot.cpp:(.text+0x7b0): undefined reference to `Robot::~Robot()'
+/usr/bin/ld: CMakeFiles/robot.dir/src/Robot.cpp.o: in function `Robot::Robot(int)':
+Robot.cpp:(.text+0x199): undefined reference to `vtable for Robot'
+/usr/bin/ld: CMakeFiles/robot.dir/src/Robot.cpp.o: in function `Robot::DeplacerPieceCallback(std::shared_ptr<commande_locale::msg::DeplacerPieceMsg_<std::allocator<void> > >)':
+Robot.cpp:(.text+0x6651): undefined reference to `Robot::EnvoyerRobot(int)'
+/usr/bin/ld: Robot.cpp:(.text+0x665d): undefined reference to `Robot::DescendreBras()'
+/usr/bin/ld: Robot.cpp:(.text+0x668b): undefined reference to `Robot::FermerPince()'
+/usr/bin/ld: Robot.cpp:(.text+0x6697): undefined reference to `Robot::MonterBras()'
+/usr/bin/ld: Robot.cpp:(.text+0x66b4): undefined reference to `Robot::EnvoyerRobot(int)'
+/usr/bin/ld: Robot.cpp:(.text+0x66c0): undefined reference to `Robot::DescendreBras()'
+/usr/bin/ld: Robot.cpp:(.text+0x66ee): undefined reference to `Robot::OuvrirPince()'
+/usr/bin/ld: Robot.cpp:(.text+0x66fa): undefined reference to `Robot::MonterBras()'
+/usr/bin/ld: CMakeFiles/robot.dir/src/Robot.cpp.o: in function `Robot::init(std::shared_ptr<rclcpp::Node>)':
+Robot.cpp:(.text+0x8a26): undefined reference to `Robot::SendPositionCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+/usr/bin/ld: Robot.cpp:(.text+0x8bad): undefined reference to `Robot::SendJointsCallback(std::shared_ptr<commande_locale::msg::RobotJoints_<std::allocator<void> > >)'
+/usr/bin/ld: Robot.cpp:(.text+0x8d34): undefined reference to `Robot::FermerPinceCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+/usr/bin/ld: Robot.cpp:(.text+0x8ebb): undefined reference to `Robot::OuvrirPinceCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+/usr/bin/ld: Robot.cpp:(.text+0x9042): undefined reference to `Robot::DescendreBrasCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+/usr/bin/ld: Robot.cpp:(.text+0x91c9): undefined reference to `Robot::MonterBrasCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+/usr/bin/ld: Robot.cpp:(.text+0x9350): undefined reference to `Robot::ControlerRobotCallback(std::shared_ptr<robots::msg::MoveRobot_<std::allocator<void> > >)'
+/usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/robot.dir/build.make:250: robot] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:626: CMakeFiles/robot.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

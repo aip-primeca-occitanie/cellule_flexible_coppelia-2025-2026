@@ -1,0 +1,4 @@
+<launch>
+	<node name="Robot3" pkg="robots" type="robot" output="screen" launch-prefix="xterm -geometry '80x20+0+607' -e" args="3"/>
+	<node name="Robot4" pkg="robots" type="robot" output="screen" launch-prefix="xterm -geometry '80x20+550+607' -e" args="4"/>
+</launch>

@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from robots/msg/MsgNumRobot.msg
+// generated code does not contain a copyright notice
+
+
+module robots {
+  module msg {
+    struct MsgNumRobot {
+      int32 num_robot;
+
+      int32 data;
+    };
+  };
+};

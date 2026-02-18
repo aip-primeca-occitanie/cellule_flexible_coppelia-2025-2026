@@ -1,8 +1,12 @@
 #python
 
 def sysCall_init():
+    sim = require('sim')
+
     # do some initialization here
-    pass
+    #
+    # Instead of using globals, you can do e.g.:
+    # self.myVariable = 21000000
 
 def sysCall_nonSimulation():
     # is executed when simulation is not running

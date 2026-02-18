@@ -1,0 +1,14 @@
+source /opt/ros/jazzy/setup.bash
+colcon build
+source install/setup.bash
+ros2 run commande_locale simulation 2
+ros2 launch robots robotsGauche.launch.py
+
+
+Pour ouvrir Coppelia : ./coppeliaSim.sh
+
+Publications : 
+ros2 topic pub -n temp_pub --once /commande_locale/shutdown std_msgs/msg/Byte "{}"
+ros2 topic pub -n temp_pub --once /commande_locale/nbNavettes std_msgs/msg/Int32 "{data: 2}"
+
+

@@ -1,0 +1,4 @@
+source;share/shuttles/environment/ament_prefix_path.sh
+source;share/shuttles/environment/library_path.sh
+source;share/shuttles/environment/path.sh
+source;share/shuttles/environment/pythonpath.sh

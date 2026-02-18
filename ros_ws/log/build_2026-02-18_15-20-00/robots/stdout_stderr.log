@@ -1,0 +1,944 @@
+[  1%] Built target robots__rosidl_generator_type_description
+[  1%] Built target ament_cmake_python_copy_robots
+[  3%] Built target robots__cpp
+[ 22%] Built target robots__rosidl_generator_c
+[ 48%] Built target robots__rosidl_typesupport_fastrtps_c
+[ 48%] Built target robots__rosidl_typesupport_cpp
+[ 48%] Built target robots__rosidl_typesupport_c
+[ 56%] Built target robots__rosidl_typesupport_fastrtps_cpp
+[ 65%] Built target robots__rosidl_typesupport_introspection_c
+[ 74%] Built target robots__rosidl_typesupport_introspection_cpp
+[ 74%] Built target robots
+[ 75%] Built target robots__py
+[ 77%] [32mBuilding CXX object CMakeFiles/robot.dir/src/Robot.cpp.o[0m
+[ 84%] Built target robots__rosidl_generator_py
+[ 94%] Built target robots_s__rosidl_typesupport_fastrtps_c
+[ 94%] Built target robots_s__rosidl_typesupport_c
+[ 94%] Built target robots_s__rosidl_typesupport_introspection_c
+running egg_info
+writing robots.egg-info/PKG-INFO
+writing dependency_links to robots.egg-info/dependency_links.txt
+writing top-level names to robots.egg-info/top_level.txt
+reading manifest file 'robots.egg-info/SOURCES.txt'
+writing manifest file 'robots.egg-info/SOURCES.txt'
+[ 94%] Built target ament_cmake_python_build_robots_egg
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:8:1:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[KRobot::[01;32m[KRobot[m[K(int)[m[K’
+    8 | [01;31m[KRobot[m[K::Robot(int num_du_robot): Node("robot_" + std::to_string(num_du_robot))
+      | [01;31m[K^~~~~[m[K
+In file included from [01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:2[m[K:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:13:5:[m[K [01;36m[Knote: [m[K‘[01m[KRobot::[01;32m[KRobot[m[K(int)[m[K’ previously defined here
+   13 |     [01;36m[KRobot[m[K(int num) : num_robot(num) {}
+      |     [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:46:15:[m[K [01;31m[Kerror: [m[Kdefinition of implicitly-declared ‘[01m[KRobot::[01;32m[K~Robot[m[K()[m[K’
+   46 | Robot::~Robot([01;31m[K)[m[K
+      |               [01;31m[K^[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:54:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KEnvoyerRobot[m[K(int)[m[K’
+   54 | void [01;31m[KRobot[m[K::EnvoyerRobot(int numposition)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:54:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KEnvoyerRobot[m[K(int)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:166:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KEnvoyerJoints[m[K(int, int, int, int, int, int, int)[m[K’
+  166 | void [01;31m[KRobot[m[K::EnvoyerJoints(int joint1, int joint2, int joint3, int joint4, int joint5, int joint6, int joint7)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:166:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KEnvoyerJoints[m[K(int, int, int, int, int, int, int)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:241:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KDescendreBras[m[K()[m[K’
+  241 | void [01;31m[KRobot[m[K::DescendreBras()
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:241:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KDescendreBras[m[K()[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:318:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KMonterBras[m[K()[m[K’
+  318 | void [01;31m[KRobot[m[K::MonterBras()
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:318:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KMonterBras[m[K()[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:397:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KFermerPince[m[K()[m[K’
+  397 | void [01;31m[KRobot[m[K::FermerPince()
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:397:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KFermerPince[m[K()[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:447:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KOuvrirPince[m[K()[m[K’
+  447 | void [01;31m[KRobot[m[K::OuvrirPince()
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:447:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KOuvrirPince[m[K()[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:499:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KSendPositionCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+  499 | void [01;31m[KRobot[m[K::SendPositionCallback(const robots::msg::MsgNumRobot::SharedPtr msg)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:499:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KSendPositionCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:514:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommande_locale[m[K’ does not name a type
+  514 | void Robot::SendJointsCallback(const [01;31m[Kcommande_locale[m[K::msg::RobotJoints::SharedPtr msg)
+      |                                      [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:514:58:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+  514 | void Robot::SendJointsCallback(const commande_locale::msg[01;31m[K::[m[KRobotJoints::SharedPtr msg)
+      |                                                          [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:514:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+  514 | void Robot::SendJointsCallback[34m[K([m[Kconst commande_locale::msg[01;31m[K:[m[K[32m[K:[m[KRobotJoints::SharedPtr msg)
+      |                               [34m[K~[m[K                          [01;31m[K^[m[K[32m[K~[m[K
+      |                                                          [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:514:58:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+  514 | void Robot::SendJointsCallback(const commande_locale::msg[01;31m[K::[m[KRobotJoints::SharedPtr msg)
+      |                                                          [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:524:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KFermerPinceCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+  524 | void [01;31m[KRobot[m[K::FermerPinceCallback(const robots::msg::MsgNumRobot::SharedPtr msg)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:524:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KFermerPinceCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:533:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KOuvrirPinceCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+  533 | void [01;31m[KRobot[m[K::OuvrirPinceCallback(const robots::msg::MsgNumRobot::SharedPtr msg)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:533:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KOuvrirPinceCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:543:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KDescendreBrasCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+  543 | void [01;31m[KRobot[m[K::DescendreBrasCallback(const robots::msg::MsgNumRobot::SharedPtr msg)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:543:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KDescendreBrasCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:553:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KMonterBrasCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+  553 | void [01;31m[KRobot[m[K::MonterBrasCallback(const robots::msg::MsgNumRobot::SharedPtr msg)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:553:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KMonterBrasCallback[m[K(robots::msg::MsgNumRobot_<std::allocator<void> >::SharedPtr)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:563:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KControlerRobotCallback[m[K(robots::msg::MoveRobot_<std::allocator<void> >::SharedPtr)[m[K’
+  563 | void [01;31m[KRobot[m[K::ControlerRobotCallback(const robots::msg::MoveRobot::SharedPtr msg)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:563:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KControlerRobotCallback[m[K(robots::msg::MoveRobot_<std::allocator<void> >::SharedPtr)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:596:5:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kint Robot::[01;32m[KcomputeTableId[m[K(int)[m[K’
+  596 | int [01;31m[KRobot[m[K::computeTableId(int position)
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:596:5:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kint Robot::[01;32m[KcomputeTableId[m[K(int)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:631:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KColorer[m[K(int, int)[m[K’
+  631 | void [01;31m[KRobot[m[K::Colorer(int position, int type)//attention c'est forcement quand on transporte !!
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:631:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KColorer[m[K(int, int)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:802:5:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kint Robot::[01;32m[KcolorerPosteDebutTask[m[K(int)[m[K’
+  802 | int [01;31m[KRobot[m[K::colorerPosteDebutTask(int positionPoste)
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:802:5:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kint Robot::[01;32m[KcolorerPosteDebutTask[m[K(int)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:894:5:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kint Robot::[01;32m[KcolorerPosteFinTask[m[K(int, int)[m[K’
+  894 | int [01;31m[KRobot[m[K::colorerPosteFinTask(int positionPoste, int duree)
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:894:5:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kint Robot::[01;32m[KcolorerPosteFinTask[m[K(int, int)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:981:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[KfaireTacheCallback[m[K(robots::msg::FaireTacheMsg_<std::allocator<void> >::SharedPtr)[m[K’
+  981 | void [01;31m[KRobot[m[K::faireTacheCallback(const robots::msg::FaireTacheMsg::SharedPtr msg)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:981:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[KfaireTacheCallback[m[K(robots::msg::FaireTacheMsg_<std::allocator<void> >::SharedPtr)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:[m[K In member function ‘[01m[Kvoid Robot::[01;32m[Kupdate[m[K()[m[K’:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1029:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kposte_pos_1[m[K’ was not declared in this scope
+ 1029 |         if([01;31m[Kposte_pos_1[m[K.isTaskEnCours() || poste_pos_4.isTaskEnCours())
+      |            [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1029:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kposte_pos_4[m[K’ was not declared in this scope
+ 1029 |         if(poste_pos_1.isTaskEnCours() || [01;31m[Kposte_pos_4[m[K.isTaskEnCours())
+      |                                           [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1032:17:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getTimeUpdate[m[K’ was not declared in this scope
+ 1032 |                 [01;31m[KpubSim_getTimeUpdate[m[K->publish(msgSim_getTimeUpdate);
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1032:47:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgSim_getTimeUpdate[m[K’ was not declared in this scope
+ 1032 |                 pubSim_getTimeUpdate->publish([01;31m[KmsgSim_getTimeUpdate[m[K);
+      |                                               [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1033:24:[m[K [01;31m[Kerror: [m[K‘[01m[KrepSim_getTimeUpdate[m[K’ was not declared in this scope
+ 1033 |                 while(![01;31m[KrepSim_getTimeUpdate[m[K && rclcpp::ok())
+      |                        [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1036:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kloop_rate[m[K’ was not declared in this scope
+ 1036 |                         [01;31m[Kloop_rate[m[K->sleep();
+      |                         [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1038:17:[m[K [01;31m[Kerror: [m[K‘[01m[KrepSim_getTimeUpdate[m[K’ was not declared in this scope
+ 1038 |                 [01;31m[KrepSim_getTimeUpdate[m[K=false;
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1039:28:[m[K [01;31m[Kerror: [m[K‘[01m[KvalueSim_getTimeUpdate[m[K’ was not declared in this scope
+ 1039 |                 float time=[01;31m[KvalueSim_getTimeUpdate[m[K;
+      |                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1049:44:[m[K [01;31m[Kerror: [m[K‘[01m[KcolorerPosteFinTask[m[K’ was not declared in this scope
+ 1049 |                                 int indice=[01;31m[KcolorerPosteFinTask[m[K(1,poste_pos_1.get_duree());
+      |                                            [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:4[m[K:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1051:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1051 |                                         RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),"ColorerPosteTask Probleme !!");
+      |                                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1051:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1051:41:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1051 |                                         [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(),"ColorerPosteTask Probleme !!");
+      |                                         [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1051:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1051 |                                         RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),"ColorerPosteTask Probleme !!");
+      |                                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1051:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1051 |                                         RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),"ColorerPosteTask Probleme !!");
+      |                                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1058:33:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgSim_getColor[m[K’ was not declared in this scope
+ 1058 |                                 [01;31m[KmsgSim_getColor[m[K.data=fin;
+      |                                 [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1063:41:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getColor[m[K’ was not declared in this scope
+ 1063 |                                         [01;31m[KpubSim_getColor[m[K->publish(msgSim_getColor);
+      |                                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1064:48:[m[K [01;31m[Kerror: [m[K‘[01m[KrepSim_getColor[m[K’ was not declared in this scope
+ 1064 |                                         while(![01;31m[KrepSim_getColor[m[K&&rclcpp::ok())
+      |                                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1067:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kloop_rate[m[K’ was not declared in this scope
+ 1067 |                                                 [01;31m[Kloop_rate[m[K->sleep();
+      |                                                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1069:41:[m[K [01;31m[Kerror: [m[K‘[01m[KrepSim_getColor[m[K’ was not declared in this scope
+ 1069 |                                         [01;31m[KrepSim_getColor[m[K=false;
+      |                                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1070:49:[m[K [01;31m[Kerror: [m[K‘[01m[KvalueSim_getColor[m[K’ was not declared in this scope
+ 1070 |                                         couleur=[01;31m[KvalueSim_getColor[m[K;
+      |                                                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1072:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kloop_rate[m[K’ was not declared in this scope
+ 1072 |                                         [01;31m[Kloop_rate[m[K->sleep();
+      |                                         [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1075:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kretour[m[K’ was not declared in this scope
+ 1075 |                                 [01;31m[Kretour[m[K.data=8;
+      |                                 [01;31m[K^~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1076:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_retourCommande[m[K’ was not declared in this scope
+ 1076 |                                 [01;31m[Kpub_retourCommande[m[K->publish(retour);
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1086:44:[m[K [01;31m[Kerror: [m[K‘[01m[KcolorerPosteFinTask[m[K’ was not declared in this scope
+ 1086 |                                 int indice=[01;31m[KcolorerPosteFinTask[m[K(4,poste_pos_4.get_duree());
+      |                                            [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1088:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1088 |                                         RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),"ColorerPosteTask Probleme !!");
+      |                                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1088:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1088:41:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1088 |                                         [01;31m[KRCLCPP_ERROR[m[K(this->get_logger(),"ColorerPosteTask Probleme !!");
+      |                                         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1088:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1088 |                                         RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),"ColorerPosteTask Probleme !!");
+      |                                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1088:60:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1088 |                                         RCLCPP_ERROR(this->[01;31m[Kget_logger[m[K(),"ColorerPosteTask Probleme !!");
+      |                                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1095:33:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgSim_getColor[m[K’ was not declared in this scope
+ 1095 |                                 [01;31m[KmsgSim_getColor[m[K.data=fin;
+      |                                 [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1100:41:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getColor[m[K’ was not declared in this scope
+ 1100 |                                         [01;31m[KpubSim_getColor[m[K->publish(msgSim_getColor);
+      |                                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1101:48:[m[K [01;31m[Kerror: [m[K‘[01m[KrepSim_getColor[m[K’ was not declared in this scope
+ 1101 |                                         while(![01;31m[KrepSim_getColor[m[K&&rclcpp::ok())
+      |                                                [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1104:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kloop_rate[m[K’ was not declared in this scope
+ 1104 |                                                 [01;31m[Kloop_rate[m[K->sleep();
+      |                                                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1106:41:[m[K [01;31m[Kerror: [m[K‘[01m[KrepSim_getColor[m[K’ was not declared in this scope
+ 1106 |                                         [01;31m[KrepSim_getColor[m[K=false;
+      |                                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1107:49:[m[K [01;31m[Kerror: [m[K‘[01m[KvalueSim_getColor[m[K’ was not declared in this scope
+ 1107 |                                         couleur=[01;31m[KvalueSim_getColor[m[K;
+      |                                                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1109:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kloop_rate[m[K’ was not declared in this scope
+ 1109 |                                         [01;31m[Kloop_rate[m[K->sleep();
+      |                                         [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1111:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kretour[m[K’ was not declared in this scope
+ 1111 |                                 [01;31m[Kretour[m[K.data=9;
+      |                                 [01;31m[K^~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1112:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_retourCommande[m[K’ was not declared in this scope
+ 1112 |                                 [01;31m[Kpub_retourCommande[m[K->publish(retour);
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:[m[K At global scope:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1118:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid Robot::[01;32m[Ktransport[m[K(bool)[m[K’
+ 1118 | void [01;31m[KRobot[m[K::transport(bool valeur)
+      |      [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1118:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid Robot::[01;32m[Ktransport[m[K(bool)[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.h:10:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass Robot[m[K’ defined here
+   10 | class [01;36m[KRobot[m[K
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1126:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1126 | void Robot::Evacuer(const [01;31m[Kstd_msgs[m[K::msg::Byte::SharedPtr msg)
+      |                           [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1126:40:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1126 | void Robot::Evacuer(const std_msgs::msg[01;31m[K::[m[KByte::SharedPtr msg)
+      |                                        [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1126:40:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1126 | void Robot::Evacuer[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KByte::SharedPtr msg)
+      |                    [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                        [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1126:40:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1126 | void Robot::Evacuer(const std_msgs::msg[01;31m[K::[m[KByte::SharedPtr msg)
+      |                                        [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1177:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1177 | void Robot::stopTacheCallback(const [01;31m[Kstd_msgs[m[K::msg::Int32::SharedPtr msg)
+      |                                     [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1177:50:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1177 | void Robot::stopTacheCallback(const std_msgs::msg[01;31m[K::[m[KInt32::SharedPtr msg)
+      |                                                  [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1177:50:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1177 | void Robot::stopTacheCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KInt32::SharedPtr msg)
+      |                              [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                  [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1177:50:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1177 | void Robot::stopTacheCallback(const std_msgs::msg[01;31m[K::[m[KInt32::SharedPtr msg)
+      |                                                  [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1193:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommande_locale[m[K’ does not name a type
+ 1193 | void Robot::DeplacerPieceCallback(const [01;31m[Kcommande_locale[m[K::msg::DeplacerPieceMsg::SharedPtr msg)
+      |                                         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1193:61:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1193 | void Robot::DeplacerPieceCallback(const commande_locale::msg[01;31m[K::[m[KDeplacerPieceMsg::SharedPtr msg)
+      |                                                             [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1193:61:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1193 | void Robot::DeplacerPieceCallback[34m[K([m[Kconst commande_locale::msg[01;31m[K:[m[K[32m[K:[m[KDeplacerPieceMsg::SharedPtr msg)
+      |                                  [34m[K~[m[K                          [01;31m[K^[m[K[32m[K~[m[K
+      |                                                             [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1193:61:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1193 | void Robot::DeplacerPieceCallback(const commande_locale::msg[01;31m[K::[m[KDeplacerPieceMsg::SharedPtr msg)
+      |                                                             [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:[m[K In member function ‘[01m[Kvoid Robot::[01;32m[Kinit[m[K(rclcpp::Node::SharedPtr)[m[K’:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1233:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kposte_pos_1[m[K’ was not declared in this scope
+ 1233 |                         [01;31m[Kposte_pos_1[m[K.init(nom,numero_poste);
+      |                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1236:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kposte_pos_4[m[K’ was not declared in this scope
+ 1236 |                         [01;31m[Kposte_pos_4[m[K.init(nom,numero_poste);
+      |                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1267:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1267 |                         RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"CHOIX ROBOT INCORRECT");
+      |                                           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1267:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1267:25:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1267 |                         [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),"CHOIX ROBOT INCORRECT");
+      |                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1267:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1267 |                         RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"CHOIX ROBOT INCORRECT");
+      |                                           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1267:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1267 |                         RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"CHOIX ROBOT INCORRECT");
+      |                                           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1272:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getObjectHandle[m[K’ was not declared in this scope
+ 1272 |         [01;31m[KpubSim_getObjectHandle[m[K = node_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle",100);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1272:58:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ was not declared in this scope
+ 1272 |         pubSim_getObjectHandle = node_->create_publisher<[01;31m[Kstd_msgs[m[K::msg::String>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle",100);
+      |                                                          [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1272:41:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1272 |         pubSim_getObjectHandle = node_->[01;31m[Kcreate_publisher<std_msgs::msg::String>[m[K("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle",100);
+      |                                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1272:80:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<<expression error> >(std::__cxx11::basic_string<char>, int)[m[K’
+ 1272 |         pubSim_getObjectHandle = [01;31m[Knode_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle",100)[m[K;
+      |                                  [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1272:80:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1272 |         pubSim_getObjectHandle = [01;31m[Knode_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle",100)[m[K;
+      |                                  [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1273:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_getObjectHandle[m[K’ was not declared in this scope
+ 1273 |         [01;31m[KsubSim_getObjectHandle[m[K = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/GetObjectHandle",100,std::bind(&Robot::simGetObjectHandleCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1273:41:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1273 |         subSim_getObjectHandle = node_->[01;31m[Kcreate_subscription<std_msgs::msg::Int32>[m[K("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/GetObjectHandle",100,std::bind(&Robot::simGetObjectHandleCallback, this, std::placeholders::_1));
+      |                                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1273:195:[m[K [01;31m[Kerror: [m[K‘[01m[KsimGetObjectHandleCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1273 |         subSim_getObjectHandle = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/GetObjectHandle",100,std::bind(&Robot::[01;31m[KsimGetObjectHandleCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1275:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_setJointState[m[K’ was not declared in this scope
+ 1275 |         [01;31m[KpubSim_setJointState[m[K = node_->create_publisher<std_msgs::msg::Float32MultiArray>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/SetJointState",100);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1275:39:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1275 |         pubSim_setJointState = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Float32MultiArray>[m[K("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/SetJointState",100);
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1275:89:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1275 |         pubSim_setJointState = [01;31m[Knode_->create_publisher<std_msgs::msg::Float32MultiArray>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/SetJointState",100)[m[K;
+      |                                [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1276:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_setJointState[m[K’ was not declared in this scope
+ 1276 |         [01;31m[KsubSim_setJointState[m[K = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/SetJointState",100,std::bind(&Robot::simSetJointStateCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1276:39:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1276 |         subSim_setJointState = node_->[01;31m[Kcreate_subscription<std_msgs::msg::Byte>[m[K("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/SetJointState",100,std::bind(&Robot::simSetJointStateCallback, this, std::placeholders::_1));
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1276:190:[m[K [01;31m[Kerror: [m[K‘[01m[KsimSetJointStateCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1276 |         subSim_setJointState = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/SetJointState",100,std::bind(&Robot::[01;31m[KsimSetJointStateCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1278:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getJointState[m[K’ was not declared in this scope
+ 1278 |         [01;31m[KpubSim_getJointState[m[K = node_->create_publisher<std_msgs::msg::Int32>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetJointState", 100);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1278:39:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1278 |         pubSim_getJointState = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Int32>[m[K("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetJointState", 100);
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1278:77:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1278 |         pubSim_getJointState = [01;31m[Knode_->create_publisher<std_msgs::msg::Int32>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetJointState", 100)[m[K;
+      |                                [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1279:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_getJointState[m[K’ was not declared in this scope
+ 1279 |         [01;31m[KsubSim_getJointState[m[K = node_->create_subscription<sensor_msgs::msg::JointState::SharedPtr>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetJointState", 100, std::bind(&Robot::simGetJointStateCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1279:59:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ was not declared in this scope
+ 1279 |         subSim_getJointState = node_->create_subscription<[01;31m[Ksensor_msgs[m[K::msg::JointState::SharedPtr>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetJointState", 100, std::bind(&Robot::simGetJointStateCallback, this, std::placeholders::_1));
+      |                                                           [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1279:39:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1279 |         subSim_getJointState = node_->[01;31m[Kcreate_subscription<sensor_msgs::msg::JointState::SharedPtr>[m[K("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetJointState", 100, std::bind(&Robot::simGetJointStateCallback, this, std::placeholders::_1));
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1279:216:[m[K [01;31m[Kerror: [m[K‘[01m[KsimGetJointStateCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1279 |         subSim_getJointState = node_->create_subscription<sensor_msgs::msg::JointState::SharedPtr>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetJointState", 100, std::bind(&Robot::[01;31m[KsimGetJointStateCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1282:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getTime[m[K’ was not declared in this scope
+ 1282 |         [01;31m[KpubSim_getTime[m[K = node_->create_publisher<std_msgs::msg::Byte>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetTime", 100);
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1282:33:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1282 |         pubSim_getTime = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Byte>[m[K("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetTime", 100);
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1282:70:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1282 |         pubSim_getTime = [01;31m[Knode_->create_publisher<std_msgs::msg::Byte>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetTime", 100)[m[K;
+      |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1283:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_getTime[m[K’ was not declared in this scope
+ 1283 |         [01;31m[KsubSim_getTime[m[K = node_->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetTime", 100, std::bind(&Robot::simGetTimeCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1283:33:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1283 |         subSim_getTime = node_->[01;31m[Kcreate_subscription<std_msgs::msg::Float32>[m[K("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetTime", 100, std::bind(&Robot::simGetTimeCallback, this, std::placeholders::_1));
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1283:187:[m[K [01;31m[Kerror: [m[K‘[01m[KsimGetTimeCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1283 |         subSim_getTime = node_->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetTime", 100, std::bind(&Robot::[01;31m[KsimGetTimeCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                           [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1285:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getTimeUpdate[m[K’ was not declared in this scope
+ 1285 |         [01;31m[KpubSim_getTimeUpdate[m[K = node_->create_publisher<std_msgs::msg::Byte>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "Update/GetTime", 100);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1285:39:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1285 |         pubSim_getTimeUpdate = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Byte>[m[K("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "Update/GetTime", 100);
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1285:76:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1285 |         pubSim_getTimeUpdate = [01;31m[Knode_->create_publisher<std_msgs::msg::Byte>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "Update/GetTime", 100)[m[K;
+      |                                [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1286:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_getTimeUpdate[m[K’ was not declared in this scope
+ 1286 |         [01;31m[KsubSim_getTimeUpdate[m[K = node_->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "Update/GetTime", 100, std::bind(&Robot::simGetTimeUpdateCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1286:39:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1286 |         subSim_getTimeUpdate = node_->[01;31m[Kcreate_subscription<std_msgs::msg::Float32>[m[K("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "Update/GetTime", 100, std::bind(&Robot::simGetTimeUpdateCallback, this, std::placeholders::_1));
+      |                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1286:199:[m[K [01;31m[Kerror: [m[K‘[01m[KsimGetTimeUpdateCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1286 |         subSim_getTimeUpdate = node_->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "Update/GetTime", 100, std::bind(&Robot::[01;31m[KsimGetTimeUpdateCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1288:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_changeColor[m[K’ was not declared in this scope
+ 1288 |         [01;31m[KpubSim_changeColor[m[K = node_->create_publisher<std_msgs::msg::Int32MultiArray>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeColor", 100);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1288:37:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1288 |         pubSim_changeColor = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Int32MultiArray>[m[K("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeColor", 100);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1288:85:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1288 |         pubSim_changeColor = [01;31m[Knode_->create_publisher<std_msgs::msg::Int32MultiArray>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeColor", 100)[m[K;
+      |                              [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1289:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_changeColor[m[K’ was not declared in this scope
+ 1289 |         [01;31m[KsubSim_changeColor[m[K = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeColor", 100, std::bind(&Robot::simChangeColorCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1289:37:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1289 |         subSim_changeColor = node_->[01;31m[Kcreate_subscription<std_msgs::msg::Byte>[m[K("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeColor", 100, std::bind(&Robot::simChangeColorCallback, this, std::placeholders::_1));
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1289:192:[m[K [01;31m[Kerror: [m[K‘[01m[KsimChangeColorCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1289 |         subSim_changeColor = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeColor", 100, std::bind(&Robot::[01;31m[KsimChangeColorCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                                [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1291:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_changeShuttleColor[m[K’ was not declared in this scope
+ 1291 |         [01;31m[KpubSim_changeShuttleColor[m[K = node_->create_publisher<std_msgs::msg::Int32MultiArray>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1291:44:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1291 |         pubSim_changeShuttleColor = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Int32MultiArray>[m[K("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100);
+      |                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1291:92:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1291 |         pubSim_changeShuttleColor = [01;31m[Knode_->create_publisher<std_msgs::msg::Int32MultiArray>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100)[m[K;
+      |                                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1292:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_changeShuttleColor[m[K’ was not declared in this scope
+ 1292 |         [01;31m[KsubSim_changeShuttleColor[m[K = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100, std::bind(&Robot::simChangeShuttleColorCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1292:44:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1292 |         subSim_changeShuttleColor = node_->[01;31m[Kcreate_subscription<std_msgs::msg::Byte>[m[K("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100, std::bind(&Robot::simChangeShuttleColorCallback, this, std::placeholders::_1));
+      |                                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1292:206:[m[K [01;31m[Kerror: [m[K‘[01m[KsimChangeShuttleColorCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1292 |         subSim_changeShuttleColor = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100, std::bind(&Robot::[01;31m[KsimChangeShuttleColorCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1294:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getColor[m[K’ was not declared in this scope
+ 1294 |         [01;31m[KpubSim_getColor[m[K = node_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColor", 100);
+      |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1294:34:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1294 |         pubSim_getColor = node_->[01;31m[Kcreate_publisher<std_msgs::msg::String>[m[K("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColor", 100);
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1294:73:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1294 |         pubSim_getColor = [01;31m[Knode_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColor", 100)[m[K;
+      |                           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1295:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_getColor[m[K’ was not declared in this scope
+ 1295 |         [01;31m[KsubSim_getColor[m[K = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColor", 100, std::bind(&Robot::simGetColorCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1295:34:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1295 |         subSim_getColor = node_->[01;31m[Kcreate_subscription<std_msgs::msg::Int32>[m[K("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColor", 100, std::bind(&Robot::simGetColorCallback, this, std::placeholders::_1));
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1295:187:[m[K [01;31m[Kerror: [m[K‘[01m[KsimGetColorCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1295 |         subSim_getColor = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColor", 100, std::bind(&Robot::[01;31m[KsimGetColorCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                           [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1297:9:[m[K [01;31m[Kerror: [m[K‘[01m[KpubSim_getColorUpdate[m[K’ was not declared in this scope
+ 1297 |         [01;31m[KpubSim_getColorUpdate[m[K = node_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1297:40:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1297 |         pubSim_getColorUpdate = node_->[01;31m[Kcreate_publisher<std_msgs::msg::String>[m[K("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100);
+      |                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1297:79:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1297 |         pubSim_getColorUpdate = [01;31m[Knode_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100)[m[K;
+      |                                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1298:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubSim_getColorUpdate[m[K’ was not declared in this scope
+ 1298 |         [01;31m[KsubSim_getColorUpdate[m[K = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100, std::bind(&Robot::simGetColorUpdateCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1298:40:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1298 |         subSim_getColorUpdate = node_->[01;31m[Kcreate_subscription<std_msgs::msg::Int32>[m[K("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100, std::bind(&Robot::simGetColorUpdateCallback, this, std::placeholders::_1));
+      |                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1298:199:[m[K [01;31m[Kerror: [m[K‘[01m[KsimGetColorUpdateCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1298 |         subSim_getColorUpdate = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100, std::bind(&Robot::[01;31m[KsimGetColorUpdateCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                                                       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1300:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_robot_transport[m[K’ was not declared in this scope
+ 1300 |         [01;31m[Kpub_robot_transport[m[K = node_->create_publisher<std_msgs::msg::Bool>("/commande/Simulation/TransportBras" + std::to_string(num_robot), 10);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1300:38:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1300 |         pub_robot_transport = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Bool>[m[K("/commande/Simulation/TransportBras" + std::to_string(num_robot), 10);
+      |                                      [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1300:75:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1300 |         pub_robot_transport = [01;31m[Knode_->create_publisher<std_msgs::msg::Bool>("/commande/Simulation/TransportBras" + std::to_string(num_robot), 10)[m[K;
+      |                               [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1301:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_tache_finie[m[K’ was not declared in this scope
+ 1301 |         [01;31m[Kpub_tache_finie[m[K = node_->create_publisher<commande_locale::msg::TacheFinieMsg>("/commande/Simulation/TacheFinie",10);
+      |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1301:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kcommande_locale[m[K’ was not declared in this scope
+ 1301 |         pub_tache_finie = node_->create_publisher<[01;31m[Kcommande_locale[m[K::msg::TacheFinieMsg>("/commande/Simulation/TacheFinie",10);
+      |                                                   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1301:34:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1301 |         pub_tache_finie = node_->[01;31m[Kcreate_publisher<commande_locale::msg::TacheFinieMsg>[m[K("/commande/Simulation/TacheFinie",10);
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1301:87:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<<expression error> >(const char [32], int)[m[K’
+ 1301 |         pub_tache_finie = [01;31m[Knode_->create_publisher<commande_locale::msg::TacheFinieMsg>("/commande/Simulation/TacheFinie",10)[m[K;
+      |                           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1301:87:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1301 |         pub_tache_finie = [01;31m[Knode_->create_publisher<commande_locale::msg::TacheFinieMsg>("/commande/Simulation/TacheFinie",10)[m[K;
+      |                           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1304:9:[m[K [01;31m[Kerror: [m[K‘[01m[KplanifSendPosition[m[K’ was not declared in this scope
+ 1304 |         [01;31m[KplanifSendPosition[m[K = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/SendPositionRobot",10,std::bind(&Robot::SendPositionCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1304:145:[m[K [01;31m[Kerror: [m[K‘[01m[KSendPositionCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1304 |         planifSendPosition = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/SendPositionRobot",10,std::bind(&Robot::[01;31m[KSendPositionCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1305:9:[m[K [01;31m[Kerror: [m[K‘[01m[KplanifSendJoints[m[K’ was not declared in this scope
+ 1305 |         [01;31m[KplanifSendJoints[m[K = node_->create_subscription<commande_locale::msg::RobotJoints>("/commande/Simulation/SendJointsRobot",10,std::bind(&Robot::SendJointsCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1305:35:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1305 |         planifSendJoints = node_->[01;31m[Kcreate_subscription<commande_locale::msg::RobotJoints>[m[K("/commande/Simulation/SendJointsRobot",10,std::bind(&Robot::SendJointsCallback, this, std::placeholders::_1));
+      |                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1305:150:[m[K [01;31m[Kerror: [m[K‘[01m[KSendJointsCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1305 |         planifSendJoints = node_->create_subscription<commande_locale::msg::RobotJoints>("/commande/Simulation/SendJointsRobot",10,std::bind(&Robot::[01;31m[KSendJointsCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                      [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1306:9:[m[K [01;31m[Kerror: [m[K‘[01m[KplanifFermerPince[m[K’ was not declared in this scope
+ 1306 |         [01;31m[KplanifFermerPince[m[K = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/FermerPinceRobot",10,std::bind(&Robot::FermerPinceCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1306:143:[m[K [01;31m[Kerror: [m[K‘[01m[KFermerPinceCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1306 |         planifFermerPince = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/FermerPinceRobot",10,std::bind(&Robot::[01;31m[KFermerPinceCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                               [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1307:9:[m[K [01;31m[Kerror: [m[K‘[01m[KplanifOuvrirPince[m[K’ was not declared in this scope
+ 1307 |         [01;31m[KplanifOuvrirPince[m[K = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/OuvrirPinceRobot",10,std::bind(&Robot::OuvrirPinceCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1307:143:[m[K [01;31m[Kerror: [m[K‘[01m[KOuvrirPinceCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1307 |         planifOuvrirPince = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/OuvrirPinceRobot",10,std::bind(&Robot::[01;31m[KOuvrirPinceCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                               [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1308:9:[m[K [01;31m[Kerror: [m[K‘[01m[KplanifDescendreBras[m[K’ was not declared in this scope
+ 1308 |         [01;31m[KplanifDescendreBras[m[K = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/DescendreBras",10,std::bind(&Robot::DescendreBrasCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1308:142:[m[K [01;31m[Kerror: [m[K‘[01m[KDescendreBrasCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1308 |         planifDescendreBras = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/DescendreBras",10,std::bind(&Robot::[01;31m[KDescendreBrasCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1309:9:[m[K [01;31m[Kerror: [m[K‘[01m[KplanifMonterBras[m[K’ was not declared in this scope
+ 1309 |         [01;31m[KplanifMonterBras[m[K = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/MonterBras",10,std::bind(&Robot::MonterBrasCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1309:136:[m[K [01;31m[Kerror: [m[K‘[01m[KMonterBrasCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1309 |         planifMonterBras = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/MonterBras",10,std::bind(&Robot::[01;31m[KMonterBrasCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                        [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1310:9:[m[K [01;31m[Kerror: [m[K‘[01m[KplanifControlerRobot[m[K’ was not declared in this scope
+ 1310 |         [01;31m[KplanifControlerRobot[m[K = node_->create_subscription<robots::msg::MoveRobot>("/commande/Simulation/ControlerBras",10,std::bind(&Robot::ControlerRobotCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1310:141:[m[K [01;31m[Kerror: [m[K‘[01m[KControlerRobotCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1310 |         planifControlerRobot = node_->create_subscription<robots::msg::MoveRobot>("/commande/Simulation/ControlerBras",10,std::bind(&Robot::[01;31m[KControlerRobotCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1311:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_faireTache[m[K’ was not declared in this scope
+ 1311 |         [01;31m[Ksub_faireTache[m[K = node_->create_subscription<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache",10,std::bind(&Robot::faireTacheCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1311:136:[m[K [01;31m[Kerror: [m[K‘[01m[KfaireTacheCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1311 |         sub_faireTache = node_->create_subscription<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache",10,std::bind(&Robot::[01;31m[KfaireTacheCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                        [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1312:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksub_evacuer[m[K’ was not declared in this scope
+ 1312 |         [01;31m[Ksub_evacuer[m[K= node_->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1312:29:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1312 |         sub_evacuer= node_->[01;31m[Kcreate_subscription<std_msgs::msg::Byte>[m[K("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1));
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1312:122:[m[K [01;31m[Kerror: [m[K‘[01m[KEvacuer[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1312 |         sub_evacuer= node_->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::[01;31m[KEvacuer[m[K, this, std::placeholders::_1));
+      |                                                                                                                          [01;31m[K^~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1313:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubStopTache[m[K’ was not declared in this scope
+ 1313 |         [01;31m[KsubStopTache[m[K= node_->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1313:30:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1313 |         subStopTache= node_->[01;31m[Kcreate_subscription<std_msgs::msg::Int32>[m[K("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1));
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1313:161:[m[K [01;31m[Kerror: [m[K‘[01m[KstopTacheCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1313 |         subStopTache= node_->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::[01;31m[KstopTacheCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1314:9:[m[K [01;31m[Kerror: [m[K‘[01m[KsubDeplacerPiece[m[K’ was not declared in this scope
+ 1314 |         [01;31m[KsubDeplacerPiece[m[K= node_->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1));
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1314:34:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1314 |         subDeplacerPiece= node_->[01;31m[Kcreate_subscription<commande_locale::msg::DeplacerPieceMsg>[m[K("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1));
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1314:152:[m[K [01;31m[Kerror: [m[K‘[01m[KDeplacerPieceCallback[m[K’ is not a member of ‘[01m[KRobot[m[K’
+ 1314 |         subDeplacerPiece= node_->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::[01;31m[KDeplacerPieceCallback[m[K, this, std::placeholders::_1));
+      |                                                                                                                                                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1317:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_pince[m[K’ was not declared in this scope
+ 1317 |         [01;31m[Kpub_pince[m[K = node_->create_publisher<std_msgs::msg::Int32>("/robot/cmdPinceRobot"+std::to_string(num_robot), 10);
+      |         [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1317:28:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1317 |         pub_pince = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Int32>[m[K("/robot/cmdPinceRobot"+std::to_string(num_robot), 10);
+      |                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1317:66:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1317 |         pub_pince = [01;31m[Knode_->create_publisher<std_msgs::msg::Int32>("/robot/cmdPinceRobot"+std::to_string(num_robot), 10)[m[K;
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1318:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_robotPosition[m[K’ was not declared in this scope
+ 1318 |         [01;31m[Kpub_robotPosition[m[K = node_->create_publisher<std_msgs::msg::Int32>("/robot/PositionRobot"+std::to_string(num_robot),10);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1318:36:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1318 |         pub_robotPosition = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Int32>[m[K("/robot/PositionRobot"+std::to_string(num_robot),10);
+      |                                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1318:74:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1318 |         pub_robotPosition = [01;31m[Knode_->create_publisher<std_msgs::msg::Int32>("/robot/PositionRobot"+std::to_string(num_robot),10)[m[K;
+      |                             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1319:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_robotBras[m[K’ was not declared in this scope
+ 1319 |         [01;31m[Kpub_robotBras[m[K = node_->create_publisher<std_msgs::msg::Int32>("/robot/BrasRobot"+std::to_string(num_robot),10);
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1319:32:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1319 |         pub_robotBras = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Int32>[m[K("/robot/BrasRobot"+std::to_string(num_robot),10);
+      |                                [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1319:70:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1319 |         pub_robotBras = [01;31m[Knode_->create_publisher<std_msgs::msg::Int32>("/robot/BrasRobot"+std::to_string(num_robot),10)[m[K;
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1320:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_robotPince[m[K’ was not declared in this scope
+ 1320 |         [01;31m[Kpub_robotPince[m[K = node_->create_publisher<std_msgs::msg::Int32>("/robot/PinceRobot"+std::to_string(num_robot),10);
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1320:33:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1320 |         pub_robotPince = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Int32>[m[K("/robot/PinceRobot"+std::to_string(num_robot),10);
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1320:71:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(std::__cxx11::basic_string<char>, int)[m[K’
+ 1320 |         pub_robotPince = [01;31m[Knode_->create_publisher<std_msgs::msg::Int32>("/robot/PinceRobot"+std::to_string(num_robot),10)[m[K;
+      |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  197 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1321:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_retourCommande[m[K’ was not declared in this scope
+ 1321 |         [01;31m[Kpub_retourCommande[m[K = node_->create_publisher<robots::msg::MsgNumRobot>("/commande/Simulation/retourCommande", 10);
+      |         [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1323:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_produitEvac[m[K’ was not declared in this scope
+ 1323 |         [01;31m[Kpub_produitEvac[m[K = node_->create_publisher<std_msgs::msg::Int32MultiArray>("/commande/Simulation/produitEvac", 10);
+      |         [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1323:34:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1323 |         pub_produitEvac = node_->[01;31m[Kcreate_publisher<std_msgs::msg::Int32MultiArray>[m[K("/commande/Simulation/produitEvac", 10);
+      |                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1323:82:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<std_msgs>(const char [33], int)[m[K’
+ 1323 |         pub_produitEvac = [01;31m[Knode_->create_publisher<std_msgs::msg::Int32MultiArray>("/commande/Simulation/produitEvac", 10)[m[K;
+      |                           [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1663[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+   73 | [01;36m[KNode[m[K::create_publisher(
+      | [01;36m[K^~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1325:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_erreur_log[m[K’ was not declared in this scope
+ 1325 |         [01;31m[Kpub_erreur_log[m[K = node_->create_publisher<commande_locale::msg::MsgErreur>("/commande/Simulation/Erreur_log",10);
+      |         [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1325:33:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1325 |         pub_erreur_log = node_->[01;31m[Kcreate_publisher<commande_locale::msg::MsgErreur>[m[K("/commande/Simulation/Erreur_log",10);
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1325:82:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_publisher<commande_locale>(const char [32], int)[m[K’
+ 1325 |         pub_erreur_log = [01;31m[Knode_->create_publisher<commande_locale::msg::MsgErreur>("/commande/Simulation/Erreur_log",10)[m[K;
+      |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::[01;32m[Kcreate_publisher[m[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+   73 | [01;36m[KNode[m[K::create_publisher(
+      | [01;36m[K^~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:73:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1327:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient[m[K’ was not declared in this scope
+ 1327 |         [01;31m[Kclient[m[K = node_->create_client<shuttles::srv::ShuttleId>("get_id_shuttle_at_poste");
+      |         [01;31m[K^~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1327:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kshuttles[m[K’ was not declared in this scope
+ 1327 |         client = node_->create_client<[01;31m[Kshuttles[m[K::srv::ShuttleId>("get_id_shuttle_at_poste");
+      |                                       [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1327:25:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+ 1327 |         client = node_->[01;31m[Kcreate_client<shuttles::srv::ShuttleId>[m[K("get_id_shuttle_at_poste");
+      |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1327:64:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Krclcpp::Node::create_client<<expression error> >(const char [24])[m[K’
+ 1327 |         client = [01;31m[Knode_->create_client<shuttles::srv::ShuttleId>("get_id_shuttle_at_poste")[m[K;
+      |                  [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:271:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ServiceT> typename rclcpp::Client<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_client[m[K(const std::string&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr)[m[K’
+  271 |   [01;36m[Kcreate_client[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:271:3:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:285:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ServiceT> typename rclcpp::Client<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_client[m[K(const std::string&, const rclcpp::QoS&, rclcpp::CallbackGroup::SharedPtr)[m[K’
+  285 |   [01;36m[Kcreate_client[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:285:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1327:64:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1327 |         client = [01;31m[Knode_->create_client<shuttles::srv::ShuttleId>("get_id_shuttle_at_poste")[m[K;
+      |                  [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1338:33:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgSim_getObjectHandle[m[K’ was not declared in this scope
+ 1338 |                                 [01;31m[KmsgSim_getObjectHandle[m[K.data = "LBR_iiwa_14_R820_joint" + sr.str();
+      |                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1354:49:[m[K [01;31m[Kerror: [m[K‘[01m[KmsgSim_getObjectHandle[m[K’ was not declared in this scope
+ 1354 |                 pubSim_getObjectHandle->publish([01;31m[KmsgSim_getObjectHandle[m[K);
+      |                                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1355:24:[m[K [01;31m[Kerror: [m[K‘[01m[KrepSim_getObjectHandle[m[K’ was not declared in this scope
+ 1355 |                 while(![01;31m[KrepSim_getObjectHandle[m[K&&rclcpp::ok())
+      |                        [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1358:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kloop_rate[m[K’ was not declared in this scope
+ 1358 |                         [01;31m[Kloop_rate[m[K->sleep() ;
+      |                         [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1360:17:[m[K [01;31m[Kerror: [m[K‘[01m[KrepSim_getObjectHandle[m[K’ was not declared in this scope
+ 1360 |                 [01;31m[KrepSim_getObjectHandle[m[K = false;
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1361:17:[m[K [01;31m[Kerror: [m[K‘[01m[KRints[m[K’ was not declared in this scope
+ 1361 |                 [01;31m[KRints[m[K[i-1]=valueSim_getObjectHandle;
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1361:28:[m[K [01;31m[Kerror: [m[K‘[01m[KvalueSim_getObjectHandle[m[K’ was not declared in this scope
+ 1361 |                 Rints[i-1]=[01;31m[KvalueSim_getObjectHandle[m[K;
+      |                            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1365:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1365 |                         RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"Robot %d : Handle non obtenu pour joint %d",num_robot,i);
+      |                                           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1365:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1365:25:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1365 |                         [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),"Robot %d : Handle non obtenu pour joint %d",num_robot,i);
+      |                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1365:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1365 |                         RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"Robot %d : Handle non obtenu pour joint %d",num_robot,i);
+      |                                           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1365:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1365 |                         RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"Robot %d : Handle non obtenu pour joint %d",num_robot,i);
+      |                                           [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1371:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1371 |                                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"Robot %d OK",num_robot);
+      |                                                   [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1371:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1371:33:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+ 1371 |                                 [01;31m[KRCLCPP_INFO[m[K(this->get_logger(),"Robot %d OK",num_robot);
+      |                                 [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1371:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1371 |                                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"Robot %d OK",num_robot);
+      |                                                   [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1371:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Robot[m[K’ has no member named ‘[01m[Kget_logger[m[K’
+ 1371 |                                 RCLCPP_INFO(this->[01;31m[Kget_logger[m[K(),"Robot %d OK",num_robot);
+      |                                                   [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1373:33:[m[K [01;31m[Kerror: [m[K‘[01m[Kretour[m[K’ was not declared in this scope
+ 1373 |                                 [01;31m[Kretour[m[K.data = 0;
+      |                                 [01;31m[K^~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:[m[K At global scope:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1382:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1382 | void Robot::simGetObjectHandleCallback(const [01;31m[Kstd_msgs[m[K::msg::Int32::SharedPtr msg)
+      |                                              [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1382:59:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1382 | void Robot::simGetObjectHandleCallback(const std_msgs::msg[01;31m[K::[m[KInt32::SharedPtr msg)
+      |                                                           [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1382:59:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1382 | void Robot::simGetObjectHandleCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KInt32::SharedPtr msg)
+      |                                       [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                           [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1382:59:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1382 | void Robot::simGetObjectHandleCallback(const std_msgs::msg[01;31m[K::[m[KInt32::SharedPtr msg)
+      |                                                           [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1388:44:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1388 | void Robot::simSetJointStateCallback(const [01;31m[Kstd_msgs[m[K::msg::Byte::SharedPtr msg)
+      |                                            [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1388:57:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1388 | void Robot::simSetJointStateCallback(const std_msgs::msg[01;31m[K::[m[KByte::SharedPtr msg)
+      |                                                         [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1388:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1388 | void Robot::simSetJointStateCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KByte::SharedPtr msg)
+      |                                     [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                         [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1388:57:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1388 | void Robot::simSetJointStateCallback(const std_msgs::msg[01;31m[K::[m[KByte::SharedPtr msg)
+      |                                                         [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1393:44:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ does not name a type
+ 1393 | void Robot::simGetJointStateCallback(const [01;31m[Ksensor_msgs[m[K::msg::JointState::SharedPtr msg)
+      |                                            [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1393:60:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1393 | void Robot::simGetJointStateCallback(const sensor_msgs::msg[01;31m[K::[m[KJointState::SharedPtr msg)
+      |                                                            [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1393:60:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1393 | void Robot::simGetJointStateCallback[34m[K([m[Kconst sensor_msgs::msg[01;31m[K:[m[K[32m[K:[m[KJointState::SharedPtr msg)
+      |                                     [34m[K~[m[K                      [01;31m[K^[m[K[32m[K~[m[K
+      |                                                            [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1393:60:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1393 | void Robot::simGetJointStateCallback(const sensor_msgs::msg[01;31m[K::[m[KJointState::SharedPtr msg)
+      |                                                            [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1399:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1399 | void Robot::simGetTimeCallback(const [01;31m[Kstd_msgs[m[K::msg::Float32::SharedPtr msg)
+      |                                      [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1399:51:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1399 | void Robot::simGetTimeCallback(const std_msgs::msg[01;31m[K::[m[KFloat32::SharedPtr msg)
+      |                                                   [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1399:51:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1399 | void Robot::simGetTimeCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KFloat32::SharedPtr msg)
+      |                               [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                   [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1399:51:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1399 | void Robot::simGetTimeCallback(const std_msgs::msg[01;31m[K::[m[KFloat32::SharedPtr msg)
+      |                                                   [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1405:44:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1405 | void Robot::simGetTimeUpdateCallback(const [01;31m[Kstd_msgs[m[K::msg::Float32::SharedPtr msg)
+      |                                            [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1405:57:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1405 | void Robot::simGetTimeUpdateCallback(const std_msgs::msg[01;31m[K::[m[KFloat32::SharedPtr msg)
+      |                                                         [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1405:57:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1405 | void Robot::simGetTimeUpdateCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KFloat32::SharedPtr msg)
+      |                                     [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                         [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1405:57:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1405 | void Robot::simGetTimeUpdateCallback(const std_msgs::msg[01;31m[K::[m[KFloat32::SharedPtr msg)
+      |                                                         [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1411:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1411 | void Robot::simChangeColorCallback(const [01;31m[Kstd_msgs[m[K::msg::Byte::SharedPtr msg)
+      |                                          [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1411:55:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1411 | void Robot::simChangeColorCallback(const std_msgs::msg[01;31m[K::[m[KByte::SharedPtr msg)
+      |                                                       [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1411:55:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1411 | void Robot::simChangeColorCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KByte::SharedPtr msg)
+      |                                   [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                       [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1411:55:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1411 | void Robot::simChangeColorCallback(const std_msgs::msg[01;31m[K::[m[KByte::SharedPtr msg)
+      |                                                       [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1416:49:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1416 | void Robot::simChangeShuttleColorCallback(const [01;31m[Kstd_msgs[m[K::msg::Byte::SharedPtr msg)
+      |                                                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1416:62:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1416 | void Robot::simChangeShuttleColorCallback(const std_msgs::msg[01;31m[K::[m[KByte::SharedPtr msg)
+      |                                                              [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1416:62:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1416 | void Robot::simChangeShuttleColorCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KByte::SharedPtr msg)
+      |                                          [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                              [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1416:62:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1416 | void Robot::simChangeShuttleColorCallback(const std_msgs::msg[01;31m[K::[m[KByte::SharedPtr msg)
+      |                                                              [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1421:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1421 | void Robot::simGetColorCallback(const [01;31m[Kstd_msgs[m[K::msg::Int32::SharedPtr msg)
+      |                                       [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1421:52:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1421 | void Robot::simGetColorCallback(const std_msgs::msg[01;31m[K::[m[KInt32::SharedPtr msg)
+      |                                                    [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1421:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1421 | void Robot::simGetColorCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KInt32::SharedPtr msg)
+      |                                [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                    [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1421:52:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1421 | void Robot::simGetColorCallback(const std_msgs::msg[01;31m[K::[m[KInt32::SharedPtr msg)
+      |                                                    [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1427:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd_msgs[m[K’ does not name a type
+ 1427 | void Robot::simGetColorUpdateCallback(const [01;31m[Kstd_msgs[m[K::msg::Int32::SharedPtr msg)
+      |                                             [01;31m[K^~~~~~~~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1427:58:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+ 1427 | void Robot::simGetColorUpdateCallback(const std_msgs::msg[01;31m[K::[m[KInt32::SharedPtr msg)
+      |                                                          [01;31m[K^~[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1427:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+ 1427 | void Robot::simGetColorUpdateCallback[34m[K([m[Kconst std_msgs::msg[01;31m[K:[m[K[32m[K:[m[KInt32::SharedPtr msg)
+      |                                      [34m[K~[m[K                   [01;31m[K^[m[K[32m[K~[m[K
+      |                                                          [32m[K)[m[K
+[01m[K/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots/src/Robot.cpp:1427:58:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+ 1427 | void Robot::simGetColorUpdateCallback(const std_msgs::msg[01;31m[K::[m[KInt32::SharedPtr msg)
+      |                                                          [01;31m[K^~[m[K
+gmake[2]: *** [CMakeFiles/robot.dir/build.make:90: CMakeFiles/robot.dir/src/Robot.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:626: CMakeFiles/robot.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

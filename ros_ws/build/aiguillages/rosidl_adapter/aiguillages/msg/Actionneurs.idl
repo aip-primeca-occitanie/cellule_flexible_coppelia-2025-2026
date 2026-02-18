@@ -1,0 +1,12 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from aiguillages/msg/Actionneurs.msg
+// generated code does not contain a copyright notice
+
+
+module aiguillages {
+  module msg {
+    struct Actionneurs {
+      int64 actionneurs;
+    };
+  };
+};

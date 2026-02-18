@@ -1,0 +1,55 @@
+[0.022s] Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots -- -j8 -l8
+[0.080s] [  1%] Built target robots__rosidl_generator_type_description
+[0.092s] [  1%] Built target ament_cmake_python_copy_robots
+[0.110s] [  3%] Built target robots__cpp
+[0.114s] [ 22%] Built target robots__rosidl_generator_c
+[0.157s] [ 39%] Built target robots__rosidl_typesupport_introspection_cpp
+[0.157s] [ 37%] Built target robots__rosidl_typesupport_fastrtps_cpp
+[0.157s] [ 56%] Built target robots__rosidl_typesupport_fastrtps_c
+[0.157s] [ 55%] Built target robots__rosidl_typesupport_c
+[0.158s] [ 67%] Built target robots__rosidl_typesupport_introspection_c
+[0.158s] [ 74%] Built target robots__rosidl_typesupport_cpp
+[0.181s] [ 74%] Built target robots
+[0.214s] [ 75%] Built target robots__py
+[0.225s] [ 77%] [32mBuilding CXX object CMakeFiles/robot.dir/src/Robot.cpp.o[0m
+[0.239s] [ 84%] Built target robots__rosidl_generator_py
+[0.266s] [ 87%] Built target robots_s__rosidl_typesupport_fastrtps_c
+[0.267s] [ 91%] Built target robots_s__rosidl_typesupport_introspection_c
+[0.267s] [ 94%] Built target robots_s__rosidl_typesupport_c
+[0.269s] running egg_info
+[0.282s] writing robots.egg-info/PKG-INFO
+[0.282s] writing dependency_links to robots.egg-info/dependency_links.txt
+[0.283s] writing top-level names to robots.egg-info/top_level.txt
+[0.312s] reading manifest file 'robots.egg-info/SOURCES.txt'
+[0.312s] writing manifest file 'robots.egg-info/SOURCES.txt'
+[0.334s] [ 94%] Built target ament_cmake_python_build_robots_egg
+[17.521s] [ 96%] [32m[1mLinking CXX executable robot[0m
+[18.146s] /usr/bin/ld: CMakeFiles/robot.dir/src/Robot.cpp.o: warning: relocation against `_ZTV5Robot' in read-only section `.text'
+[18.204s] /usr/bin/ld: CMakeFiles/robot.dir/src/main_robot.cpp.o: in function `main':
+[18.204s] main_robot.cpp:(.text+0x5c6): undefined reference to `Robot::~Robot()'
+[18.204s] /usr/bin/ld: main_robot.cpp:(.text+0x7b0): undefined reference to `Robot::~Robot()'
+[18.225s] /usr/bin/ld: CMakeFiles/robot.dir/src/Robot.cpp.o: in function `Robot::Robot(int)':
+[18.225s] Robot.cpp:(.text+0x199): undefined reference to `vtable for Robot'
+[18.228s] /usr/bin/ld: CMakeFiles/robot.dir/src/Robot.cpp.o: in function `Robot::DeplacerPieceCallback(std::shared_ptr<commande_locale::msg::DeplacerPieceMsg_<std::allocator<void> > >)':
+[18.228s] Robot.cpp:(.text+0x6651): undefined reference to `Robot::EnvoyerRobot(int)'
+[18.230s] /usr/bin/ld: Robot.cpp:(.text+0x665d): undefined reference to `Robot::DescendreBras()'
+[18.231s] /usr/bin/ld: Robot.cpp:(.text+0x668b): undefined reference to `Robot::FermerPince()'
+[18.232s] /usr/bin/ld: Robot.cpp:(.text+0x6697): undefined reference to `Robot::MonterBras()'
+[18.233s] /usr/bin/ld: Robot.cpp:(.text+0x66b4): undefined reference to `Robot::EnvoyerRobot(int)'
+[18.234s] /usr/bin/ld: Robot.cpp:(.text+0x66c0): undefined reference to `Robot::DescendreBras()'
+[18.235s] /usr/bin/ld: Robot.cpp:(.text+0x66ee): undefined reference to `Robot::OuvrirPince()'
+[18.236s] /usr/bin/ld: Robot.cpp:(.text+0x66fa): undefined reference to `Robot::MonterBras()'
+[18.237s] /usr/bin/ld: CMakeFiles/robot.dir/src/Robot.cpp.o: in function `Robot::init(std::shared_ptr<rclcpp::Node>)':
+[18.237s] Robot.cpp:(.text+0x8a26): undefined reference to `Robot::SendPositionCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+[18.238s] /usr/bin/ld: Robot.cpp:(.text+0x8bad): undefined reference to `Robot::SendJointsCallback(std::shared_ptr<commande_locale::msg::RobotJoints_<std::allocator<void> > >)'
+[18.240s] /usr/bin/ld: Robot.cpp:(.text+0x8d34): undefined reference to `Robot::FermerPinceCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+[18.241s] /usr/bin/ld: Robot.cpp:(.text+0x8ebb): undefined reference to `Robot::OuvrirPinceCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+[18.242s] /usr/bin/ld: Robot.cpp:(.text+0x9042): undefined reference to `Robot::DescendreBrasCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+[18.243s] /usr/bin/ld: Robot.cpp:(.text+0x91c9): undefined reference to `Robot::MonterBrasCallback(std::shared_ptr<robots::msg::MsgNumRobot_<std::allocator<void> > >)'
+[18.245s] /usr/bin/ld: Robot.cpp:(.text+0x9350): undefined reference to `Robot::ControlerRobotCallback(std::shared_ptr<robots::msg::MoveRobot_<std::allocator<void> > >)'
+[18.323s] /usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+[18.351s] collect2: error: ld returned 1 exit status
+[18.351s] gmake[2]: *** [CMakeFiles/robot.dir/build.make:250: robot] Error 1
+[18.352s] gmake[1]: *** [CMakeFiles/Makefile2:626: CMakeFiles/robot.dir/all] Error 2
+[18.352s] gmake: *** [Makefile:146: all] Error 2
+[18.358s] Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots' returned '2': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots -- -j8 -l8

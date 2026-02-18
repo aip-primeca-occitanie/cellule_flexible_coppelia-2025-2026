@@ -1,0 +1,397 @@
+[0.056s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.056s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x72c1d78a0b00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x72c1d79c8b00>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x72c1d79c8b00>>, mixin_verb=('build',))
+[0.075s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.076s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/user/celluleflexible_en_cours_ROS2/ros_ws'
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.076s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.089s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extensions ['ignore', 'ignore_ament_install']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extension 'ignore'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extension 'ignore_ament_install'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extensions ['colcon_pkg']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extension 'colcon_pkg'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extensions ['colcon_meta']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extension 'colcon_meta'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extensions ['ros']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(src/aiguillages) by extension 'ros'
+[0.092s] DEBUG:colcon.colcon_core.package_identification:Package 'src/aiguillages' with type 'ros.ament_cmake' and name 'aiguillages'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extensions ['ignore', 'ignore_ament_install']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extension 'ignore'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extension 'ignore_ament_install'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extensions ['colcon_pkg']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extension 'colcon_pkg'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extensions ['colcon_meta']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extension 'colcon_meta'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extensions ['ros']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/commande_locale) by extension 'ros'
+[0.092s] DEBUG:colcon.colcon_core.package_identification:Package 'src/commande_locale' with type 'ros.ament_cmake' and name 'commande_locale'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['ignore', 'ignore_ament_install']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'ignore'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'ignore_ament_install'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['colcon_pkg']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'colcon_pkg'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['colcon_meta']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'colcon_meta'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['ros']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'ros'
+[0.093s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robots' with type 'ros.ament_cmake' and name 'robots'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extensions ['ignore', 'ignore_ament_install']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extension 'ignore'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extension 'ignore_ament_install'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extensions ['colcon_pkg']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extension 'colcon_pkg'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extensions ['colcon_meta']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extension 'colcon_meta'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extensions ['ros']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/shuttles) by extension 'ros'
+[0.093s] DEBUG:colcon.colcon_core.package_identification:Package 'src/shuttles' with type 'ros.ament_cmake' and name 'shuttles'
+[0.093s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.093s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.093s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.093s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.093s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.103s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.103s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.104s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/user/celluleflexible_en_cours_ROS2/ros_ws/install
+[0.105s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 286 installed packages in /opt/ros/jazzy
+[0.105s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'cmake_target' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'cmake_clean_cache' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'cmake_clean_first' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'cmake_force_configure' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'ament_cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'catkin_cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'aiguillages' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.123s] DEBUG:colcon.colcon_core.verb:Building package 'aiguillages' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages', 'merge_install': False, 'path': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/aiguillages', 'symlink_install': False, 'test_result_base': None}
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'cmake_target' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'cmake_clean_cache' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'cmake_clean_first' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'cmake_force_configure' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'ament_cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'catkin_cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'commande_locale' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.123s] DEBUG:colcon.colcon_core.verb:Building package 'commande_locale' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale', 'merge_install': False, 'path': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/commande_locale', 'symlink_install': False, 'test_result_base': None}
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'cmake_target' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'cmake_clean_cache' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'cmake_clean_first' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'cmake_force_configure' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'ament_cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'catkin_cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'shuttles' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.123s] DEBUG:colcon.colcon_core.verb:Building package 'shuttles' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles', 'merge_install': False, 'path': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/shuttles', 'symlink_install': False, 'test_result_base': None}
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'cmake_target' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'cmake_clean_cache' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'cmake_clean_first' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'cmake_force_configure' from command line to 'False'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'ament_cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'catkin_cmake_args' from command line to 'None'
+[0.123s] Level 5:colcon.colcon_core.verb:set package 'robots' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.123s] DEBUG:colcon.colcon_core.verb:Building package 'robots' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots', 'merge_install': False, 'path': '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots', 'symlink_install': False, 'test_result_base': None}
+[0.123s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.124s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.124s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/aiguillages' with build type 'ament_cmake'
+[0.125s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/aiguillages'
+[0.127s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.127s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.127s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.141s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages -- -j8 -l8
+[0.441s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages -- -j8 -l8
+[0.452s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages
+[0.492s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(aiguillages)
+[0.496s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages' for CMake module files
+[0.498s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages' for CMake config files
+[0.499s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/aiguillages
+[0.500s] Level 1:colcon.colcon_core.shell:create_environment_hook('aiguillages', 'cmake_prefix_path')
+[0.500s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/cmake_prefix_path.ps1'
+[0.500s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/cmake_prefix_path.dsv'
+[0.500s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/cmake_prefix_path.sh'
+[0.501s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib'
+[0.501s] Level 1:colcon.colcon_core.shell:create_environment_hook('aiguillages', 'ld_library_path_lib')
+[0.501s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/ld_library_path_lib.ps1'
+[0.502s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/ld_library_path_lib.dsv'
+[0.502s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/ld_library_path_lib.sh'
+[0.502s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/bin'
+[0.502s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/pkgconfig/aiguillages.pc'
+[0.502s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages'
+[0.503s] Level 1:colcon.colcon_core.shell:create_environment_hook('aiguillages', 'pythonpath')
+[0.503s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/pythonpath.ps1'
+[0.503s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/pythonpath.dsv'
+[0.503s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/pythonpath.sh'
+[0.504s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/bin'
+[0.504s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.ps1'
+[0.504s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.dsv'
+[0.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.sh'
+[0.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.bash'
+[0.506s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.zsh'
+[0.506s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/colcon-core/packages/aiguillages)
+[0.507s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(aiguillages)
+[0.507s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages' for CMake module files
+[0.507s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages' for CMake config files
+[0.507s] Level 1:colcon.colcon_core.shell:create_environment_hook('aiguillages', 'cmake_prefix_path')
+[0.507s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/cmake_prefix_path.ps1'
+[0.507s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/cmake_prefix_path.dsv'
+[0.508s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/cmake_prefix_path.sh'
+[0.508s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib'
+[0.508s] Level 1:colcon.colcon_core.shell:create_environment_hook('aiguillages', 'ld_library_path_lib')
+[0.508s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/ld_library_path_lib.ps1'
+[0.509s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/ld_library_path_lib.dsv'
+[0.509s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/ld_library_path_lib.sh'
+[0.509s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/bin'
+[0.509s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/pkgconfig/aiguillages.pc'
+[0.510s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages'
+[0.510s] Level 1:colcon.colcon_core.shell:create_environment_hook('aiguillages', 'pythonpath')
+[0.510s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/pythonpath.ps1'
+[0.510s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/pythonpath.dsv'
+[0.510s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/hook/pythonpath.sh'
+[0.511s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/bin'
+[0.511s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.ps1'
+[0.511s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.dsv'
+[0.512s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.sh'
+[0.512s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.bash'
+[0.512s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.zsh'
+[0.513s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/colcon-core/packages/aiguillages)
+[0.513s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/commande_locale' with build type 'ament_cmake'
+[0.513s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/commande_locale'
+[0.513s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.513s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.516s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/shuttles' with build type 'ament_cmake'
+[0.516s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/shuttles'
+[0.516s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.517s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.536s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles -- -j8 -l8
+[0.538s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale -- -j8 -l8
+[0.881s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles' returned '0': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles -- -j8 -l8
+[0.881s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles
+[0.902s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale' returned '0': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale -- -j8 -l8
+[0.903s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale
+[0.931s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(shuttles)
+[0.931s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles' for CMake module files
+[0.932s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles' returned '0': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles
+[0.932s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles' for CMake config files
+[0.932s] Level 1:colcon.colcon_core.shell:create_environment_hook('shuttles', 'cmake_prefix_path')
+[0.933s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/cmake_prefix_path.ps1'
+[0.933s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/cmake_prefix_path.dsv'
+[0.933s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/cmake_prefix_path.sh'
+[0.934s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib'
+[0.934s] Level 1:colcon.colcon_core.shell:create_environment_hook('shuttles', 'ld_library_path_lib')
+[0.934s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/ld_library_path_lib.ps1'
+[0.934s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/ld_library_path_lib.dsv'
+[0.934s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/ld_library_path_lib.sh'
+[0.935s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/bin'
+[0.935s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/pkgconfig/shuttles.pc'
+[0.935s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages'
+[0.935s] Level 1:colcon.colcon_core.shell:create_environment_hook('shuttles', 'pythonpath')
+[0.935s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/pythonpath.ps1'
+[0.935s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/pythonpath.dsv'
+[0.936s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/pythonpath.sh'
+[0.936s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/bin'
+[0.936s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.ps1'
+[0.937s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.dsv'
+[0.937s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.sh'
+[0.937s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.bash'
+[0.938s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.zsh'
+[0.938s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/colcon-core/packages/shuttles)
+[0.938s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(shuttles)
+[0.939s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles' for CMake module files
+[0.939s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles' for CMake config files
+[0.939s] Level 1:colcon.colcon_core.shell:create_environment_hook('shuttles', 'cmake_prefix_path')
+[0.939s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/cmake_prefix_path.ps1'
+[0.939s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/cmake_prefix_path.dsv'
+[0.939s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/cmake_prefix_path.sh'
+[0.940s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib'
+[0.940s] Level 1:colcon.colcon_core.shell:create_environment_hook('shuttles', 'ld_library_path_lib')
+[0.940s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/ld_library_path_lib.ps1'
+[0.941s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/ld_library_path_lib.dsv'
+[0.942s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/ld_library_path_lib.sh'
+[0.942s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/bin'
+[0.943s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/pkgconfig/shuttles.pc'
+[0.943s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages'
+[0.943s] Level 1:colcon.colcon_core.shell:create_environment_hook('shuttles', 'pythonpath')
+[0.943s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/pythonpath.ps1'
+[0.943s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/pythonpath.dsv'
+[0.944s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/hook/pythonpath.sh'
+[0.944s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/bin'
+[0.944s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.ps1'
+[0.946s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.dsv'
+[0.947s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.sh'
+[0.951s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.bash'
+[0.953s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.zsh'
+[0.960s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/colcon-core/packages/shuttles)
+[0.964s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(commande_locale)
+[0.964s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale' for CMake module files
+[0.965s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale' returned '0': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/commande_locale
+[0.965s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale' for CMake config files
+[0.965s] Level 1:colcon.colcon_core.shell:create_environment_hook('commande_locale', 'cmake_prefix_path')
+[0.965s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/cmake_prefix_path.ps1'
+[0.966s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/cmake_prefix_path.dsv'
+[0.966s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/cmake_prefix_path.sh'
+[0.967s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib'
+[0.967s] Level 1:colcon.colcon_core.shell:create_environment_hook('commande_locale', 'ld_library_path_lib')
+[0.967s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/ld_library_path_lib.ps1'
+[0.967s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/ld_library_path_lib.dsv'
+[0.968s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/ld_library_path_lib.sh'
+[0.968s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/bin'
+[0.968s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/pkgconfig/commande_locale.pc'
+[0.968s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages'
+[0.968s] Level 1:colcon.colcon_core.shell:create_environment_hook('commande_locale', 'pythonpath')
+[0.968s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/pythonpath.ps1'
+[0.969s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/pythonpath.dsv'
+[0.969s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/pythonpath.sh'
+[0.969s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/bin'
+[0.970s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.ps1'
+[0.970s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.dsv'
+[0.970s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.sh'
+[0.971s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.bash'
+[0.971s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.zsh'
+[0.971s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/colcon-core/packages/commande_locale)
+[0.972s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(commande_locale)
+[0.972s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale' for CMake module files
+[0.972s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale' for CMake config files
+[0.972s] Level 1:colcon.colcon_core.shell:create_environment_hook('commande_locale', 'cmake_prefix_path')
+[0.972s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/cmake_prefix_path.ps1'
+[0.972s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/cmake_prefix_path.dsv'
+[0.973s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/cmake_prefix_path.sh'
+[0.973s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib'
+[0.973s] Level 1:colcon.colcon_core.shell:create_environment_hook('commande_locale', 'ld_library_path_lib')
+[0.973s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/ld_library_path_lib.ps1'
+[0.974s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/ld_library_path_lib.dsv'
+[0.974s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/ld_library_path_lib.sh'
+[0.974s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/bin'
+[0.974s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/pkgconfig/commande_locale.pc'
+[0.974s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages'
+[0.974s] Level 1:colcon.colcon_core.shell:create_environment_hook('commande_locale', 'pythonpath')
+[0.974s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/pythonpath.ps1'
+[0.975s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/pythonpath.dsv'
+[0.975s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/hook/pythonpath.sh'
+[0.975s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/bin'
+[0.976s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.ps1'
+[0.976s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.dsv'
+[0.976s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.sh'
+[0.977s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.bash'
+[0.977s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.zsh'
+[0.977s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/colcon-core/packages/commande_locale)
+[0.978s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots' with build type 'ament_cmake'
+[0.978s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/src/robots'
+[0.978s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.978s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.000s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots -- -j8 -l8
+[19.122s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots' returned '0': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots -- -j8 -l8
+[19.123s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots
+[19.183s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robots)
+[19.183s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots' for CMake module files
+[19.183s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots' returned '0': CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/robots
+[19.184s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots' for CMake config files
+[19.184s] Level 1:colcon.colcon_core.shell:create_environment_hook('robots', 'cmake_prefix_path')
+[19.184s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/cmake_prefix_path.ps1'
+[19.184s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/cmake_prefix_path.dsv'
+[19.184s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/cmake_prefix_path.sh'
+[19.185s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib'
+[19.186s] Level 1:colcon.colcon_core.shell:create_environment_hook('robots', 'ld_library_path_lib')
+[19.186s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/ld_library_path_lib.ps1'
+[19.187s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/ld_library_path_lib.dsv'
+[19.187s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/ld_library_path_lib.sh'
+[19.187s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/bin'
+[19.188s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/pkgconfig/robots.pc'
+[19.188s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages'
+[19.188s] Level 1:colcon.colcon_core.shell:create_environment_hook('robots', 'pythonpath')
+[19.188s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/pythonpath.ps1'
+[19.188s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/pythonpath.dsv'
+[19.188s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/pythonpath.sh'
+[19.189s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/bin'
+[19.189s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.ps1'
+[19.189s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.dsv'
+[19.190s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.sh'
+[19.191s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.bash'
+[19.192s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.zsh'
+[19.192s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/colcon-core/packages/robots)
+[19.192s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robots)
+[19.192s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots' for CMake module files
+[19.193s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots' for CMake config files
+[19.193s] Level 1:colcon.colcon_core.shell:create_environment_hook('robots', 'cmake_prefix_path')
+[19.193s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/cmake_prefix_path.ps1'
+[19.193s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/cmake_prefix_path.dsv'
+[19.193s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/cmake_prefix_path.sh'
+[19.194s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib'
+[19.194s] Level 1:colcon.colcon_core.shell:create_environment_hook('robots', 'ld_library_path_lib')
+[19.194s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/ld_library_path_lib.ps1'
+[19.194s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/ld_library_path_lib.dsv'
+[19.195s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/ld_library_path_lib.sh'
+[19.195s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/bin'
+[19.195s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/pkgconfig/robots.pc'
+[19.195s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/lib/python3.12/site-packages'
+[19.195s] Level 1:colcon.colcon_core.shell:create_environment_hook('robots', 'pythonpath')
+[19.195s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/pythonpath.ps1'
+[19.196s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/pythonpath.dsv'
+[19.196s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/hook/pythonpath.sh'
+[19.196s] Level 1:colcon.colcon_core.environment:checking '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/bin'
+[19.197s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.ps1'
+[19.197s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.dsv'
+[19.197s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.sh'
+[19.198s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.bash'
+[19.198s] INFO:colcon.colcon_core.shell:Creating package script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.zsh'
+[19.198s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/colcon-core/packages/robots)
+[19.199s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[19.199s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[19.199s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[19.199s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[19.205s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[19.205s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[19.205s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[19.227s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[19.227s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/local_setup.ps1'
+[19.228s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/_local_setup_util_ps1.py'
+[19.230s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/setup.ps1'
+[19.230s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/local_setup.sh'
+[19.231s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/_local_setup_util_sh.py'
+[19.231s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/setup.sh'
+[19.232s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/local_setup.bash'
+[19.232s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/setup.bash'
+[19.233s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/local_setup.zsh'
+[19.233s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/setup.zsh'

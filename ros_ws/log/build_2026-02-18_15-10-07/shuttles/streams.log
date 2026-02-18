@@ -1,0 +1,362 @@
+[0.021s] Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles': AMENT_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/user/celluleflexible_en_cours_ROS2/ros_ws/src/shuttles -DCMAKE_INSTALL_PREFIX=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles
+[0.068s] -- The C compiler identification is GNU 13.3.0
+[0.110s] -- The CXX compiler identification is GNU 13.3.0
+[0.128s] -- Detecting C compiler ABI info
+[0.208s] -- Detecting C compiler ABI info - done
+[0.212s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.213s] -- Detecting C compile features
+[0.213s] -- Detecting C compile features - done
+[0.224s] -- Detecting CXX compiler ABI info
+[0.312s] -- Detecting CXX compiler ABI info - done
+[0.318s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.318s] -- Detecting CXX compile features
+[0.318s] -- Detecting CXX compile features - done
+[0.321s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.414s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.471s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.490s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.499s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.506s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.515s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.552s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.556s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.627s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.641s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.656s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.693s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.701s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.712s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.713s] -- Found aiguillages: 3.1.2 (/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/cmake)
+[1.107s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[1.611s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.806s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.809s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[1.899s] -- Found PythonExtra: /usr/bin/python3  
+[2.171s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.208s] -- Configuring done (2.2s)
+[2.234s] -- Generating done (0.0s)
+[2.242s] -- Build files have been written to: /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles
+[2.254s] Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles' returned '0': AMENT_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/user/celluleflexible_en_cours_ROS2/ros_ws/src/shuttles -DCMAKE_INSTALL_PREFIX=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles
+[2.255s] Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles': AMENT_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles -- -j8 -l8
+[2.310s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[2.317s] [  1%] Built target ament_cmake_python_copy_shuttles
+[2.446s] [  1%] Built target shuttles__rosidl_generator_type_description
+[2.450s] running egg_info
+[2.450s] creating shuttles.egg-info
+[2.457s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.459s] writing shuttles.egg-info/PKG-INFO
+[2.459s] writing dependency_links to shuttles.egg-info/dependency_links.txt
+[2.459s] writing top-level names to shuttles.egg-info/top_level.txt
+[2.459s] writing manifest file 'shuttles.egg-info/SOURCES.txt'
+[2.465s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.494s] reading manifest file 'shuttles.egg-info/SOURCES.txt'
+[2.494s] writing manifest file 'shuttles.egg-info/SOURCES.txt'
+[2.507s] [  4%] Built target ament_cmake_python_build_shuttles_egg
+[2.734s] [  4%] Built target shuttles__cpp
+[2.787s] [  8%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_shuttle_change__functions.c.o[0m
+[2.787s] [  8%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_shuttle_create__description.c.o[0m
+[2.787s] [  8%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_shuttle_change__type_support.c.o[0m
+[2.788s] [ 10%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_shuttle_create__type_support.c.o[0m
+[2.795s] [ 13%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_erreur__functions.c.o[0m
+[2.795s] [ 13%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_shuttle_create__functions.c.o[0m
+[2.819s] [ 14%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_erreur__description.c.o[0m
+[2.819s] [ 16%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_shuttle_change__description.c.o[0m
+[2.831s] [ 17%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/msg/detail/msg_erreur__type_support.c.o[0m
+[2.844s] [ 20%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/srv/detail/shuttle_id__functions.c.o[0m
+[2.844s] [ 20%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/srv/detail/shuttle_id__description.c.o[0m
+[2.846s] [ 22%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_c.dir/rosidl_generator_c/shuttles/srv/detail/shuttle_id__type_support.c.o[0m
+[2.896s] [ 23%] [32m[1mLinking C shared library libshuttles__rosidl_generator_c.so[0m
+[2.937s] [ 23%] Built target shuttles__rosidl_generator_c
+[2.966s] [ 26%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.966s] [ 26%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.967s] [ 27%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.968s] [ 29%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.969s] [ 30%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.972s] [ 32%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.148s] [ 33%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_c.dir/rosidl_typesupport_c/shuttles/msg/msg_shuttle_change__type_support.cpp.o[0m
+[3.149s] [ 35%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_c.dir/rosidl_typesupport_c/shuttles/msg/msg_shuttle_create__type_support.cpp.o[0m
+[3.164s] [ 36%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/shuttles/msg/msg_shuttle_change__type_support.cpp.o[0m
+[3.169s] [ 38%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/shuttles/msg/detail/msg_shuttle_change__type_support.cpp.o[0m
+[3.176s] [ 39%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_c.dir/rosidl_typesupport_c/shuttles/msg/msg_erreur__type_support.cpp.o[0m
+[3.185s] [ 41%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/shuttles/msg/detail/msg_shuttle_create__type_support.cpp.o[0m
+[3.190s] [ 42%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/shuttles/msg/msg_shuttle_create__type_support.cpp.o[0m
+[3.231s] [ 44%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_c.dir/rosidl_typesupport_c/shuttles/srv/shuttle_id__type_support.cpp.o[0m
+[3.231s] [ 45%] [32mBuilding C object CMakeFiles/shuttles__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/shuttles/msg/detail/msg_shuttle_change__type_support.c.o[0m
+[3.291s] [ 47%] [32m[1mLinking CXX shared library libshuttles__rosidl_typesupport_c.so[0m
+[3.296s] [ 48%] [32mBuilding C object CMakeFiles/shuttles__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/shuttles/msg/detail/msg_shuttle_create__type_support.c.o[0m
+[3.302s] [ 50%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/shuttles/msg/detail/dds_fastrtps/msg_shuttle_change__type_support.cpp.o[0m
+[3.303s] [ 51%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/shuttles/msg/detail/msg_shuttle_change__type_support_c.cpp.o[0m
+[3.376s] [ 52%] [32mBuilding C object CMakeFiles/shuttles__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/shuttles/msg/detail/msg_erreur__type_support.c.o[0m
+[3.376s] [ 52%] Built target shuttles__rosidl_typesupport_c
+[3.395s] [ 54%] [32mBuilding C object CMakeFiles/shuttles__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/shuttles/srv/detail/shuttle_id__type_support.c.o[0m
+[3.414s] [ 55%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/shuttles/msg/detail/msg_erreur__type_support.cpp.o[0m
+[3.441s] [ 57%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/shuttles/msg/detail/dds_fastrtps/msg_shuttle_create__type_support.cpp.o[0m
+[3.445s] [ 58%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/shuttles/msg/msg_erreur__type_support.cpp.o[0m
+[3.473s] [ 60%] [32m[1mLinking C shared library libshuttles__rosidl_typesupport_introspection_c.so[0m
+[3.487s] [ 61%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/shuttles/srv/shuttle_id__type_support.cpp.o[0m
+[3.511s] [ 63%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/shuttles/srv/detail/shuttle_id__type_support.cpp.o[0m
+[3.531s] [ 63%] Built target shuttles__rosidl_typesupport_introspection_c
+[3.551s] [ 64%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/shuttles/msg/detail/msg_shuttle_create__type_support_c.cpp.o[0m
+[3.676s] [ 66%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/shuttles/msg/detail/dds_fastrtps/msg_erreur__type_support.cpp.o[0m
+[3.693s] [ 67%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/shuttles/srv/detail/dds_fastrtps/shuttle_id__type_support.cpp.o[0m
+[3.709s] [ 69%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/shuttles/srv/detail/shuttle_id__type_support_c.cpp.o[0m
+[3.717s] [ 70%] [32mBuilding CXX object CMakeFiles/shuttles__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/shuttles/msg/detail/msg_erreur__type_support_c.cpp.o[0m
+[3.834s] [ 72%] [32m[1mLinking CXX shared library libshuttles__rosidl_typesupport_introspection_cpp.so[0m
+[3.932s] [ 73%] [32m[1mLinking CXX shared library libshuttles__rosidl_typesupport_cpp.so[0m
+[3.962s] [ 73%] Built target shuttles__rosidl_typesupport_introspection_cpp
+[4.013s] [ 73%] Built target shuttles__rosidl_typesupport_cpp
+[4.043s] [ 77%] [32mBuilding CXX object CMakeFiles/shuttle_manager.dir/src/FileAttente.cpp.o[0m
+[4.043s] [ 77%] [32mBuilding CXX object CMakeFiles/shuttle_manager.dir/src/capteurs.cpp.o[0m
+[4.043s] [ 77%] [32mBuilding CXX object CMakeFiles/shuttle_manager.dir/src/main_ShuttleManager.cpp.o[0m
+[4.319s] [ 79%] [32m[1mLinking CXX shared library libshuttles__rosidl_typesupport_fastrtps_cpp.so[0m
+[4.352s] [ 80%] [32m[1mLinking CXX shared library libshuttles__rosidl_typesupport_fastrtps_c.so[0m
+[4.508s] [ 80%] Built target shuttles__rosidl_typesupport_fastrtps_c
+[4.508s] [ 80%] Built target shuttles__rosidl_typesupport_fastrtps_cpp
+[4.670s] [ 80%] Built target shuttles
+[4.690s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[5.051s] [ 82%] Built target shuttles__py
+[5.097s] [ 83%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_py.dir/rosidl_generator_py/shuttles/srv/_shuttle_id_s.c.o[0m
+[5.100s] [ 85%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_py.dir/rosidl_generator_py/shuttles/msg/_msg_shuttle_create_s.c.o[0m
+[5.104s] [ 86%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_py.dir/rosidl_generator_py/shuttles/msg/_msg_erreur_s.c.o[0m
+[5.104s] [ 88%] [32mBuilding C object CMakeFiles/shuttles__rosidl_generator_py.dir/rosidl_generator_py/shuttles/msg/_msg_shuttle_change_s.c.o[0m
+[5.325s] [ 89%] [32m[1mLinking C shared library libshuttles__rosidl_generator_py.so[0m
+[5.409s] [ 89%] Built target shuttles__rosidl_generator_py
+[5.462s] [ 91%] [32mBuilding C object CMakeFiles/shuttles_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/shuttles/_shuttles_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[5.462s] [ 92%] [32mBuilding C object CMakeFiles/shuttles_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/shuttles/_shuttles_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[5.566s] [ 94%] [32mBuilding C object CMakeFiles/shuttles_s__rosidl_typesupport_c.dir/rosidl_generator_py/shuttles/_shuttles_s.ep.rosidl_typesupport_c.c.o[0m
+[5.622s] [ 95%] [32m[1mLinking C shared module rosidl_generator_py/shuttles/shuttles_s__rosidl_typesupport_fastrtps_c.so[0m
+[5.622s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/shuttles/shuttles_s__rosidl_typesupport_introspection_c.so[0m
+[5.706s] [ 97%] Built target shuttles_s__rosidl_typesupport_fastrtps_c
+[5.739s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/shuttles/shuttles_s__rosidl_typesupport_c.so[0m
+[5.742s] [ 98%] Built target shuttles_s__rosidl_typesupport_introspection_c
+[5.802s] [ 98%] Built target shuttles_s__rosidl_typesupport_c
+[10.892s] [100%] [32m[1mLinking CXX executable shuttle_manager[0m
+[11.205s] [100%] Built target shuttle_manager
+[11.218s] Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles' returned '0': AMENT_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles -- -j8 -l8
+[11.219s] Invoking command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles': AMENT_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles
+[11.228s] -- Install configuration: ""
+[11.228s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/ament_index/resource_index/rosidl_interfaces/shuttles
+[11.228s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgShuttleChange.json
+[11.228s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgShuttleCreate.json
+[11.228s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgErreur.json
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/srv/ShuttleId.json
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/msg_shuttle_create.h
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/msg_shuttle_change.h
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/rosidl_generator_c__visibility_control.h
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/msg_erreur.h
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__functions.h
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__functions.h
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__functions.c
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__type_support.c
+[11.229s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__struct.h
+[11.230s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__type_support.h
+[11.231s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__struct.h
+[11.231s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__struct.h
+[11.231s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__description.c
+[11.231s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__functions.c
+[11.231s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__description.c
+[11.231s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__type_support.c
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__description.c
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__type_support.c
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__type_support.h
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__functions.h
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__type_support.h
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__functions.c
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/shuttle_id.h
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__type_support.c
+[11.232s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__struct.h
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__functions.c
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__functions.h
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__type_support.h
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__description.c
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/environment/library_path.sh
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/environment/library_path.dsv
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_generator_c.so
+[11.233s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_generator_c.so" to ""
+[11.233s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles
+[11.233s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[11.233s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__rosidl_typesupport_fastrtps_c.h
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__rosidl_typesupport_fastrtps_c.h
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__rosidl_typesupport_fastrtps_c.h
+[11.233s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv
+[11.233s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__rosidl_typesupport_fastrtps_c.h
+[11.233s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_fastrtps_c.so
+[11.234s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_fastrtps_c.so" to ""
+[11.234s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles
+[11.234s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/rosidl_generator_cpp__visibility_control.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/msg_shuttle_change.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/msg_shuttle_create.hpp
+[11.234s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__type_support.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__traits.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__traits.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__traits.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__struct.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__type_support.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__builder.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__type_support.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__builder.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__builder.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__struct.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__struct.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/msg_erreur.hpp
+[11.234s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/shuttle_id.hpp
+[11.234s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__type_support.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__struct.hpp
+[11.234s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__builder.hpp
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__traits.hpp
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/dds_fastrtps
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__rosidl_typesupport_fastrtps_cpp.hpp
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__rosidl_typesupport_fastrtps_cpp.hpp
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__rosidl_typesupport_fastrtps_cpp.hpp
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__rosidl_typesupport_fastrtps_cpp.hpp
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/dds_fastrtps
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_fastrtps_cpp.so
+[11.235s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_fastrtps_cpp.so" to ""
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__type_support.c
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__rosidl_typesupport_introspection_c.h
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__type_support.c
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__type_support.c
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__rosidl_typesupport_introspection_c.h
+[11.235s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__rosidl_typesupport_introspection_c.h
+[11.235s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv
+[11.236s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail
+[11.236s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__type_support.c
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__rosidl_typesupport_introspection_c.h
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_introspection_c.so
+[11.236s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_introspection_c.so" to ""
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_c.so
+[11.236s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_c.so" to ""
+[11.236s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles
+[11.236s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg
+[11.236s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__type_support.cpp
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__type_support.cpp
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_erreur__rosidl_typesupport_introspection_cpp.hpp
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__rosidl_typesupport_introspection_cpp.hpp
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_create__rosidl_typesupport_introspection_cpp.hpp
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/msg/detail/msg_shuttle_change__type_support.cpp
+[11.236s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv
+[11.236s] -- Up-to-date: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__type_support.cpp
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/include/shuttles/shuttles/srv/detail/shuttle_id__rosidl_typesupport_introspection_cpp.hpp
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_introspection_cpp.so
+[11.236s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_introspection_cpp.so" to ""
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_cpp.so
+[11.236s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_typesupport_cpp.so" to ""
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/environment/pythonpath.sh
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/environment/pythonpath.dsv
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles-0.0.0-py3.12.egg-info
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles-0.0.0-py3.12.egg-info/SOURCES.txt
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles-0.0.0-py3.12.egg-info/top_level.txt
+[11.236s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles-0.0.0-py3.12.egg-info/PKG-INFO
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles-0.0.0-py3.12.egg-info/dependency_links.txt
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_introspection_c.so
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/_shuttles_s.ep.rosidl_typesupport_c.c
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_shuttle_change.py
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_erreur.py
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/__init__.py
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_shuttle_create_s.c
+[11.237s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_erreur_s.c
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_shuttle_create.py
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_shuttle_change_s.c
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_c.so
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/__init__.py
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/_shuttles_s.ep.rosidl_typesupport_fastrtps_c.c
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/srv
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/srv/__init__.py
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/srv/_shuttle_id.py
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/srv/_shuttle_id_s.c
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/_shuttles_s.ep.rosidl_typesupport_introspection_c.c
+[11.238s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_fastrtps_c.so
+[11.265s] Listing '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles'...
+[11.265s] Compiling '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/__init__.py'...
+[11.265s] Listing '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg'...
+[11.265s] Compiling '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/__init__.py'...
+[11.265s] Compiling '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_erreur.py'...
+[11.265s] Compiling '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_shuttle_change.py'...
+[11.265s] Compiling '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/msg/_msg_shuttle_create.py'...
+[11.266s] Listing '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/srv'...
+[11.266s] Compiling '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/srv/__init__.py'...
+[11.266s] Compiling '/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/srv/_shuttle_id.py'...
+[11.269s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_fastrtps_c.so
+[11.269s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_fastrtps_c.so" to ""
+[11.269s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_introspection_c.so
+[11.270s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_introspection_c.so" to ""
+[11.270s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_c.so
+[11.270s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/python3.12/site-packages/shuttles/shuttles_s__rosidl_typesupport_c.so" to ""
+[11.270s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_generator_py.so
+[11.270s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/libshuttles__rosidl_generator_py.so" to ""
+[11.270s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgShuttleChange.idl
+[11.270s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgShuttleCreate.idl
+[11.271s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgErreur.idl
+[11.271s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/srv/ShuttleId.idl
+[11.271s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgShuttleChange.msg
+[11.271s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgShuttleCreate.msg
+[11.271s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/msg/MsgErreur.msg
+[11.271s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/srv/ShuttleId.srv
+[11.271s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/shuttles/shuttle_manager
+[11.276s] -- Set non-toolchain portion of runtime path of "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/lib/shuttles/shuttle_manager" to ""
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/ament_index/resource_index/package_run_dependencies/shuttles
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/ament_index/resource_index/parent_prefix_path/shuttles
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/environment/ament_prefix_path.sh
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/environment/ament_prefix_path.dsv
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/environment/path.sh
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/environment/path.dsv
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/local_setup.bash
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/local_setup.sh
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/local_setup.zsh
+[11.276s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/local_setup.dsv
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.dsv
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/ament_index/resource_index/packages/shuttles
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_generator_cExport.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_generator_cExport-noconfig.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_typesupport_fastrtps_cExport.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_generator_cppExport.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_typesupport_fastrtps_cppExport.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttles__rosidl_typesupport_introspection_cExport.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttles__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttles__rosidl_typesupport_cExport.cmake
+[11.277s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttles__rosidl_typesupport_cExport-noconfig.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttles__rosidl_typesupport_introspection_cppExport.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttles__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttles__rosidl_typesupport_cppExport.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttles__rosidl_typesupport_cppExport-noconfig.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_generator_pyExport.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/export_shuttles__rosidl_generator_pyExport-noconfig.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/rosidl_cmake-extras.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/ament_cmake_export_dependencies-extras.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/ament_cmake_export_include_directories-extras.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/ament_cmake_export_libraries-extras.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/ament_cmake_export_targets-extras.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttlesConfig.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/cmake/shuttlesConfig-version.cmake
+[11.278s] -- Installing: /home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.xml
+[11.281s] Invoked command in '/home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles' returned '0': AMENT_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/user/celluleflexible_en_cours_ROS2/ros_ws/build/shuttles

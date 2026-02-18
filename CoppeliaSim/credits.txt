@@ -14,15 +14,18 @@ acknowledge the contributions in various forms of the following people, group of
 -   Antonio Escano Scuri and Mark Stroetzel Glasberg for the free WebBook framework they provide. See below.
 -   Diego Nehab (http://w3.impa.br/~diego/software/luasocket/home.html), for the free LuaSocket extension
     library. See below.
--   Erwin Coumans (http://www.bulletphysics.com), for the free physics library he provides. See below.
--   Russel L. Smith (http://www.ode.org), for the free physics library he provides. See below.
+-   Erwin Coumans (http://www.bulletphysics.com), for the physics library he provides. See below.
+-   The team behind MuJoCo (https://github.com/deepmind/mujoco), for the physics library they provide. See below.
+-   Russel L. Smith (http://www.ode.org), for the physics library he provides. See below.
 -   Daniel Fiser for his collision routines (libccd, used with ODE). See below.
+-   Samuel Cavalcanti for his Rust ZeroMQ remote API client. See below.
 -   Pierre Terdiman for his collision routines (OPCODE, used with ODE).
 -   Francisco Leon Najera for his collision routines (GIMPACT, used with Bullet). See below.
 -   The people and community behind the Open Motion Planning Library
     (OMPL, http://ompl.kavrakilab.org). See below.
 -   Khaled Mamou, for the excellent convex decomposition routines he provides. See below.
 -   Brad Barber, for the efficient Qhull routines he provides. See below.
+-   Oliver Gay and Zedwood.com, for their sha256 implementation. See below.
 -   François Conti, for the CHAI3D library he provides. See below.
 -   The Scintilla development team (www.scintilla.org), for the free source code editing component they
     provide. The Scintilla library is used via commercial QScintilla (www.riverbankcomputing.com).
@@ -77,6 +80,7 @@ acknowledge the contributions in various forms of the following people, group of
     WS plugin. See below.
 -   The developers of three.js (https://threejs.org/), which is used in the CoppeliaSim's
     external viewer. See below.
+-   Christoph Kubisch, the developer of ldrawloader (https://github.com/pixeljetstream/ldrawloader). See below.
 -   All the developers behind the OpenCV library, which is used by the simExtImage plugin. See below.
 -   David Heiko Kolf, for his JSON module for Lua. See below.
 -   Francois Perrad, for his MessagePack module for Lua
@@ -139,8 +143,14 @@ acknowledge the contributions in various forms of the following people, group of
     Nathan Kocherhans, Alex Wuqi Zhang, René Simon, Yongdong Wang, Andrés Faíña, Davide Scorza,
     Jovan Sumarac, Mechatronics Ninja, Alexander Oliva, Luigi Ascione, Rui Li, Patrick Grüner, Andrés Faíña,
     Michal Mareš, Kat Styles Wood, David Paulius, Pranav A. Bhounsule, Davide Scorza,
-    Amirhossein Afkhami Ardekani. We know we forgot many many people,
-    also significant ones... please let us know!
+    Amirhossein Afkhami Ardekani, Roman Horshkov, Volker Kühn, Artem Shishkin, Andrey Voronkov,
+    Vitalii Kudinov, Yong Jiang, Marco Frigerio, Elia Cereda, Keith Siilats, Pardeep Singh Panesar,
+    Zichun Xu, Belal Elsayed, Clélie Demey, Fumio Ozaki, Christopher Blum, Javier Quintana, Sebastian Serna,
+    Jian Qi, Vishwas Jain, Barca David, Sasha Koryakin, Louis Munier, Fatih Kocyigit, Clément Moulin-Frier,
+    Markus Voelk, Fabio Massimo Proietti, Michael Leslie, Cheng Zhou, Ben Figg, Caio Conti Guidote Ribeiro,
+    Daniel Schiller, Juan José Quiroz Omaña, Matteo Nini, Philippe Juhel, Jeffrey W. Herrmann, Sinan Barut,
+    Javier Lopez, Jonatas Teixeira, github user MoonNarga, Riften, Congjun Ma, Wilbert Pumacay.
+    We know we forgot many many people, also significant ones... please let us know!
 
 I also wish to thank following people for the inspiration they provided in various fields through their
 publications, books or other means:
@@ -263,6 +273,14 @@ subject to the following restrictions:
  
 
 
+License of the MuJoCo Physics Library
+*************************************
+
+The library is licensed under the Apache Licnese version 2.0:
+http://www.apache.org/licenses/
+ 
+
+
 License of the Open Dynamics Engine
 ***********************************
 Open Dynamics Engine
@@ -306,6 +324,36 @@ see accompanying file BDS-LICENSE for details or see
 This software is distributed WITHOUT ANY WARRANTY; without even the
 implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 See the License for more information.
+
+
+
+License of the Rust ZeroMQ remote API
+*************************************
+BSD 2-Clause License
+
+Copyright (c) 2022, Samuel Cavalcanti All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
 
 
 
@@ -399,6 +447,45 @@ and redistributed under the following conditions:
 
  
 
+License of the sha256 implementation
+************************************
+Updated to C++, zedwood.com 2012
+Based on Olivier Gay's version
+See Modified BSD License below: 
+
+FIPS 180-2 SHA-224/256/384/512 implementation
+Issue date:  04/30/2005
+http://www.ouah.org/ogay/sha2/
+
+Copyright (C) 2005, 2007 Olivier Gay <olivier.gay@a3.epfl.ch>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name of the project nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+
+ 
 License of the tinyxml routines
 *******************************
 Original code by Lee Thomason (www.grinninglizard.com)
@@ -711,6 +798,33 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+
+
+License of ldrawloader
+**********************
+
+MIT License
+
+Copyright (c) 2019-2020 Christoph Kubisch
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
 
