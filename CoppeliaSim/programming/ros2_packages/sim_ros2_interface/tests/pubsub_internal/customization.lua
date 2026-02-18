@@ -7,7 +7,7 @@ end
 
 function sysCall_nonSimulation()
     simulationCount=simulationCount+1
-    sim.writeCustomBufferData(sim_handle_app,'@tmpsimulationCount',sim.packInt32Table{simulationCount})
+    sim.writeCustomDataBlock(sim_handle_app,'@tmpsimulationCount',sim.packInt32Table{simulationCount})
     sim.startSimulation()
 end
 

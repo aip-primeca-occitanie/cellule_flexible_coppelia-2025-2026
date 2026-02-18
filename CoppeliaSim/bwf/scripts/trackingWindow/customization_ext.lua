@@ -52,25 +52,25 @@ end
 function model.ext.getAssociatedSensorDetectorOrVisionHandle()
     local h=simBWF.getReferencedObjectHandle(model.handle,model.objRefIdx.INPUT)
     while h>=0 do
-        local data=sim.readCustomStringData(h,simBWF.modelTags.VISIONWINDOW)
-        if data and #data > 0 then
+        local data=sim.readCustomDataBlock(h,simBWF.modelTags.VISIONWINDOW)
+        if data then
             return h
         end
-        data=sim.readCustomStringData(h,simBWF.modelTags.RAGNARSENSOR)
-        if data and #data > 0 then
+        data=sim.readCustomDataBlock(h,simBWF.modelTags.RAGNARSENSOR)
+        if data then
             return h
         end
-        data=sim.readCustomStringData(h,simBWF.modelTags.RAGNARDETECTOR)
-        if data and #data > 0 then
+        data=sim.readCustomDataBlock(h,simBWF.modelTags.RAGNARDETECTOR)
+        if data then
             return h
         end
-        data=sim.readCustomStringData(h,simBWF.modelTags.THERMOFORMER) -- has internal trigger and pallet
-        if data and #data > 0 then
+        data=sim.readCustomDataBlock(h,simBWF.modelTags.THERMOFORMER) -- has internal trigger and pallet
+        if data then
             return h
         end
         -- Following has no effect. What was intended? Probably to return the input of the tracking window used as input
-        data=sim.readCustomStringData(h,simBWF.modelTags.TRACKINGWINDOW)
-        if data and #data > 0 then
+        data=sim.readCustomDataBlock(h,simBWF.modelTags.TRACKINGWINDOW)
+        if data then
             h=simBWF.getReferencedObjectHandle(h,model.objRefIdx.INPUT)
         else
             h=-1

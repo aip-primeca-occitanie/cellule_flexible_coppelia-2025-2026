@@ -10,8 +10,7 @@ function sysCall_init()
     model.gripper=-1
     local objs=sim.getObjectsInTree(model.handle,sim.handle_all,1)
     for i=1,#objs,1 do
-        local aab = sim.readCustomStringData(objs[i],simBWF.modelTags.RAGNARGRIPPER)
-        if aab and #aab > 0 then
+        if sim.readCustomDataBlock(objs[i],simBWF.modelTags.RAGNARGRIPPER) then
             model.gripper=objs[i]
             break
         end

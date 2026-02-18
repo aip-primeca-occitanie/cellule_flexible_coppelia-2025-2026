@@ -16,6 +16,11 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 
+json bin(const cv::Mat &mat)
+{
+    return bin(mat.data, mat.rows * mat.cols * mat.elemSize());
+}
+
 int edgeThresh = 12;
 cv::Mat image, gray, blurImage, edge, cedge;
 const char* window_name = "Press any key to step, q to quit";
@@ -34,21 +39,23 @@ static void onTrackbar(int value, void *data)
 int main()
 {
     RemoteAPIClient client;
-    auto sim = client.getObject().sim();
 
-    auto visionSensorHandle = sim.getObject("/VisionSensor");
-    auto passiveVisionSensorHandle = sim.getObject("/PassiveVisionSensor");
+    auto visionSensorHandle = client.call("sim.getObject", {"/VisionSensor"})[0];
+    auto passiveVisionSensorHandle = client.call("sim.getObject", {"/PassiveVisionSensor"})[0];
 
-    sim.setStepping(true);
-    sim.startSimulation();
+    client.setStepping(true);
+    client.call("sim.startSimulation");
 
     while(1)
     {
-        sim.step();
+        client.step();
 
-        auto [img, res] = sim.getVisionSensorImg(visionSensorHandle);
+        auto ret = client.call("sim.getVisionSensorCharImage", {visionSensorHandle});
+        auto img = ret[0].as<std::vector<uint8_t>>();
+        auto resX = ret[1].as<int>();
+        auto resY = ret[2].as<int>();
 
-        image = cv::Mat(res[1], res[0], CV_8UC3, img.data());
+        image = cv::Mat(resY, resX, CV_8UC3, img.data());
         // In CoppeliaSim images are left to right (x-axis), and bottom to top (y-axis)
         // (consistent with the axes of vision sensors, pointing Z outwards, Y up)
         // and color format is RGB triplets, whereas OpenCV uses BGR:
@@ -68,13 +75,13 @@ int main()
         // Write displayed image back to CoppeliaSim:
         cv::cvtColor(cedge, cedge, cv::COLOR_BGR2RGB);
         cv::flip(cedge, cedge, 0);
-        sim.setVisionSensorImg(passiveVisionSensorHandle, std::vector<uint8_t>(cedge.data, cedge.data + cedge.total() * cedge.elemSize()));
+        client.call("sim.setVisionSensorCharImage", {passiveVisionSensorHandle, bin(cedge)});
 
         // Wait for a key stroke; the same function arranges events processing:
         auto key = cv::waitKey(0) & 0xFF;
         if(key == 'q' || key == 27) break;
     }
-    sim.stopSimulation();
+    client.call("sim.stopSimulation");
 
     return 0;
 }

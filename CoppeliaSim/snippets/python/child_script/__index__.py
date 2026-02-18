@@ -1,1 +1,1 @@
-#@name Simulation Script
+#@name Child Script

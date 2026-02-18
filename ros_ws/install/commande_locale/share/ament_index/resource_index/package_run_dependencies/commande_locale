@@ -1,1 +1,0 @@
-rclcpp;std_msgs;sensor_msgs;image_transport;cv_bridge;rosidl_default_runtime;aiguillages;ament_lint_auto;ament_lint_common

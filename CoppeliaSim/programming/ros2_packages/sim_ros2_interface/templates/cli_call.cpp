@@ -9,7 +9,7 @@
         read__`interface.request.cpp_type_normalized`(in->_.stackID, req.get(), &(clientProxy->rd_opt));
         auto result = cli->async_send_request(req);
         if(rclcpp::spin_until_future_complete(node, result) ==
-                rclcpp::FutureReturnCode::SUCCESS)
+                rclcpp::executor::FutureReturnCode::SUCCESS)
         {
             auto resp = result.get();
             write__`interface.response.cpp_type_normalized`(*resp, in->_.stackID, &(clientProxy->wr_opt));

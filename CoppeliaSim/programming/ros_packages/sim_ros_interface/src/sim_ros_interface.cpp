@@ -1,6 +1,6 @@
 #include <sim_ros_interface.h>
 #include <simPlusPlus/Plugin.h>
-#include <simPlusPlus/Handles.h>
+#include <simPlusPlus/Handle.h>
 
 #include <tf/transform_broadcaster.h>
 #include <sensor_msgs/image_encodings.h>
@@ -46,7 +46,7 @@ void ros_imtr_callback(const sensor_msgs::ImageConstPtr& msg, SubscriberProxy *s
 class Plugin : public sim::Plugin
 {
 public:
-    void onInit()
+    void onStart()
     {
         if(!getenv("ROS_MASTER_URI"))
             throw std::runtime_error("ROS_MASTER_URI is not set");
@@ -61,14 +61,14 @@ public:
         setBuildDate(BUILD_DATE);
     }
 
-    void onCleanup()
+    void onEnd()
     {
         shutdown();
     }
 
-    void onScriptStateAboutToBeDestroyed(int scriptHandle, long long scriptUid)
+    void onScriptStateDestroyed(int scriptID)
     {
-        for(auto proxy : publisherHandles.find(scriptHandle))
+        for(auto proxy : publisherHandles.find(scriptID))
         {
             if(proxy->publisher)
             {
@@ -85,7 +85,7 @@ public:
                 imageTransportShutdownPublisher(&in, &out);
             }
         }
-        for(auto proxy : subscriberHandles.find(scriptHandle))
+        for(auto proxy : subscriberHandles.find(scriptID))
         {
             if(proxy->subscriber)
             {
@@ -102,14 +102,14 @@ public:
                 imageTransportShutdownSubscriber(&in, &out);
             }
         }
-        for(auto proxy : serviceClientHandles.find(scriptHandle))
+        for(auto proxy : serviceClientHandles.find(scriptID))
         {
             shutdownServiceClient_in in;
             in.serviceClientHandle = proxy->handle;
             shutdownServiceClient_out out;
             shutdownServiceClient(&in, &out);
         }
-        for(auto proxy : serviceServerHandles.find(scriptHandle))
+        for(auto proxy : serviceServerHandles.find(scriptID))
         {
             shutdownServiceServer_in in;
             in.serviceServerHandle = proxy->handle;
@@ -118,16 +118,17 @@ public:
         }
     }
 
-    void onInstancePass(const sim::InstancePassFlags &flags)
+    void onInstancePass(const sim::InstancePassFlags &flags, bool first)
     {
         ros::spinOnce();
     }
 
     void onMainScriptAboutToBeCalled(int &out)
     {
+
         int stopSimulationRequestCounter;
-        simGetInt32Param(sim_intparam_stop_request_counter, &stopSimulationRequestCounter);
-        bool doNotRun = simGetBoolParam(sim_boolparam_rosinterface_donotrunmainscript);
+        simGetIntegerParameter(sim_intparam_stop_request_counter, &stopSimulationRequestCounter);
+        simBool doNotRun = simGetBoolParameter(sim_boolparam_rosinterface_donotrunmainscript);
         if(doNotRun > 0)
         {
             if(previousStopSimulationRequestCounter == -1)
@@ -511,7 +512,7 @@ public:
 
         int node_name_length = 0;
         char *node_name = nullptr;
-        node_name = simGetNamedStringParam("ROSInterface.nodeName", &node_name_length);
+        node_name = simGetStringNamedParam("ROSInterface.nodeName", &node_name_length);
 
         ros::init(argc, argv, node_name && node_name_length ? node_name : "sim_ros_interface");
 
@@ -544,11 +545,11 @@ private:
     tf::TransformBroadcaster *tfbr = NULL;
     image_transport::ImageTransport *imtr = NULL;
 
-    sim::Handles<SubscriberProxy*> subscriberHandles;
-    sim::Handles<PublisherProxy*> publisherHandles;
-    sim::Handles<ServiceClientProxy*> serviceClientHandles;
-    sim::Handles<ServiceServerProxy*> serviceServerHandles;
+    sim::Handles<SubscriberProxy> subscriberHandles;
+    sim::Handles<PublisherProxy> publisherHandles;
+    sim::Handles<ServiceClientProxy> serviceClientHandles;
+    sim::Handles<ServiceServerProxy> serviceServerHandles;
 };
 
-SIM_PLUGIN(Plugin)
+SIM_PLUGIN(PLUGIN_NAME, PLUGIN_VERSION, Plugin)
 #include "stubsPlusPlus.cpp"

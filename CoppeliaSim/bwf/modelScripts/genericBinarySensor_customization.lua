@@ -54,8 +54,8 @@ function getDefaultInfoForNonExistingFields(info)
 end
 
 function readInfo()
-    local data=sim.readCustomStringData(model,'XYZ_BINARYSENSOR_INFO')
-    if data and #data > 0 then
+    local data=sim.readCustomDataBlock(model,'XYZ_BINARYSENSOR_INFO')
+    if data then
         data=sim.unpackTable(data)
     else
         data={}
@@ -66,9 +66,9 @@ end
 
 function writeInfo(data)
     if data then
-        sim.writeCustomStringData(model,'XYZ_BINARYSENSOR_INFO',sim.packTable(data))
+        sim.writeCustomDataBlock(model,'XYZ_BINARYSENSOR_INFO',sim.packTable(data))
     else
-        sim.writeCustomStringData(model,'XYZ_BINARYSENSOR_INFO','')
+        sim.writeCustomDataBlock(model,'XYZ_BINARYSENSOR_INFO','')
     end
 end
 
@@ -388,8 +388,8 @@ end
 
 function sysCall_init()
     dlgMainTabIndex=0
-    model=sim.getObject('..')
-    sensor=sim.getObject('../genericBinarySensor_sensor')
+    model=sim.getObject('.')
+    sensor=sim.getObject('./genericBinarySensor_sensor')
     _MODELVERSION_=0
     _CODEVERSION_=0
     local _info=readInfo()
@@ -401,7 +401,7 @@ function sysCall_init()
 end
 
 showOrHideUiIfNeeded=function()
-    local s=sim.getObjectSel()
+    local s=sim.getObjectSelection()
     if s and #s>=1 and s[#s]==model then
         showDlg()
     else

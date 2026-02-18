@@ -8,7 +8,7 @@ function model.handleBackCompatibility()
             local h2=dum[j]
             local h3=sim.getLinkDummy(h2)
             if h3==-1 then
-                sim.removeObjects({h2})
+                sim.removeObject(h2)
             end
         end
     end
@@ -24,7 +24,7 @@ function sysCall_init()
    for i=1,4,1 do
         local data={}
         data.index=i
-        sim.writeCustomStringData(model.handles.ikPts[i],simBWF.modelTags.RAGNARGRIPPERPLATFORMIKPT,sim.packTable(data))
+        sim.writeCustomDataBlock(model.handles.ikPts[i],simBWF.modelTags.RAGNARGRIPPERPLATFORMIKPT,sim.packTable(data))
     end
 
     model.handleJobConsistency(simBWF.isModelACopy_ifYesRemoveCopyTag(model.handle))

@@ -1,4 +1,3 @@
-local simPython = loadPlugin 'simPython';
-(require 'simPython-typecheck')(simPython)
+local simSpline={}
 
-return simPython
+return simSpline

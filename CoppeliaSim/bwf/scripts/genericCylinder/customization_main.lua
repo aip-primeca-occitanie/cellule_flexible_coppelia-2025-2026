@@ -58,13 +58,13 @@ function sysCall_cleanup_specific()
     local c=model.readInfo()
     local fs=sim.getObjectsInTree(model.handle,sim.object_forcesensor_type,1+2)
     for i=1,#fs,1 do
-        sim.removeObjects({fs[i]})
+        sim.removeObject(fs[i])
     end
     if c.partSpecific['count']<3 then
-        sim.removeObjects({model.specHandles.auxCylinders[2]})
+        sim.removeObject(model.specHandles.auxCylinders[2])
     end
     if c.partSpecific['count']<2 then
-        sim.removeObjects({model.specHandles.auxCylinders[1]})
+        sim.removeObject(model.specHandles.auxCylinders[1])
     else
         local dummy=sim.createDummy(0.01)
         sim.setObjectOrientation(dummy,model.handle,{0,0,0})
@@ -72,7 +72,7 @@ function sysCall_cleanup_specific()
         oss[#oss+1]=model.handle
         local r=sim.groupShapes(oss)
         sim.reorientShapeBoundingBox(r,dummy)
-        sim.removeObjects({dummy})
+        sim.removeObject(dummy)
     end
 end
 

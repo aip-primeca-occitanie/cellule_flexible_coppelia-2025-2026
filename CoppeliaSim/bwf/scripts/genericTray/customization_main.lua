@@ -44,7 +44,9 @@ function model.setShapeSize(h,x,y,z)
 end
 
 function model.setShapeMass(handle,m)
-    sim.setShapeMass(handle,m)
+    local transf=sim.getObjectMatrix(handle,-1)
+    local m0,i0,com0=sim.getShapeMassAndInertia(handle,transf)
+    sim.setShapeMassAndInertia(handle,m,{0.01*m,0,0,0,0.01*m,0,0,0,0.01*m},{0,0,0},transf)
 end
 
 function model.updateTray()
@@ -59,7 +61,7 @@ function model.updateTray()
     local palletOffset=c.partSpecific['placeOffset']
     model.setShapeSize(model.handle,width,length,height)
     if model.specHandles.border~=-1 then
-        sim.removeObjects({model.specHandles.border})
+        sim.removeObject(model.specHandles.border)
         model.specHandles.border=-1
     end
     local borders={}
@@ -177,6 +179,6 @@ end
 
 
 function sysCall_cleanup_specific()
-    sim.removeObjects({model.specHandles.borderElement}) 
+    sim.removeObject(model.specHandles.borderElement) 
 end
 

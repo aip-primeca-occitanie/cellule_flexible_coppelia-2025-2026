@@ -1,26 +1,28 @@
-# Make sure to have the add-on "ZMQ remote API" running in
-# CoppeliaSim. Do not launch simulation, but run this script
+# Make sure to have CoppeliaSim running, with followig scene loaded:
+#
+# scenes/messaging/pControllerViaRemoteApi.ttt
+#
+# Do not launch simulation, but run this script
 
 import math
 
-from coppeliasim_zmqremoteapi_client import RemoteAPIClient
+from zmqRemoteApi import RemoteAPIClient
 
 print('Program started')
 
 maxForce = 100
 
 client = RemoteAPIClient()
-sim = client.require('sim')
+sim = client.getObject('sim')
 
-sim.loadScene(sim.getStringParam(sim.stringparam_scenedefaultdir) + '/messaging/pControllerViaRemoteApi.ttt')
 
 def moveToAngle(targetAngle):
     global jointAngle
     while abs(jointAngle - targetAngle) > 0.1 * math.pi / 180:
         vel = computeTargetVelocity(jointAngle, targetAngle)
         sim.setJointTargetVelocity(jointHandle, vel)
-        sim.setJointTargetForce(jointHandle, maxForce, False)
-        sim.step()
+        sim.setJointMaxForce(jointHandle, maxForce)
+        client.step()
         jointAngle = sim.getJointPosition(jointHandle)
 
 
@@ -51,7 +53,7 @@ jointAngle = sim.getJointPosition(jointHandle)
 sim.setJointTargetVelocity(jointHandle, 360 * math.pi / 180)
 
 # enable the stepping mode on the client:
-sim.setStepping(True)
+client.setStepping(True)
 
 sim.startSimulation()
 
