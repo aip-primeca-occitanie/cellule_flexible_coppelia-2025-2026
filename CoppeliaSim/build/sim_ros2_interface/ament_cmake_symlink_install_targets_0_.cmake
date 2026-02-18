@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface/libsimExtROS2.so" "TARGETS" "simExtROS2" "DESTINATION" "/home/user/Desktop/New_ter/CoppeliaSim")

@@ -1,1 +1,1 @@
-/home/user/Desktop/New_ter/ros2_ws/src/simExtROS2/simROS2.lua
+/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/simROS2.lua
