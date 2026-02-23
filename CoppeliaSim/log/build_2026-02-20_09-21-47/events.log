@@ -1,0 +1,127 @@
+[0.000000] (-) TimerEvent: {}
+[0.001357] (-) JobUnselected: {'identifier': 'ros2_bubble_rob'}
+[0.001921] (-) JobUnselected: {'identifier': 'ros_bubble_rob'}
+[0.002035] (-) JobUnselected: {'identifier': 'simStubsGenTests'}
+[0.002882] (-) JobUnselected: {'identifier': 'sim_ros_interface'}
+[0.003220] (-) JobUnselected: {'identifier': 'wsRemoteApi'}
+[0.003245] (-) JobUnselected: {'identifier': 'zmqRemoteApi'}
+[0.003265] (sim_ros2_interface) JobQueued: {'identifier': 'sim_ros2_interface', 'dependencies': OrderedDict()}
+[0.003289] (sim_ros2_interface) JobStarted: {'identifier': 'sim_ros2_interface'}
+[0.055952] (sim_ros2_interface) JobProgress: {'identifier': 'sim_ros2_interface', 'progress': 'cmake'}
+[0.061785] (sim_ros2_interface) Command: {'cmd': ['/usr/bin/cmake', '/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface'], 'cwd': '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'user', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/user', 'OLDPWD': '/home/user', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2141', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'user', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'user', 'TERM': 'xterm-256color', 'COPPELIASIM_ROOT_DIR': '/home/user/Desktop/New_ter/CoppeliaSim', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/Ubuntu:@/tmp/.ICE-unix/2100,unix/Ubuntu:/tmp/.ICE-unix/2100', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/23e4cd27_b5d0_477f_b1b7_bb783941ea36', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.LI7RK3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.102', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099867] (-) TimerEvent: {}
+[0.200873] (-) TimerEvent: {}
+[0.301584] (-) TimerEvent: {}
+[0.404625] (-) TimerEvent: {}
+[0.505389] (-) TimerEvent: {}
+[0.569610] (sim_ros2_interface) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.607001] (-) TimerEvent: {}
+[0.721384] (-) TimerEvent: {}
+[0.824263] (-) TimerEvent: {}
+[0.888136] (sim_ros2_interface) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.924791] (-) TimerEvent: {}
+[0.973422] (sim_ros2_interface) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.025407] (-) TimerEvent: {}
+[1.126361] (-) TimerEvent: {}
+[1.228409] (-) TimerEvent: {}
+[1.249214] (sim_ros2_interface) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.263997] (sim_ros2_interface) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.268730] (sim_ros2_interface) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.271213] (sim_ros2_interface) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.296901] (sim_ros2_interface) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.331169] (-) TimerEvent: {}
+[1.431911] (-) TimerEvent: {}
+[1.535016] (-) TimerEvent: {}
+[1.540300] (sim_ros2_interface) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.552377] (sim_ros2_interface) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.552598] (sim_ros2_interface) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.554502] (sim_ros2_interface) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.636785] (-) TimerEvent: {}
+[1.685169] (sim_ros2_interface) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.741005] (-) TimerEvent: {}
+[1.846059] (-) TimerEvent: {}
+[1.913305] (sim_ros2_interface) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.947078] (-) TimerEvent: {}
+[2.051751] (-) TimerEvent: {}
+[2.141886] (sim_ros2_interface) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[2.152121] (-) TimerEvent: {}
+[2.252578] (-) TimerEvent: {}
+[2.306551] (sim_ros2_interface) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[2.353778] (-) TimerEvent: {}
+[2.358415] (sim_ros2_interface) StdoutLine: {'line': b'-- Found diagnostic_msgs: 5.3.6 (/opt/ros/jazzy/share/diagnostic_msgs/cmake)\n'}
+[2.468756] (-) TimerEvent: {}
+[2.562367] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[2.569007] (-) TimerEvent: {}
+[2.619540] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[2.669279] (-) TimerEvent: {}
+[2.705603] (sim_ros2_interface) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.770434] (-) TimerEvent: {}
+[2.786272] (sim_ros2_interface) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.915538] (-) TimerEvent: {}
+[3.016979] (-) TimerEvent: {}
+[3.038916] (sim_ros2_interface) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[3.096326] (sim_ros2_interface) StdoutLine: {'line': b'-- Found lifecycle_msgs: 2.0.3 (/opt/ros/jazzy/share/lifecycle_msgs/cmake)\n'}
+[3.117469] (-) TimerEvent: {}
+[3.173459] (sim_ros2_interface) StdoutLine: {'line': b'-- Found map_msgs: 2.4.1 (/opt/ros/jazzy/share/map_msgs/cmake)\n'}
+[3.235751] (-) TimerEvent: {}
+[3.338493] (-) TimerEvent: {}
+[3.419795] (sim_ros2_interface) StdoutLine: {'line': b'-- Found pendulum_msgs: 0.33.9 (/opt/ros/jazzy/share/pendulum_msgs/cmake)\n'}
+[3.438792] (-) TimerEvent: {}
+[3.499891] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rosgraph_msgs: 2.0.3 (/opt/ros/jazzy/share/rosgraph_msgs/cmake)\n'}
+[3.539293] (-) TimerEvent: {}
+[3.565440] (sim_ros2_interface) StdoutLine: {'line': b'-- Found shape_msgs: 5.3.6 (/opt/ros/jazzy/share/shape_msgs/cmake)\n'}
+[3.626963] (sim_ros2_interface) StdoutLine: {'line': b'-- Found stereo_msgs: 5.3.6 (/opt/ros/jazzy/share/stereo_msgs/cmake)\n'}
+[3.651293] (-) TimerEvent: {}
+[3.701165] (sim_ros2_interface) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.19 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[3.749645] (sim_ros2_interface) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[3.751918] (-) TimerEvent: {}
+[3.755129] (sim_ros2_interface) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[3.755471] (sim_ros2_interface) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[3.874765] (-) TimerEvent: {}
+[3.982439] (-) TimerEvent: {}
+[4.083933] (-) TimerEvent: {}
+[4.169672] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[4.184897] (-) TimerEvent: {}
+[4.185589] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[4.285300] (-) TimerEvent: {}
+[4.386112] (-) TimerEvent: {}
+[4.489275] (-) TimerEvent: {}
+[4.503108] (sim_ros2_interface) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[4.554409] (sim_ros2_interface) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[4.588556] (sim_ros2_interface) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[4.590288] (-) TimerEvent: {}
+[4.694136] (-) TimerEvent: {}
+[4.795908] (-) TimerEvent: {}
+[4.897795] (-) TimerEvent: {}
+[5.015658] (-) TimerEvent: {}
+[5.067569] (sim_ros2_interface) StdoutLine: {'line': b'-- Found trajectory_msgs: 5.3.6 (/opt/ros/jazzy/share/trajectory_msgs/cmake)\n'}
+[5.115982] (-) TimerEvent: {}
+[5.134863] (sim_ros2_interface) StdoutLine: {'line': b'-- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)\n'}
+[5.210744] (sim_ros2_interface) StdoutLine: {'line': b'-- Found std_srvs: 5.3.6 (/opt/ros/jazzy/share/std_srvs/cmake)\n'}
+[5.235096] (-) TimerEvent: {}
+[5.283045] (sim_ros2_interface) StdoutLine: {'line': b'-- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)\n'}
+[5.335331] (-) TimerEvent: {}
+[5.362944] (sim_ros2_interface) StdoutLine: {'line': b'-- Found image_transport: 5.1.7 (/opt/ros/jazzy/share/image_transport/cmake)\n'}
+[5.403930] (sim_ros2_interface) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:50 (find_package):\n'}
+[5.404266] (sim_ros2_interface) StderrLine: {'line': b'  By not providing "Findaiguillages.cmake" in CMAKE_MODULE_PATH this project\n'}
+[5.404407] (sim_ros2_interface) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[5.404559] (sim_ros2_interface) StderrLine: {'line': b'  "aiguillages", but CMake did not find one.\n'}
+[5.404683] (sim_ros2_interface) StderrLine: {'line': b'\n'}
+[5.405276] (sim_ros2_interface) StderrLine: {'line': b'  Could not find a package configuration file provided by "aiguillages" with\n'}
+[5.405399] (sim_ros2_interface) StderrLine: {'line': b'  any of the following names:\n'}
+[5.405457] (sim_ros2_interface) StderrLine: {'line': b'\n'}
+[5.405563] (sim_ros2_interface) StderrLine: {'line': b'    aiguillagesConfig.cmake\n'}
+[5.407219] (sim_ros2_interface) StderrLine: {'line': b'    aiguillages-config.cmake\n'}
+[5.407303] (sim_ros2_interface) StderrLine: {'line': b'\n'}
+[5.407362] (sim_ros2_interface) StderrLine: {'line': b'  Add the installation prefix of "aiguillages" to CMAKE_PREFIX_PATH or set\n'}
+[5.407427] (sim_ros2_interface) StderrLine: {'line': b'  "aiguillages_DIR" to a directory containing one of the above files.  If\n'}
+[5.408679] (sim_ros2_interface) StderrLine: {'line': b'  "aiguillages" provides a separate development package or SDK, be sure it\n'}
+[5.409094] (sim_ros2_interface) StderrLine: {'line': b'  has been installed.\n'}
+[5.409169] (sim_ros2_interface) StderrLine: {'line': b'\n'}
+[5.409227] (sim_ros2_interface) StderrLine: {'line': b'\x1b[0m\n'}
+[5.409280] (sim_ros2_interface) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[5.435775] (-) TimerEvent: {}
+[5.456932] (sim_ros2_interface) CommandEnded: {'returncode': 1}
+[5.530396] (sim_ros2_interface) JobEnded: {'identifier': 'sim_ros2_interface', 'rc': 1}
+[5.540121] (-) TimerEvent: {}
+[5.542958] (-) EventReactorShutdown: {}

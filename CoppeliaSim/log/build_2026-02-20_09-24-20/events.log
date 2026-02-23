@@ -1,0 +1,170 @@
+[0.000000] (-) TimerEvent: {}
+[0.000474] (-) JobUnselected: {'identifier': 'ros2_bubble_rob'}
+[0.000880] (-) JobUnselected: {'identifier': 'ros_bubble_rob'}
+[0.001121] (-) JobUnselected: {'identifier': 'simStubsGenTests'}
+[0.001139] (-) JobUnselected: {'identifier': 'sim_ros_interface'}
+[0.001150] (-) JobUnselected: {'identifier': 'wsRemoteApi'}
+[0.001411] (-) JobUnselected: {'identifier': 'zmqRemoteApi'}
+[0.001445] (sim_ros2_interface) JobQueued: {'identifier': 'sim_ros2_interface', 'dependencies': OrderedDict()}
+[0.001729] (sim_ros2_interface) JobStarted: {'identifier': 'sim_ros2_interface'}
+[0.019361] (sim_ros2_interface) JobProgress: {'identifier': 'sim_ros2_interface', 'progress': 'cmake'}
+[0.032275] (sim_ros2_interface) Command: {'cmd': ['/usr/bin/cmake', '/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface'], 'cwd': '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'user', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/user', 'OLDPWD': '/home/user', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2141', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'user', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'user', 'TERM': 'xterm-256color', 'COPPELIASIM_ROOT_DIR': '/home/user/Desktop/New_ter/CoppeliaSim', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/Ubuntu:@/tmp/.ICE-unix/2100,unix/Ubuntu:/tmp/.ICE-unix/2100', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/23e4cd27_b5d0_477f_b1b7_bb783941ea36', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.LI7RK3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.102', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.069809] (sim_ros2_interface) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.097011] (-) TimerEvent: {}
+[0.197824] (-) TimerEvent: {}
+[0.303119] (-) TimerEvent: {}
+[0.404139] (-) TimerEvent: {}
+[0.444285] (sim_ros2_interface) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.456981] (sim_ros2_interface) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[0.462040] (sim_ros2_interface) StdoutLine: {'line': b'-- Found diagnostic_msgs: 5.3.6 (/opt/ros/jazzy/share/diagnostic_msgs/cmake)\n'}
+[0.498271] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.504680] (-) TimerEvent: {}
+[0.510761] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.526369] (sim_ros2_interface) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.547899] (sim_ros2_interface) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.614163] (sim_ros2_interface) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[0.614435] (-) TimerEvent: {}
+[0.635184] (sim_ros2_interface) StdoutLine: {'line': b'-- Found lifecycle_msgs: 2.0.3 (/opt/ros/jazzy/share/lifecycle_msgs/cmake)\n'}
+[0.666338] (sim_ros2_interface) StdoutLine: {'line': b'-- Found map_msgs: 2.4.1 (/opt/ros/jazzy/share/map_msgs/cmake)\n'}
+[0.724713] (-) TimerEvent: {}
+[0.798676] (sim_ros2_interface) StdoutLine: {'line': b'-- Found pendulum_msgs: 0.33.9 (/opt/ros/jazzy/share/pendulum_msgs/cmake)\n'}
+[0.816841] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rosgraph_msgs: 2.0.3 (/opt/ros/jazzy/share/rosgraph_msgs/cmake)\n'}
+[0.825380] (-) TimerEvent: {}
+[0.835889] (sim_ros2_interface) StdoutLine: {'line': b'-- Found shape_msgs: 5.3.6 (/opt/ros/jazzy/share/shape_msgs/cmake)\n'}
+[0.859389] (sim_ros2_interface) StdoutLine: {'line': b'-- Found stereo_msgs: 5.3.6 (/opt/ros/jazzy/share/stereo_msgs/cmake)\n'}
+[0.883389] (sim_ros2_interface) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.19 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[0.888046] (sim_ros2_interface) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[0.890395] (sim_ros2_interface) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[0.957483] (-) TimerEvent: {}
+[0.983171] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.985286] (sim_ros2_interface) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.057846] (-) TimerEvent: {}
+[1.091167] (sim_ros2_interface) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.169910] (-) TimerEvent: {}
+[1.253589] (sim_ros2_interface) StdoutLine: {'line': b'-- Found trajectory_msgs: 5.3.6 (/opt/ros/jazzy/share/trajectory_msgs/cmake)\n'}
+[1.277311] (sim_ros2_interface) StdoutLine: {'line': b'-- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)\n'}
+[1.278107] (-) TimerEvent: {}
+[1.320274] (sim_ros2_interface) StdoutLine: {'line': b'-- Found std_srvs: 5.3.6 (/opt/ros/jazzy/share/std_srvs/cmake)\n'}
+[1.339883] (sim_ros2_interface) StdoutLine: {'line': b'-- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)\n'}
+[1.366214] (sim_ros2_interface) StdoutLine: {'line': b'-- Found image_transport: 5.1.7 (/opt/ros/jazzy/share/image_transport/cmake)\n'}
+[1.374137] (sim_ros2_interface) StdoutLine: {'line': b'-- CoppeliaSim: LIBPLUGIN_DIR: /home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin.\n'}
+[1.374370] (sim_ros2_interface) StdoutLine: {'line': b'-- CoppeliaSim: COPPELIASIM_ROOT_DIR: /home/user/Desktop/New_ter/CoppeliaSim.\n'}
+[1.374435] (sim_ros2_interface) StdoutLine: {'line': b'-- Found CoppeliaSim installation at /home/user/Desktop/New_ter/CoppeliaSim.\n'}
+[1.375790] (sim_ros2_interface) StdoutLine: {'line': b'-- Checking CoppeliaSim header version...\n'}
+[1.385036] (-) TimerEvent: {}
+[1.486009] (-) TimerEvent: {}
+[1.586781] (-) TimerEvent: {}
+[1.709378] (-) TimerEvent: {}
+[1.810018] (-) TimerEvent: {}
+[1.916179] (-) TimerEvent: {}
+[1.992532] (sim_ros2_interface) StdoutLine: {'line': b'-- CoppeliaSim headers version 4.3.0 rev3\n'}
+[2.001958] (sim_ros2_interface) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: regex \n'}
+[2.018502] (-) TimerEvent: {}
+[2.119944] (-) TimerEvent: {}
+[2.220830] (-) TimerEvent: {}
+[2.275257] (sim_ros2_interface) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0")  \n'}
+[2.277775] (sim_ros2_interface) StdoutLine: {'line': b'-- Adding simStubsGen command...\n'}
+[2.325999] (-) TimerEvent: {}
+[2.443678] (-) TimerEvent: {}
+[2.448108] (sim_ros2_interface) StdoutLine: {'line': b'-- Reading plugin metadata...\n'}
+[2.490674] (sim_ros2_interface) StderrLine: {'line': b'warning: missing python package "xmlschema"; input file callbacks.xml will not be validated.\n'}
+[2.527993] (sim_ros2_interface) StderrLine: {'line': b'warning: missing python package "xmlschema"; input file callbacks.xml will not be validated.\n'}
+[2.543827] (-) TimerEvent: {}
+[2.562397] (sim_ros2_interface) StdoutLine: {'line': b'-- Plugin: ROS2\n'}
+[2.646756] (-) TimerEvent: {}
+[2.747458] (-) TimerEvent: {}
+[2.750698] (sim_ros2_interface) StdoutLine: {'line': b'-- Configuring done (2.7s)\n'}
+[2.821678] (sim_ros2_interface) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[2.830919] (sim_ros2_interface) StdoutLine: {'line': b'-- Build files have been written to: /home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface\n'}
+[2.849995] (-) TimerEvent: {}
+[2.865771] (sim_ros2_interface) CommandEnded: {'returncode': 0}
+[2.872031] (sim_ros2_interface) JobProgress: {'identifier': 'sim_ros2_interface', 'progress': 'build'}
+[2.872081] (sim_ros2_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface', '--', '-j4', '-l4'], 'cwd': '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'user', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/user', 'OLDPWD': '/home/user', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2141', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'user', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'user', 'TERM': 'xterm-256color', 'COPPELIASIM_ROOT_DIR': '/home/user/Desktop/New_ter/CoppeliaSim', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/Ubuntu:@/tmp/.ICE-unix/2100,unix/Ubuntu:/tmp/.ICE-unix/2100', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/23e4cd27_b5d0_477f_b1b7_bb783941ea36', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.LI7RK3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.102', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[2.950307] (-) TimerEvent: {}
+[2.982373] (sim_ros2_interface) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating generated/actcli_del.cpp\x1b[0m\n'}
+[2.987873] (sim_ros2_interface) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating generated/actcli_cancelLastGoal.cpp\x1b[0m\n'}
+[2.990686] (sim_ros2_interface) StdoutLine: {'line': b'[  7%] \x1b[34m\x1b[1mGenerating generated/actcli_new.cpp\x1b[0m\n'}
+[3.001274] (sim_ros2_interface) StdoutLine: {'line': b'[  9%] \x1b[34m\x1b[1mGenerating generated/actcli_sendGoal.cpp\x1b[0m\n'}
+[3.055655] (-) TimerEvent: {}
+[3.158492] (-) TimerEvent: {}
+[3.295344] (-) TimerEvent: {}
+[3.417307] (-) TimerEvent: {}
+[3.434164] (sim_ros2_interface) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[3.434790] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 212, in <module>\n'}
+[3.434947] (sim_ros2_interface) StderrLine: {'line': b'    f.write(pycpp.get_output())\n'}
+[3.437891] (sim_ros2_interface) StderrLine: {'line': b'            ^^^^^^^^^^^^^^^^^^\n'}
+[3.438056] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 136, in get_output\n'}
+[3.438164] (sim_ros2_interface) StderrLine: {'line': b"    exec(self.get_python_code(b, spool_fn='pycpp.output'), locals())\n"}
+[3.438225] (sim_ros2_interface) StderrLine: {'line': b'  File "<string>", line 3, in <module>\n'}
+[3.438280] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 82, in parse_interfaces\n'}
+[3.438336] (sim_ros2_interface) StderrLine: {'line': b'    interfaces[interface_name] = parse_interface(interface_name)\n'}
+[3.438388] (sim_ros2_interface) StderrLine: {'line': b'                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.438441] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 47, in parse_interface\n'}
+[3.438674] (sim_ros2_interface) StderrLine: {'line': b'    path = get_interface_path(m)\n'}
+[3.438737] (sim_ros2_interface) StderrLine: {'line': b'           ^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.438788] (sim_ros2_interface) StderrLine: {'line': b'  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_runtime_py/get_interfaces.py", line 179, in get_interface_path\n'}
+[3.438842] (sim_ros2_interface) StderrLine: {'line': b'    raise LookupError(f"Unknown package \'{parts[0]}\'")\n'}
+[3.438975] (sim_ros2_interface) StderrLine: {'line': b"LookupError: Unknown package 'aiguillages'\n"}
+[3.439031] (sim_ros2_interface) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[3.439084] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 212, in <module>\n'}
+[3.439141] (sim_ros2_interface) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[3.439193] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 212, in <module>\n'}
+[3.439244] (sim_ros2_interface) StderrLine: {'line': b'    f.write(pycpp.get_output())\n'}
+[3.439296] (sim_ros2_interface) StderrLine: {'line': b'            ^^^^^^^^^^^^^^^^^^\n'}
+[3.439348] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 136, in get_output\n'}
+[3.439400] (sim_ros2_interface) StderrLine: {'line': b"    exec(self.get_python_code(b, spool_fn='pycpp.output'), locals())\n"}
+[3.439452] (sim_ros2_interface) StderrLine: {'line': b'  File "<string>", line 3, in <module>\n'}
+[3.439502] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 82, in parse_interfaces\n'}
+[3.439554] (sim_ros2_interface) StderrLine: {'line': b'    interfaces[interface_name] = parse_interface(interface_name)\n'}
+[3.439606] (sim_ros2_interface) StderrLine: {'line': b'                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.439658] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 47, in parse_interface\n'}
+[3.439711] (sim_ros2_interface) StderrLine: {'line': b'    path = get_interface_path(m)\n'}
+[3.439764] (sim_ros2_interface) StderrLine: {'line': b'           ^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.439816] (sim_ros2_interface) StderrLine: {'line': b'  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_runtime_py/get_interfaces.py", line 179, in get_interface_path\n'}
+[3.439869] (sim_ros2_interface) StderrLine: {'line': b'    raise LookupError(f"Unknown package \'{parts[0]}\'")\n'}
+[3.439919] (sim_ros2_interface) StderrLine: {'line': b"LookupError: Unknown package 'aiguillages'\n"}
+[3.451117] (sim_ros2_interface) StderrLine: {'line': b'    f.write(pycpp.get_output())\n'}
+[3.451620] (sim_ros2_interface) StderrLine: {'line': b'            ^^^^^^^^^^^^^^^^^^\n'}
+[3.451702] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 136, in get_output\n'}
+[3.451766] (sim_ros2_interface) StderrLine: {'line': b"    exec(self.get_python_code(b, spool_fn='pycpp.output'), locals())\n"}
+[3.451840] (sim_ros2_interface) StderrLine: {'line': b'  File "<string>", line 3, in <module>\n'}
+[3.451896] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 82, in parse_interfaces\n'}
+[3.451950] (sim_ros2_interface) StderrLine: {'line': b'    interfaces[interface_name] = parse_interface(interface_name)\n'}
+[3.452274] (sim_ros2_interface) StderrLine: {'line': b'                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.452368] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 47, in parse_interface\n'}
+[3.452423] (sim_ros2_interface) StderrLine: {'line': b'    path = get_interface_path(m)\n'}
+[3.452474] (sim_ros2_interface) StderrLine: {'line': b'           ^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.452525] (sim_ros2_interface) StderrLine: {'line': b'  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_runtime_py/get_interfaces.py", line 179, in get_interface_path\n'}
+[3.453174] (sim_ros2_interface) StderrLine: {'line': b'    raise LookupError(f"Unknown package \'{parts[0]}\'")\n'}
+[3.453234] (sim_ros2_interface) StderrLine: {'line': b"LookupError: Unknown package 'aiguillages'\n"}
+[3.514652] (sim_ros2_interface) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[3.514879] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 212, in <module>\n'}
+[3.514939] (sim_ros2_interface) StderrLine: {'line': b'    f.write(pycpp.get_output())\n'}
+[3.514999] (sim_ros2_interface) StderrLine: {'line': b'            ^^^^^^^^^^^^^^^^^^\n'}
+[3.515053] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 136, in get_output\n'}
+[3.515106] (sim_ros2_interface) StderrLine: {'line': b"    exec(self.get_python_code(b, spool_fn='pycpp.output'), locals())\n"}
+[3.515750] (sim_ros2_interface) StderrLine: {'line': b'  File "<string>", line 3, in <module>\n'}
+[3.515833] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 82, in parse_interfaces\n'}
+[3.515890] (sim_ros2_interface) StderrLine: {'line': b'    interfaces[interface_name] = parse_interface(interface_name)\n'}
+[3.515940] (sim_ros2_interface) StderrLine: {'line': b'                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.515991] (sim_ros2_interface) StderrLine: {'line': b'  File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 47, in parse_interface\n'}
+[3.516503] (sim_ros2_interface) StderrLine: {'line': b'    path = get_interface_path(m)\n'}
+[3.516593] (sim_ros2_interface) StderrLine: {'line': b'           ^^^^^^^^^^^^^^^^^^^^^\n'}
+[3.516644] (sim_ros2_interface) StderrLine: {'line': b'  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_runtime_py/get_interfaces.py", line 179, in get_interface_path\n'}
+[3.516697] (sim_ros2_interface) StderrLine: {'line': b'    raise LookupError(f"Unknown package \'{parts[0]}\'")\n'}
+[3.516748] (sim_ros2_interface) StderrLine: {'line': b"LookupError: Unknown package 'aiguillages'\n"}
+[3.516946] (sim_ros2_interface) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/generate_ros_code.dir/build.make:110: generated/actcli_del.cpp] Error 1\n'}
+[3.517028] (sim_ros2_interface) StderrLine: {'line': b"gmake[2]: *** Deleting file 'generated/actcli_del.cpp'\n"}
+[3.517080] (sim_ros2_interface) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[3.517399] (-) TimerEvent: {}
+[3.533717] (sim_ros2_interface) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/generate_ros_code.dir/build.make:104: generated/actcli_cancelLastGoal.cpp] Error 1\n'}
+[3.534351] (sim_ros2_interface) StderrLine: {'line': b"gmake[2]: *** Deleting file 'generated/actcli_cancelLastGoal.cpp'\n"}
+[3.545792] (sim_ros2_interface) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/generate_ros_code.dir/build.make:116: generated/actcli_new.cpp] Error 1\n'}
+[3.546397] (sim_ros2_interface) StderrLine: {'line': b"gmake[2]: *** Deleting file 'generated/actcli_new.cpp'\n"}
+[3.561848] (sim_ros2_interface) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/generate_ros_code.dir/build.make:122: generated/actcli_sendGoal.cpp] Error 1\n'}
+[3.562190] (sim_ros2_interface) StderrLine: {'line': b"gmake[2]: *** Deleting file 'generated/actcli_sendGoal.cpp'\n"}
+[3.563901] (sim_ros2_interface) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:138: CMakeFiles/generate_ros_code.dir/all] Error 2\n'}
+[3.564861] (sim_ros2_interface) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[3.571870] (sim_ros2_interface) CommandEnded: {'returncode': 2}
+[3.592306] (sim_ros2_interface) JobEnded: {'identifier': 'sim_ros2_interface', 'rc': 2}
+[3.604680] (-) EventReactorShutdown: {}
