@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "commande_locale/srv/SrvAddProductPushBack_Request",
+      "fields": [
+        {
+          "name": "poste",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "produit",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "commande_locale/srv/SrvAddProductPushBack_Request",
+      "hash_string": "RIHS01_fadd0fd14f0dbe28363d11f931c9d103edac8c389d097336b8b2500dfa2da3df"
+    }
+  ]
+}

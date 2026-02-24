@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from shuttles/msg/MsgErreur.msg
+// generated code does not contain a copyright notice
+
+
+module shuttles {
+  module msg {
+    struct MsgErreur {
+      int32 code;
+
+      int32 n_poste;
+    };
+  };
+};

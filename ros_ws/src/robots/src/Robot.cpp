@@ -618,7 +618,7 @@ void Robot::Colorer(int position, int type)//attention c'est forcement quand on 
         auto result_future = client->async_send_request(request);
 
         // Attente de la réponse
-        if (rclcpp::spin_until_future_complete(node_, result_future)
+        if (rclcpp::spin_until_future_complete(this->get_node_base_interface(), result_future)
             != rclcpp::FutureReturnCode::SUCCESS)
         {
             RCLCPP_ERROR(this->get_logger(), "Erreur lors de l'appel du service");
@@ -1185,13 +1185,12 @@ void Robot::DeplacerPieceCallback(const commande_locale::msg::DeplacerPieceMsg::
 
 /*** Initialisation ***/
 //Initialisation des services, des publishers et des subscribers + Récupération des handles des robots
-void Robot::init(rclcpp::Node::SharedPtr noeud)
+void Robot::init()
 {
 	std::string nom;
 	int numero_poste;
-	node_ = noeud;
 
-	callback_group_ = node_->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+	callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 	rclcpp::SubscriptionOptions options;
 	options.callback_group = callback_group_;
 
@@ -1238,63 +1237,63 @@ void Robot::init(rclcpp::Node::SharedPtr noeud)
 
 	// Topic pour V-Rep; s'abonne aux topics en publisher et subscriber
 	// Tant q'uil n'y a pas de messages publiés sur les topics sur lesquels on s'abonne, on n'exécute rien
-	pubSim_getObjectHandle = node_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle",100);
-	subSim_getObjectHandle = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/GetObjectHandle",100,std::bind(&Robot::simGetObjectHandleCallback, this, std::placeholders::_1),options);
+	pubSim_getObjectHandle = this->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle",100);
+	subSim_getObjectHandle = this->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/GetObjectHandle",100,std::bind(&Robot::simGetObjectHandleCallback, this, std::placeholders::_1),options);
 	
-	pubSim_setJointState = node_->create_publisher<std_msgs::msg::Float32MultiArray>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/SetJointState",100);
-	subSim_setJointState = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/SetJointState",100,std::bind(&Robot::simSetJointStateCallback, this, std::placeholders::_1),options);
+	pubSim_setJointState = this->create_publisher<std_msgs::msg::Float32MultiArray>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/SetJointState",100);
+	subSim_setJointState = this->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/SetJointState",100,std::bind(&Robot::simSetJointStateCallback, this, std::placeholders::_1),options);
 
-	pubSim_getJointState = node_->create_publisher<std_msgs::msg::Int32>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetJointState", 100);
-	subSim_getJointState = node_->create_subscription<sensor_msgs::msg::JointState>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetJointState", 100, std::bind(&Robot::simGetJointStateCallback, this, std::placeholders::_1),options);
+	pubSim_getJointState = this->create_publisher<std_msgs::msg::Int32>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetJointState", 100);
+	subSim_getJointState = this->create_subscription<sensor_msgs::msg::JointState>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetJointState", 100, std::bind(&Robot::simGetJointStateCallback, this, std::placeholders::_1),options);
 
-	pubSim_getTime = node_->create_publisher<std_msgs::msg::Byte>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetTime", 100);
-	subSim_getTime = node_->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetTime", 100, std::bind(&Robot::simGetTimeCallback, this, std::placeholders::_1),options);
+	pubSim_getTime = this->create_publisher<std_msgs::msg::Byte>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetTime", 100);
+	subSim_getTime = this->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetTime", 100, std::bind(&Robot::simGetTimeCallback, this, std::placeholders::_1),options);
 
-	pubSim_getTimeUpdate = node_->create_publisher<std_msgs::msg::Byte>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "Update/GetTime", 100);
-	subSim_getTimeUpdate = node_->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "Update/GetTime", 100, std::bind(&Robot::simGetTimeUpdateCallback, this, std::placeholders::_1),options);
+	pubSim_getTimeUpdate = this->create_publisher<std_msgs::msg::Byte>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "Update/GetTime", 100);
+	subSim_getTimeUpdate = this->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "Update/GetTime", 100, std::bind(&Robot::simGetTimeUpdateCallback, this, std::placeholders::_1),options);
 
-	pubSim_changeColor = node_->create_publisher<std_msgs::msg::Int32MultiArray>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeColor", 100);
-	subSim_changeColor = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeColor", 100, std::bind(&Robot::simChangeColorCallback, this, std::placeholders::_1),options);
+	pubSim_changeColor = this->create_publisher<std_msgs::msg::Int32MultiArray>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeColor", 100);
+	subSim_changeColor = this->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeColor", 100, std::bind(&Robot::simChangeColorCallback, this, std::placeholders::_1),options);
 
-	pubSim_changeShuttleColor = node_->create_publisher<std_msgs::msg::Int32MultiArray>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100);
-	subSim_changeShuttleColor = node_->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100, std::bind(&Robot::simChangeShuttleColorCallback, this, std::placeholders::_1),options);
+	pubSim_changeShuttleColor = this->create_publisher<std_msgs::msg::Int32MultiArray>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100);
+	subSim_changeShuttleColor = this->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/ChangeShuttleColor", 100, std::bind(&Robot::simChangeShuttleColorCallback, this, std::placeholders::_1),options);
 
-	pubSim_getColor = node_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColor", 100);
-	subSim_getColor = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColor", 100, std::bind(&Robot::simGetColorCallback, this, std::placeholders::_1),options);
+	pubSim_getColor = this->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColor", 100);
+	subSim_getColor = this->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColor", 100, std::bind(&Robot::simGetColorCallback, this, std::placeholders::_1),options);
 
-	pubSim_getColorUpdate = node_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100);
-	subSim_getColorUpdate = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100, std::bind(&Robot::simGetColorUpdateCallback, this, std::placeholders::_1),options);
+	pubSim_getColorUpdate = this->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100);
+	subSim_getColorUpdate = this->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot" + std::to_string(num_robot) + "/GetColorUpdate", 100, std::bind(&Robot::simGetColorUpdateCallback, this, std::placeholders::_1),options);
 
-	pub_robot_transport = node_->create_publisher<std_msgs::msg::Bool>("/commande/Simulation/TransportBras" + std::to_string(num_robot), 10);
-	pub_tache_finie = node_->create_publisher<commande_locale::msg::TacheFinieMsg>("/commande/Simulation/TacheFinie",10);
+	pub_robot_transport = this->create_publisher<std_msgs::msg::Bool>("/commande/Simulation/TransportBras" + std::to_string(num_robot), 10);
+	pub_tache_finie = this->create_publisher<commande_locale::msg::TacheFinieMsg>("/commande/Simulation/TacheFinie",10);
 
 	
 	//Subscribers
-	planifSendPosition = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/SendPositionRobot",10,std::bind(&Robot::SendPositionCallback, this, std::placeholders::_1));
-	planifSendJoints = node_->create_subscription<commande_locale::msg::RobotJoints>("/commande/Simulation/SendJointsRobot",10,std::bind(&Robot::SendJointsCallback, this, std::placeholders::_1));
-	planifFermerPince = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/FermerPinceRobot",10,std::bind(&Robot::FermerPinceCallback, this, std::placeholders::_1));
-	planifOuvrirPince = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/OuvrirPinceRobot",10,std::bind(&Robot::OuvrirPinceCallback, this, std::placeholders::_1));
-	planifDescendreBras = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/DescendreBras",10,std::bind(&Robot::DescendreBrasCallback, this, std::placeholders::_1));
-	planifMonterBras = node_->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/MonterBras",10,std::bind(&Robot::MonterBrasCallback, this, std::placeholders::_1));
-	planifControlerRobot = node_->create_subscription<robots::msg::MoveRobot>("/commande/Simulation/ControlerBras",10,std::bind(&Robot::ControlerRobotCallback, this, std::placeholders::_1));
-	sub_faireTache = node_->create_subscription<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache",10,std::bind(&Robot::faireTacheCallback, this, std::placeholders::_1));
-	sub_evacuer= node_->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1));
-	subStopTache= node_->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1));
-	subDeplacerPiece= node_->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1));
+	planifSendPosition = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/SendPositionRobot",10,std::bind(&Robot::SendPositionCallback, this, std::placeholders::_1));
+	planifSendJoints = this->create_subscription<commande_locale::msg::RobotJoints>("/commande/Simulation/SendJointsRobot",10,std::bind(&Robot::SendJointsCallback, this, std::placeholders::_1));
+	planifFermerPince = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/FermerPinceRobot",10,std::bind(&Robot::FermerPinceCallback, this, std::placeholders::_1));
+	planifOuvrirPince = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/OuvrirPinceRobot",10,std::bind(&Robot::OuvrirPinceCallback, this, std::placeholders::_1));
+	planifDescendreBras = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/DescendreBras",10,std::bind(&Robot::DescendreBrasCallback, this, std::placeholders::_1));
+	planifMonterBras = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/MonterBras",10,std::bind(&Robot::MonterBrasCallback, this, std::placeholders::_1));
+	planifControlerRobot = this->create_subscription<robots::msg::MoveRobot>("/commande/Simulation/ControlerBras",10,std::bind(&Robot::ControlerRobotCallback, this, std::placeholders::_1));
+	sub_faireTache = this->create_subscription<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache",10,std::bind(&Robot::faireTacheCallback, this, std::placeholders::_1));
+	sub_evacuer= this->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1));
+	subStopTache= this->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1));
+	subDeplacerPiece= this->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1));
 
 	//Publishers
-	pub_pince = node_->create_publisher<std_msgs::msg::Int32>("/robot/cmdPinceRobot"+std::to_string(num_robot), 10);
-	pub_robotPosition = node_->create_publisher<std_msgs::msg::Int32>("/robot/PositionRobot"+std::to_string(num_robot),10);
-	pub_robotBras = node_->create_publisher<std_msgs::msg::Int32>("/robot/BrasRobot"+std::to_string(num_robot),10);
-	pub_robotPince = node_->create_publisher<std_msgs::msg::Int32>("/robot/PinceRobot"+std::to_string(num_robot),10);
-	pub_retourCommande = node_->create_publisher<robots::msg::MsgNumRobot>("/commande/Simulation/retourCommande", 10);
-	pub_produitEvac = node_->create_publisher<std_msgs::msg::Int32MultiArray>("/commande/Simulation/produitEvac", 10);
-	pub_erreur_log = node_->create_publisher<commande_locale::msg::MsgErreur>("/commande/Simulation/Erreur_log",10);
+	pub_pince = this->create_publisher<std_msgs::msg::Int32>("/robot/cmdPinceRobot"+std::to_string(num_robot), 10);
+	pub_robotPosition = this->create_publisher<std_msgs::msg::Int32>("/robot/PositionRobot"+std::to_string(num_robot),10);
+	pub_robotBras = this->create_publisher<std_msgs::msg::Int32>("/robot/BrasRobot"+std::to_string(num_robot),10);
+	pub_robotPince = this->create_publisher<std_msgs::msg::Int32>("/robot/PinceRobot"+std::to_string(num_robot),10);
+	pub_retourCommande = this->create_publisher<robots::msg::MsgNumRobot>("/commande/Simulation/retourCommande", 10);
+	pub_produitEvac = this->create_publisher<std_msgs::msg::Int32MultiArray>("/commande/Simulation/produitEvac", 10);
+	pub_erreur_log = this->create_publisher<commande_locale::msg::MsgErreur>("/commande/Simulation/Erreur_log",10);
 
 	//Client (pour les services)
-	client = node_->create_client<shuttles::srv::ShuttleId>("get_id_shuttle_at_poste");
+	client = this->create_client<shuttles::srv::ShuttleId>("get_id_shuttle_at_poste");
 	
-	rclcpp::sleep_for(std::chrono::seconds(1));
+	rclcpp::sleep_for(std::chrono::seconds(4));
 
 	//Utilisation du service simRosGetObjectHandle pour obtenir les handles du robot
 	for (int i=1;i<8;i++)

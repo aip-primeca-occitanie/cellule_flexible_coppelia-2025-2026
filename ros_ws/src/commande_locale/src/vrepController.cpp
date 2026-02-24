@@ -42,8 +42,9 @@ void vrepController::loadModelInit(int shuttleNumber)
     if(shuttleNumber < 0 || shuttleNumber > 6) 
         printf(" ATTENTION, LE NUMERO DU SHUTTLE DOIT ETRE COMPRIS ENTRE 0 ET 6 \n");
     else {
-        shuttleChar = (shuttleNumber == 0) ? 'Z' : char(shuttleNumber + 64);
-        string shuttleName = "models/montrac/shuttle" + string(&shuttleChar) + ".ttm";
+        if(shuttleNumber == 0) shuttleChar = (char)(90); // SI 0 -> ShuttleZ
+		else shuttleChar = char(shuttleNumber+64);
+        string shuttleName = "models/montrac/shuttle" + string(1, shuttleChar) + ".ttm";
 
         msgSim_loadModel.data = shuttleName;
         pubSim_loadModel->publish(msgSim_loadModel);
@@ -71,9 +72,6 @@ void vrepController::init(rclcpp::Node::SharedPtr n, const string& executionPath
     fs::path exePath(executionPath);
     fs::path wsRoot = exePath.parent_path().parent_path().parent_path().parent_path().parent_path().parent_path(); // remonte jusqu'au workspace root
     fs::path vrepPath = wsRoot / "CoppeliaSim";
-    std::cout<<"ON EST ICI"<<std::endl;
-    std::cout<<vrepPath<<std::endl;
-    std::cout<<simulationFileName<<std::endl;
 
     if(!fs::exists(vrepPath)){
         cerr << "ERREUR : CoppeliaSim non trouvé dans " << vrepPath << endl;

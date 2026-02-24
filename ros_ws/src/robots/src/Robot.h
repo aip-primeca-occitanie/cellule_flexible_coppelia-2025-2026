@@ -166,11 +166,11 @@ public:
 
   explicit Robot(int num_du_robot);
   ~Robot();
-  rclcpp::Node::SharedPtr node_;
+  
   rclcpp::CallbackGroup::SharedPtr callback_group_;
 
   //Initialisation
-  void init(rclcpp::Node::SharedPtr noeud);
+  void init();
 
   int computeTableId(int position);
   void transport(bool valeur);

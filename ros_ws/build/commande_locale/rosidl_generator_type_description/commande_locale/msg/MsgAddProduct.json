@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "commande_locale/msg/MsgAddProduct",
+      "fields": [
+        {
+          "name": "num_poste",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "num_produit",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "commande_locale/msg/MsgAddProduct",
+      "hash_string": "RIHS01_ad42e745aa0aa08eec008f88893fa678b83b093ecb30b35c202389c7fcde5823"
+    }
+  ]
+}
