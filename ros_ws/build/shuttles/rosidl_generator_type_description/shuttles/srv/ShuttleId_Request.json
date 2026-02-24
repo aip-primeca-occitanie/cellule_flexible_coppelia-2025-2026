@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "shuttles/srv/ShuttleId_Request",
+      "fields": [
+        {
+          "name": "robot",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "position",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "shuttles/srv/ShuttleId_Request",
+      "hash_string": "RIHS01_a15d875e0102e4d669df10ce558c9f1a7c0bd345bca091513e1e343ce8cd4237"
+    }
+  ]
+}

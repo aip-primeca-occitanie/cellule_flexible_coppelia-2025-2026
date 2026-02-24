@@ -73,6 +73,8 @@ int main(int argc, char** argv)
 {
     rclcpp::init(argc, argv);
     auto node = std::make_shared<rclcpp::Node>("commande_locale");
+    
+    auto vrep_node = std::make_shared<rclcpp::Node>("vrep_node");
 
     // --- Publishers ---
     auto pubProductAdd = node->create_publisher<commande_locale::msg::MsgAddProduct>("/commande_locale/AddProduct", 10);
@@ -96,7 +98,7 @@ int main(int argc, char** argv)
     std::string nombreRobotStr = (argc > 1) ? argv[1] : "4";
     if(nombreRobotStr != "2" && nombreRobotStr != "4") nombreRobotStr = "4";
     std::string simulationFile = "Simulation" + nombreRobotStr + "Robots";
-    VREPController.init(node, argv[0], simulationFile);
+    VREPController.init(vrep_node, argv[0], simulationFile);
 
     // --- IN & OUT Controller ---
     inOutController IOController(&VREPController);
@@ -110,8 +112,8 @@ int main(int argc, char** argv)
         rate.sleep();
     }
 
-    //string cmd="roslaunch launcher launch_beta.launch nbRobot:=" + nombreRobotStr + " &";
-	//system(cmd.c_str());
+    std::string cmd="ros2 launch launcher launch_beta.launch.py nbRobot:=" + nombreRobotStr + " &";
+	system(cmd.c_str());
 
     std::cout << "Pause envoyée" << std::endl;
     VREPController.pause();

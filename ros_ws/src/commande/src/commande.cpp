@@ -76,8 +76,8 @@ void Commande::Initialisation()
 	for(int i=0;i<13;i++) Vx[i]=0;
 	for(int i=0;i<13;i++) Dx[i]=0;
 	for(int i=0;i<9;i++) PIx[i]=0;
-
-	clientFinInit->async_send_request(srvFinInit);
+	auto request = std::make_shared<commande_locale::srv::SrvFinInit::Request>();
+	clientFinInit->async_send_request(request);
 }
 
 void Commande::PlayCallback(const std_msgs::msg::Byte::SharedPtr msg)

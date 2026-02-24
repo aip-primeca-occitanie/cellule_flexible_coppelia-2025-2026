@@ -1,26 +1,28 @@
-/*########################################################################
-##  ______                        _____ ___    __    __    ___   ______ ##
-## /_  __/__  ____ _____ ___     / ___//   |  / /   / /   /   | / ____/ ##
-##  / / / _ \/ __ `/ __ `__ \    \__ \/ /| | / /   / /   / /| |/ / __   ##
-## / / /  __/ /_/ / / / / / /   ___/ / ___ |/ /___/ /___/ ___ / /_/ /   ##
-##/_/  \___/\__,_/_/ /_/ /_/   /____/_/  |_/_____/_____/_/  |_\____/    ##
-######### Steve - Anthony - Lucie - Lucas - Antonin - Guillaume ##########
-##########Croce - Favier - Ricart - Veit - Messioux - Auffray-Amen########
-##########################################################################
-### As a wise man once said : "Follow the white rabbit with hhbbgd...."###
-##########################################################################*/
- 
+/*###########################################################################
+## ___ __ __                      __                      ___              ##
+##  | |_ |__)   /\ |_ _ |o _  _  |_ | _   o|_ | _    __    |    |_ _       ##
+##  | |__| \   /--\|_(-`||(-`|   |  |(-`><||_)|(-`         | |_||_(_)      ##
+##                                                                         ##
+############################################################################*/
+
+/*!
+ * \file Tuto_Basique.main_commande.cpp
+ * \brief code correspondant au tuto du sujet de TER atelier flexible
+ * \author Team Tuto_Basique (N7 2023-2024)
+ * \version 0.1
+ */
+
 #include "capteurs.h"
 #include "actionneurs.h"
 #include "commande.h"
 #include "RobotsInterface.h"
 #include "AigsInterface.h"
 #include <rclcpp/rclcpp.hpp>
-#include <std_msgs/msg/int32.hpp>
-#include <std_msgs/msg/byte.hpp>
 #include <unistd.h>
 
 using namespace std;
+
+#include "prodconfig/productconfig.h"
 
 #define RESET   "\033[0m"
 #define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
@@ -30,78 +32,112 @@ using namespace std;
 #define PlaceFin 1000 /* Marquage à ne pas dépasser */
 
 int M[PlaceFin+1];
-int cpt =0;
+
+/* *****************************************************************
+///////////  | Exemple configuration produits : début |  //////////
+ ******************************************************************* */
+
+// type de produit : séquence de POSTES : durée par poste : nombre de produits
+// 2 : 1 4 : 4 5 : 2
+// 6 : 7 6 5 : 3 6 3 : 1
+
+/*
+const vector<int> Prod_type{    2,
+                                6};
+
+const vector<int> Prod_qte{ 2,
+                            1};
+
+const vector<vector<int>> Prod_seqdeposte{  { POSTE_1, POSTE_4 },
+                                            { POSTE_7, POSTE_6, POSTE_5 }};
+
+const vector<vector<int>> Prod_dureeparposte{   { 4, 5 },
+                                                { 3, 6, 3 }};
+*/
+/* ********************************************************
+///////////  | Exemple configuration produits : fin |  //////////
+ ******************************************************** */
+
+
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////// | DEBUT DECLARE ETU | /////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////  |  FIN DECLARE ETU  |   /////////////////
+/////////////////////////////////////////////////////////////////////////
+
 
 // Pour l'affichage //
 void display()
 {
-	cout << endl;
-	for (int i=0;i<=PlaceFin;i++)
-	{
-		if(i==0)
-			cout << "Marquage : ";
+    cout << endl;
+    for (int i=0;i<=PlaceFin;i++)
+    {
+        if(i==0)
+            cout << "Marquage : ";
 
-		if(M[i]>0)
-			cout<<BOLDRED<<"M["<<i<<"]="<<M[i]<<RESET<<", ";
-		if(M[i]<0)
-			cout<<BOLDGREEN<<"M["<<i<<"]="<<M[i]<<RESET<<", ";
-	}
-	cout<<endl<<endl;
+        if(M[i]>0)
+            cout<<BOLDRED<<"M["<<i<<"]="<<M[i]<<RESET<<", ";
+        if(M[i]<0)
+            cout<<BOLDGREEN<<"M["<<i<<"]="<<M[i]<<RESET<<", ";
+    }
+    cout<<endl<<endl;
 }
 
 void ShutdownCallback(const std_msgs::msg::Byte::SharedPtr msg)
 {
-    rclcpp::shutdown();
+        rclcpp::shutdown(); // <-- Changement ROS2
 }
 
 int main(int argc, char **argv)
 {
     /* *************************************************
-	///////////  | Debut du Petri plus bas |  //////////
+    ///////////  | Debut du Petri plus bas |  //////////
      ************************************************* */
 
 
-	rclcpp::init(argc, argv);
-	auto node = rclcpp::Node::make_shared("commande");
+    rclcpp::init(argc, argv); // <-- Changement ROS2
+    auto node = rclcpp::Node::make_shared("commande"); // <-- Changement ROS2
 
-	auto pub_spawnShuttles = node->create_publisher<std_msgs::msg::Int32>("/commande_locale/nbNavettes", 10);
-	auto sub_shutdown = node->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, ShutdownCallback);
+    // <-- Changements ROS2 pour les publishers et subscribers
+    auto pub_spawnShuttles = node->create_publisher<std_msgs::msg::Int32>("/commande_locale/nbNavettes",10);
+    auto sub_shutdown = node->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, ShutdownCallback);
 
-	int nbRobot=atoi(argv[1]);
+    int nbRobot=atoi(argv[1]);
 
-	Commande cmd(node,argv[0]);
-	RobotsInterface robot(node,nbRobot);
-	AigsInterface aiguillage(node);
-	Capteurs capteur(node);
+    Commande cmd(node,argv[0]);
+    RobotsInterface robot(node,nbRobot);
+    AigsInterface aiguillage(node);
+    Capteurs capteur(node);
 
-	rclcpp::Rate loop_rate(25); //fréquence de la boucle
+    rclcpp::Rate loop_rate(25); //fréquence de la boucle <-- Changement ROS2
 
-	// On attend la fin de l'initialisation des robots
-	while(!robot.RobotInitialise(1) || !robot.RobotInitialise(2))
-	{
-		std::cout<<"Je suis là"<<std::endl;
-		rclcpp::spin_some(node);
-		loop_rate.sleep();
-	}	
-	while(nbRobot==4 && (!robot.RobotInitialise(3) || !robot.RobotInitialise(4)))
-	{
-		std::cout<<"Je suis ici"<<std::endl;
-		rclcpp::spin_some(node);
-		loop_rate.sleep();
-	}
+    // On attend la fin de l'initialisation des robots
+    while(!robot.RobotInitialise(1) || !robot.RobotInitialise(2))
+    {
+        rclcpp::spin_some(node); // <-- Changement ROS2
+        loop_rate.sleep();
+    }
+    while(nbRobot==4 && (!robot.RobotInitialise(3) || !robot.RobotInitialise(4)))
+    {
+        rclcpp::spin_some(node); // <-- Changement ROS2
+        loop_rate.sleep();
+    }
 
     /* *************************************************
-	// | Creation des Navettes | //
+    // | Creation des Navettes | //
      ************************************************* */
 
-    vector<int> listeNavettes{1};
-    // vector<int> listofnavettes;
-    // vector<int> listofnavettes{1, 4};
-    // vector<int> listofnavettes{0, 1, 2, 3, 4, 5, 6};
-    
-    while(listeNavettes.size()<1||listeNavettes.size()>7)
+    cmd.activateShuttleManagerDisplay();
+    // cmd.activateAutoRunSimu();
+    int nbNavettes=0;//Mettre 0 pour demander a l'utilisateur
+    while(nbNavettes<1||nbNavettes>6)
     {
-        int nbNavettes=1;
         cout << "Combien voulez vous de navettes ? [1..6]" << endl;
         cin >> nbNavettes;
         if(cin.fail())
@@ -110,290 +146,209 @@ int main(int argc, char **argv)
             cin.clear();
             cin.ignore(256,'\n');
         }
-        else
-        {
-            for (int i=0; i < nbNavettes; i++)
-            {
-                listeNavettes.push_back(i+1); // SUN avoid navet 0 because its initial position is different
-            }
-        }
     }
-    
-    
-    
-    /*SUN
-	int nbNavettes=1;//Mettre 0 pour demander a l'utilisateur
-	while(nbNavettes<1||nbNavettes>6)
-	{
-		cout << "Combien voulez vous de navettes ? [1..6]" << endl;
-		cin >> nbNavettes;
-		if(cin.fail())
-		{
-			cout << endl << " [Erreur mauvais choix ..]" << endl;
-			cin.clear();
-			cin.ignore(256,'\n');
-		}
-	}
-    
-	std_msgs::Int32 msg_nbNavettes;
-	msg_nbNavettes.data=nbNavettes;
-	pub_spawnShuttles.publish(msg_nbNavettes);
-    */
-    
-    
-    for (int i=0; i < listeNavettes.size(); i++)
-    {
-        std_msgs::msg::Int32 msg_nbNavettes;
-        msg_nbNavettes.data=listeNavettes[i];
-        pub_spawnShuttles->publish(msg_nbNavettes);
-    }
-    
 
-	cmd.Initialisation();
-	for(int i=0;i<PlaceFin;i++) M[i]=0;
+    std_msgs::msg::Int32 msg_nbNavettes; 
+    msg_nbNavettes.data=nbNavettes;
+    pub_spawnShuttles->publish(msg_nbNavettes);
 
+
+    cmd.Initialisation();
+    for(int i=0;i<PlaceFin;i++) M[i]=0;
     /* *************************************************
-	////// | MARQUAGE INITIAL | ////////
+    ////// | MARQUAGE INITIAL | ////////
     ************************************************* */
-	M[0]=1;
-	display();
-    
-    ////////////////////////////////////////////////////////////////////
-    /////////////// | DEBUT INIT ETU | //////////////
-    ////////////////////////////////////////////////////////////////////
-    
-    
-    ////////////////////////////////////////////////////////////////////
-    ////////////////  |  FIN INIT ETU  |   //////////////
-    ////////////////////////////////////////////////////////////////////
+    M[0]=1;
+    display();
 
-	while (rclcpp::ok())
-	{
-		// Seulement si la simulation est en cours
-		if(cmd.getPlay()==true)
-		{
+    ///////////////////////////////////////////////////////////////////
+    ///////////////////// | DEBUT INIT ETU | ///////////////////
+    ///////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////////////////////
+    /////////////////////  |  FIN INIT ETU  |  ////////////////////
+    ///////////////////////////////////////////////////////////////////
+
+    while (rclcpp::ok()) // <-- Changement ROS2
+    {
+        // Seulement si la simulation est en cours
+        if(cmd.getPlay()==true)
+        {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////////// | DEBUT PETRI  ETU | /////////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		/*aiguillage.Droite(1);
-            	aiguillage.Droite(2);
-            	aiguillage.Droite(11);	
-		aiguillage.Droite(12);*/
+            if(M[0])
+            {
+            /*!
+                        * \b T1: init aiguillages et produit
+                        * \arg positionnement des aiguillages et ajout des produits
+                        * \arg \b Precondition: M[0]
+                        * \arg \b Postcondition: M[2]++
+                        */
+                M[0]--;
 
-		/*if (M[0])
-		{	
-			sleep(10);
-			M[0]--;	
-			robot.DeplacerPiece(ROBOT_1,1,3);
-			M[70]--;	
-		}*/
-		if(M[0])
-		{		
-			M[0]--;		
-			cmd.Ouvrir_PS(1);
-			cmd.Ouvrir_PS(2);
-			cmd.Ouvrir_PS(3);
-			cmd.Ouvrir_PS(4);
-			cmd.Stop_PS(5);
-			cmd.Ouvrir_PS(6);
-			cmd.Ouvrir_PS(7);
-			cmd.Ouvrir_PS(8);
-			cmd.Ouvrir_PS(9);	
-			cmd.Ouvrir_PS(10);
-			cmd.Ouvrir_PS(11);
-			cmd.Ouvrir_PS(12);
-			cmd.Ouvrir_PS(13);
-			cmd.Ouvrir_PS(14);
-			cmd.Ouvrir_PS(15);
-			cmd.Ouvrir_PS(16);
-			cmd.Ouvrir_PS(17);
-			cmd.Ouvrir_PS(18);
-			cmd.Ouvrir_PS(19);	
-			cmd.Ouvrir_PS(20);
-			cmd.Ouvrir_PS(21);
-			cmd.Ouvrir_PS(22);
-			cmd.Ouvrir_PS(23);
-			cmd.Ouvrir_PS(24);			
-			
-			M[13]++;
-
-			display();
-  	
-		}
-		if(M[13]){
-			M[13]--;
-			
-			aiguillage.Gauche(3);
-			aiguillage.Gauche(10);
-			M[15]++;
-
-		}
-
-		if(M[15])
-		{	
-
-			if(capteur.get_PS(5)){
+                aiguillage.Gauche(3);
+                aiguillage.Gauche(10);
+                aiguillage.Gauche(11);
+                aiguillage.Gauche(12);
+                aiguillage.Gauche(1);
 				
-				M[15]--;
-				aiguillage.Droite(2);
-				aiguillage.Droite(11);
-				aiguillage.Droite(1);
-				aiguillage.Droite(12);
-				M[14]++;
-			}
+                cmd.Stop_PS(19);
+				
+				
 
-			display();
-  	
-		}
-		if(M[14])
-		{
-			if(capteur.get_DD(1) && capteur.get_DD(2) && capteur.get_DD(11) && capteur.get_DD(12))
-			{	
-				M[14]--;
-				cmd.Ouvrir_PS(5);
-				cmd.Stop_PS(21);
-				M[50]++;
-			}
-			display();
-		}
-		if(M[50])
-		{
-			if(capteur.get_PS(21))
-			{
-				M[50]--;
-				robot.DeplacerPiece(ROBOT_1,2,4);				
-				M[2]++;
-			}
-			
-			display();
-		}
-		if(M[2])
-		{
-			if(robot.FinDeplacerPiece(ROBOT_1))
-			{
-				M[2]--;
-				aiguillage.Gauche(1);
-				aiguillage.Gauche(2);
-				aiguillage.Droite(3);	
-				aiguillage.Droite(4);
-				aiguillage.Droite(5);
-				aiguillage.Droite(6);
-				aiguillage.Gauche(7);
-				aiguillage.Gauche(8);
-				aiguillage.Droite(9);
-				aiguillage.Droite(11);
-				M[3]++;
-			}
-			display();
-		}
-		if(M[3])
-		{
-			if(capteur.get_DG(1) && capteur.get_DG(2) && capteur.get_DD(3) && capteur.get_DD(4) && capteur.get_DD(5) && capteur.get_DD(6) && capteur.get_DG(7) && capteur.get_DG(8) && capteur.get_DD(9) && capteur.get_DD(11))
-			{
-				M[3]--;
-				cmd.Ouvrir_PS(21);
-				cmd.Stop_PS(9);
-				M[8]++;
-			}
-			display();
-		}		
-        	if(M[8]){ 
-			if(capteur.get_PS(9))
-			{
-				M[8]--;
-				robot.DeplacerPiece(ROBOT_4,4,2);
-				cmd.Stop_PS(10);
-				M[9]++;
-			}
-			display();
-		}
-		if(M[9]){ 
-			if(robot.FinDeplacerPiece(ROBOT_4))
-			{
-				M[9]--;
-				cmd.Ouvrir_PS(9);
-				M[10]++;
-			}
-			display();
-		}
-		if(M[10]){ 
-			if(capteur.get_PS(10))
-			{
-				M[10]--;
-				robot.DeplacerPiece(ROBOT_4,3,4);
-				aiguillage.Droite(10);
-				cmd.Stop_PS(22);				
-				M[51]++;
-			}
-			display();
-		}
-		if(M[51]){ 
-			if(robot.FinDeplacerPiece(ROBOT_4) && capteur.get_DD(10))
-			{
-				M[51]--;
-				cmd.Ouvrir_PS(10);
-				M[52]++;
-			}
-			display();
-		}
-		if(M[52]){ 
-			if(capteur.get_PS(22))
-			{
-				M[52]--;
-				robot.DeplacerPiece(ROBOT_1,4,3);
-				aiguillage.Droite(12);
-				aiguillage.Droite(1);
-				cmd.Stop_PS(5);
-				M[53]++;
-			}
-			display();
-		}	
-		if(M[53]){ 
-			if(robot.FinDeplacerPiece(ROBOT_1) && capteur.get_DD(12)  && capteur.get_DD(1))
-			{
-				M[53]--;
-				cmd.Ouvrir_PS(22);
-				M[54]++;
-			}
-			display();
-		}
-		if(M[54]){ 
-			if(capteur.get_PS(5))
-			{
-				M[54]--;
-				
-				M[PlaceFin]++;
-			}
-			display();
-		}
-				
-            
-            
-            
-            
-            
+                robot.AjouterProduit(Prod_seqdeposte[0][0], Prod_type[0]);
+                robot.FaireTache(Prod_seqdeposte[0][0], Prod_dureeparposte[0][0]);
+                cout << "duree poste=" << Prod_dureeparposte[0][0] << endl;
+
+                M[2]++;
+                display();
+            }
+            if(M[2] && capteur.get_PS(6))
+            {
+                /*!
+                        * \b T2: aiguillage A02 mise en place
+                        * \arg  courte description
+                        * \arg \b Precondition: M[2] && capteur.get_PS(6)
+                        * \arg \b Postcondition: M[3]++
+                        */
+                M[2]--;
+
+                aiguillage.Gauche(2);
+
+                M[3]++;
+                display();
+            }
+            if(M[3] && robot.TacheFinie(Prod_seqdeposte[0][0]))
+            {
+            /*!
+                        * \b T4: positionnement aiguillages vers prochain poste 3
+                        * \arg courte description
+                        * \arg \b Precondition: M[3] && robot.TacheFinie(Prod_seqdeposte[0][0])
+                        * \arg \b Postcondition: M[4]++
+                        */
+                M[3]--;
+
+                aiguillage.Droite(11);
+                aiguillage.Droite(12);
+                aiguillage.Droite(01);
+
+                cmd.Stop_PS(21);
+
+
+
+                M[4]++;
+                display();
+            }
+            if(M[4] && capteur.get_PS(21))
+            {
+            /*!
+                        * \b T3: piece de poste 2 à navette
+                        * \arg deplacement de piece
+                        * \arg \b Precondition: M[4] && capteur.get_PS(21)
+                        * \arg \b Postcondition: M[PlaceAval]++; M[PlaceAvalBis]
+                        */
+                M[4]--;
+
+                robot.DeplacerPiece(ROBOT_1, 1, 2);
+
+                M[5]++;
+                display();
+            }
+            if(M[5] && robot.FinDeplacerPiece(ROBOT_1))
+            {
+            /*!
+                        * \b T5: faire repartir navette PS21
+                        * \arg navette repart de PS21, PS2 stop activé
+                        * \arg \b Precondition: M[5] && robot.FinDeplacerPiece(ROBOT_1)
+                        * \arg \b Postcondition: M[6]++
+                        */
+                M[5]--;
+
+                cmd.Ouvrir_PS(21);
+                cmd.Stop_PS(2);
+
+
+                M[6]++;
+                display();
+            }
+            if(M[6] && capteur.get_PS(2))
+            {
+            /*!
+                        * \b T6: deplacement piece navette poste
+                        * \arg deplacement piece depuis navette sur PS2 vers poste 3
+                        * \arg \b Precondition: M[6] && capteur.get_PS(2)
+                        * \arg \b Postcondition: M[7]++
+                        */
+                M[6]--;
+
+                robot.DeplacerPiece(ROBOT_2, 2, 1);
+
+                M[7]++;
+                display();
+            }
+            if(M[7] && robot.FinDeplacerPiece(ROBOT_2))
+            {
+            /*!
+                        * \b T7: evacuer produit
+                        * \arg evacuer produit sur POSTE_3
+                        * \arg \b Precondition: M[7] && robot.FinDeplacerPiece(ROBOT_2)
+                        * \arg \b Postcondition: M[8]++
+                        */
+                M[7]--;
+
+
+                robot.Evacuer();
+                M[8]++;
+                display();
+            }
+            if(M[8])
+            {
+            /*!
+                        * \b T8: fin rdp
+                        * \arg fin du rdp
+                        * \arg \b Precondition: M[8] && robot.TacheFinie(Prod_seqdeposte[0][1])
+                        * \arg \b Postcondition: M[PlaceFin]++
+                        */
+                M[8]--;
+
+
+                M[PlaceFin]++;
+                display();
+            }
+
+
+
+
+
+
+
+
+
+
+
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////// | Place de fin de Petri ETU | //////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-			if(M[PlaceFin])
-			{
-				display();
-				cout << endl << BOLDCYAN << " --[PETRI TERMINE]--" << RESET << endl;
-				cmd.FinPetri();
-				while(rclcpp::ok())
-				{
-					rclcpp::spin_some(node);
-					loop_rate.sleep();
-				}
-			}
-		}
+            if(M[PlaceFin])
+            {
+                display();
+                cout << endl << BOLDCYAN << " --[PETRI TERMINE]--" << RESET << endl;
+                cmd.FinPetri();
+                while(rclcpp::ok()) // <-- Changement ROS2
+                {
+                    rclcpp::spin_some(node); // <-- Changement ROS2
+                    loop_rate.sleep();
+                }
+            }
+        }
 
-		rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées
-		loop_rate.sleep(); //permet de synchroniser la boucle while. Il attend le temps qu'il reste pour faire le 25Hz (ou la fréquence indiquée dans le loop_rate)
-	}
+        rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées <-- Changement ROS2
+        loop_rate.sleep(); //permet de synchroniser la boucle while. Il attend le temps qu'il reste pour faire le 25Hz (ou la fréquence indiquée dans le loop_rate)
+    }
 
-	return 0;
+    return 0;
 }
-

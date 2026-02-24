@@ -17,7 +17,7 @@ Aiguillage::Aiguillage() : Node("aiguillage_node")
     
     //  Abonnement à Int32 sur le topic SwitchSensor
     vrep_sub_switch_sensor = this->create_subscription<std_msgs::msg::Int32>(
-        "sim_ros_interface/SwitchSensor", 10, 
+        "/sim_ros_interface/SwitchSensor", 10, 
         std::bind(&Aiguillage::switch_sensor_callback, this, _1), options);
 
     sub_cmd_droite = this->create_subscription<std_msgs::msg::Int32>(
@@ -60,7 +60,7 @@ void Aiguillage::gauche_callback(const std_msgs::msg::Int32::SharedPtr msg_aigs)
 {
     int id = msg_aigs->data;
     RCLCPP_INFO(this->get_logger(), "GAUCHE -> Aiguillage %d", id);
-    
+
     if(!aig_g[id]) 
     {
         aig_dev->publish(*msg_aigs);     

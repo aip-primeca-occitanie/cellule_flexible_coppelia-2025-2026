@@ -1,0 +1,14 @@
+source;share/aiguillages/hook/cmake_prefix_path.ps1
+source;share/aiguillages/hook/cmake_prefix_path.dsv
+source;share/aiguillages/hook/cmake_prefix_path.sh
+source;share/aiguillages/hook/ld_library_path_lib.ps1
+source;share/aiguillages/hook/ld_library_path_lib.dsv
+source;share/aiguillages/hook/ld_library_path_lib.sh
+source;share/aiguillages/hook/pythonpath.ps1
+source;share/aiguillages/hook/pythonpath.dsv
+source;share/aiguillages/hook/pythonpath.sh
+source;share/aiguillages/local_setup.bash
+source;share/aiguillages/local_setup.dsv
+source;share/aiguillages/local_setup.ps1
+source;share/aiguillages/local_setup.sh
+source;share/aiguillages/local_setup.zsh

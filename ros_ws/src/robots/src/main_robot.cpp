@@ -24,30 +24,24 @@ int main(int argc, char **argv)
 {
     // Initialisation du noeud ROS2
     rclcpp::init(argc, argv);
-
-    string name = "robot";
-    name.append(argv[1]);
+    int num_robot = atoi(argv[1]);
 
     //Création d'un noeud ROS2 nommé "robots"
-    auto node = std::make_shared<rclcpp::Node>("robots");
+    auto robot = std::make_shared<Robot>(num_robot);
 
     rclcpp::executors::MultiThreadedExecutor executor;
-    executor.add_node(node);
+    executor.add_node(robot);
 
     std::thread spin_thread([&executor]() {
         executor.spin();
     });
 
     // On souscrit au topic de shutdown
-    auto sub_shutdown = node->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, ShutdownCallback);
-
-    // Création de l'objet Robot
-    int num_robot = atoi(argv[1]);
-    Robot robot(num_robot); //Entre dans le contructeur du Robot (fichier Robot.cpp)
+    auto sub_shutdown = robot->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, ShutdownCallback);
 
     // Initialisation des publishers, subscribers et services
     //Appelle la fonction init du fichier Robot.cpp
-    robot.init(node);
+    robot->init();
 
     rclcpp::Rate loop_rate(25);
     int compteur = 0;
@@ -55,7 +49,7 @@ int main(int argc, char **argv)
     {
         if(compteur++ > 25)
         {
-            robot.update();
+            robot->update();
             compteur = 0;
         }
         loop_rate.sleep();

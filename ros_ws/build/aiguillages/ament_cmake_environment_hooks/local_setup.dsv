@@ -1,0 +1,4 @@
+source;share/aiguillages/environment/ament_prefix_path.sh
+source;share/aiguillages/environment/library_path.sh
+source;share/aiguillages/environment/path.sh
+source;share/aiguillages/environment/pythonpath.sh

@@ -5,6 +5,8 @@ ros2 run commande_locale simulation 2
 ros2 run commande run
 ros2 run aiguillages run_Aiguillage
 ros2 launch robots robotsGauche.launch.py
+ros2 launch launcher launch_alpha.launch.py
+
 
 
 Pour ouvrir Coppelia : ./coppeliaSim.sh (doit avoir faire source /opt/ros/jazzy/setup.bash dans le dossier ros_ws puis être revenus dans le dossier Coppelia)

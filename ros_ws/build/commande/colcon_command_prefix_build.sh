@@ -1,0 +1,5 @@
+# generated from colcon_core/shell/template/command_prefix.sh.em
+. "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/aiguillages/share/aiguillages/package.sh"
+. "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/commande_locale/share/commande_locale/package.sh"
+. "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/shuttles/share/shuttles/package.sh"
+. "/home/user/celluleflexible_en_cours_ROS2/ros_ws/install/robots/share/robots/package.sh"
