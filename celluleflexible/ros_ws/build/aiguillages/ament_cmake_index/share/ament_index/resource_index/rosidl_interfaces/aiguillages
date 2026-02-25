@@ -1,8 +1,0 @@
-msg/Actionneurs.idl
-msg/Actionneurs.msg
-msg/Capteurs.idl
-msg/Capteurs.msg
-msg/ExchangeSh.idl
-msg/ExchangeSh.msg
-msg/MsgSensorState.idl
-msg/MsgSensorState.msg

@@ -1,8 +1,0 @@
-{
-  "package_name": "robots",
-  "non_idl_tuples": [
-    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/robots:msg/MoveRobot.msg",
-    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/robots:msg/FaireTacheMsg.msg",
-    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/robots:msg/MsgNumRobot.msg"
-  ]
-}

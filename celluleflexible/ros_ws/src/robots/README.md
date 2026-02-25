@@ -8,14 +8,14 @@ Chaque bras robotique constitue un noeud et donc fait tourner le programme indé
 
 
 ## 2. Composition
-Ce dossier est composé de 4 éléments:
+Ce dossier est composé de 5 éléments:
 * Un fichier package.xml
 * Un fichier CMakeLists.txt
 * Un dossier msg, permettant de définir des structures de messages pour communiquer
 * Un dossier src, où se trouve le code source C++ et composé des fichiers suivants :
   * main_robot.cpp, qui initialise le robot
   * Robot.cpp et Robot.h, qui définissent toutes les fonctions pour le mouvement du bras robotique
-  * Poste.cpp et Poste.h, qui représente un poste de travail et contient les données associées
+  * Poste.cpp et Poste.h, qui représentent un poste de travail et contient les données associées
 * Un dossier launch, pour lancer plusieurs robots à la fois
 
 ## 3. Description détaillée des fichiers src
