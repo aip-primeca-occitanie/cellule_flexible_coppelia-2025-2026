@@ -1,0 +1,30 @@
+[0.065s] Invoking command in '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface -- -j4 -l4
+[0.753s] [ 73%] Built target generate_ros_code
+[1.514s] [ 75%] [32mBuilding CXX object CMakeFiles/simExtROS2.dir/src/sim_ros2_interface.cpp.o[0m
+[201.819s] [ 78%] [32m[1mLinking CXX shared library libsimExtROS2.so[0m
+[217.545s] [100%] Built target simExtROS2
+[217.574s] Invoked command in '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface -- -j4 -l4
+[217.607s] Invoking command in '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface
+[217.628s] -- Install configuration: ""
+[217.632s] -- Execute custom install script
+[217.632s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/lua/simROS2-typecheck.lua
+[217.632s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/lua/simROS2.lua
+[217.633s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/helpFiles/en/simROS2.htm
+[217.636s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/helpFiles/index/simROS2.json
+[217.636s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/libsimExtROS2.so
+[217.636s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/ament_index/resource_index/package_run_dependencies/sim_ros2_interface
+[217.636s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/ament_index/resource_index/parent_prefix_path/sim_ros2_interface
+[217.636s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/environment/ament_prefix_path.sh
+[217.637s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/environment/ament_prefix_path.dsv
+[217.638s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/environment/path.sh
+[217.638s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/environment/path.dsv
+[217.638s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/local_setup.bash
+[217.638s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/local_setup.sh
+[217.638s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/local_setup.zsh
+[217.638s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/local_setup.dsv
+[217.638s] -- Symlinking: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/package.dsv
+[217.653s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/ament_index/resource_index/packages/sim_ros2_interface
+[217.653s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/cmake/sim_ros2_interfaceConfig.cmake
+[217.654s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/cmake/sim_ros2_interfaceConfig-version.cmake
+[217.656s] -- Up-to-date symlink: /home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface/share/sim_ros2_interface/package.xml
+[217.659s] Invoked command in '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface

@@ -1,0 +1,124 @@
+[0.032s] Invoking command in '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface
+[0.068s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.444s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.455s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[0.460s] -- Found diagnostic_msgs: 5.3.6 (/opt/ros/jazzy/share/diagnostic_msgs/cmake)
+[0.497s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.509s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.526s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.546s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.613s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[0.634s] -- Found lifecycle_msgs: 2.0.3 (/opt/ros/jazzy/share/lifecycle_msgs/cmake)
+[0.666s] -- Found map_msgs: 2.4.1 (/opt/ros/jazzy/share/map_msgs/cmake)
+[0.797s] -- Found pendulum_msgs: 0.33.9 (/opt/ros/jazzy/share/pendulum_msgs/cmake)
+[0.815s] -- Found rosgraph_msgs: 2.0.3 (/opt/ros/jazzy/share/rosgraph_msgs/cmake)
+[0.835s] -- Found shape_msgs: 5.3.6 (/opt/ros/jazzy/share/shape_msgs/cmake)
+[0.859s] -- Found stereo_msgs: 5.3.6 (/opt/ros/jazzy/share/stereo_msgs/cmake)
+[0.882s] -- Found tf2_geometry_msgs: 0.36.19 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[0.886s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[0.889s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.983s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.984s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.091s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.252s] -- Found trajectory_msgs: 5.3.6 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
+[1.276s] -- Found visualization_msgs: 5.3.6 (/opt/ros/jazzy/share/visualization_msgs/cmake)
+[1.319s] -- Found std_srvs: 5.3.6 (/opt/ros/jazzy/share/std_srvs/cmake)
+[1.339s] -- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)
+[1.365s] -- Found image_transport: 5.1.7 (/opt/ros/jazzy/share/image_transport/cmake)
+[1.373s] -- CoppeliaSim: LIBPLUGIN_DIR: /home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin.
+[1.373s] -- CoppeliaSim: COPPELIASIM_ROOT_DIR: /home/user/Desktop/New_ter/CoppeliaSim.
+[1.373s] -- Found CoppeliaSim installation at /home/user/Desktop/New_ter/CoppeliaSim.
+[1.374s] -- Checking CoppeliaSim header version...
+[1.991s] -- CoppeliaSim headers version 4.3.0 rev3
+[2.000s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: regex 
+[2.274s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0")  
+[2.276s] -- Adding simStubsGen command...
+[2.447s] -- Reading plugin metadata...
+[2.489s] warning: missing python package "xmlschema"; input file callbacks.xml will not be validated.
+[2.526s] warning: missing python package "xmlschema"; input file callbacks.xml will not be validated.
+[2.562s] -- Plugin: ROS2
+[2.749s] -- Configuring done (2.7s)
+[2.820s] -- Generating done (0.0s)
+[2.830s] -- Build files have been written to: /home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface
+[2.869s] Invoked command in '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/user/Desktop/New_ter/CoppeliaSim/install/sim_ros2_interface
+[2.871s] Invoking command in '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface -- -j4 -l4
+[2.981s] [  2%] [34m[1mGenerating generated/actcli_del.cpp[0m
+[2.987s] [  4%] [34m[1mGenerating generated/actcli_cancelLastGoal.cpp[0m
+[2.996s] [  7%] [34m[1mGenerating generated/actcli_new.cpp[0m
+[3.000s] [  9%] [34m[1mGenerating generated/actcli_sendGoal.cpp[0m
+[3.433s] Traceback (most recent call last):
+[3.433s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 212, in <module>
+[3.436s]     f.write(pycpp.get_output())
+[3.436s]             ^^^^^^^^^^^^^^^^^^
+[3.436s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 136, in get_output
+[3.436s]     exec(self.get_python_code(b, spool_fn='pycpp.output'), locals())
+[3.437s]   File "<string>", line 3, in <module>
+[3.437s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 82, in parse_interfaces
+[3.437s]     interfaces[interface_name] = parse_interface(interface_name)
+[3.437s]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[3.437s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 47, in parse_interface
+[3.437s]     path = get_interface_path(m)
+[3.437s]            ^^^^^^^^^^^^^^^^^^^^^
+[3.437s]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_runtime_py/get_interfaces.py", line 179, in get_interface_path
+[3.437s]     raise LookupError(f"Unknown package '{parts[0]}'")
+[3.437s] LookupError: Unknown package 'aiguillages'
+[3.437s] Traceback (most recent call last):
+[3.437s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 212, in <module>
+[3.437s] Traceback (most recent call last):
+[3.437s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 212, in <module>
+[3.438s]     f.write(pycpp.get_output())
+[3.438s]             ^^^^^^^^^^^^^^^^^^
+[3.438s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 136, in get_output
+[3.438s]     exec(self.get_python_code(b, spool_fn='pycpp.output'), locals())
+[3.438s]   File "<string>", line 3, in <module>
+[3.438s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 82, in parse_interfaces
+[3.438s]     interfaces[interface_name] = parse_interface(interface_name)
+[3.438s]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[3.438s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 47, in parse_interface
+[3.438s]     path = get_interface_path(m)
+[3.438s]            ^^^^^^^^^^^^^^^^^^^^^
+[3.438s]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_runtime_py/get_interfaces.py", line 179, in get_interface_path
+[3.438s]     raise LookupError(f"Unknown package '{parts[0]}'")
+[3.438s] LookupError: Unknown package 'aiguillages'
+[3.450s]     f.write(pycpp.get_output())
+[3.450s]             ^^^^^^^^^^^^^^^^^^
+[3.450s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 136, in get_output
+[3.450s]     exec(self.get_python_code(b, spool_fn='pycpp.output'), locals())
+[3.450s]   File "<string>", line 3, in <module>
+[3.450s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 82, in parse_interfaces
+[3.450s]     interfaces[interface_name] = parse_interface(interface_name)
+[3.451s]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[3.451s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 47, in parse_interface
+[3.451s]     path = get_interface_path(m)
+[3.451s]            ^^^^^^^^^^^^^^^^^^^^^
+[3.451s]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_runtime_py/get_interfaces.py", line 179, in get_interface_path
+[3.451s]     raise LookupError(f"Unknown package '{parts[0]}'")
+[3.452s] LookupError: Unknown package 'aiguillages'
+[3.513s] Traceback (most recent call last):
+[3.513s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 212, in <module>
+[3.513s]     f.write(pycpp.get_output())
+[3.513s]             ^^^^^^^^^^^^^^^^^^
+[3.513s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/libPlugin/simStubsGen/external/pycpp/pycpp.py", line 136, in get_output
+[3.514s]     exec(self.get_python_code(b, spool_fn='pycpp.output'), locals())
+[3.514s]   File "<string>", line 3, in <module>
+[3.514s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 82, in parse_interfaces
+[3.514s]     interfaces[interface_name] = parse_interface(interface_name)
+[3.514s]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[3.515s]   File "/home/user/Desktop/New_ter/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/tools/parse_interfaces.py", line 47, in parse_interface
+[3.515s]     path = get_interface_path(m)
+[3.515s]            ^^^^^^^^^^^^^^^^^^^^^
+[3.515s]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_runtime_py/get_interfaces.py", line 179, in get_interface_path
+[3.515s]     raise LookupError(f"Unknown package '{parts[0]}'")
+[3.515s] LookupError: Unknown package 'aiguillages'
+[3.515s] gmake[2]: *** [CMakeFiles/generate_ros_code.dir/build.make:110: generated/actcli_del.cpp] Error 1
+[3.515s] gmake[2]: *** Deleting file 'generated/actcli_del.cpp'
+[3.516s] gmake[2]: *** Waiting for unfinished jobs....
+[3.532s] gmake[2]: *** [CMakeFiles/generate_ros_code.dir/build.make:104: generated/actcli_cancelLastGoal.cpp] Error 1
+[3.533s] gmake[2]: *** Deleting file 'generated/actcli_cancelLastGoal.cpp'
+[3.545s] gmake[2]: *** [CMakeFiles/generate_ros_code.dir/build.make:116: generated/actcli_new.cpp] Error 1
+[3.549s] gmake[2]: *** Deleting file 'generated/actcli_new.cpp'
+[3.560s] gmake[2]: *** [CMakeFiles/generate_ros_code.dir/build.make:122: generated/actcli_sendGoal.cpp] Error 1
+[3.560s] gmake[2]: *** Deleting file 'generated/actcli_sendGoal.cpp'
+[3.562s] gmake[1]: *** [CMakeFiles/Makefile2:138: CMakeFiles/generate_ros_code.dir/all] Error 2
+[3.563s] gmake: *** [Makefile:146: all] Error 2
+[3.570s] Invoked command in '/home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/user/Desktop/New_ter/CoppeliaSim/build/sim_ros2_interface -- -j4 -l4
