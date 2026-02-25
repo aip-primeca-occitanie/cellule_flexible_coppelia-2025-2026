@@ -1,0 +1,4 @@
+source;share/shuttles/local_setup.bash
+source;share/shuttles/local_setup.dsv
+source;share/shuttles/local_setup.sh
+source;share/shuttles/local_setup.zsh

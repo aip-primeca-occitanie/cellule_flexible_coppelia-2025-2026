@@ -1,0 +1,1 @@
+/home/user/celluleflexible_en_cours_ROS2/celluleflexible/CoppeliaSim/build/sim_ros2_interface/ament_cmake_core/sim_ros2_interfaceConfig.cmake

@@ -1,0 +1,53 @@
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Found image_transport: 5.1.7 (/opt/ros/jazzy/share/image_transport/cmake)
+-- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+-- Found shuttles: 0.0.0 (/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/install/shuttles/share/shuttles/cmake)
+-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Configuring done (0.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale
+[  1%] Built target commande_locale__rosidl_generator_type_description
+[  1%] Built target ament_cmake_python_copy_commande_locale
+[  1%] Built target commande_locale__cpp
+[ 26%] Built target commande_locale__rosidl_generator_c
+[ 35%] Built target commande_locale__rosidl_typesupport_c
+[ 44%] Built target commande_locale__rosidl_typesupport_introspection_c
+[ 53%] Built target commande_locale__rosidl_typesupport_cpp
+[ 73%] Built target commande_locale__rosidl_typesupport_introspection_cpp
+[ 72%] Built target commande_locale__rosidl_typesupport_fastrtps_c
+[ 82%] Built target commande_locale__rosidl_typesupport_fastrtps_cpp
+[ 83%] [32mBuilding CXX object CMakeFiles/display_node.dir/src/display.cpp.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/log_manager.dir/src/LogManager.cpp.o[0m
+[ 84%] Built target commande_locale
+[ 87%] Built target simulation
+[ 88%] Built target commande_locale__py
+running egg_info
+[ 97%] Built target commande_locale__rosidl_generator_py
+writing commande_locale.egg-info/PKG-INFO
+writing dependency_links to commande_locale.egg-info/dependency_links.txt
+writing top-level names to commande_locale.egg-info/top_level.txt
+[100%] Built target commande_locale_s__rosidl_typesupport_c
+[100%] Built target commande_locale_s__rosidl_typesupport_fastrtps_c
+[100%] Built target commande_locale_s__rosidl_typesupport_introspection_c
+reading manifest file 'commande_locale.egg-info/SOURCES.txt'
+writing manifest file 'commande_locale.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_commande_locale_egg
+[100%] [32m[1mLinking CXX executable log_manager[0m
+[100%] Built target log_manager

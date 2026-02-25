@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from commande_locale/msg/MsgSwitchControl.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module commande_locale {
+  module msg {
+    typedef boolean boolean__13[13];
+    struct MsgSwitchControl {
+      std_msgs::msg::Header header;
+
+      boolean__13 lock;
+
+      boolean__13 rd;
+
+      boolean__13 rg;
+    };
+  };
+};

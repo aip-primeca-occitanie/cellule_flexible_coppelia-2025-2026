@@ -1,0 +1,26 @@
+{
+  "package_name": "commande_locale",
+  "output_dir": "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_generator_type_description/commande_locale",
+  "idl_tuples": [
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:srv/SrvAddProduct.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:srv/SrvFinInit.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:srv/SrvAddProductPushBack.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgAddProduct.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgStopControl.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgColor.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgSwitchControl.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgPinControl.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgErreur.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/RobotJoints.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/TacheFinieMsg.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/DeplacerPieceMsg.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/Actionneurs.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/Capteurs.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale/rosidl_adapter/commande_locale:msg/MsgChoixMode.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "service_msgs:/opt/ros/jazzy/share/service_msgs"
+  ]
+}

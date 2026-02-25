@@ -1,0 +1,10 @@
+setup.py
+robots/__init__.py
+robots.egg-info/PKG-INFO
+robots.egg-info/SOURCES.txt
+robots.egg-info/dependency_links.txt
+robots.egg-info/top_level.txt
+robots/msg/__init__.py
+robots/msg/_faire_tache_msg.py
+robots/msg/_move_robot.py
+robots/msg/_msg_num_robot.py

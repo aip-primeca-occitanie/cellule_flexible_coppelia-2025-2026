@@ -1,0 +1,16 @@
+{
+  "package_name": "shuttles",
+  "output_dir": "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/rosidl_generator_type_description/shuttles",
+  "idl_tuples": [
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/rosidl_adapter/shuttles:msg/MsgShuttleChange.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/rosidl_adapter/shuttles:msg/MsgShuttleCreate.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/rosidl_adapter/shuttles:msg/MsgErreur.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/rosidl_adapter/shuttles:srv/ShuttleId.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "aiguillages:/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/install/aiguillages/share/aiguillages",
+    "service_msgs:/opt/ros/jazzy/share/service_msgs"
+  ]
+}

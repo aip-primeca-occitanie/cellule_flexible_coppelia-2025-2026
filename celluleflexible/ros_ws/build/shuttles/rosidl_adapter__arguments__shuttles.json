@@ -1,0 +1,9 @@
+{
+  "package_name": "shuttles",
+  "non_idl_tuples": [
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/shuttles:msg/MsgShuttleChange.msg",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/shuttles:msg/MsgShuttleCreate.msg",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/shuttles:msg/MsgErreur.msg",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/shuttles:srv/ShuttleId.srv"
+  ]
+}

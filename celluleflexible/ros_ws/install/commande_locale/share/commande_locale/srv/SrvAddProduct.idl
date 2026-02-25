@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from commande_locale/srv/SrvAddProduct.srv
+// generated code does not contain a copyright notice
+
+
+module commande_locale {
+  module srv {
+    struct SrvAddProduct_Request {
+      int32 choixposte;
+
+      int32 choixproduit;
+    };
+    struct SrvAddProduct_Response {
+      boolean success;
+    };
+  };
+};

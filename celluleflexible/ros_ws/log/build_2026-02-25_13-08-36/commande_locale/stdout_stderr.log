@@ -1,0 +1,112 @@
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Found image_transport: 5.1.7 (/opt/ros/jazzy/share/image_transport/cmake)
+-- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+-- Found shuttles: 0.0.0 (/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/install/shuttles/share/shuttles/cmake)
+-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Configuring done (0.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/commande_locale
+[  1%] Built target commande_locale__rosidl_generator_type_description
+[  1%] Built target ament_cmake_python_copy_commande_locale
+[  1%] Built target commande_locale__cpp
+[ 26%] Built target commande_locale__rosidl_generator_c
+[ 35%] Built target commande_locale__rosidl_typesupport_c
+[ 44%] Built target commande_locale__rosidl_typesupport_introspection_c
+[ 53%] Built target commande_locale__rosidl_typesupport_cpp
+[ 73%] Built target commande_locale__rosidl_typesupport_introspection_cpp
+[ 72%] Built target commande_locale__rosidl_typesupport_fastrtps_c
+[ 82%] Built target commande_locale__rosidl_typesupport_fastrtps_cpp
+[ 83%] [32mBuilding CXX object CMakeFiles/display_node.dir/src/display.cpp.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/log_manager.dir/src/LogManager.cpp.o[0m
+[ 84%] Built target commande_locale
+[ 87%] Built target simulation
+[ 88%] Built target commande_locale__py
+running egg_info
+[ 97%] Built target commande_locale__rosidl_generator_py
+writing commande_locale.egg-info/PKG-INFO
+writing dependency_links to commande_locale.egg-info/dependency_links.txt
+writing top-level names to commande_locale.egg-info/top_level.txt
+[100%] Built target commande_locale_s__rosidl_typesupport_c
+[100%] Built target commande_locale_s__rosidl_typesupport_fastrtps_c
+[100%] Built target commande_locale_s__rosidl_typesupport_introspection_c
+reading manifest file 'commande_locale.egg-info/SOURCES.txt'
+writing manifest file 'commande_locale.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_commande_locale_egg
+[01m[K/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/commande_locale/src/display.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/commande_locale/src/display.cpp:51:33:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kimage_transport::ImageTransport::subscribe(const char [35], int, std::_Bind_helper<false, void (*)(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >), const std::_Placeholder<1>&>::type)[m[K’
+   51 |     auto subImage = [01;31m[Kit.subscribe("sim_ros_interface/VisionSensorData", 1, std::bind(&getSimuStream, std::placeholders::_1))[m[K;
+      |                     [01;31m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/commande_locale/src/display.cpp:4[m[K:
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:173:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> image_transport::Subscriber image_transport::ImageTransport::[01;32m[Ksubscribe[m[K(const std::string&, uint32_t, void (T::*)(const ImageConstPtr&), T*, const image_transport::TransportHints*, rclcpp::SubscriptionOptions)[m[K’
+  173 |   Subscriber [01;36m[Ksubscribe[m[K(
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:173:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/commande_locale/src/display.cpp:51:33:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kvoid (T::*)(const image_transport::ImageTransport::ImageConstPtr&)[m[K’ and ‘[01m[Kstd::_Bind<void (*(std::_Placeholder<1>))(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >)>[m[K’
+   51 |     auto subImage = [01;36m[Kit.subscribe("sim_ros_interface/VisionSensorData", 1, std::bind(&getSimuStream, std::placeholders::_1))[m[K;
+      |                     [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:188:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> image_transport::Subscriber image_transport::ImageTransport::[01;32m[Ksubscribe[m[K(const std::string&, uint32_t, void (T::*)(const ImageConstPtr&), const std::shared_ptr<_Tp>&, const image_transport::TransportHints*, rclcpp::SubscriptionOptions)[m[K’
+  188 |   Subscriber [01;36m[Ksubscribe[m[K(
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:188:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/commande_locale/src/display.cpp:51:33:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kvoid (T::*)(const image_transport::ImageTransport::ImageConstPtr&)[m[K’ and ‘[01m[Kstd::_Bind<void (*(std::_Placeholder<1>))(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >)>[m[K’
+   51 |     auto subImage = [01;36m[Kit.subscribe("sim_ros_interface/VisionSensorData", 1, std::bind(&getSimuStream, std::placeholders::_1))[m[K;
+      |                     [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:231:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> image_transport::Subscriber image_transport::ImageTransport::[01;32m[Ksubscribe[m[K(const std::string&, rmw_qos_profile_t, void (T::*)(const ImageConstPtr&), T*, const image_transport::TransportHints*, rclcpp::SubscriptionOptions)[m[K’
+  231 |   Subscriber [01;36m[Ksubscribe[m[K(
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:231:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/commande_locale/src/display.cpp:51:33:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kvoid (T::*)(const image_transport::ImageTransport::ImageConstPtr&)[m[K’ and ‘[01m[Kstd::_Bind<void (*(std::_Placeholder<1>))(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >)>[m[K’
+   51 |     auto subImage = [01;36m[Kit.subscribe("sim_ros_interface/VisionSensorData", 1, std::bind(&getSimuStream, std::placeholders::_1))[m[K;
+      |                     [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:246:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class T> image_transport::Subscriber image_transport::ImageTransport::[01;32m[Ksubscribe[m[K(const std::string&, rmw_qos_profile_t, void (T::*)(const ImageConstPtr&), const std::shared_ptr<_Tp>&, const image_transport::TransportHints*, rclcpp::SubscriptionOptions)[m[K’
+  246 |   Subscriber [01;36m[Ksubscribe[m[K(
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:246:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/commande_locale/src/display.cpp:51:33:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kvoid (T::*)(const image_transport::ImageTransport::ImageConstPtr&)[m[K’ and ‘[01m[Kstd::_Bind<void (*(std::_Placeholder<1>))(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >)>[m[K’
+   51 |     auto subImage = [01;36m[Kit.subscribe("sim_ros_interface/VisionSensorData", 1, std::bind(&getSimuStream, std::placeholders::_1))[m[K;
+      |                     [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:146:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kimage_transport::Subscriber image_transport::ImageTransport::[01;32m[Ksubscribe[m[K(const std::string&, uint32_t, const image_transport::Subscriber::Callback&, const VoidPtr&, const image_transport::TransportHints*, rclcpp::SubscriptionOptions)[m[K’
+  146 |   Subscriber [01;36m[Ksubscribe[m[K(
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:148:34:[m[K [01;36m[Knote: [m[K  no known conversion for argument 3 from ‘[01m[Kstd::_Bind_helper<false, void (*)(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >), const std::_Placeholder<1>&>::type[m[K’ to ‘[01m[Kconst image_transport::Subscriber::Callback&[m[K’ {aka ‘[01m[Kconst std::function<void(const std::shared_ptr<const sensor_msgs::msg::Image_<std::allocator<void> > >&)>&[m[K’}
+  148 |     [01;36m[Kconst Subscriber::Callback & callback[m[K,
+      |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:157:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kimage_transport::Subscriber image_transport::ImageTransport::[01;32m[Ksubscribe[m[K(const std::string&, uint32_t, void (*)(const ImageConstPtr&), const image_transport::TransportHints*, rclcpp::SubscriptionOptions)[m[K’
+  157 |   Subscriber [01;36m[Ksubscribe[m[K(
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:159:13:[m[K [01;36m[Knote: [m[K  no known conversion for argument 3 from ‘[01m[Kstd::_Bind_helper<false, void (*)(std::shared_ptr<sensor_msgs::msg::Image_<std::allocator<void> > >), const std::_Placeholder<1>&>::type[m[K’ to ‘[01m[Kvoid (*)(const image_transport::ImageTransport::ImageConstPtr&)[m[K’ {aka ‘[01m[Kvoid (*)(const std::shared_ptr<const sensor_msgs::msg::Image_<std::allocator<void> > >&)[m[K’}
+  159 |     [01;36m[Kvoid (* fp)(const ImageConstPtr &)[m[K,
+      |     [01;36m[K~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:204:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kimage_transport::Subscriber image_transport::ImageTransport::[01;32m[Ksubscribe[m[K(const std::string&, rmw_qos_profile_t, const image_transport::Subscriber::Callback&, const VoidPtr&, const image_transport::TransportHints*, rclcpp::SubscriptionOptions)[m[K’
+  204 |   Subscriber [01;36m[Ksubscribe[m[K(
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:204:14:[m[K [01;36m[Knote: [m[K  candidate expects 6 arguments, 3 provided
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:215:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kimage_transport::Subscriber image_transport::ImageTransport::[01;32m[Ksubscribe[m[K(const std::string&, rmw_qos_profile_t, void (*)(const ImageConstPtr&), const image_transport::TransportHints*, rclcpp::SubscriptionOptions)[m[K’
+  215 |   Subscriber [01;36m[Ksubscribe[m[K(
+      |              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/image_transport/image_transport/image_transport.hpp:216:55:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Kint[m[K’ to ‘[01m[Krmw_qos_profile_t[m[K’ {aka ‘[01m[Krmw_qos_profile_s[m[K’}
+  216 |     const std::string & base_topic, [01;36m[Krmw_qos_profile_t custom_qos[m[K,
+      |                                     [01;36m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/display_node.dir/build.make:76: CMakeFiles/display_node.dir/src/display.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:657: CMakeFiles/display_node.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] [32m[1mLinking CXX executable log_manager[0m
+[100%] Built target log_manager
+gmake: *** [Makefile:146: all] Error 2

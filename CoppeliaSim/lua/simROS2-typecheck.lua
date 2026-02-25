@@ -1,1 +1,0 @@
-/home/user/celluleflexible_en_cours_ROS2/CoppeliaSim/build/sim_ros2_interface/generated/simROS2-typecheck.lua

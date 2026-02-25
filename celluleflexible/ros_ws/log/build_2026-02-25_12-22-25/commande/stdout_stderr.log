@@ -1,0 +1,8 @@
+[ 12%] [32mBuilding CXX object CMakeFiles/run.dir/src/main_commande.cpp.o[0m
+[01m[K/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/src/commande/src/main_commande.cpp:20:10:[m[K [01;31m[Kfatal error: [m[Kros/ros.h: No such file or directory
+   20 | #include [01;31m[K<ros/ros.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/run.dir/build.make:76: CMakeFiles/run.dir/src/main_commande.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/run.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

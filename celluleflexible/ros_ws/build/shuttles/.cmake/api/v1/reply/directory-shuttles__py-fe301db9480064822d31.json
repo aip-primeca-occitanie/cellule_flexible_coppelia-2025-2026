@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "shuttles__py",
+		"source" : "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/shuttles__py"
+	}
+}

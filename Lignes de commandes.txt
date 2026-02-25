@@ -7,7 +7,16 @@ ros2 run aiguillages run_Aiguillage
 ros2 launch robots robotsGauche.launch.py
 ros2 launch launcher launch_alpha.launch.py
 
+source script0_Compile.sh principal data124567_3_2_n0
+./script1_Run.sh
+./script2_GetSimuOutput.sh principal data124567_3_2_n0
+./script3_Validation.sh principal data124567_3_2_n0
+./script4_Documentation.sh principal
 
+Pour build Coppelia :
+cd ../CoppeliaSim/
+export COPPELIASIM_ROOT_DIR=~/celluleflexible_en_cours_ROS2/celluleflexible/CoppeliaSim/
+colcon build --packages-select sim_ros2_interface --symlink-install
 
 Pour ouvrir Coppelia : ./coppeliaSim.sh (doit avoir faire source /opt/ros/jazzy/setup.bash dans le dossier ros_ws puis être revenus dans le dossier Coppelia)
 

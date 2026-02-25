@@ -1,0 +1,6 @@
+msg/FaireTacheMsg.idl
+msg/FaireTacheMsg.msg
+msg/MoveRobot.idl
+msg/MoveRobot.msg
+msg/MsgNumRobot.idl
+msg/MsgNumRobot.msg

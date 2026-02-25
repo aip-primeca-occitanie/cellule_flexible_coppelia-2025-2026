@@ -1,0 +1,79 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target"
+		],
+		"files" : 
+		[
+			"/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/shuttles__py/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 36,
+				"parent" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "shuttles::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "shuttles__py::@418225b2cff613c716f4",
+	"name" : "shuttles__py",
+	"paths" : 
+	{
+		"build" : "shuttles__py",
+		"source" : "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/shuttles__py"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/shuttles__py/CMakeFiles/shuttles__py",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/shuttles__py/CMakeFiles/shuttles__py.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/shuttles/rosidl_generator_py/shuttles/_shuttles_s.ep.rosidl_typesupport_fastrtps_c.c.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,4 @@
+int32 choixposte
+int32 choixproduit
+---
+bool success

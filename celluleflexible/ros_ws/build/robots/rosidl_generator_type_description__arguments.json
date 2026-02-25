@@ -1,0 +1,13 @@
+{
+  "package_name": "robots",
+  "output_dir": "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/robots/rosidl_generator_type_description/robots",
+  "idl_tuples": [
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/robots/rosidl_adapter/robots:msg/MoveRobot.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/robots/rosidl_adapter/robots:msg/FaireTacheMsg.idl",
+    "/home/user/celluleflexible_en_cours_ROS2/celluleflexible/ros_ws/build/robots/rosidl_adapter/robots:msg/MsgNumRobot.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces"
+  ]
+}
