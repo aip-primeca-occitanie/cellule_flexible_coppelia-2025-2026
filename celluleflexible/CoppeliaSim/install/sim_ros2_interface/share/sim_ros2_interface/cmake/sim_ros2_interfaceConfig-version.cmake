@@ -1,1 +1,0 @@
-/home/user/Desktop/New_2/CoppeliaSim/build/sim_ros2_interface/ament_cmake_core/sim_ros2_interfaceConfig-version.cmake
