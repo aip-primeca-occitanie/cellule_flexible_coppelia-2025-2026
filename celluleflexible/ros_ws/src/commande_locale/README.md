@@ -1,0 +1,105 @@
+# ReadMe du Package commande_locale
+
+## 1. Description générale
+Le but de ce package est de faire l'intermédiaire entre la simulation physique (CoppeliaSim), le réseau de Pétri au niveau complété par les étudiants et l'utilisateur.
+Ainsi, il gère le cycle de vie de la simulation, traduit les signaux venant des capteurs et actionneurs et enregistre l'historique de production.
+C'est notamment ce programme qui ouvre CoppeliaSim et charge la scène voulue dedans.
+
+## 2. Composition
+Ce dossier est composé de 5 éléments:
+* Un fichier package.xml
+* Un fichier CMakeLists.txt
+* Un dossier msg, permettant de définir des structures de messages pour communiquer
+* Un dossier srv, permettant de définir des structures de services pour communiquer
+* Un dossier src, où se trouve le code source C++ et composé des fichiers suivants :
+  * commande_locale.cpp, qui initialise les fonctions, s'assure que Coppelia répond bien et affiche le menu
+  * inOutController.cpp et inOutController.h, qui s'occupe de convertir les données des capteurs et des actionneurs entre CoppeliaSim et le réseau de Pétri
+  * vrepController.cpp et vrepController.h, qui
+  * display.cpp, qui
+  * LogManager.cpp, qui
+* Un dossier launch, pour lancer plusieurs robots à la fois
+
+## 3. Description détaillée des fichiers src
+### 3.1. Fichier commande_locale.cpp
+La fonction main est le code principal du package. Elle fait dans l'ordre :
+* Initialisation de ROS2
+* Création d'un noeud commande_locale
+* Abonnemment en publisher ou suscriber aux topics
+* Récupération de la scène CoppeliaSim voulue
+* Initialisation des codes vrepController et inoutController
+* Boucle d'attente de la fin du démarrage de Coppelia
+* Exécution d'un fichier launch général
+* Boucle d'attente de la fin de l'initialisation
+* Si le programme n'est pas en mode autorun (ce qui est le cas en lançant normalement la simulation depuis le dossier etu) :
+  * Affiche le menu de choix (Ajouter un produit/ Pause/ Play/ Fin programme)
+  * En fonction des cas, retourne soit une erreur soit execute le programme associé
+* Si le programme est en mode autorun :
+  * Lance automatiquement la simulation
+  * Attend la fin du réseau de Pétri
+  
+Ce fichier est également composé de fonctions simples, appelées par des pulications sur des topics, chargées par exemple de mettre des variables à une certaine valeur ou par exemple de fermer le programme.
+
+
+### 3.2. Fichiers inOutController.cpp et inOutController.h
+Ces fichiers sont composés de plusieurs fonctions. 
+
+Nous avons tout d'abord les fonctions *SensorCallbackRail*, *SensorCallbackStop* et *SensorCallbackSwitch* pour les capteurs. Nous récupérons de CoppeliaSim tous les états des capteurs sur un entier, et le but de ces programmes est alors de traduire ce code en binaire, pour indiquer au réseau de Pétri un par un l'état de chaque capteur.
+
+Ensuite, nous avons les fonctions *StateSwitchCallBack*, *StateStopCallBack* et *StatePinCallBack* pour les actionneurs. Ces fonctions font exactement l'inverse : elles reçoivent du dossier commande (RdP) un message binaire, qu'elles traduisent en un entier.
+
+La fonction *SensorCallbackRail* gère les 10 capteurs de position CP. La fonction *StatePinCallBack* gère les 8 capteurs de position intérieurs CPI.
+La fonction *SensorCallbackRail* gère les 24 capteurs "stops" PS. La fonction *StateStopCallBack* gère les mises en route ou les arrêts des 24 segments de la simulation.
+Les fonctions *SensorCallbackRail* et *StateSwitchCallBack* gèrent les 12 aiguillages (droite, gauche, lock).
+
+Les capteurs et actionneurs sont représentés sur la figure ci-dessous :
+![Image_Capteurs_et_Actionneurs](../../../Doc/CelluleCapteursActionneurs.png)
+
+Enfin, nous avons la fonction init, qui s'abonne en publisher ou en suscriber aux topics concernant les capteurs et les actionneurs, et qui initialise les capteurs intérieurs CPI.
+
+
+### 3.3. Fichiers vrepController.cpp et vrepController.h
+Ces fichiers contiennent des fonctions appelées depuis commande_locale.cpp. Les principales sont : 
+* *pause*, qui bloque la simulation jusqu'à ce que l'utilisateur demande de la redémarrer.
+* *play*, qui lance la simulation jusqu'à ce que l'utilisateur demande une pause
+* *loadModelInit*, qui traduit le numéro de la navette en lettre, et ouvre le fichier correspondant à la navette directement dans Coppelia. Ces fichiers sont sous la forme "ShuttleA" (d'où la traduction en lettre) et contiennent des informations sur les navettes, comme leurs coordonnées de départ.
+* *close*, qui kill tous les noeuds et les topics, quand l'utilisateur choisit dans le menu Fin Programme
+* *init*, qui trouve le chemin vers CoppeliaSim et qui le lance. On s'abonne ici encore aux topics qu'on écoute ou sur lesquels on publie.
+* *computeTableId*, qui traduit le numéro de poste en identifiant CopeliaSim
+* *addProduct*, qui fait apparaitre un produit sur un poste donné lorssqu'il rentre en production
+* *computeNumRobotPosteTache*, qui traduit le numéro de poste en terme de robot ("tab[0]" correspond au robot associé au poste (1 robot pour 2 postes) et "tab[1]" correspond à la position du poste par rapport au robot). L'illustration pour tab[1] est représentée sur l'image ci-dessous :
+![Image_Position_Postes](../../../Doc/CellulePositionPostes.png)
+
+
+### 3.4. Fichiers display.cpp
+
+
+### 3.5. Fichiers LogManager.cpp
+
+
+### 3.6. Sécurités mises en place
+Des sécurités ont été ajoutées pour permettre de repérer convenablement certains problèmes.
+Dans le fichier commande_locale, il y a tout d'abord des erreurs affichées si jamais l'utilisateur entre autre chose que les solutions proposées. On affiche alors "Erreur mauvais choix".
+Dans le fichier vrepController, nous affichons une erreur dans le cas où CoppeliaSim n'est pas trouvé dans les dossiers ("ERREUR : CoppeliaSim non trouvé"). Egalement, si le numéro de navette (shutlle) n'est pas bon (doit être compris entre 0 et 6), nous affichons "ATTENTION, LE NUMERO DU SHUTTLE DOIT ETRE COMPRIS ENTRE 0 ET 6". Enfin, dans la fonction addProduct, on demande à la fonction GetColor de nous dire la couleur de la pièce sur la table. S'il renvoit autre chose que 0 (autre chose que transparent), alors c'est qu'un objet est déjà présent sur la table et dans ce cas-là, on affiche alors "ERREUR : On ecrase un produit !!".
+
+
+## 4. Utilisation
+Pour lancer le code depuis le répertoire ros, on fait d'abord :
+```bash
+  source /opt/ros/jazzy/setup.bash
+  colcon build
+  source install/setup.bash
+```
+
+Ensuite, on exécute la ligne suivante, qui permet de lancer le noeud commande_locale :
+```bash
+  ros2 run commande_locale simulation 4
+```
+L'avant dernier mot ("simulation") correspond au nom de l'exécutable. Le dernier chiffre correspond au numéro de la scène. Nous avons deux scènes différentes : Simulation2Robots et Simulation4Robots. Nous ouvrons la scène Simulation2Robots en mettant le chiffre 2 et Simulation4Robots en mettant le chiffre 4. La Simulation2Robots est donc ouverte par la commande :
+```bash
+  ros2 run commande_locale simulation 2
+```
+
+
+## 5. Protocole de Test
+Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test pour sortir de l'initialisation et afficher le menu, en reprenant les commandes à faire depuis le début. Ce test se trouve dans le fichier "Tests du package commande_locale".
+Dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim. Ce protocole n'est donc valable que **si CoppeliaSim n'est pas opérationnel** (n'envoit pas les messages correctement sur les topics).
