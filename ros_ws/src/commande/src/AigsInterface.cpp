@@ -33,5 +33,4 @@ void AigsInterface::Gauche(int num_Aig)
 {
 	msg_aigs.data=num_Aig;
 	pub_aig_Gauche->publish(msg_aigs);
-	cout<<"Je publie sur /commande/Simulation/AiguillageGauche"<<endl;
 }

@@ -8,7 +8,7 @@ if (sim_call_type==sim.syscb_init) then
     if simROS2 then
         -- 3. Création sécurisée
         
-        local status, createdPub = pcall(simROS2.createPublisher, '/RailSensor', 'std_msgs/msg/Int32')
+        local status, createdPub = pcall(simROS2.createPublisher, '/sim_ros_interface/RailSensor', 'std_msgs/msg/Int32')
         
         if status and createdPub then
             pub = createdPub

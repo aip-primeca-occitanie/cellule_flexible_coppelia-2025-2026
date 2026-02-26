@@ -15,8 +15,9 @@ int main(int argc, char **argv)
     rclcpp::init(argc, argv);
     auto node_aiguillage = std::make_shared<Aiguillage>();
 
-    // Utiliser un exécuteur multi-threadé (ex: 4 threads pour vos 4 cœurs VM)
-    rclcpp::executors::MultiThreadedExecutor executor;
+
+    // Mets ça pour forcer 12 threads (un par aiguillage possible + capteurs) :
+    rclcpp::executors::MultiThreadedExecutor executor(rclcpp::ExecutorOptions(), 15);
     executor.add_node(node_aiguillage);
     
     RCLCPP_INFO(node_aiguillage->get_logger(), "Nœud démarré avec MultiThreadedExecutor.");

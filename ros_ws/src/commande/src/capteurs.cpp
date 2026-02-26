@@ -1,5 +1,3 @@
-/**** Bruno DATO, Abdellah ELGOURAIN, Evgeny SHULGA M1 EEA ISTR Université Paul Sabatier Toulouse III 2016 ****/
-
 #include "capteurs.h"
 
 Capteurs::Capteurs(rclcpp::Node::SharedPtr node)

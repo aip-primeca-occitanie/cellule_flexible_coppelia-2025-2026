@@ -17,7 +17,7 @@ Aiguillage::Aiguillage() : Node("aiguillage_node")
     
     //  Abonnement à Int32 sur le topic SwitchSensor
     vrep_sub_switch_sensor = this->create_subscription<std_msgs::msg::Int32>(
-        "/sim_ros_interface/SwitchSensor", 10, 
+        "/sim_ros_interface/aig", 10, 
         std::bind(&Aiguillage::switch_sensor_callback, this, _1), options);
 
     sub_cmd_droite = this->create_subscription<std_msgs::msg::Int32>(
@@ -49,10 +49,8 @@ void Aiguillage::switch_sensor_callback(const std_msgs::msg::Int32::SharedPtr ms
     
     for(int i=1; i<13; i++)
     {
-        // Masque pour isoler les bits 2*i-1 (Gauche) et 2*i-2 (Droite)
-        // Note : msg->data contient l'entier brut
-        this->aig_d[i] = (msg->data & (int32_t)pow(2, 2*i - 2)) > 0;
-        this->aig_g[i] = (msg->data & (int32_t)pow(2, 2*i - 1)) > 0;
+        this->aig_d[i] = (msg->data & (1 << (2*i - 2))) > 0;
+        this->aig_g[i] = (msg->data & (1 << (2*i - 1))) > 0;
     }
 }
 
@@ -61,20 +59,30 @@ void Aiguillage::gauche_callback(const std_msgs::msg::Int32::SharedPtr msg_aigs)
     int id = msg_aigs->data;
     RCLCPP_INFO(this->get_logger(), "GAUCHE -> Aiguillage %d", id);
 
-    if(!aig_g[id]) 
+    if(!this->aig_g[id])
     {
-        aig_dev->publish(*msg_aigs);     
-        aig_gauche->publish(*msg_aigs);  
+        // 1. Déverrouillage et envoi de l'ordre initial
+        this->aig_dev->publish(*msg_aigs);
+        this->aig_gauche->publish(*msg_aigs);
 
-        // Attente active
-        while(!aig_g[id] && rclcpp::ok()) 
+        // 2. Boucle d'attente (comme en ROS 1)
+        while(!this->aig_g[id] && rclcpp::ok())
         {
-         
-            if(aig_d[id]) aig_gauche->publish(*msg_aigs); 
-            loop_rate->sleep(); 
+            // Pas de ros::spinOnce() en ROS2 ! Le MultiThreadedExecutor gère les capteurs en fond.
+            
+            // Si le capteur indique que l'aiguillage est resté à Droite, on force la republication 
+            // (exactement comme dans ton code ROS 1) pour contrer la "Race Condition" du script Lua
+            if(this->aig_d[id]) 
+            {
+                this->aig_dev->publish(*msg_aigs); // On republie le déverrouillage au cas où
+                this->aig_gauche->publish(*msg_aigs);
+            }
+            
+            this->loop_rate->sleep();
         }
-        
-        aig_ver->publish(*msg_aigs);
+
+        // 3. Verrouillage une fois arrivé
+        this->aig_ver->publish(*msg_aigs);
         RCLCPP_INFO(this->get_logger(), "SUCCES : Aiguillage %d est à GAUCHE", id);
     }
 }
@@ -84,20 +92,28 @@ void Aiguillage::droite_callback(const std_msgs::msg::Int32::SharedPtr msg_aigs)
     int id = msg_aigs->data;
     RCLCPP_INFO(this->get_logger(), "DROITE -> Aiguillage %d", id);
     
-    if(!aig_d[id])
+    if(!this->aig_d[id])
     {
-        aig_dev->publish(*msg_aigs);
-        aig_droite->publish(*msg_aigs);
+        // 1. Déverrouillage et envoi de l'ordre initial
+        this->aig_dev->publish(*msg_aigs);
+        this->aig_droite->publish(*msg_aigs);
 
-        while(!aig_d[id] && rclcpp::ok())
+        // 2. Boucle d'attente
+        while(!this->aig_d[id] && rclcpp::ok())
         {
-  
-
-            if(aig_g[id]) aig_droite->publish(*msg_aigs);
-            loop_rate->sleep();
+            // Si le capteur indique que l'aiguillage est toujours à Gauche, 
+            // on insiste en renvoyant les DEUX commandes (déverrouillage + mouvement)
+            if(this->aig_g[id]) 
+            {
+                this->aig_dev->publish(*msg_aigs);    // <-- Ajout crucial ici
+                this->aig_droite->publish(*msg_aigs);
+            }
+            
+            this->loop_rate->sleep();
         }
         
-        aig_ver->publish(*msg_aigs);
+        // 3. Verrouillage une fois arrivé à Droite
+        this->aig_ver->publish(*msg_aigs);
         RCLCPP_INFO(this->get_logger(), "SUCCES : Aiguillage %d est à DROITE", id);
     }
 }

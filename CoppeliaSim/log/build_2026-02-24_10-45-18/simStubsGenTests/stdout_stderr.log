@@ -1,0 +1,29 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- CoppeliaSim: LIBPLUGIN_DIR: /home/user/Desktop/New_2/CoppeliaSim/programming/libPlugin.
+-- CoppeliaSim: COPPELIASIM_ROOT_DIR: /home/user/Desktop/New_2/CoppeliaSim.
+-- Found CoppeliaSim installation at /home/user/Desktop/New_2/CoppeliaSim.
+-- Checking CoppeliaSim header version...
+-- CoppeliaSim headers version 4.3.0 rev3
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: regex 
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0")  
+-- Adding simStubsGen command...
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Reading plugin metadata...
+warning: missing python package "xmlschema"; input file callbacks.xml will not be validated.
+warning: missing python package "xmlschema"; input file callbacks.xml will not be validated.
+-- Plugin: StubsGenTests
+-- Configuring done (2.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/user/Desktop/New_2/CoppeliaSim/build/simStubsGenTests

@@ -13,7 +13,7 @@ void inOutController::TypeMode(const commande_locale::msg::MsgChoixMode::SharedP
 
 void inOutController::SensorCallbackRail(const std_msgs::msg::Int32::SharedPtr msg)
 {
-    if (mode == 0)
+    //if (mode == 0)
     {
         for(int i=1;i<=10;i++)
             SensorState.cp[i] = (msg->data & (int32_t)pow(2,i-1)) > 0;
@@ -24,7 +24,7 @@ void inOutController::SensorCallbackRail(const std_msgs::msg::Int32::SharedPtr m
 
 void inOutController::SensorCallbackStop(const std_msgs::msg::Int32::SharedPtr msg)
 {
-    if (mode == 0)
+    //if (mode == 0)
     {
         for(int i=1;i<=24;i++)
             SensorState.ps[i] = (msg->data & (int32_t)pow(2,i-1)) > 0;
@@ -35,7 +35,7 @@ void inOutController::SensorCallbackStop(const std_msgs::msg::Int32::SharedPtr m
 
 void inOutController::SensorCallbackSwitch(const std_msgs::msg::Int32::SharedPtr msg)
 {
-    if (mode == 0)
+    //if (mode == 0)
     {
         for(int i=1;i<=12;i++)
         {
@@ -133,13 +133,13 @@ void inOutController::init(rclcpp::Node::SharedPtr n)
     node = n;
 
     // Subscribers
-    VREPsubRailSensor = node->create_subscription<std_msgs::msg::Int32>("sim_ros_interface/RailSensor", 100,
+    VREPsubRailSensor = node->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/RailSensor", 100,
         std::bind(&inOutController::SensorCallbackRail, this, std::placeholders::_1));
 
-    VREPsubStopSensor = node->create_subscription<std_msgs::msg::Int32>("sim_ros_interface/StopSensor", 100,
+    VREPsubStopSensor = node->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/StopSensor", 100,
         std::bind(&inOutController::SensorCallbackStop, this, std::placeholders::_1));
 
-    VREPsubSwitchSensor = node->create_subscription<std_msgs::msg::Int32>("sim_ros_interface/SwitchSensor", 100,
+    VREPsubSwitchSensor = node->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/SwitchSensor", 100,
         std::bind(&inOutController::SensorCallbackSwitch, this, std::placeholders::_1));
 
     planifSubSwitchState = node->create_subscription<commande_locale::msg::MsgSwitchControl>("/commande/Simulation/Actionneurs_aiguillages", 100,

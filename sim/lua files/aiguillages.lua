@@ -30,7 +30,7 @@ function sysCall_init()
 
     -- CREATION PUBLISHER (TYPE INT32)
     -- ne publiait pas dans le code ROS1, ne change pas les fonctionnalités du systeme, réalisé surtout pour tester notre noeud cpp
-    pubSensors = simROS2.createPublisher('/sim_ros_interface/SwitchSensor', 'std_msgs/msg/Int32')
+    pubSensors = simROS2.createPublisher('/sim_ros_interface/aig', 'std_msgs/msg/Int32')
 
     -- Subscribers 
     subRight = simROS2.createSubscription('/sim_ros_interface/SwitchControllerRight', 'std_msgs/msg/Int32', 'right_cb')
@@ -64,7 +64,7 @@ function sysCall_actuation() -- remplace les boucles if en ROS1, qui gerait les 
                 sim.setJointTargetPosition(h, 0) -- Position Droite (0)
                 
             else
-                print('switch ' .. id_to_move_right .. ' is not unlocked !')
+                --print('switch ' .. id_to_move_right .. ' is not unlocked !')
             end
         end
         cmd_right = 0 -- Reset de la commande après traitement
@@ -86,7 +86,7 @@ function sysCall_actuation() -- remplace les boucles if en ROS1, qui gerait les 
                 
                 sim.setJointTargetPosition(h, angle) 
             else
-                print('switch ' .. id_to_move_left .. ' is not unlocked !')
+                --print('switch ' .. id_to_move_left .. ' is not unlocked !')
             end
         end
         cmd_left = 0 -- Reset de la commande après traitement
@@ -112,7 +112,7 @@ function sysCall_sensing()
             
             -- Bit Gauche (2*i - 1) -> Correspond à 2^(2*i-1)
             -- Si pos > 0.5 (Gauche, ajustez seuil selon besoin)
-            if math.abs(pos) > 0.5 then
+            if math.abs(pos) > 0.1 then
                 val = val + 2^(2*i - 1)
             end
         end

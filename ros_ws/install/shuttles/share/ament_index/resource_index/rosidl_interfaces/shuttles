@@ -1,8 +1,0 @@
-msg/MsgErreur.idl
-msg/MsgErreur.msg
-msg/MsgShuttleChange.idl
-msg/MsgShuttleChange.msg
-msg/MsgShuttleCreate.idl
-msg/MsgShuttleCreate.msg
-srv/ShuttleId.idl
-srv/ShuttleId.srv

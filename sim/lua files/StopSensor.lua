@@ -1,51 +1,52 @@
 -- DO NOT WRITE CODE OUTSIDE OF THE if-then-end SECTIONS BELOW!!
 
 if (sim_call_type==sim.syscb_init) then
-    -- On initialise la variable à vide par sécurité
     pub = nil
-
-    -- Vérification : Est-ce que le module ROS2 est chargé ?
     if simROS2 then
-        -- Tentative de création du publisher (Topic: /sim_ros_interface/SwitchSensor)
-        -- On utilise pcall pour éviter un crash si la création échoue momentanément
-        local status, createdPub = pcall(simROS2.createPublisher, '/StopSensor', 'std_msgs/msg/Int32')
-        
+        -- Création du publisher ROS 2
+        -- Attention : vérifie si ton architecture attend '/StopSensor' ou '/sim_ros_interface/StopSensor'
+        local status, createdPub = pcall(simROS2.createPublisher, '/sim_ros_interface/StopSensor', 'std_msgs/msg/Int32')
         if status and createdPub then
             pub = createdPub
-            -- sim.displayDialog('Info', 'Publisher SwitchSensor créé avec succès.', sim.dlgstyle_message, false)
-        else
-            sim.displayDialog('Error', 'Le plugin est là, mais impossible de créer le publisher!', sim.dlgstyle_ok, false)
         end
-    else
-        -- sim.displayDialog('Error', 'ROS 2 plugin was not found.', sim.dlgstyle_ok, false)
     end
 end
 
 if (sim_call_type==sim.syscb_actuation) then
-
 end
 
 if (sim_call_type==sim.syscb_sensing) then
-    -- SECURITÉ CRITIQUE : Si le publisher n'existe pas encore, on arrête tout de suite pour ne pas planter.
     if not pub then return end
 
-    -- Ton calcul original (sans boucle for, comme demandé)
-    -- Using nil instead of NULL for the third argument
-    sum = math.pow(2,0)*sim.checkProximitySensor(sim.getObjectHandle('CP01'),sim.handle_all,nil)
-    +math.pow(2,1)*sim.checkProximitySensor(sim.getObjectHandle('CP02'),sim.handle_all,nil)
-    +math.pow(2,2)*sim.checkProximitySensor(sim.getObjectHandle('CP03'),sim.handle_all,nil)
-    +math.pow(2,3)*sim.checkProximitySensor(sim.getObjectHandle('CP04'),sim.handle_all,nil)
-    +math.pow(2,4)*sim.checkProximitySensor(sim.getObjectHandle('CP05'),sim.handle_all,nil)
-    +math.pow(2,5)*sim.checkProximitySensor(sim.getObjectHandle('CP06'),sim.handle_all,nil)
-    +math.pow(2,6)*sim.checkProximitySensor(sim.getObjectHandle('CP07'),sim.handle_all,nil)
-    +math.pow(2,7)*sim.checkProximitySensor(sim.getObjectHandle('CP08'),sim.handle_all,nil)
-    +math.pow(2,8)*sim.checkProximitySensor(sim.getObjectHandle('CP09'),sim.handle_all,nil)
-    +math.pow(2,9)*sim.checkProximitySensor(sim.getObjectHandle('CP10'),sim.handle_all,nil)
-    
-    -- Envoi sécurisé
-    simROS2.publish(pub, {data=sum})
+    -- Lecture des 24 capteurs (PS01 à PS24). Remplacement de NULL par nil pour Lua.
+    sum = math.pow(2,0)*sim.checkProximitySensor(sim.getObjectHandle('PS01'),sim.handle_all,nil)
+    +math.pow(2,1)*sim.checkProximitySensor(sim.getObjectHandle('PS02'),sim.handle_all,nil)
+    +math.pow(2,2)*sim.checkProximitySensor(sim.getObjectHandle('PS03'),sim.handle_all,nil)
+    +math.pow(2,3)*sim.checkProximitySensor(sim.getObjectHandle('PS04'),sim.handle_all,nil)
+    +math.pow(2,4)*sim.checkProximitySensor(sim.getObjectHandle('PS05'),sim.handle_all,nil)
+    +math.pow(2,5)*sim.checkProximitySensor(sim.getObjectHandle('PS06'),sim.handle_all,nil)
+    +math.pow(2,6)*sim.checkProximitySensor(sim.getObjectHandle('PS07'),sim.handle_all,nil)
+    +math.pow(2,7)*sim.checkProximitySensor(sim.getObjectHandle('PS08'),sim.handle_all,nil)
+    +math.pow(2,8)*sim.checkProximitySensor(sim.getObjectHandle('PS09'),sim.handle_all,nil)
+    +math.pow(2,9)*sim.checkProximitySensor(sim.getObjectHandle('PS10'),sim.handle_all,nil)
+    +math.pow(2,10)*sim.checkProximitySensor(sim.getObjectHandle('PS11'),sim.handle_all,nil)
+    +math.pow(2,11)*sim.checkProximitySensor(sim.getObjectHandle('PS12'),sim.handle_all,nil)
+    +math.pow(2,12)*sim.checkProximitySensor(sim.getObjectHandle('PS13'),sim.handle_all,nil)
+    +math.pow(2,13)*sim.checkProximitySensor(sim.getObjectHandle('PS14'),sim.handle_all,nil)
+    +math.pow(2,14)*sim.checkProximitySensor(sim.getObjectHandle('PS15'),sim.handle_all,nil)
+    +math.pow(2,15)*sim.checkProximitySensor(sim.getObjectHandle('PS16'),sim.handle_all,nil)
+    +math.pow(2,16)*sim.checkProximitySensor(sim.getObjectHandle('PS17'),sim.handle_all,nil)
+    +math.pow(2,17)*sim.checkProximitySensor(sim.getObjectHandle('PS18'),sim.handle_all,nil)
+    +math.pow(2,18)*sim.checkProximitySensor(sim.getObjectHandle('PS19'),sim.handle_all,nil)
+    +math.pow(2,19)*sim.checkProximitySensor(sim.getObjectHandle('PS20'),sim.handle_all,nil)
+    +math.pow(2,20)*sim.checkProximitySensor(sim.getObjectHandle('PS21'),sim.handle_all,nil)
+    +math.pow(2,21)*sim.checkProximitySensor(sim.getObjectHandle('PS22'),sim.handle_all,nil)
+    +math.pow(2,22)*sim.checkProximitySensor(sim.getObjectHandle('PS23'),sim.handle_all,nil)
+    +math.pow(2,23)*sim.checkProximitySensor(sim.getObjectHandle('PS24'),sim.handle_all,nil)
+
+    -- Publication de l'entier
+    simROS2.publish(pub,{data=sum})
 end
 
 if (sim_call_type==sim.syscb_cleanup) then
-
 end
