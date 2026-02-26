@@ -2,7 +2,7 @@ Règles de base en ROS2 (.cpp):
 
 1) Pour souscrire en publisher à un topic :
  LIGNE : pubSim_getObjectHandle = node_->create_publisher<std_msgs::msg::String>("/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle",100);
- EXPLICATION : On s'abonne en publisher au topic "/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle". Le message publié sera un String
+ EXPLICATION : On s'abonne en tant que publisher au topic "/sim_ros_interface/services/robot"+std::to_string(num_robot)+"/GetObjectHandle". Le message publié sera un String
 
 2) Pour souscrire en suscriber à un topic :
  LIGNE : subSim_getObjectHandle = node_->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/services/response/robot"+std::to_string(num_robot)+"/GetObjectHandle",100,std::bind(&Robot::simGetObjectHandleCallback, this, std::placeholders::_1));

@@ -1,0 +1,48 @@
+Afin de tester l'intégration indépendamment de CoppeliaSim, vous pouvez simuler son comportement en ligne de commande depuis des terminaux : 
+
+* Test du noeud aiguillage : 
+-phase 1 : vérifier la connectivité 
+
+```TERMINAL 1 
+  bash
+  source install/setup.bash
+  ros2 run aiguillages run_Aiguillage 
+```
+```TERMINAL 2 
+  bash
+  source install/setup.bash
+  ros2 topic list
+```
+-phase 2 : test de commande 
+```TERMINAL 1 - run le noeud
+  bash
+  source install/setup.bash
+  ros2 run aiguillages run_Aiguillage 
+```
+```TERMINAL 2 - 'ecoute' le topic
+  bash
+  source install/setup.bash
+  ros2 topic echo /commande/AiguillageDroite
+```
+```TERMINAL 3 - lance la commande
+  bash
+  source install/setup.bash
+  ros2 topic pub -1 /commande/Simulation/AiguillageDroite std_msgs/msg/Int32 "{data: 5}"
+```
+```TERMINAL 4 -  simule message retour Coppelia
+  bash
+  source install/setup.bash
+  ros2 topic pub -1 /sim_ros_interface/SwitchSensor aiguillages/msg/MsgSensorState "{header: {frame_id: 'world'}, dd: [false, false, false, false, false, false, false, false, false, false, false, false, false], dg: [false, false, false, false, false, false, false, false, false, false, false, false, false]}"
+  ros2 topic pub -1 /sim_ros_interface/SwitchSensor aiguillages/msg/MsgSensorState "{header: {frame_id: 'world'}, dd: [false, false, false, false, false, true, false, false, false, false, false, false, false]}"
+```
+```TERMINAL 5 -  'ecoutte' le topic de verouillage
+  bash
+  source install/setup.bash
+  ros2 topic echo /commande/VerouilleAiguillage
+  
+```
+
+
+
+* Test du noeud aiguillage avec CoppeliaSim (script .lua):
+- refaire le test de commande, mais cette fois-ci en lançant Coppelia, au lieu de simuler ses publications.

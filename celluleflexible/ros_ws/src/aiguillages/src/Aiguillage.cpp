@@ -105,7 +105,7 @@ void Aiguillage::droite_callback(const std_msgs::msg::Int32::SharedPtr msg_aigs)
             // on insiste en renvoyant les DEUX commandes (déverrouillage + mouvement)
             if(this->aig_g[id]) 
             {
-                this->aig_dev->publish(*msg_aigs);    // <-- Ajout crucial ici
+                this->aig_dev->publish(*msg_aigs);   
                 this->aig_droite->publish(*msg_aigs);
             }
             
