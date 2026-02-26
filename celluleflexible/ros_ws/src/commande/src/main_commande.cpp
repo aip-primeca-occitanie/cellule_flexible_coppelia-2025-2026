@@ -135,6 +135,7 @@ int main(int argc, char **argv)
 
     cmd.activateShuttleManagerDisplay();
     // cmd.activateAutoRunSimu();
+
     int nbNavettes=0;//Mettre 0 pour demander a l'utilisateur
     while(nbNavettes<1||nbNavettes>6)
     {
@@ -197,7 +198,7 @@ int main(int argc, char **argv)
 				
                 cmd.Stop_PS(19);
 				
-				
+	
 
                 robot.AjouterProduit(Prod_seqdeposte[0][0], Prod_type[0]);
                 robot.FaireTache(Prod_seqdeposte[0][0], Prod_dureeparposte[0][0]);
@@ -207,6 +208,7 @@ int main(int argc, char **argv)
                 display();
             }
             if(M[2] && capteur.get_PS(6))
+<<<<<<< HEAD
             {
                 /*!
                         * \b T2: aiguillage A02 mise en place
@@ -237,6 +239,7 @@ int main(int argc, char **argv)
                 aiguillage.Droite(01);
 
                 cmd.Stop_PS(21);
+
 
 
 
@@ -353,3 +356,4 @@ int main(int argc, char **argv)
 
     return 0;
 }
+

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <chrono>
+#include <thread>
+
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/byte.hpp"
@@ -78,6 +80,9 @@ int main(int argc, char** argv)
     options.use_global_arguments(false); 
     auto vrep_node = std::make_shared<rclcpp::Node>("vrep_node", options);
 
+    // auto vrep_node = std::make_shared<rclcpp::Node>("vrep_node"); VERSION ELVENN
+
+
     // --- Publishers ---
     auto pubProductAdd = node->create_publisher<commande_locale::msg::MsgAddProduct>("/commande_locale/AddProduct", 10);
     auto pubModeType   = node->create_publisher<commande_locale::msg::MsgChoixMode>("/commande_locale/ChoixMode", 10);
@@ -126,57 +131,69 @@ int main(int argc, char** argv)
         rate.sleep();
     }
 
-    // --- Boucle principale utilisateur ou autorun ---
+
+// --- Boucle principale utilisateur ou autorun ---
     if(!autorunstop){
-        while(rclcpp::ok()){
-            std::string choix;
-            std::cout << "\nQue voulez faire ?\n1- Ajouter un produit\n2- Pause simu\n3- Play simu\n4- Fin programme\n5- Simu ou Atelier ?\nChoix : ";
-            std::cin >> choix;
+        
+        // --- NOUVEAUTÉ : ON LANCE LE MENU DANS UN THREAD SÉPARÉ ---
+        std::thread menu_thread([&]() {
+            while(rclcpp::ok() && !petrifinished){
+                std::string choix;
+                std::cout << "\nQue voulez faire ?\n1- Ajouter un produit\n2- Pause simu\n3- Play simu\n4- Fin programme\n5- Simu ou Atelier ?\nChoix : ";
+                std::cin >> choix;
 
-            if(choix.length() != 1 || choix[0]<'1' || choix[0]>'9'){
-                std::cout << "[Erreur mauvais choix]" << std::endl;
-                std::cin.clear(); std::cin.ignore(256,'\n');
-                continue;
-            }
+                if(choix.length() != 1 || choix[0]<'1' || choix[0]>'9'){
+                    std::cout << "[Erreur mauvais choix]" << std::endl;
+                    std::cin.clear(); std::cin.ignore(256,'\n');
+                    continue;
+                }
 
-            int choixInt = std::stoi(choix);
-            switch(choixInt){
-                case 1:
-                {
-                    int choixPoste, choixProduit;
-                    std::cout << "Quel poste ? [1..8] "; std::cin >> choixPoste;
-                    std::cout << "Quel produit ? [1..6] "; std::cin >> choixProduit;
-                    if(choixPoste<1 || choixPoste>8 || choixProduit<1 || choixProduit>6){
-                        std::cout << "[Erreur mauvais choix]" << std::endl;
-                        std::cin.clear(); std::cin.ignore(256,'\n');
+                int choixInt = std::stoi(choix);
+                switch(choixInt){
+                    case 1:
+                    {
+                        int choixPoste, choixProduit;
+                        std::cout << "Quel poste ? [1..8] "; std::cin >> choixPoste;
+                        std::cout << "Quel produit ? [1..6] "; std::cin >> choixProduit;
+                        if(choixPoste<1 || choixPoste>8 || choixProduit<1 || choixProduit>6){
+                            std::cout << "[Erreur mauvais choix]" << std::endl;
+                            std::cin.clear(); std::cin.ignore(256,'\n');
+                            break;
+                        }
+                        msg0.num_poste = choixPoste;
+                        msg0.num_produit = choixProduit*10+4;
+                        pubProductAdd->publish(msg0);
+                        VREPController.addProduct(choixProduit, choixPoste);
                         break;
                     }
-                    msg0.num_poste = choixPoste;
-                    msg0.num_produit = choixProduit*10+4;
-                    pubProductAdd->publish(msg0);
-                    VREPController.addProduct(choixProduit, choixPoste);
-                    break;
+                    case 2: VREPController.pause(); break;
+                    case 3: VREPController.play(); break;
+                    case 4:
+                        pub_stopSim->publish(std_msgs::msg::Byte());
+                        pub_shutdown->publish(std_msgs::msg::Byte());
+                        rclcpp::sleep_for(1s);
+                        rclcpp::shutdown();
+                        break;
+                    case 5:
+                    {
+                        int choixMode;
+                        std::cout << "Mode : Simu (0) ou Atelier (1)? "; std::cin >> choixMode;
+                        msg1.mode = choixMode;
+                        pubModeType->publish(msg1);
+                        break;
+                    }
+                    default: std::cout << "[Erreur mauvais choix]" << std::endl; break;
                 }
-                case 2: VREPController.pause(); break;
-                case 3: VREPController.play(); break;
-                case 4:
-                    pub_stopSim->publish(std_msgs::msg::Byte());
-                    pub_shutdown->publish(std_msgs::msg::Byte());
-                    rclcpp::sleep_for(1s);
-                    rclcpp::shutdown();
-                    break;
-                case 5:
-                {
-                    int choixMode;
-                    std::cout << "Mode : Simu (0) ou Atelier (1)? "; std::cin >> choixMode;
-                    msg1.mode = choixMode;
-                    pubModeType->publish(msg1);
-                    break;
-                }
-                default: std::cout << "[Erreur mauvais choix]" << std::endl; break;
             }
+        });
+        menu_thread.detach(); // On détache le menu pour qu'il vive sa vie en arrière-plan
+        // ----------------------------------------------------------
 
-            rclcpp::spin_some(node); // gère toutes les subscriptions et services
+        // --- LA BOUCLE PRINCIPALE (Capteurs) N'EST PLUS BLOQUÉE ! ---
+        rclcpp::Rate rate_spin(25); // On force une lecture à 25 Hz
+        while(rclcpp::ok() && !petrifinished) {
+            rclcpp::spin_some(node); // On avale tous les capteurs en continu
+            rate_spin.sleep();
         }
     } else {
         bool beg = true;

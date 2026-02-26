@@ -15,9 +15,6 @@ int main(int argc, char **argv)
     rclcpp::init(argc, argv);
     auto node_aiguillage = std::make_shared<Aiguillage>();
 
-    // On souscrit au topic de shutdown
-    auto sub_shutdown = node_aiguillage->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, shutdown_callback);
-
 
     // Mets ça pour forcer 12 threads (un par aiguillage possible + capteurs) :
     rclcpp::executors::MultiThreadedExecutor executor(rclcpp::ExecutorOptions(), 15);

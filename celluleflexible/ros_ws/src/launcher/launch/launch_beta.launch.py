@@ -30,6 +30,7 @@ def generate_launch_description():
         name='aiguillage',
         output='screen',
         prefix=["xterm -geometry '80x20+1100+0' -e "]
+
     )
 
     robot1_node = Node(

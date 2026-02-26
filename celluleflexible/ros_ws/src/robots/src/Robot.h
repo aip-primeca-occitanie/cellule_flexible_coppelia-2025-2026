@@ -33,6 +33,7 @@
 #include <string>
 #include <atomic>
 
+
 #include "Poste.h"
 
 // Nombre de cube max sur les postes et navettes
@@ -55,11 +56,13 @@ private:
   std::atomic<bool> repSim_getObjectHandle;
   std::atomic<int> valueSim_getObjectHandle;
 
+
   // SetJointState
   rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr pubSim_setJointState;
   std_msgs::msg::Float32MultiArray msgSim_setJointState;
   rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr subSim_setJointState;
   std::atomic<bool> repSim_setJointState;
+
 
   // GetJointState
   rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr pubSim_getJointState;
@@ -68,12 +71,14 @@ private:
   std::atomic<bool> repSim_getJointState;
   std::atomic<float> valueSim_getJointState;
 
+
   // GetTime
   rclcpp::Publisher<std_msgs::msg::Byte>::SharedPtr pubSim_getTime;
   std_msgs::msg::Byte msgSim_getTime;
   rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr subSim_getTime;
   std::atomic<bool> repSim_getTime;
   std::atomic<float> valueSim_getTime;
+
 
   // GetTimeUpdate
   rclcpp::Publisher<std_msgs::msg::Byte>::SharedPtr pubSim_getTimeUpdate;
@@ -82,11 +87,13 @@ private:
   std::atomic<bool> repSim_getTimeUpdate;
   std::atomic<float> valueSim_getTimeUpdate;
 
+
   // ChangeColor
   rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr pubSim_changeColor;
   std_msgs::msg::Int32MultiArray msgSim_changeColor;
   rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr subSim_changeColor;
   std::atomic<bool> repSim_changeColor;
+
   
   // ChangeShuttleColor
   rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr pubSim_changeShuttleColor;
@@ -94,12 +101,14 @@ private:
   rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr subSim_changeShuttleColor;
   std::atomic<bool> repSim_changeShuttleColor;
 
+
   // GetColor
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr pubSim_getColor;
   std_msgs::msg::String msgSim_getColor;
   rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subSim_getColor;
   std::atomic<bool> repSim_getColor{false};
   std::atomic<int> valueSim_getColor{0};
+
   
   // GetColorUpdate
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr pubSim_getColorUpdate;
@@ -107,6 +116,7 @@ private:
   rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subSim_getColorUpdate;
   std::atomic<bool> repSim_getColorUpdate;
   std::atomic<int> valueSim_getColorUpdate;
+
 
   /** Subscribers aux topics de la commande **/
   rclcpp::Subscription<robots::msg::MsgNumRobot>::SharedPtr planifSendPosition;

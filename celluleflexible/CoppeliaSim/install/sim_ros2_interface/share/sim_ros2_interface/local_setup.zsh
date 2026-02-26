@@ -1,1 +1,0 @@
-/home/user/celluleflexible_en_cours_ROS2/celluleflexible/CoppeliaSim/build/sim_ros2_interface/ament_cmake_environment_hooks/local_setup.zsh

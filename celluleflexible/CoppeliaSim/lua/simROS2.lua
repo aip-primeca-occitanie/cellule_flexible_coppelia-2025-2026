@@ -1,1 +1,0 @@
-/home/user/celluleflexible_en_cours_ROS2/celluleflexible/CoppeliaSim/programming/ros2_packages/sim_ros2_interface/simROS2.lua

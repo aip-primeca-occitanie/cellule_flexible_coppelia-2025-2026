@@ -5,7 +5,7 @@ using std::placeholders::_1;
 Capteurs::Capteurs(std::shared_ptr<rclcpp::Node> noeud)
 {
 	// Abonnement ROS 2
-	sub_capteurs_simu = noeud->create_subscription<aiguillages::msg::MsgSensorState>("/sim_ros_interface/SwitchSensor", 10, std::bind(&Capteurs::Callback_capteurs_simulation, this, _1));
+	sub_capteurs_simu = noeud->create_subscription<aiguillages::msg::MsgSensorState>("/commande/Simulation/Capteurs", 10, std::bind(&Capteurs::Callback_capteurs_simulation, this, _1));
 
 	for(int i=0;i<25;i++) PSx[i]=0;
 	for(int i=0;i<13;i++) DxD[i]=0;

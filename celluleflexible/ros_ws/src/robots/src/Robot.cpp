@@ -216,6 +216,7 @@ void Robot::EnvoyerJoints(int joint1, int joint2, int joint3, int joint4, int jo
 			Position = valueSim_getJointState;
 
 			loop_rate->sleep();
+
 		}
 	}
 
@@ -283,8 +284,8 @@ void Robot::DescendreBras()
 			}
 			repSim_getJointState=false;
 			Position = valueSim_getJointState;
-
 			loop_rate->sleep();
+
 		}
 	}
 
@@ -303,6 +304,7 @@ void Robot::DescendreBras()
 //Fonction permettant de mettre le bras en position haute
 void Robot::MonterBras()
 {
+	std::cout<<"On rentre"<<std::endl;
 	//Récupération et modification de la position actuelle
 	Rpos[0]=Rpos[0]-2*pi/180;
 	Rpos[1]=Rpos[1]-10*pi/180;
@@ -356,8 +358,8 @@ void Robot::MonterBras()
 			}
 			repSim_getJointState=false;
 			Position = valueSim_getJointState;
-
 			loop_rate->sleep();
+
 		}
 	}
 
@@ -394,6 +396,7 @@ void Robot::FermerPince()
 		{
 			time = this->now().seconds();
 			loop_rate->sleep(); // On utilise loop_rate (25Hz) pour plus de fluidité
+
 		}
 
 		//Retour vers la commande
@@ -426,6 +429,8 @@ void Robot::OuvrirPince()
 		{
 			time = this->now().seconds();
 			loop_rate->sleep(); 
+
+
 		}
 
 		//Retour vers la commande
@@ -791,6 +796,7 @@ int Robot::colorerPosteDebutTask(int positionPoste)
 		i++;
 	} while(i<NB_CUBE && couleur_last!=0 && rclcpp::ok());
 
+
 	if(i==1)
 	{
 		RCLCPP_ERROR(this->get_logger(), "TACHE SUR AUCUN PRODUIT !!!");
@@ -926,6 +932,7 @@ void Robot::faireTacheCallback(const robots::msg::FaireTacheMsg::SharedPtr msg)
 		RCLCPP_INFO(this->get_logger(), "Debut tache pos=%d", msg->position);
 		double time = this->now().seconds();
 
+
 		int retourDebTask = colorerPosteDebutTask(msg->position);
 		if(msg->position==1)
 		{
@@ -964,6 +971,7 @@ void Robot::update()
 	{
 		// On demande le temps à VREP
 		double time = this->now().seconds();
+
 		
 		std::cout << std::endl;
 
