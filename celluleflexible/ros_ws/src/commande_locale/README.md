@@ -14,10 +14,14 @@ Ce dossier est composé de 5 éléments:
 * Un dossier src, où se trouve le code source C++ et composé des fichiers suivants :
   * commande_locale.cpp, qui initialise les fonctions, s'assure que Coppelia répond bien et affiche le menu
   * inOutController.cpp et inOutController.h, qui s'occupe de convertir les données des capteurs et des actionneurs entre CoppeliaSim et le réseau de Pétri
-  * vrepController.cpp et vrepController.h, qui
-  * display.cpp, qui
-  * LogManager.cpp, qui
-* Un dossier launch, pour lancer plusieurs robots à la fois
+  * vrepController.cpp et vrepController.h, qui contient les opérations élémentaires pour faire fonctionner la simulation
+  * display.cpp, qui ouvre une fenêtre OpenCV pour voir la simulation sous un autre point de vue
+  * LogManager.cpp, qui permet de garder sur un fichier texte l'historique
+
+Nous avons trois exécutables différents pour ce dossier : "simulation" qui lance les fichiers commandelocale.cpp, inOutController.cpp et vrepController.cpp; "display_node" qui lance le fichier display.cpp; log_manager qui lance le fichier LogManager.cpp.
+Nous noterons que pour la simulation étudiante le code display.cpp n'est pas exécuté, et est donc inutile à son fonctionnement.
+
+
 
 ## 3. Description détaillée des fichiers src
 ### 3.1. Fichier commande_locale.cpp
@@ -52,7 +56,7 @@ La fonction *SensorCallbackRail* gère les 24 capteurs "stops" PS. La fonction *
 Les fonctions *SensorCallbackRail* et *StateSwitchCallBack* gèrent les 12 aiguillages (droite, gauche, lock).
 
 Les capteurs et actionneurs sont représentés sur la figure ci-dessous :
-![Image_Capteurs_et_Actionneurs](../../../Doc/CelluleCapteursActionneurs.png)
+![Image_Capteurs_et_Actionneurs](../../../Doc/CelluleSchema.png)
 
 Enfin, nous avons la fonction init, qui s'abonne en publisher ou en suscriber aux topics concernant les capteurs et les actionneurs, et qui initialise les capteurs intérieurs CPI.
 
@@ -70,16 +74,32 @@ Ces fichiers contiennent des fonctions appelées depuis commande_locale.cpp. Les
 ![Image_Position_Postes](../../../Doc/CellulePositionPostes.png)
 
 
-### 3.4. Fichiers display.cpp
+### 3.4. Fichier display.cpp
+Ce fichier contient des commandes pour ouvrir une fenêtre OpenCV, par les fonctions suivantes :
+* *update*, qui rafraichit l'image à l'écran
+* *getSimuStream*, qui traduit les images ROS en matrice pour OpenCV
+* *main*, qui initialise OpenCV et crée une fenêtre où elle le lance. Elle s'abonne également à des topics et lance en boucle la fonction *update*.
+
+Ce fichier n'est pas pris en compte dans la simulation étudiante, car le fichier launch ne le lance pas.
 
 
-### 3.5. Fichiers LogManager.cpp
+### 3.5. Fichier LogManager.cpp
+Ce fichier est composé des fonctions :
+* *main*, qui efface l'ancien fichier texte log.txt, pour en créer un nouveau, sur lequel seront écrit les actions importantes de la simulation.
+* *ProduitEvacCallback*, qui écrit dans le fichier texte lorsqu'un produit est évacué
+* *NewProductCallback*, qui écrit dans le fichier texte lorsqu'un nouveau produit apparait dans la simulation
+* *ErreurCallback*, qui écrit dans le fichier texte et dans la console lorsqu'une erreur se produit. Elle écrit un message spécifique en fonction de l'erreur rencontrée (chaque type d'erreur à un code)
+* *TachefinieCallback*, qui écrit dans le fichier texte à chaque tâche finie
+* *PetriTermineCallback*, qui écrit dans le fichier texte que le Pétri est terminé
+
+Les fonctions de ce fichier sont activées lors de publications sur des topics spécifiques lors d'actions effectuées par le code.
 
 
 ### 3.6. Sécurités mises en place
 Des sécurités ont été ajoutées pour permettre de repérer convenablement certains problèmes.
 Dans le fichier commande_locale, il y a tout d'abord des erreurs affichées si jamais l'utilisateur entre autre chose que les solutions proposées. On affiche alors "Erreur mauvais choix".
 Dans le fichier vrepController, nous affichons une erreur dans le cas où CoppeliaSim n'est pas trouvé dans les dossiers ("ERREUR : CoppeliaSim non trouvé"). Egalement, si le numéro de navette (shutlle) n'est pas bon (doit être compris entre 0 et 6), nous affichons "ATTENTION, LE NUMERO DU SHUTTLE DOIT ETRE COMPRIS ENTRE 0 ET 6". Enfin, dans la fonction addProduct, on demande à la fonction GetColor de nous dire la couleur de la pièce sur la table. S'il renvoit autre chose que 0 (autre chose que transparent), alors c'est qu'un objet est déjà présent sur la table et dans ce cas-là, on affiche alors "ERREUR : On ecrase un produit !!".
+Dans le fichier LogManager, nous avons une fonction qui permet d'afficher des erreurs lorsque celles-ci surviennent. Nous pouvons donc afficher "ERREUR poste Vide", "ERREUR Operation sur un produit plein", "ERREUR Manipulation produit en traitement", "ERREUR Perte navette" et "ERREUR On a ecrase un produit".
 
 
 ## 4. Utilisation
@@ -90,7 +110,7 @@ Pour lancer le code depuis le répertoire ros, on fait d'abord :
   source install/setup.bash
 ```
 
-Ensuite, on exécute la ligne suivante, qui permet de lancer le noeud commande_locale :
+Ensuite, on exécute la ligne suivante, qui permet de lancer les fichiers commande_locale, inOutController et vrepController :
 ```bash
   ros2 run commande_locale simulation 4
 ```
@@ -98,7 +118,17 @@ L'avant dernier mot ("simulation") correspond au nom de l'exécutable. Le dernie
 ```bash
   ros2 run commande_locale simulation 2
 ```
+Ces lignes permettent alors le lancement de Coppelia et le chargement de la scène. Si les autres packages sont également là, nous aurons l'ouverture de 6 pop up, menant au démarrage complet de la simulation. Après avoir rentré le nombre de navettes, nous aurons un affichage du menu dans la console.
 
+Pour lancer le fichier display, il faut faire :
+```bash
+  ros2 run commande_locale display_node
+```
+
+Pour lancer le fichier LogManager, il faut faire :
+```bash
+  ros2 run commande_locale log_manager
+```
 
 ## 5. Protocole de Test
 Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test pour sortir de l'initialisation et afficher le menu, en reprenant les commandes à faire depuis le début. Ce test se trouve dans le fichier "Tests du package commande_locale".
