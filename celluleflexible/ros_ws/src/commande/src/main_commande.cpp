@@ -208,7 +208,6 @@ int main(int argc, char **argv)
                 display();
             }
             if(M[2] && capteur.get_PS(6))
-<<<<<<< HEAD
             {
                 /*!
                         * \b T2: aiguillage A02 mise en place

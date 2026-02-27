@@ -51,20 +51,13 @@
 // ProductConfig
 
 
-const vector<int> Prod_type{ 2,
-                             6,
-                             4 };
+const vector<int> Prod_type{ 2 };
 
+const vector<vector<int>> Prod_seqdeposte{  { POSTE_2 } };
 
-const vector<vector<int>> Prod_dureeparposte{  { 13 } };
+const vector<vector<int>> Prod_dureeparposte{  { 12 } };
 
-const vector<vector<int>> Prod_dureeparposte{  { 4, 5 },
-                                               { 3, 6, 3 },
-                                               { 7, 3 } };
-
-const vector<int> Prod_qte{ 2,
-                            1,
-                            1 };
+const vector<int> Prod_qte{ 1 };
 
 
 
