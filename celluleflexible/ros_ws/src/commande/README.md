@@ -1,4 +1,4 @@
-# ReadMe du Package commande
+# Package commande
 
 ## 1. Description générale
 

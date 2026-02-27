@@ -1,4 +1,4 @@
-# ReadMe du Package commande_locale
+# Package commande_locale
 
 ## 1. Description générale
 Le but de ce package est de faire l'intermédiaire entre la simulation physique (CoppeliaSim), le réseau de Pétri au niveau complété par les étudiants et l'utilisateur.
@@ -131,5 +131,5 @@ Pour lancer le fichier LogManager, il faut faire :
 ```
 
 ## 5. Protocole de Test
-Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test pour sortir de l'initialisation et afficher le menu, en reprenant les commandes à faire depuis le début. Ce test se trouve dans le fichier "Tests du package commande_locale".
+Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test pour sortir de l'initialisation et afficher le menu, en reprenant les commandes à faire depuis le début. Ce test se trouve dans le fichier "tests_du_package_commande_locale.txt".
 Dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim. Ce protocole n'est donc valable que **si CoppeliaSim n'est pas opérationnel** (n'envoit pas les messages correctement sur les topics).

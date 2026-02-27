@@ -1,4 +1,4 @@
-# ReadMe du Package Robots
+# Package Robots
 
 ## 1. Description générale
 Le but de ce package est de gérer la logique et le contrôle des bras robotiques de la simulation. 
@@ -102,5 +102,5 @@ Pour lancer les deux robots de droite (3 et 4), il suffit de faire :
 ```
 
 ## 5. Protocole de Test
-Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test pour la fonction Evacuer, ainsi que pour le shutdown, en reprenant les commandes à faire depuis le début. Ce test se trouve dans le fichier "Tests du package robots".
+Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test pour la fonction Evacuer, ainsi que pour le shutdown, en reprenant les commandes à faire depuis le début. Ce test se trouve dans le fichier "tests_du_package_robots.txt".
 Dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim. Ce protocole n'est donc valable que **si CoppeliaSim n'est pas opérationnel** (n'envoit pas les messages correctement sur les topics).
