@@ -304,7 +304,6 @@ void Robot::DescendreBras()
 //Fonction permettant de mettre le bras en position haute
 void Robot::MonterBras()
 {
-	std::cout<<"On rentre"<<std::endl;
 	//Récupération et modification de la position actuelle
 	Rpos[0]=Rpos[0]-2*pi/180;
 	Rpos[1]=Rpos[1]-10*pi/180;
@@ -585,23 +584,28 @@ void Robot::Colorer(int position, int type)//attention c'est forcement quand on 
 	if(position==2 || position==3) // Si navette
 	{
 		auto request = std::make_shared<shuttles::srv::ShuttleId::Request>();
-        request->robot = num_robot;
-        request->position = position;
+		request->robot = num_robot;
+		request->position = position;
 
-        auto result_future = client->async_send_request(request);
+		// On s'assure juste que le service existe avant de tirer dans le vide
+		client->wait_for_service(std::chrono::seconds(1)); 
 
-        // Attente de la réponse
-        if (rclcpp::spin_until_future_complete(this->get_node_base_interface(), result_future)
-            != rclcpp::FutureReturnCode::SUCCESS)
-        {
-            RCLCPP_ERROR(this->get_logger(), "Erreur lors de l'appel du service");
-            return;
-        }
+		auto result_future = client->async_send_request(request);
 
-        idNavette = result_future.get()->id_shuttle;
-        RCLCPP_INFO(this->get_logger(), "Navette %d", idNavette);
+		// --- LA SEULE LIGNE QUI CHANGE PAR RAPPORT À TON CODE ---
+		// On remplace le 'spin_until_future_complete' (qui fait crasher ROS 2) 
+		// par un simple 'wait_for' classique !
+		if (result_future.wait_for(std::chrono::seconds(3)) != std::future_status::ready)
+		{
+			RCLCPP_ERROR(this->get_logger(), "Erreur lors de l'appel du service");
+			return;
+		}
+		// ---------------------------------------------------------
+
+		idNavette = result_future.get()->id_shuttle;
+		RCLCPP_INFO(this->get_logger(), "Navette %d", idNavette);
 	}
-
+	
 	if(idNavette==66) // 66=Erreur
 	{
 		RCLCPP_ERROR(this->get_logger(),"ERREUR : Pas de navette a la position demandee");	
@@ -748,8 +752,6 @@ void Robot::Colorer(int position, int type)//attention c'est forcement quand on 
 
 int Robot::colorerPosteDebutTask(int positionPoste)
 {
-	rclcpp::sleep_for(std::chrono::milliseconds(3000));
-
 	std::string signal;
 	std::string fin;
 	int couleur[NB_CUBE];
@@ -929,11 +931,12 @@ void Robot::faireTacheCallback(const robots::msg::FaireTacheMsg::SharedPtr msg)
 	if((msg->num_robot==num_robot)
 			&& (msg->position==1||msg->position==4)) // pas sur une navette
 	{
+		rclcpp::sleep_for(std::chrono::milliseconds(2000));
+		
 		RCLCPP_INFO(this->get_logger(), "Debut tache pos=%d", msg->position);
+		int retourDebTask = colorerPosteDebutTask(msg->position);
 		double time = this->now().seconds();
 
-
-		int retourDebTask = colorerPosteDebutTask(msg->position);
 		if(msg->position==1)
 		{
 			if(poste_pos_1.isTaskEnCours())
@@ -1245,7 +1248,7 @@ void Robot::init()
 	sub_faireTache = this->create_subscription<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache",10,std::bind(&Robot::faireTacheCallback, this, std::placeholders::_1));
 	sub_evacuer= this->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1));
 	subStopTache= this->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1));
-	subDeplacerPiece= this->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1));
+	subDeplacerPiece= this->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1),options);
 
 	//Publishers
 	pub_pince = this->create_publisher<std_msgs::msg::Int32>("/robot/cmdPinceRobot"+std::to_string(num_robot), 10);
@@ -1257,7 +1260,7 @@ void Robot::init()
 	pub_erreur_log = this->create_publisher<commande_locale::msg::MsgErreur>("/commande/Simulation/Erreur_log",10);
 
 	//Client (pour les services)
-	client = this->create_client<shuttles::srv::ShuttleId>("get_id_shuttle_at_poste");
+	client = this->create_client<shuttles::srv::ShuttleId>("get_id_shuttle_at_poste", rclcpp::ServicesQoS(), callback_group_);
 	
 	rclcpp::sleep_for(std::chrono::seconds(4));
 
