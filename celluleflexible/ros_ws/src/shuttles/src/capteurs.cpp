@@ -29,7 +29,6 @@ void Capteurs::Callback_capteurs_simulation(const aiguillages::msg::MsgSensorSta
 
 bool Capteurs::get_PS(int num_PS)
 {
-	std::cout<<"là"<<std::endl;
 	return PSx[num_PS];
 }
 

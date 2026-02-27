@@ -134,8 +134,7 @@ int main(int argc, char **argv)
      ************************************************* */
 
     cmd.activateShuttleManagerDisplay();
-    // cmd.activateAutoRunSimu();
-
+     // cmd.activateAutoRunSimu();
     int nbNavettes=0;//Mettre 0 pour demander a l'utilisateur
     while(nbNavettes<1||nbNavettes>6)
     {
@@ -173,6 +172,13 @@ int main(int argc, char **argv)
 
     while (rclcpp::ok()) // <-- Changement ROS2
     {
+        // --- DEBUT DEBUG EN CONTINU ---
+        // Le '\r' permet d'écrire par dessus la même ligne pour que ce soit lisible
+        //cout << "\r[DEBUG] PS3=" << capteur.get_PS(3) 
+          //   << " | PS6=" << capteur.get_PS(6) 
+          //   << " | PS19=" << capteur.get_PS(19) << flush;
+        // --- FIN DEBUG EN CONTINU ---
+        
         // Seulement si la simulation est en cours
         if(cmd.getPlay()==true)
         {
@@ -189,16 +195,20 @@ int main(int argc, char **argv)
                         * \arg \b Postcondition: M[2]++
                         */
                 M[0]--;
+                
 
                 aiguillage.Gauche(3);
                 aiguillage.Gauche(10);
                 aiguillage.Gauche(11);
                 aiguillage.Gauche(12);
                 aiguillage.Gauche(1);
+                aiguillage.Gauche(7);
+                aiguillage.Gauche(8);
+                aiguillage.Droite(5);
+                aiguillage.Droite(6);
 				
-                cmd.Stop_PS(19);
+                
 				
-	
 
                 robot.AjouterProduit(Prod_seqdeposte[0][0], Prod_type[0]);
                 robot.FaireTache(Prod_seqdeposte[0][0], Prod_dureeparposte[0][0]);
@@ -208,24 +218,22 @@ int main(int argc, char **argv)
                 display();
             }
             if(M[2] && capteur.get_PS(6))
-<<<<<<< HEAD
-            {
-                /*!
-                        * \b T2: aiguillage A02 mise en place
-                        * \arg  courte description
-                        * \arg \b Precondition: M[2] && capteur.get_PS(6)
-                        * \arg \b Postcondition: M[3]++
-                        */
+            { 
+              
                 M[2]--;
-                cout<<"problème aiguillage"<<endl;
 
                 aiguillage.Gauche(2);
+                aiguillage.Gauche(5);
+                aiguillage.Gauche(6);
+                aiguillage.Droite(7);
+                aiguillage.Droite(8);
 
                 M[3]++;
                 display();
             }
             if(M[3] && robot.TacheFinie(Prod_seqdeposte[0][0]))
             {
+              
             /*!
                         * \b T4: positionnement aiguillages vers prochain poste 3
                         * \arg courte description
@@ -236,10 +244,13 @@ int main(int argc, char **argv)
 
                 aiguillage.Droite(11);
                 aiguillage.Droite(12);
-                aiguillage.Droite(01);
+                aiguillage.Droite(1);
+                aiguillage.Gauche(7);
+                aiguillage.Gauche(8);
+                aiguillage.Droite(5);
+                aiguillage.Droite(6);
 
-                cmd.Stop_PS(21);
-
+                cmd.Stop_PS(20);
 
 
 
@@ -356,4 +367,3 @@ int main(int argc, char **argv)
 
     return 0;
 }
-

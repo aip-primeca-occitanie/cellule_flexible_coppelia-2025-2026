@@ -3,7 +3,6 @@
 #include <chrono>
 #include <thread>
 
-
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/byte.hpp"
 #include "std_msgs/msg/int32.hpp"
@@ -76,12 +75,7 @@ int main(int argc, char** argv)
     rclcpp::init(argc, argv);
     auto node = std::make_shared<rclcpp::Node>("commande_locale");
     
-    rclcpp::NodeOptions options;
-    options.use_global_arguments(false); 
-    auto vrep_node = std::make_shared<rclcpp::Node>("vrep_node", options);
-
-    // auto vrep_node = std::make_shared<rclcpp::Node>("vrep_node"); VERSION ELVENN
-
+    auto vrep_node = std::make_shared<rclcpp::Node>("vrep_node");
 
     // --- Publishers ---
     auto pubProductAdd = node->create_publisher<commande_locale::msg::MsgAddProduct>("/commande_locale/AddProduct", 10);
@@ -195,6 +189,7 @@ int main(int argc, char** argv)
             rclcpp::spin_some(node); // On avale tous les capteurs en continu
             rate_spin.sleep();
         }
+
     } else {
         bool beg = true;
         while(rclcpp::ok()){

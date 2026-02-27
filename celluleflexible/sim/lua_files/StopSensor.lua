@@ -9,7 +9,6 @@ if (sim_call_type==sim.syscb_init) then
         if status and createdPub then
             pub = createdPub
         end
-
     end
 end
 

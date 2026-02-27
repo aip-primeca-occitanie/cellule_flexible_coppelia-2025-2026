@@ -46,17 +46,17 @@ int Poste::get_duree()
 }
 
 
-void Poste::debutTask(double VREPtime, int duree)
+void Poste::debutTask(float VREPtime, int duree)
 {
 	task_en_cours_=true;
 	temps_debut_task_=VREPtime;
 	duree_task_=duree;
 }
 
-bool Poste::updateTask(double time)
+bool Poste::updateTask(float time)
 {
 	bool fin_tache=false;
-	double restant=(temps_debut_task_+duree_task_)-time;
+	float restant=(temps_debut_task_+duree_task_)-time;
 	if(restant<0)
 		restant=0;
 

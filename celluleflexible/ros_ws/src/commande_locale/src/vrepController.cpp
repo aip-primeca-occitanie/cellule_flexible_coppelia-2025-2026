@@ -108,7 +108,7 @@ void vrepController::init(rclcpp::Node::SharedPtr n, const string& executionPath
 }
 
 // ------------------- Table / Robot helpers -------------------
-
+// (le reste identique à ton code existant)
 
 void vrepController::setSimulationFile(std::string fileName)
 {

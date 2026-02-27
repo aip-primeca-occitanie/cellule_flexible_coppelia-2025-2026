@@ -16,7 +16,7 @@ class Poste
 		int numero_poste_;
 		int couleur_;
 		int duree_task_;
-		double temps_debut_task_;
+		float temps_debut_task_;
 		bool task_en_cours_;
 
 	public:
@@ -29,8 +29,8 @@ class Poste
 		int get_color();
 		int get_duree();
 
-		void debutTask(double VREPtime, int duree);
-		bool updateTask(double time);
+		void debutTask(float VREPtime, int duree);
+		bool updateTask(float time);
 		bool isTaskEnCours();
 		void stopTask();
 };

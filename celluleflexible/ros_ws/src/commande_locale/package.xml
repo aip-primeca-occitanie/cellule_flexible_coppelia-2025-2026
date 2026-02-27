@@ -28,8 +28,7 @@
   <exec_depend>image_transport</exec_depend>
   <exec_depend>cv_bridge</exec_depend>
   <exec_depend>rosidl_default_runtime</exec_depend>
-  <exec_depend>shuttles</exec_depend>
-
+  <!--<exec_depend>shuttles</exec_depend>-->
   <exec_depend>aiguillages</exec_depend>
 
   <!-- Test dependencies -->

@@ -215,8 +215,7 @@ void Robot::EnvoyerJoints(int joint1, int joint2, int joint3, int joint4, int jo
 			repSim_getJointState=false;
 			Position = valueSim_getJointState;
 
-			loop_rate->sleep();
-
+			loop_ok->sleep();
 		}
 	}
 
@@ -284,8 +283,8 @@ void Robot::DescendreBras()
 			}
 			repSim_getJointState=false;
 			Position = valueSim_getJointState;
-			loop_rate->sleep();
 
+			loop_ok->sleep();
 		}
 	}
 
@@ -358,8 +357,8 @@ void Robot::MonterBras()
 			}
 			repSim_getJointState=false;
 			Position = valueSim_getJointState;
-			loop_rate->sleep();
 
+			loop_ok->sleep();
 		}
 	}
 
@@ -373,6 +372,7 @@ void Robot::MonterBras()
 	//Retour de l'état actuel du bras
 	robotBras.data = 1;
 	pub_robotBras->publish(robotBras);
+	std::cout<<"On sort"<<std::endl;
 }
 
 /** Pour fermer ou ouvrir la pince **/
@@ -389,14 +389,28 @@ void Robot::FermerPince()
 	if(retour.data != 6)
 	{
 		//Attente pour que la pince se ferme
-		double t0 = this->now().seconds();
-		double time = t0;
-        
-		while(time - t0 < 0.5 && rclcpp::ok())
-		{
-			time = this->now().seconds();
-			loop_rate->sleep(); // On utilise loop_rate (25Hz) pour plus de fluidité
+		float t0, time;
 
+		pubSim_getTime->publish(msgSim_getTime);
+		while(!repSim_getTime&&rclcpp::ok())
+		{
+            loop_rate->sleep();
+		}
+		repSim_getTime=false;
+		t0 = valueSim_getTime;
+
+		time = t0;
+		while(time - t0 < 0.5 &&rclcpp::ok())
+		{
+			pubSim_getTime->publish(msgSim_getTime);
+			while(!repSim_getTime&&rclcpp::ok())
+			{
+            	loop_rate->sleep();
+			}
+			repSim_getTime=false;
+			time = valueSim_getTime;
+
+			loop_ok->sleep();
 		}
 
 		//Retour vers la commande
@@ -422,15 +436,28 @@ void Robot::OuvrirPince()
 	if(retour.data != 7)
 	{
 		//Attente pour que la pince s'ouvre
-		double t0 = this->now().seconds();
-		double time = t0;
-        
-		while(time - t0 < 0.5 && rclcpp::ok())
+		float t0, time;
+
+		pubSim_getTime->publish(msgSim_getTime);
+		while(!repSim_getTime&&rclcpp::ok())
 		{
-			time = this->now().seconds();
-			loop_rate->sleep(); 
+            loop_rate->sleep();
+		}
+		repSim_getTime=false;
+		t0 = valueSim_getTime;
 
+		time = t0;
+		while(time - t0 < 0.5&&rclcpp::ok())
+		{
+			pubSim_getTime->publish(msgSim_getTime);
+			while(!repSim_getTime&&rclcpp::ok())
+			{
+                loop_rate->sleep();
+			}
+			repSim_getTime=false;
+			time = valueSim_getTime;
 
+			loop_ok->sleep();
 		}
 
 		//Retour vers la commande
@@ -748,12 +775,9 @@ void Robot::Colorer(int position, int type)//attention c'est forcement quand on 
 
 int Robot::colorerPosteDebutTask(int positionPoste)
 {
-	rclcpp::sleep_for(std::chrono::milliseconds(3000));
-
 	std::string signal;
 	std::string fin;
 	int couleur[NB_CUBE];
-	
 	for(int i=0; i<NB_CUBE; couleur[i++]=0){}
 	int couleur_last(0);
 	int retour=-1;
@@ -794,8 +818,8 @@ int Robot::colorerPosteDebutTask(int positionPoste)
 		couleur_last=couleur[i];
 
 		i++;
-	} while(i<NB_CUBE && couleur_last!=0 && rclcpp::ok());
 
+	} while(i<NB_CUBE && couleur_last!=0&&rclcpp::ok());
 
 	if(i==1)
 	{
@@ -930,8 +954,13 @@ void Robot::faireTacheCallback(const robots::msg::FaireTacheMsg::SharedPtr msg)
 			&& (msg->position==1||msg->position==4)) // pas sur une navette
 	{
 		RCLCPP_INFO(this->get_logger(), "Debut tache pos=%d", msg->position);
-		double time = this->now().seconds();
-
+		pubSim_getTime->publish(msgSim_getTime);
+		while(!repSim_getTime && rclcpp::ok())
+		{
+			loop_rate->sleep();
+		}
+		repSim_getTime=false;
+		float time=valueSim_getTime;
 
 		int retourDebTask = colorerPosteDebutTask(msg->position);
 		if(msg->position==1)
@@ -970,8 +999,13 @@ void Robot::update()
 	if(poste_pos_1.isTaskEnCours() || poste_pos_4.isTaskEnCours())
 	{
 		// On demande le temps à VREP
-		double time = this->now().seconds();
-
+		pubSim_getTimeUpdate->publish(msgSim_getTimeUpdate);
+		while(!repSim_getTimeUpdate && rclcpp::ok())
+		{
+			loop_rate->sleep();
+		}
+		repSim_getTimeUpdate=false;
+		float time=valueSim_getTimeUpdate;
 		
 		std::cout << std::endl;
 

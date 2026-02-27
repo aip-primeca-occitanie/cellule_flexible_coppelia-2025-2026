@@ -13,8 +13,7 @@ void inOutController::TypeMode(const commande_locale::msg::MsgChoixMode::SharedP
 
 void inOutController::SensorCallbackRail(const std_msgs::msg::Int32::SharedPtr msg)
 {
-    if (mode == 0) //je les avais mis en commentaires au debut quand ca marchait pas
-
+    //if (mode == 0)
     {
         for(int i=1;i<=10;i++)
             SensorState.cp[i] = (msg->data & (int32_t)pow(2,i-1)) > 0;
@@ -25,8 +24,7 @@ void inOutController::SensorCallbackRail(const std_msgs::msg::Int32::SharedPtr m
 
 void inOutController::SensorCallbackStop(const std_msgs::msg::Int32::SharedPtr msg)
 {
-    if (mode == 0)
-
+    //if (mode == 0)
     {
         for(int i=1;i<=24;i++)
             SensorState.ps[i] = (msg->data & (int32_t)pow(2,i-1)) > 0;
@@ -37,8 +35,7 @@ void inOutController::SensorCallbackStop(const std_msgs::msg::Int32::SharedPtr m
 
 void inOutController::SensorCallbackSwitch(const std_msgs::msg::Int32::SharedPtr msg)
 {
-    if (mode == 0)
-
+    //if (mode == 0)
     {
         for(int i=1;i<=12;i++)
         {

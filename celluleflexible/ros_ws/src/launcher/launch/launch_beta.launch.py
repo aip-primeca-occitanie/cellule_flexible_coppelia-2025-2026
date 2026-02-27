@@ -29,8 +29,7 @@ def generate_launch_description():
         executable='run_Aiguillage',
         name='aiguillage',
         output='screen',
-        prefix=["xterm -geometry '80x20+1100+0' -e "]
-
+        prefix=["xterm -geometry '80x20+0+0' -e "] # Ouvre une nouvelle fenêtre terminal au lancement
     )
 
     robot1_node = Node(
