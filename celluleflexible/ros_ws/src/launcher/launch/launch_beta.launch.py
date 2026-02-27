@@ -86,8 +86,8 @@ def generate_launch_description():
 
     shuttle_manager_node = Node(
         package='shuttles',
-        executable='main_ShuttleManager',
-        name='shuttleManager',
+        executable='shuttle_manager',
+        name='shuttle_manager',
         output='screen',
         prefix=["xterm -geometry '60x20+400+800' -e "]
     )

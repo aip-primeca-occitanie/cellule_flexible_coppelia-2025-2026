@@ -32,7 +32,9 @@ void ProduitEvacCallback(const std_msgs::msg::Int32MultiArray::SharedPtr msg)
 	pubSim_getTime->publish(std_msgs::msg::Byte());
 	while(!repSim_getTime && rclcpp::ok())
 	{
-		rclcpp::spin_some(rclcpp::Node::make_shared("tmp"));
+		rclcpp::NodeOptions options;
+		options.use_global_arguments(false);
+		rclcpp::spin_some(rclcpp::Node::make_shared("tmp", options));
 		loop_rate.sleep();
 	}
 	repSim_getTime=false;
@@ -55,7 +57,9 @@ void NewProductCallback(const commande_locale::msg::MsgAddProduct::SharedPtr msg
 	pubSim_getTime->publish(std_msgs::msg::Byte());
 	while(!repSim_getTime && rclcpp::ok())
 	{
-		rclcpp::spin_some(rclcpp::Node::make_shared("tmp"));
+		rclcpp::NodeOptions options;
+		options.use_global_arguments(false);
+		rclcpp::spin_some(rclcpp::Node::make_shared("tmp", options));
 		loop_rate.sleep();
 	}
 	repSim_getTime=false;
