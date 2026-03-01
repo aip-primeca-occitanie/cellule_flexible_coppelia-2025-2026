@@ -97,7 +97,9 @@ Les fonctions de ce fichier sont activées lors de publications sur des topics s
 
 ### 3.6. Sécurités mises en place
 Des sécurités ont été ajoutées pour permettre de repérer convenablement certains problèmes.
+
 Dans le fichier commande_locale, il y a tout d'abord des erreurs affichées si jamais l'utilisateur entre autre chose que les solutions proposées. On affiche alors "Erreur mauvais choix".
+
 Dans le fichier vrepController, nous affichons une erreur dans le cas où CoppeliaSim n'est pas trouvé dans les dossiers ("ERREUR : CoppeliaSim non trouvé"). Egalement, si le numéro de navette (shutlle) n'est pas bon (doit être compris entre 0 et 6), nous affichons "ATTENTION, LE NUMERO DU SHUTTLE DOIT ETRE COMPRIS ENTRE 0 ET 6". Enfin, dans la fonction addProduct, on demande à la fonction GetColor de nous dire la couleur de la pièce sur la table. S'il renvoit autre chose que 0 (autre chose que transparent), alors c'est qu'un objet est déjà présent sur la table et dans ce cas-là, on affiche alors "ERREUR : On ecrase un produit !!".
 Dans le fichier LogManager, nous avons une fonction qui permet d'afficher des erreurs lorsque celles-ci surviennent. Nous pouvons donc afficher "ERREUR poste Vide", "ERREUR Operation sur un produit plein", "ERREUR Manipulation produit en traitement", "ERREUR Perte navette" et "ERREUR On a ecrase un produit".
 
