@@ -71,6 +71,7 @@ Ces fichiers contiennent des fonctions appelées depuis commande_locale.cpp. Les
 * *computeTableId*, qui traduit le numéro de poste en identifiant CopeliaSim
 * *addProduct*, qui fait apparaitre un produit sur un poste donné lorssqu'il rentre en production
 * *computeNumRobotPosteTache*, qui traduit le numéro de poste en terme de robot ("tab[0]" correspond au robot associé au poste (1 robot pour 2 postes) et "tab[1]" correspond à la position du poste par rapport au robot). L'illustration pour tab[1] est représentée sur l'image ci-dessous :
+
 ![Image_Position_Postes](../../../Doc/CellulePositionPostes.png)
 
 
