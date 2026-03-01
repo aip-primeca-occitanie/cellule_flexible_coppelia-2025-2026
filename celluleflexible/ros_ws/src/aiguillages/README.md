@@ -1,8 +1,8 @@
-# ReadMe du Package Aiguillages
+# Package Aiguillages
 
 ## 1. Description générale
 
-Le but de ce package est de gérer les aiguillages de la simulation (les faire tourner à gauche, à droite, les verrouiller et les déverrouiller. Ce paquet contrôle l'ensemble des 12 aiguillages (A01 à A12) de manière centralisée et asynchrone.
+Le but de ce package est de gérer les aiguillages de la simulation (les faire tourner à gauche, à droite, les verrouiller et les déverrouiller). Ce paquet contrôle l'ensemble des 12 aiguillages (A01 à A12) de manière centralisée et asynchrone.
 
 ## 2. Composition
 
@@ -10,18 +10,12 @@ Ce dossier est composé de plusieurs éléments essentiels :
 
 * Un fichier `package.xml` définissant les métadonnées et dépendances du paquet (rclcpp, std_msgs, opencv, etc.).
 * Un fichier `CMakeLists.txt` configuré pour ROS 2 (Jazzy) et C++17, gérant la compilation et la génération des interfaces.
-
-
 * Un dossier `msg`, permettant de définir les structures de messages pour la communication interne, incluant `Capteurs.msg`, `Actionneurs.msg`, `ExchangeSh.msg` et `MsgSensorState.msg`.
-
-
 * Un dossier `src`, contenant le code source C++ :
-* `main_aiguillage.cpp`, qui initialise et lance le nœud de gestion globale.
-* `Aiguillage.cpp` et `Aiguillage.h`, qui définissent la logique de contrôle et d'asservissement des aiguillages.
+  * `main_aiguillage.cpp`, qui initialise et lance le nœud de gestion globale.
+  * `Aiguillage.cpp` et `Aiguillage.h`, qui définissent la logique de contrôle et d'asservissement des aiguillages.
 
 
-
----
 
 ## 3. Description détaillée des fichiers src
 
@@ -53,32 +47,29 @@ Pour pallier d'éventuels soucis d'intégration avec le simulateur, des mécanis
 * **Anti "Race Condition" de Lua** : Au sein des boucles d'attente (`gauche_callback` et `droite_callback`), si le capteur indique que l'aiguillage reste anormalement bloqué dans la position opposée (ex: forcé à droite alors qu'on demande la gauche), le système réitère volontairement l'envoi de la commande de déverrouillage et de mouvement pour forcer la priorité face au script du simulateur.
 * **Architecture multithread reentrante** : L'utilisation de `MultiThreadedExecutor` et de souscriptions `Reentrant` évite qu'un aiguillage bloqué dans sa boucle d'attente ne paralyse le contrôle ou le rafraîchissement sensoriel des autres aiguillages de la ligne de production.
 
----
+
 
 ## 4. Utilisation
 
-Pour compiler et utiliser le code, il faut préalablement avoir exécuté les commandes suivantes à la racine de votre workspace ROS 2 :
+Pour compiler et utiliser le code, il faut préalablement avoir exécuté les commandes suivantes à la racine de votre workspace ROS 2 (ros_ws) :
 
 ```bash
   source /opt/ros/jazzy/setup.bash
   colcon build --packages-select aiguillages
   source install/setup.bash
-
 ```
 
-* Lancement du nœud gestionnaire :
-l'exécution d'noeud pilotant le contrôle des aiguillages :
+Pour exécuter le noeud pilotant le contrôle des aiguillages, nous faisons :
 
 ```bash
   ros2 run aiguillages run_Aiguillage
-
 ```
 
-L'exécutable généré s'appelle `run_Aiguillage`.
+L'exécutable généré s'appelle `run_Aiguillage`. Par cette commande, nous verrons alors apparaitre le message "Nœud démarré avec MultiThreadedExecutor.". Il faudra ensuite publier sur les topics de direction pour faire tourner un aiguillage à droite ou à gauche.
+
 
 ## 5. Protocole de Test
-Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test. Ce test se trouve dans le fichier "Tests du package aiguillages".
-Nous avions lors de notre migration d'abord migré les paquets C++ de R0S à ROS2, puis ensuite les script (.lua) et les models (.ttm) de la scene de simulation de Coppelia. 
+Il a fallu, pour la migration du code de ROS1 à ROS2, tester unitairement ce package. Pour cela, un protocole de test a été établi, à retrouver dans le fichier "tests_du_package_aiguillages".
 Ainsi, dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim. Ce protocole n'est donc valable que **si CoppeliaSim n'est pas opérationnel**. 
 
 
