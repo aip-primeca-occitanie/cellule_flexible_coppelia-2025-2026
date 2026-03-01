@@ -43,6 +43,7 @@ RESULTAT : La console affiche "CHOIX ROBOT INCORRECT".
 
 ## 4) Protocole pour finir l'initialisation 
 //Pas besoin si lié à Coppelia, besoin si testé individuellement
+
 EXPLICATIONS : Pour terminer l'initialisation, nous avons besoin d'avoir tous les handles du robot. On demande donc à Coppelia de nous les envoyer. Comme Coppelia n'est pas encore présent, on simule sa réponse par une publication sur le bon topic. 
 
 TEST : Dans le terminal 2, on fait :
@@ -57,20 +58,24 @@ RESULTAT : La console affiche "Robot 2 OK"
 EXPLICATIONS : On souscrit dans l'initialisation au topic "/commande/Simulation/Evacuer", de format Byte, qui exécute si activé la fonction Evacuer (dans Robot). On vérifie donc qu'en publiant un message sur ce topic, la fonction Evacuer s'effectue correctement.
 
 TEST : (tout dans le terminal 2)
-	* 5.1) Pour rentrer dans la fonction (publier un message sur le topic), on fait :
-```bash
-       ros2 topic pub -n temp_pub --once /commande/Simulation/Evacuer std_msgs/msg/Byte "{}"
-```
-	* 5.2) Ensuite pour sortir du premier while, on fait :
-```bash
-       ros2 topic pub --times 6 /sim_ros_interface/services/response/robot2/GetColor std_msgs/msg/Int32 "{data: 1}"
-```
-	* 5.3) Pour sortir de la fonction Evacuer, on fait : 
-```bash
-       ros2 topic pub -n temp_pub --once /sim_ros_interface/services/response/robot2/ChangeColor std_msgs/msg/Byte "{}"
-```
+* 5.1) Pour rentrer dans la fonction (publier un message sur le topic), on fait :
 
+    ```bash
+    ros2 topic pub -n temp_pub --once /commande/Simulation/Evacuer std_msgs/msg/Byte "{}"
+    ```
+
+* 5.2) Ensuite pour sortir du premier while, on fait :
+
+    ```bash
+    ros2 topic pub --times 6 /sim_ros_interface/services/response/robot2/GetColor std_msgs/msg/Int32 "{data: 1}"
+    ```
+
+* 5.3) Pour sortir de la fonction Evacuer, on fait :
+
+    ```bash
+    ros2 topic pub -n temp_pub --once /sim_ros_interface/services/response/robot2/ChangeColor std_msgs/msg/Byte "{}"
+    ```
 RESULTAT : (visible dans le terminal 1)
-	* Pour le 5.1. nous obtenons "Callback Evacuer recu pour robot 2".
-	* Pour le 5.2. nous obtenons une liste de couleur "couleur[0]=1, couleur[1]=1, couleur[2]=1, couleur[3]=1, couleur[4]=1, couleur[5]=1"
+* Pour le 5.1. nous obtenons "Callback Evacuer recu pour robot 2".
+* Pour le 5.2. nous obtenons une liste de couleur "couleur[0]=1, couleur[1]=1, couleur[2]=1, couleur[3]=1, couleur[4]=1, couleur[5]=1"
 
