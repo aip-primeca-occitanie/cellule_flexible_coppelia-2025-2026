@@ -9,8 +9,8 @@ Chaque bras robotique constitue un noeud et donc fait tourner le programme indé
 
 ## 2. Composition
 Ce dossier est composé de 5 éléments:
-* Un fichier package.xml
-* Un fichier CMakeLists.txt
+* Un fichier package.xml définissant les métadonnées et dépendances du paquet (rclcpp, std_msgs, opencv, etc.).
+* Un fichier CMakeLists.txt configuré pour ROS 2 (Jazzy), gérant la compilation et la génération des interfaces
 * Un dossier msg, permettant de définir des structures de messages pour communiquer
 * Un dossier src, où se trouve le code source C++ et composé des fichiers suivants :
   * main_robot.cpp, qui initialise le robot
@@ -44,7 +44,7 @@ Ces fichiers sont composés de nombreuses fonctions, dans l'ordre :
 * La fonction *colorerPosteFinTask*, qui permet de colorer un produit quand il est fini. Une fois la fabrication terminée, nous gardons la même couleur mais passons à une opacité de 100%.
 * La fonction *faireTacheCallback*, qui est déclenchée quand le noeud reçoit l'ordre de faire une tâche. Elle rend alors la pièce transparente, puis démarre un chronomètre pour vérifier que la tâche est faite dans un temps maximum imparti.
 * La fonction *update*, appelée toutes les secondes par le programme principal. Elle regarde si une tâche est en cours, puis met à jour le temps restant pour faire cette tâche et l'affiche. Quand le temps devient égal à 0, la tâche est déclarée finie. On colore alors correctement le cube correspondant à la tâche et on prévient que la tâche est finie, pour passer à l'étape suivante.
-* La fonction *transport*, qui gère l'affichage du cube lors des déplacements. Elle renvoit un booléen, qui vaut faux si le cube grisé (celui qu'on montre pendant les déplacements) doit être invisible et vrai s'il doit être visible.
+* La fonction *transport*, qui gère l'affichage du cube lors des déplacements. Elle renvoie un booléen, qui vaut faux si le cube grisé (celui qu'on montre pendant les déplacements) doit être invisible et vrai s'il doit être visible.
 * La fonction *Evacuer*, qui permet de faire disparaitre un produit lorsque celui-ci est fini. Elle rend alors le produit invisible.
 * La fonction *stopTacheCallback*, qui permet d'interrompre une tâche en cas de problème. Elle publie un message sur un topic assigné pour prévenir du problème.
 * La fonction *DeplacerPieceCallback*, qui combine plusieurs des fonctions vues précédemment pour déplacer une pièce d'un point A à un point B. Cette fonction envoie le robot dans une position donnée, fais descendre le bras, ferme la pince, remonte le bras, déplace le bras à la position B, descend le bras, ouvre la pince et remonte le bras, tout en respectant les codes couleur.
@@ -56,19 +56,19 @@ Ces fonctions sont appelées soit par l'intermédiaire de messages publiés sur 
 #### 3.2.2. Sécurités mises en place
 Pendant l'exécution, il est possible de s'assurer du bon fonctionnement de la simulation grâce à des messages informatifs et des messages d'erreurs. Les différentes erreurs traitées sont :
 * "Erreur lors de l'appel du service". Cela se produit lors de la fonction *Colorer*. Le robot demande l'identifiant de la navette, et si personne ne lui répond, alors il affiche cette erreur et annule l'action.
-* "Pas de navette à la position demandée" (fonction *Colorer*). Le programme interroge le service ShuttleManager pour savoir quelle navette est devant lui. Si ce service renvoit la valeur 66 (identifiant vide), cela signifie qu'il n'y a pas de navettes là où il devrait y en avoir une.
+* "Pas de navette à la position demandée" (fonction *Colorer*). Le programme interroge le service ShuttleManager pour savoir quelle navette est devant lui. Si ce service renvoie la valeur 66 (identifiant vide), cela signifie qu'il n'y a pas de navettes là où il devrait y en avoir une.
 * "Manipulation d'une piece en cours de traitement !" (fonction *Colorer*). Cela se produit lorsque le robot essaye d'efffectuer une action sur un produit, mais que le chronomètre de fabrication n'est pas encore terminé.
 * "ON A ÉCRASÉ UN PRODUIT !!!" (fonction *Colorer*). Cela se produit lorsqu'on essaye soit de faire apparaitre un nouveau produit soit de déplacer un produit sur un poste où il y a déjà une tâche en cours.
 * "TACHE SUR AUCUN PRODUIT !!!" (fonction *colorerPosteDebutTask*). Cela se produit lorsque le robot reçoit l'ordre de colorer un produit mais qu'il n'y a aucun produit en cours.
 * "PRODUIT PLEIN !!!" (fonction *colorerPosteDebutTask*). Cela se produit lorsque le robot reçoit l'ordre de colorer un produit, mais que les 6 cubes maximum sont déjà pris (pas de possibilité d'avoir plus que 6 tâches par produit).
-* "ERREUR : Nouvelle tache pendant une tache en cours !" (fonction *faireTacheCallback*). Cela se produit lorsqu'on envoit l'ordre à un robot de faire une tâche alors qu'il y a déjà une tâche en cours.
-* "ColorerPosteTask Probleme !!" (fonction *update*). Cela se produit lorsque l'appel à la fonction colorerPosteFinTask renvoit une erreur. Cela signifie que le produit n'a pas été coloré correctement à la fin de la tâche.
+* "ERREUR : Nouvelle tache pendant une tache en cours !" (fonction *faireTacheCallback*). Cela se produit lorsqu'on envoie l'ordre à un robot de faire une tâche alors qu'il y a déjà une tâche en cours.
+* "ColorerPosteTask Probleme !!" (fonction *update*). Cela se produit lorsque l'appel à la fonction colorerPosteFinTask renvoie une erreur. Cela signifie que le produit n'a pas été coloré correctement à la fin de la tâche.
 
 
 ### 3.3. Fichiers Poste.cpp et Poste.h
 Ces fichiers servent de ressource aux fichiers Robot. Les fonctions contenues dedans servent à garder des informations en mémoire et à les retourner en cas d'appel par une autre fonction. Par exemple, on peut ainsi obtenir le nom du poste, la couleur, le numéro du poste, la durée et la tâche en cours. Les autres fonctions sont :
 * *debutTask*, appelée lorsqu'une tâche démarre. Elle se charge de mettre à jour des variables communes.
-* *updateTask*, appelée pour mettre à jour le temps restant pour une tâche, et qui renvoit true lorsque la tâche est terminée.
+* *updateTask*, appelée pour mettre à jour le temps restant pour une tâche, et qui renvoie true lorsque la tâche est terminée.
 * *stopTask*, qui met la tâche en cours à false.
 
 Les fonctions de ces fichiers sont appelées directement depuis le fichier Robot. Tous les postes sont instanciés dès le début, lors du passage dans la fonction init de Robot.
@@ -82,25 +82,28 @@ Il y a deux manières différentes de lancer le code. Il faut préalablement avo
   source install/setup.bash
 ```
 
-* Par un lancement individuel
-Exécuter la ligne suivante permet de lancer un robot :
-```bash
-  ros2 run robots robot 1
-```
-Le dernier chiffre correspond au numéro du robot que nous lançons. Ici nous initialisation donc le robot 1. L'avant dernier mot ("robot") correspond au nom de l'exécutable.
+* Par un lancement individuel:
 
-* Par un lancement couplé
-Exécuter la ligne suivante permet de lancer 2 robots simultanément via un fichier launch : 
-```bash
-  ros2 launch robots robotsGauche.launch.py
-```
-Ce code permet de lancer les deux robots à gauche, soit les robots 1 et 2.
+  Exécuter la ligne suivante permet de lancer un robot :
+  ```bash
+    ros2 run robots robot 1
+  ```
+  Le dernier chiffre correspond au numéro du robot que nous lançons. Ici nous initialisation donc le robot 1. L'avant dernier mot ("robot") correspond au nom de l'exécutable.
 
-Pour lancer les deux robots de droite (3 et 4), il suffit de faire :
-```bash
-  ros2 launch robots robotsDroite.launch.py
-```
+* Par un lancement couplé :
+
+  Exécuter la ligne suivante permet de lancer 2 robots simultanément via un fichier launch : 
+  ```bash
+    ros2 launch robots robotsGauche.launch.py
+  ```
+  Ce code permet de lancer les deux robots à gauche, soit les robots 1 et 2.
+
+  Pour lancer les deux robots de droite (3 et 4), il suffit de faire :
+  ```bash
+    ros2 launch robots robotsDroite.launch.py
+  ```
 
 ## 5. Protocole de Test
-Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test pour la fonction Evacuer, ainsi que pour le shutdown, en reprenant les commandes à faire depuis le début. Ce test se trouve dans le fichier "tests_du_package_robots.txt".
-Dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim. Ce protocole n'est donc valable que **si CoppeliaSim n'est pas opérationnel** (n'envoit pas les messages correctement sur les topics).
+Il a fallu, pour la migration du code de ROS1 à ROS2, tester unitairement ce package. Pour cela, un protocole de test a été établi, à retrouver dans le fichier "tests_du_package_robots".
+
+Ainsi, dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim. Ce protocole n'est donc valable que **si CoppeliaSim n'est pas opérationnel** (n'envoie pas les messages correctement sur les topics).
