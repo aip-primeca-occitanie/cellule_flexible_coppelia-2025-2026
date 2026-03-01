@@ -1,14 +1,14 @@
 # Package commande_locale
 
 ## 1. Description générale
-Le but de ce package est de faire l'intermédiaire entre la simulation physique (CoppeliaSim), le réseau de Pétri au niveau complété par les étudiants et l'utilisateur.
+Le but de ce package est de faire l'intermédiaire entre la simulation physique (CoppeliaSim), le réseau de Pétri haut niveau complété par les étudiants et l'utilisateur.
 Ainsi, il gère le cycle de vie de la simulation, traduit les signaux venant des capteurs et actionneurs et enregistre l'historique de production.
 C'est notamment ce programme qui ouvre CoppeliaSim et charge la scène voulue dedans.
 
 ## 2. Composition
 Ce dossier est composé de 5 éléments:
-* Un fichier package.xml
-* Un fichier CMakeLists.txt
+* Un fichier package.xml, définissant les métadonnées et dépendances du paquet (rclcpp, std_msgs, opencv, etc.).
+* Un fichier CMakeLists.txt, configuré pour ROS 2 (Jazzy), gérant la compilation et la génération des interfaces.
 * Un dossier msg, permettant de définir des structures de messages pour communiquer
 * Un dossier srv, permettant de définir des structures de services pour communiquer
 * Un dossier src, où se trouve le code source C++ et composé des fichiers suivants :
@@ -47,9 +47,9 @@ Ce fichier est également composé de fonctions simples, appelées par des pulic
 ### 3.2. Fichiers inOutController.cpp et inOutController.h
 Ces fichiers sont composés de plusieurs fonctions. 
 
-Nous avons tout d'abord les fonctions *SensorCallbackRail*, *SensorCallbackStop* et *SensorCallbackSwitch* pour les capteurs. Nous récupérons de CoppeliaSim tous les états des capteurs sur un entier, et le but de ces programmes est alors de traduire ce code en binaire, pour indiquer au réseau de Pétri un par un l'état de chaque capteur.
+Nous avons premièrement les fonctions *SensorCallbackRail*, *SensorCallbackStop* et *SensorCallbackSwitch* pour les capteurs. Nous récupérons de CoppeliaSim tous les états des capteurs sur un entier, et le but de ces programmes est alors de traduire ce code en binaire, pour indiquer au réseau de Pétri un par un l'état de chaque capteur.
 
-Ensuite, nous avons les fonctions *StateSwitchCallBack*, *StateStopCallBack* et *StatePinCallBack* pour les actionneurs. Ces fonctions font exactement l'inverse : elles reçoivent du dossier commande (RdP) un message binaire, qu'elles traduisent en un entier.
+Nous avons de même les fonctions *StateSwitchCallBack*, *StateStopCallBack* et *StatePinCallBack* pour les actionneurs. Ces fonctions font exactement l'inverse : elles reçoivent du dossier commande (RdP) un message binaire, qu'elles traduisent en un entier.
 
 La fonction *SensorCallbackRail* gère les 10 capteurs de position CP. La fonction *StatePinCallBack* gère les 8 capteurs de position intérieurs CPI.
 La fonction *SensorCallbackRail* gère les 24 capteurs "stops" PS. La fonction *StateStopCallBack* gère les mises en route ou les arrêts des 24 segments de la simulation.
@@ -80,7 +80,7 @@ Ce fichier contient des commandes pour ouvrir une fenêtre OpenCV, par les fonct
 * *getSimuStream*, qui traduit les images ROS en matrice pour OpenCV
 * *main*, qui initialise OpenCV et crée une fenêtre où elle le lance. Elle s'abonne également à des topics et lance en boucle la fonction *update*.
 
-Ce fichier n'est pas pris en compte dans la simulation étudiante, car le fichier launch ne le lance pas.
+Ce fichier n'est pas pris en compte dans la simulation étudiante, car le fichier launch principal ne le lance pas.
 
 
 ### 3.5. Fichier LogManager.cpp
@@ -131,5 +131,6 @@ Pour lancer le fichier LogManager, il faut faire :
 ```
 
 ## 5. Protocole de Test
-Nous avons dû, pour notre migration, tester ce package indépendamment de CoppeliaSim. Pour cela, nous avons établi un protocole de test pour sortir de l'initialisation et afficher le menu, en reprenant les commandes à faire depuis le début. Ce test se trouve dans le fichier "tests_du_package_commande_locale.txt".
+Il a fallu, pour la migration du code de ROS1 à ROS2, tester unitairement ce package. Pour cela, un protocole de test a été établi,  pour sortir de l'initialisation et afficher le menu, à retrouver dans le fichier "tests_du_package_commande_locale". 
+
 Dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim. Ce protocole n'est donc valable que **si CoppeliaSim n'est pas opérationnel** (n'envoit pas les messages correctement sur les topics).
