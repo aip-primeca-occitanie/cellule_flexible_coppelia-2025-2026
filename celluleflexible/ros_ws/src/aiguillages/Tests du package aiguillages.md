@@ -18,7 +18,7 @@ Dans un TERMINAL 2, faire :
 Vous devriez voir la liste des topics actifs apparaitre. Cela permet de voir si tous les topics ont été correctement créés.
 
 
-  * Phase 1 : test de commande
+  * Phase 2 : test de commande
 Pour ce test, on ouvre 4 terminaux à la source du dossier ros_ws.
 Dans le TERMINAL 1, on run le noeud :
 ```bash
