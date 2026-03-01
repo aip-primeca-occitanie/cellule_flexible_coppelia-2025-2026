@@ -1,7 +1,7 @@
 Afin de tester l'intégration indépendamment de CoppeliaSim, vous pouvez simuler son comportement en ligne de commande depuis des terminaux : 
 
 * Test du noeud aiguillage sans Coppelia : 
- * Phase 1 : vérifier la connectivité
+  * Phase 1 : vérifier la connectivité
 Pour ce test, on ouvre 2 terminaux à la source du dossier ros_ws.
 Dans un TERMINAL 1, faire :
 ```bash
@@ -18,7 +18,7 @@ Dans un TERMINAL 2, faire :
 Vous devriez voir la liste des topics actifs apparaitre. Cela permet de voir si tous les topics ont été correctement créés.
 
 
- * Phase 2 : test de commande
+  * Phase 2 : test de commande
 Pour ce test, on ouvre 4 terminaux à la source du dossier ros_ws.
 Dans le TERMINAL 1, on run le noeud :
 ```bash
