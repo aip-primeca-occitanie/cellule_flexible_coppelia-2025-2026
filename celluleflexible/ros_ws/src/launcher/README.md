@@ -54,25 +54,27 @@ Pour compiler et utiliser le code, il faut préalablement avoir exécuté les co
 
 ```bash
   source /opt/ros/jazzy/setup.bash
-  colcon build --packages-select launcher
+  colcon build
   source install/setup.bash
 ```
 
 * **Lancement de l'environnement complet (Beta)** :
+
 Pour lancer la simulation avec le nombre de robots par défaut (4 robots), exécutez :
 
 ```bash
   ros2 launch launcher launch_beta.launch.py
-
 ```
 
 * **Lancement partiel avec arguments** :
+
 Pour lancer la simulation avec seulement 2 robots (ce qui ignorera le démarrage des robots 3 et 4), ajoutez l'argument en fin de commande :
 
 ```bash
   ros2 launch launcher launch_beta.launch.py nbRobot:=2
-
 ```
+
+Ces deux fonctions devraient permettre de lancer la simulation en intégralité.
 
 ## 5. Protocole de Test
 
