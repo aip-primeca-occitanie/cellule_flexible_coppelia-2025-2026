@@ -33,7 +33,7 @@ Afin de tester l'intégration indépendamment de CoppeliaSim, vous pouvez simule
     Dans le TERMINAL 2, on écoute le topic :
     ```bash
       source install/setup.bash
-      ros2 topic echo /commande/AiguillageDroite
+      ros2 topic echo /commande/Simulation/AiguillageDroite
     ```
 
     Dans le TERMINAL 3, on publie un message sur un topic sur lequel on souscrit. On demande de faire tourner l'aiguillage 5 à droite.
@@ -41,6 +41,7 @@ Afin de tester l'intégration indépendamment de CoppeliaSim, vous pouvez simule
       source install/setup.bash
       ros2 topic pub -1 /commande/Simulation/AiguillageDroite std_msgs/msg/Int32 "{data: 5}"
     ```
+    Vous devriez alors voir apparaitre dans le TERMINAL 2 le message "data: 5".
 
     Dans le TERMINAL 4, on simule un message de réponse de Coppelia, qui renverrait que l'aiguillage 5 a correctement tourné.
     ```bash
