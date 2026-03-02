@@ -50,7 +50,7 @@ RobotsInterface::RobotsInterface(rclcpp::Node::SharedPtr node, int nombre_robot)
 	client = node->create_client<commande_locale::srv::SrvAddProduct>("srv_add_product");
 	serverPushBack = node->create_service<commande_locale::srv::SrvAddProductPushBack>("srv_add_product_push_back",std::bind(&RobotsInterface::ProductAddPushBack, this, std::placeholders::_1, std::placeholders::_2));
 
-	rclcpp::sleep_for(std::chrono::seconds(1));
+	//rclcpp::sleep_for(std::chrono::seconds(1));
 }
 
 RobotsInterface::~RobotsInterface()
@@ -443,7 +443,7 @@ void RobotsInterface::FaireTache(int num_poste, int duree)
 		tache_msg.duree=duree;
 		pub_faireTache->publish(tache_msg);
 
-		rclcpp::sleep_for(std::chrono::seconds(1));
+		//rclcpp::sleep_for(std::chrono::seconds(1));
 	}
 	else
 		cout <<  BOLDMAGENTA << "Le numero du poste doit etre compris entre 1 et "<< nbRobot*2 << "." << RESET << endl;
@@ -454,8 +454,7 @@ void RobotsInterface::Evacuer()
 	std_msgs::msg::Byte msg;
 	pub_evacuer_piece->publish(msg);
 
-	// Pour eviter les conflits d'appel de service Coppelia en même temps
-	rclcpp::sleep_for(std::chrono::seconds(1));
+	//rclcpp::sleep_for(std::chrono::seconds(1));
 
 	cout << BOLDCYAN << "Evacuation !" << RESET << endl;
 }

@@ -27,16 +27,7 @@ std::string filepath = path.substr(0, path.length() - (15 + 11)) + "log.txt";
 ofstream monFlux(filepath, ios::app);  //On essaye d'ouvrir le fichier
 
 void ProduitEvacCallback(const std_msgs::msg::Int32MultiArray::SharedPtr msg)
-{
-	rclcpp::Rate loop_rate(25);
-	pubSim_getTime->publish(std_msgs::msg::Byte());
-	while(!repSim_getTime && rclcpp::ok())
-	{
-		rclcpp::NodeOptions options;
-		options.use_global_arguments(false);
-		rclcpp::spin_some(rclcpp::Node::make_shared("tmp", options));
-		loop_rate.sleep();
-	}
+{	
 	repSim_getTime=false;
 	float temps=valueSim_getTime;
 
@@ -52,16 +43,7 @@ void ProduitEvacCallback(const std_msgs::msg::Int32MultiArray::SharedPtr msg)
 }
 
 void NewProductCallback(const commande_locale::msg::MsgAddProduct::SharedPtr msg)
-{
-	rclcpp::Rate loop_rate(25);
-	pubSim_getTime->publish(std_msgs::msg::Byte());
-	while(!repSim_getTime && rclcpp::ok())
-	{
-		rclcpp::NodeOptions options;
-		options.use_global_arguments(false);
-		rclcpp::spin_some(rclcpp::Node::make_shared("tmp", options));
-		loop_rate.sleep();
-	}
+{	
 	repSim_getTime=false;
 	float temps=valueSim_getTime;
 
@@ -178,7 +160,7 @@ int main(int argc, char **argv)
     auto subSim_getTime = node->create_subscription<std_msgs::msg::Float32>("/sim_ros_interface/services/response/LogManager/GetTime", 100, getTimeCallback);
 	repSim_getTime=false;
 
-	rclcpp::sleep_for(std::chrono::seconds(1));
+	//rclcpp::sleep_for(std::chrono::seconds(1));
 
 	rclcpp::Rate loop_rate(25); //fréquence de la boucle
 
@@ -187,6 +169,7 @@ int main(int argc, char **argv)
 
 	while (rclcpp::ok())
 	{
+		pubSim_getTime->publish(std_msgs::msg::Byte());
 		rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées
 		loop_rate.sleep(); //permet de synchroniser la boucle while. Il attend le temps qu'il reste pour faire le 25Hz (ou la fréquence indiquée dans le loop_rate)
 	}

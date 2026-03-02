@@ -931,7 +931,7 @@ void Robot::faireTacheCallback(const robots::msg::FaireTacheMsg::SharedPtr msg)
 	if((msg->num_robot==num_robot)
 			&& (msg->position==1||msg->position==4)) // pas sur une navette
 	{
-		rclcpp::sleep_for(std::chrono::milliseconds(2000));
+		rclcpp::sleep_for(std::chrono::milliseconds(3000));
 		
 		RCLCPP_INFO(this->get_logger(), "Debut tache pos=%d", msg->position);
 		int retourDebTask = colorerPosteDebutTask(msg->position);
@@ -1262,7 +1262,7 @@ void Robot::init()
 	//Client (pour les services)
 	client = this->create_client<shuttles::srv::ShuttleId>("get_id_shuttle_at_poste", rclcpp::ServicesQoS(), callback_group_);
 	
-	rclcpp::sleep_for(std::chrono::seconds(4));
+	rclcpp::sleep_for(std::chrono::seconds(2));
 
 	//Utilisation du service simRosGetObjectHandle pour obtenir les handles du robot
 	for (int i=1;i<8;i++)

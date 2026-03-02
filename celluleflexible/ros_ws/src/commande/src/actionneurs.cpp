@@ -12,7 +12,7 @@ Actionneurs::Actionneurs(rclcpp::Node::SharedPtr node)
 	pub_actionneurs_simu_stops = node->create_publisher<commande_locale::msg::MsgStopControl>("/commande/Simulation/Actionneurs_stops", 100);
 	pub_actionneurs_simu_pins = node->create_publisher<commande_locale::msg::MsgPinControl>("/commande/Simulation/Actionneurs_pins", 100);
 
-	rclcpp::sleep_for(std::chrono::seconds(1));
+	//rclcpp::sleep_for(std::chrono::seconds(1));
 
 	Actionneurs_ligne=0;
 

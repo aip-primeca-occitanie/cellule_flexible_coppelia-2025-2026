@@ -171,7 +171,7 @@ int main(int argc, char** argv)
                     case 4:
                         pub_stopSim->publish(std_msgs::msg::Byte());
                         pub_shutdown->publish(std_msgs::msg::Byte());
-                        rclcpp::sleep_for(1s);
+                        //rclcpp::sleep_for(1s);
                         rclcpp::shutdown();
                         break;
                     case 5:
@@ -207,7 +207,7 @@ int main(int argc, char** argv)
                 std::cout << "Fin Programme" << std::endl;
                 pub_stopSim->publish(std_msgs::msg::Byte());
                 pub_shutdown->publish(std_msgs::msg::Byte());
-                rclcpp::sleep_for(1s);
+                //rclcpp::sleep_for(1s);
                 rclcpp::shutdown();
                 break;
             }

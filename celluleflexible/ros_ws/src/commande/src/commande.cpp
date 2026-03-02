@@ -47,7 +47,7 @@ Commande::Commande(rclcpp::Node::SharedPtr node, std::string executionPath)
 	pub_actionneurs_simu_aiguillages = node->create_publisher<commande_locale::msg::MsgSwitchControl>("/commande/Simulation/Actionneurs_aiguillages", 100);
 	pub_actionneurs_simu_pins = node->create_publisher<commande_locale::msg::MsgPinControl>("/commande/Simulation/Actionneurs_pins", 100);
 
-	rclcpp::sleep_for(std::chrono::seconds(1));
+	//rclcpp::sleep_for(std::chrono::seconds(1));
 
 	// Initialisation des Actionneurs
 	for(int i=1;i<=24;i++) actionneurs_simulation_Stop.stop[i] = 0;

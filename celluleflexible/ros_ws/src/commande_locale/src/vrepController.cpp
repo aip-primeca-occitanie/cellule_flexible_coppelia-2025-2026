@@ -104,7 +104,7 @@ void vrepController::init(rclcpp::Node::SharedPtr n, const string& executionPath
 
     pub_erreur_log = node->create_publisher<commande_locale::msg::MsgErreur>("/commande/Simulation/Erreur_log", 100);
 
-    rclcpp::sleep_for(1s);
+    //rclcpp::sleep_for(1s);
 }
 
 // ------------------- Table / Robot helpers -------------------

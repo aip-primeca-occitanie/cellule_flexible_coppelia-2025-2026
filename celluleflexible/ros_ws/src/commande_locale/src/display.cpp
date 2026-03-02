@@ -23,7 +23,7 @@ void update()
     }
     catch(cv::Exception)
     {
-        rclcpp::sleep_for(std::chrono::seconds(1));
+        //rclcpp::sleep_for(std::chrono::seconds(1));
     }
 }
 
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     pub = node->create_publisher<std_msgs::msg::Byte>("/actuator", 100);
 
     auto sub_shutdown = node->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, std::bind(&ShutdownCallback, std::placeholders::_1));
-	rclcpp::sleep_for(std::chrono::milliseconds(3000));
+	//rclcpp::sleep_for(std::chrono::milliseconds(3000));
 
 	rclcpp::Rate loop_rate(25); //fréquence de la boucle
 
