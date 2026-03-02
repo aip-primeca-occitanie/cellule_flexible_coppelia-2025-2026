@@ -10,11 +10,11 @@ if (sim_call_type==sim.syscb_init) then
         
         -- Création du Publisher
         -- Le topic est /camera/image_raw
-        pubImage=simROS2.createPublisher('/camera/image_raw', 'sensor_msgs/msg/Image')
+        --pubImage=simROS2.createPublisher('/camera/image_raw', 'sensor_msgs/msg/Image')
         
         -- Variables pour limiter la fréquence
-        lastImageTime = sim.getSimulationTime()
-        fps_limit = 5.0 -- Envoie seulement 5 images par seconde
+        --lastImageTime = sim.getSimulationTime()
+        --fps_limit = 5.0 -- Envoie seulement 5 images par seconde
     end
 end
 
@@ -24,11 +24,11 @@ end
 
 if (sim_call_type==sim.syscb_sensing) then
     if visionSensorHandle and pubImage then
-    	local currentTime = sim.getSimulationTime()
+    	--local currentTime = sim.getSimulationTime()
         
         -- On ne rentre ici que si le délai est passé !
-        if currentTime - lastImageTime >= (1.0 / fps_limit) then
-            	lastImageTime = currentTime -- On met à jour le chrono
+        --if currentTime - lastImageTime >= (1.0 / fps_limit) then
+            	--lastImageTime = currentTime -- On met à jour le chrono
             
 		-- On récupère l'image sous forme de chaîne binaire (string)
 		local data,w,h=sim.getVisionSensorCharImage(visionSensorHandle)
@@ -48,9 +48,9 @@ if (sim_call_type==sim.syscb_sensing) then
 		    -- On convertit la chaîne "data" en tableau de nombres pour ROS 2
 		    d['data']=sim.unpackUInt8Table(data)
 		    
-		    simROS2.publish(pubImage,d)
+		    --simROS2.publish(pubImage,d)
 		end
-	end
+	--end
     end
 end
 

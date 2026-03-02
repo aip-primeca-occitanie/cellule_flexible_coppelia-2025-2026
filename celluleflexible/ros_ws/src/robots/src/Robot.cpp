@@ -931,7 +931,7 @@ void Robot::faireTacheCallback(const robots::msg::FaireTacheMsg::SharedPtr msg)
 	if((msg->num_robot==num_robot)
 			&& (msg->position==1||msg->position==4)) // pas sur une navette
 	{
-		rclcpp::sleep_for(std::chrono::milliseconds(3000));
+		rclcpp::sleep_for(std::chrono::milliseconds(2500));
 		
 		RCLCPP_INFO(this->get_logger(), "Debut tache pos=%d", msg->position);
 		int retourDebTask = colorerPosteDebutTask(msg->position);
@@ -1284,10 +1284,19 @@ void Robot::init()
 				break;
 		}
 
-		pubSim_getObjectHandle->publish(msgSim_getObjectHandle);	//On publie le message msgSim_getObjectHandle sur le topic pubSim_getObjectHandle
-		while(!repSim_getObjectHandle&&rclcpp::ok())
+		// On publie une première fois
+		pubSim_getObjectHandle->publish(msgSim_getObjectHandle);
+		
+		int tentatives = 0;
+		while(!repSim_getObjectHandle && rclcpp::ok())
 		{
-			loop_rate->sleep() ;
+			// Si on attend depuis plus de 1 seconde (25 boucles de 40ms)
+			if (tentatives++ > 25) 
+			{
+				pubSim_getObjectHandle->publish(msgSim_getObjectHandle); // On répète la question !
+				tentatives = 0;
+			}
+			loop_rate->sleep();
 		}
 		
 		repSim_getObjectHandle = false;
