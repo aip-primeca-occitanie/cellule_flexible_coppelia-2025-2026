@@ -19,7 +19,7 @@ Communication_Baxter::Communication_Baxter(rclcpp::Node::SharedPtr node)
 	sub_attente_prise_bras_droit = node->create_subscription<std_msgs::msg::Bool>("/pont_BaxterLigneTransitique/right_arm/attente_prise", 1, std::bind(&Communication_Baxter::Callback_attente_prise_bras_droit, this, std::placeholders::_1));
 	sub_attente_prise_bras_gauche = node->create_subscription<std_msgs::msg::Bool>("/pont_BaxterLigneTransitique/left_arm/attente_prise", 1, std::bind(&Communication_Baxter::Callback_attente_prise_bras_gauche, this, std::placeholders::_1));
 
-	rclcpp::sleep_for(std::chrono::seconds(1));
+	//rclcpp::sleep_for(std::chrono::seconds(1));
 
 	msg_prise_demandee_bras_droit.data = false ;
 	msg_prise_effectuee_bras_droit.data = false ;

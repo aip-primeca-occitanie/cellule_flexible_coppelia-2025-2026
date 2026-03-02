@@ -16,7 +16,7 @@ AigsInterface::AigsInterface(rclcpp::Node::SharedPtr node)
 	pub_aig_Droite=node->create_publisher<std_msgs::msg::Int32>("/commande/Simulation/AiguillageDroite",100);
 	pub_aig_Gauche=node->create_publisher<std_msgs::msg::Int32>("/commande/Simulation/AiguillageGauche",100);
 
-	rclcpp::sleep_for(std::chrono::seconds(1));
+	//rclcpp::sleep_for(std::chrono::seconds(1));
 }
 
 AigsInterface::~AigsInterface()

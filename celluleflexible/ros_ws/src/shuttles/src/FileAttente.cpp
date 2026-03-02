@@ -65,7 +65,7 @@ void FileAttente::delete_navette_in_queue()
 	{
 		// Si on est la ça veut dire que le shuttlemanager s'est perdu
 		RCLCPP_WARN(logger, "Attention, ça va segfault dans 10 secondes, désolé");
-		rclcpp::sleep_for(std::chrono::seconds(10));
+		//rclcpp::sleep_for(std::chrono::seconds(10));
 	}
 	queue_.pop();
 }

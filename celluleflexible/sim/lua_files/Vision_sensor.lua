@@ -11,6 +11,10 @@ if (sim_call_type==sim.syscb_init) then
         -- Création du Publisher
         -- Le topic est /camera/image_raw
         pubImage=simROS2.createPublisher('/camera/image_raw', 'sensor_msgs/msg/Image')
+        
+        -- Variables pour limiter la fréquence
+        lastImageTime = sim.getSimulationTime()
+        fps_limit = 5.0 -- Envoie seulement 5 images par seconde
     end
 end
 
@@ -20,27 +24,33 @@ end
 
 if (sim_call_type==sim.syscb_sensing) then
     if visionSensorHandle and pubImage then
-        -- On récupère l'image sous forme de chaîne binaire (string)
-        local data,w,h=sim.getVisionSensorCharImage(visionSensorHandle)
+    	local currentTime = sim.getSimulationTime()
         
-        if data then
-            local d={}
-            d['header']={
-                frame_id="vision_sensor_frame",
-                stamp=simROS2.getTime()
-            }
-            d['height']=h
-            d['width']=w
-            d['encoding']='rgb8'
-            d['is_bigendian']=0
-            d['step']=w*3
+        -- On ne rentre ici que si le délai est passé !
+        if currentTime - lastImageTime >= (1.0 / fps_limit) then
+            	lastImageTime = currentTime -- On met à jour le chrono
             
-            -- C'EST ICI LA CORRECTION :
-            -- On convertit la chaîne "data" en tableau de nombres pour ROS 2
-            d['data']=sim.unpackUInt8Table(data)
-            
-            simROS2.publish(pubImage,d)
-        end
+		-- On récupère l'image sous forme de chaîne binaire (string)
+		local data,w,h=sim.getVisionSensorCharImage(visionSensorHandle)
+		
+		if data then
+		    local d={}
+		    d['header']={
+		        frame_id="vision_sensor_frame",
+		        stamp=simROS2.getTime()
+		    }
+		    d['height']=h
+		    d['width']=w
+		    d['encoding']='rgb8'
+		    d['is_bigendian']=0
+		    d['step']=w*3
+		    
+		    -- On convertit la chaîne "data" en tableau de nombres pour ROS 2
+		    d['data']=sim.unpackUInt8Table(data)
+		    
+		    simROS2.publish(pubImage,d)
+		end
+	end
     end
 end
 

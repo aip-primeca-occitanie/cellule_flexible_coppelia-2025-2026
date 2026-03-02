@@ -174,5 +174,5 @@ void inOutController::init(rclcpp::Node::SharedPtr n)
     for(int i=1;i<9;i++)
         SensorState.cpi[i] = 0;
 
-    rclcpp::sleep_for(std::chrono::seconds(1));
+    //rclcpp::sleep_for(std::chrono::seconds(1));
 }
