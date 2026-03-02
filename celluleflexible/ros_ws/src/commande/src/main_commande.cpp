@@ -1,16 +1,23 @@
-/*###########################################################################
-## ___ __ __                      __                      ___              ##
-##  | |_ |__)   /\ |_ _ |o _  _  |_ | _   o|_ | _    __    |    |_ _       ##
-##  | |__| \   /--\|_(-`||(-`|   |  |(-`><||_)|(-`         | |_||_(_)      ##
-##                                                                         ##
-############################################################################*/
+/*########################################################################
+##  ______                        _____ ___    __    __    ___   ______ ##
+## /_  __/__  ____ _____ ___     / ___//   |  / /   / /   /   | / ____/ ##
+##  / / / _ \/ __ `/ __ `__ \    \__ \/ /| | / /   / /   / /| |/ / __   ##
+## / / /  __/ /_/ / / / / / /   ___/ / ___ |/ /___/ /___/ ___ / /_/ /   ##
+##/_/  \___/\__,_/_/ /_/ /_/   /____/_/  |_/_____/_____/_/  |_\____/    ##
+######### Steve - Anthony - Lucie - Lucas - Antonin - Guillaume ##########
+##########Croce - Favier - Ricart - Veit - Messioux - Auffray-Amen########
+##########################################################################
+### As a wise man once said : "Follow the white rabbit with hhbbgd...."###
+##########################################################################*/
 
 /*!
- * \file Tuto_Basique.main_commande.cpp
- * \brief code correspondant au tuto du sujet de TER atelier flexible
- * \author Team Tuto_Basique (N7 2023-2024)
+ * \file TeamSALLAG_main_commande.cpp
+ * \brief code écrit à titre purement illustratif pour valider le bon
+ * *fonctionnement de de la simulation de la cellule flexible
+ * \author Team SALLAG (N7 2019-2020)
  * \version 0.1
  */
+
 
 #include "capteurs.h"
 #include "actionneurs.h"
@@ -91,7 +98,7 @@ void display()
 
 void ShutdownCallback(const std_msgs::msg::Byte::SharedPtr msg)
 {
-        rclcpp::shutdown(); // <-- Changement ROS2
+        rclcpp::shutdown();
 }
 
 int main(int argc, char **argv)
@@ -101,10 +108,9 @@ int main(int argc, char **argv)
      ************************************************* */
 
 
-    rclcpp::init(argc, argv); // <-- Changement ROS2
-    auto node = rclcpp::Node::make_shared("commande"); // <-- Changement ROS2
+    rclcpp::init(argc, argv); 
+    auto node = rclcpp::Node::make_shared("commande"); 
 
-    // <-- Changements ROS2 pour les publishers et subscribers
     auto pub_spawnShuttles = node->create_publisher<std_msgs::msg::Int32>("/commande_locale/nbNavettes",10);
     auto sub_shutdown = node->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, ShutdownCallback);
 
@@ -115,17 +121,17 @@ int main(int argc, char **argv)
     AigsInterface aiguillage(node);
     Capteurs capteur(node);
 
-    rclcpp::Rate loop_rate(25); //fréquence de la boucle <-- Changement ROS2
+    rclcpp::Rate loop_rate(25); //fréquence de la boucle
 
     // On attend la fin de l'initialisation des robots
     while(!robot.RobotInitialise(1) || !robot.RobotInitialise(2))
     {
-        rclcpp::spin_some(node); // <-- Changement ROS2
+        rclcpp::spin_some(node); 
         loop_rate.sleep();
     }
     while(nbRobot==4 && (!robot.RobotInitialise(3) || !robot.RobotInitialise(4)))
     {
-        rclcpp::spin_some(node); // <-- Changement ROS2
+        rclcpp::spin_some(node); 
         loop_rate.sleep();
     }
 
@@ -170,167 +176,302 @@ int main(int argc, char **argv)
     /////////////////////  |  FIN INIT ETU  |  ////////////////////
     ///////////////////////////////////////////////////////////////////
 
-    while (rclcpp::ok()) // <-- Changement ROS2
+    while (rclcpp::ok()) 
     {
         // Seulement si la simulation est en cours
         if(cmd.getPlay()==true)
         {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //////////////////////////////////////// | DEBUT PETRI  ETU | /////////////////////////////////////////
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////// | DEBUT PETRI  ETU | /////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            if(M[0])
-            {
-            /*!
-                        * \b T1: init aiguillages et produit
-                        * \arg positionnement des aiguillages et ajout des produits
-                        * \arg \b Precondition: M[0]
-                        * \arg \b Postcondition: M[2]++
-                        */
-                M[0]--;
-
-                aiguillage.Gauche(3);
-                aiguillage.Gauche(10);
-                aiguillage.Gauche(11);
-                aiguillage.Gauche(12);
-                aiguillage.Gauche(1);
-				
-                cmd.Stop_PS(19);
-				
-				
-
-                robot.AjouterProduit(Prod_seqdeposte[0][0], Prod_type[0]);
-                robot.FaireTache(Prod_seqdeposte[0][0], Prod_dureeparposte[0][0]);
-                cout << "duree poste=" << Prod_dureeparposte[0][0] << endl;
-
-                M[2]++;
-                display();
-            }
-            if(M[2] && capteur.get_PS(6))
-            {
+            
+			if (M[0]) // apparaitre produit B sur poste 3
+			{
                 /*!
-                        * \b T2: aiguillage A02 mise en place
-                        * \arg  courte description
-                        * \arg \b Precondition: M[2] && capteur.get_PS(6)
-                        * \arg \b Postcondition: M[3]++
-                        */
-                M[2]--;
-                cout<<"problème aiguillage"<<endl;
+                 * \brief T1: lancement des produits
+                 * \param[in] M[0]
+                 * \param[out] M[10], M[576], M[532]
+                 * Les produits B et F sont lancés sur les postes 3 et 7
+                 */
+				M[0]--;
+				robot.AjouterProduit(POSTE_3,2); // ajout produit n°2 (donc B) sur poste 3
+                M[532]++;
+				robot.AjouterProduit(POSTE_7,6);
+                M[576]++;
+				cmd.Stop_PS(10);
+				M[10]++;
+				display();
+			}
 
-                aiguillage.Gauche(2);
+			if (M[10] && capteur.get_PS(1)) // quand navette à proximité du poste 3, on le fait arrêter au niveau du poste
+			{
+                /*!
+                 * \brief T2: arrêt navette au poste 3 et lancement Tache POSTE_7
+                 * \param[in] M[10], M[576], M[532]
+                 * \param[out] M[20]
+                 * Arreter la navette au poste 3
+                 */
+				M[10]--;
+				M[532]--; // Enleve le marquage des produits
+				M[576]--; // Enleve le marquage des produits
+				cmd.Stop_PS(2);
+				robot.FaireTache(POSTE_7,3);
+				M[20]++;
+				display();
+			}
 
-                M[3]++;
-                display();
-            }
-            if(M[3] && robot.TacheFinie(Prod_seqdeposte[0][0]))
-            {
-            /*!
-                        * \b T4: positionnement aiguillages vers prochain poste 3
-                        * \arg courte description
-                        * \arg \b Precondition: M[3] && robot.TacheFinie(Prod_seqdeposte[0][0])
-                        * \arg \b Postcondition: M[4]++
-                        */
-                M[3]--;
+			if (M[20] && capteur.get_PS(2) && robot.TacheFinie(POSTE_7)) // le robot 2 prend le produit B sur le poste 3 et le met sur la navette
+			{
+                /*!
+                 * \b T3: chargement navette avec produit B
+                 * \arg  Déplacer produit B par le ROBOT_2 de la position 1 à la position 2
+                 * et déplacer produit F par le ROBOR_4 de la position 1 à la position 3
+                 * \arg \b Precondition: M[20] && capteur.get_PS(2) && robot.TacheFinie(POSTE_7)
+                 * \arg \b Postcondition: M[30]++
+                 */
+				M[20]--;
+				robot.DeplacerPiece(ROBOT_2,1,2);
+				robot.DeplacerPiece(ROBOT_4,1,3);
+				// cmd.SortirErgot(1); SUN to delete
+				M[30]++;
+				display();
+			}
 
-                aiguillage.Droite(11);
-                aiguillage.Droite(12);
-                aiguillage.Droite(01);
+			if (M[30]  && robot.FinDeplacerPiece(ROBOT_2) && robot.FinDeplacerPiece(ROBOT_4)) // la navette repars du poste 3 avec le produit B
+			{
+                /*!
+                 * \b T3: chargement navette avec produit B
+                 * \arg \brief Déplacer produit B par le ROBOT_2 de la position 1 à la position 2
+                 * \arg \b Precondition: M[30]  && robot.FinDeplacerPiece(ROBOT_2) && robot.FinDeplacerPiece(ROBOT_4)
+                 * \arg \b Postcondition:  {M[20]++}
+                 */
+				M[30]--;
+				cmd.Ouvrir_PS(2);
+				cmd.Ouvrir_PS(10);
+				aiguillage.Droite(2);
+				cmd.Stop_PS(6);
+				cmd.Stop_PS(14);
+				M[40]++;
+				display();
+			}
 
-                cmd.Stop_PS(21);
+			if (M[40] && capteur.get_PS(6) && capteur.get_PS(14))//On dirige la navette vers le poste 1
+			{
+                /*!
+                 * \b T4: aller au POSTE_1
+                 * \arg Déplacer produit B par le ROBOT_2 de la position 1 à la position 2
+                 * \arg \b Precondition: M[40] && capteur.get_PS(6) && capteur.get_PS(14)
+                 * \arg \b Postcondition: M[50]++
+                 */
+				M[40]--;
+				robot.DeplacerPiece(ROBOT_3,2,1);
+				aiguillage.Gauche(3);
+				aiguillage.Gauche(10); // on le met ici car pas de capteur de position entre aiguillage 3 et 10
+				M[50]++;
+				display();
+			}
 
+			if (M[50] && capteur.get_DG(3) && capteur.get_DG(10) && robot.FinDeplacerPiece(ROBOT_3))// quand les aiguillages ont fini de tourner on fait partir la navette
+			{
+                /*!
+                 * \b T5: faire repartir la navette et aller au POSTE_6
+                 * \arg Quand les aiguillages ont fini de tourner on fait partir la navette
+                 * \arg \b Precondition: M[50] && capteur.get_DG(3) && capteur.get_DG(10) && robot.FinDeplacerPiece(ROBOT_3)
+                 * \arg \b Postcondition: M[60]++
+                 */
+				M[50]--;
+				cmd.Ouvrir_PS(6);
+				cmd.Stop_PS(22);
+				robot.FaireTache(POSTE_6,6);
+				M[60]++;
+				display();
+			}
 
+			if (M[60] && capteur.get_PS(20)) // Attend front descendant de PS20
+			{
+				M[60]--;
+				M[70]++;
+				display();
+			}
 
-                M[4]++;
-                display();
-            }
-            if(M[4] && capteur.get_PS(21))
-            {
-            /*!
-                        * \b T3: piece de poste 2 à navette
-                        * \arg deplacement de piece
-                        * \arg \b Precondition: M[4] && capteur.get_PS(21)
-                        * \arg \b Postcondition: M[PlaceAval]++; M[PlaceAvalBis]
-                        */
-                M[4]--;
+			if(M[70] && !capteur.get_PS(20)) // Front descendant : la navette 1 est passée, on bouge les aiguillages pour la navette 0
+			{
+				M[70]--;
+				aiguillage.Droite(10);
+				aiguillage.Droite(3);
+				M[80]++;
+				display();
+			}
 
-                robot.DeplacerPiece(ROBOT_1, 1, 2);
+			if (M[80] && capteur.get_PS(22) && robot.TacheFinie(POSTE_6)) // Une fois l'aiguillage 10 lock on laisse passer la navette 0
+			{
+				M[80]--;
+				robot.DeplacerPiece(ROBOT_3,1,4);
+				robot.DeplacerPiece(ROBOT_1,3,4);
+				// cmd.SortirErgot(8); SUN to delete
+				M[90]++;
+				display();
+			}
 
-                M[5]++;
-                display();
-            }
-            if(M[5] && robot.FinDeplacerPiece(ROBOT_1))
-            {
-            /*!
-                        * \b T5: faire repartir navette PS21
-                        * \arg navette repart de PS21, PS2 stop activé
-                        * \arg \b Precondition: M[5] && robot.FinDeplacerPiece(ROBOT_1)
-                        * \arg \b Postcondition: M[6]++
-                        */
-                M[5]--;
+			if (M[90] && robot.FinDeplacerPiece(ROBOT_1) && robot.FinDeplacerPiece(ROBOT_3)) // le robot 1 prend le produit B sur la navette et le met sur le poste 1
+			{
+				M[90]--;
+				robot.FaireTache(POSTE_5,2);
+				robot.FaireTache(POSTE_1,4);
+				M[100]++;
+				display();
+			}
 
-                cmd.Ouvrir_PS(21);
-                cmd.Stop_PS(2);
+			if (M[100] && robot.TacheFinie(POSTE_5)) // robot 1 fais tache 1 pendant 4s
+			{
+				M[100]--;
+				cmd.Ouvrir_PS(14);
+				cmd.Stop_PS(15);
+				M[110]++;
+				display();
+			}
 
+			if (M[110] && robot.TacheFinie(POSTE_1) && robot.TacheFinie(POSTE_5)) // le robot 1 prend le produit B sur le poste et le met sur la navette quand tache fini
+			{
+				M[110]--;
+				robot.DeplacerPiece(ROBOT_1,4,3);
+				robot.DeplacerPiece(ROBOT_3,4,3);
+				M[120]++;
+				display();
+			}
 
-                M[6]++;
-                display();
-            }
-            if(M[6] && capteur.get_PS(2))
-            {
-            /*!
-                        * \b T6: deplacement piece navette poste
-                        * \arg deplacement piece depuis navette sur PS2 vers poste 3
-                        * \arg \b Precondition: M[6] && capteur.get_PS(2)
-                        * \arg \b Postcondition: M[7]++
-                        */
-                M[6]--;
+			if (M[120] && robot.FinDeplacerPiece(ROBOT_1) && robot.FinDeplacerPiece(ROBOT_3)) // la navette repars du poste 1 avec le produit B qui a fait la tâche 1
+			{
+				M[120]--;
+				cmd.Ouvrir_PS(22);
+				cmd.Ouvrir_PS(15);
+				M[130]++;
+				display();
+			}
 
-                robot.DeplacerPiece(ROBOT_2, 2, 1);
+			if(M[130] && capteur.get_PS(1))
+			{
+				M[130]--;
+				aiguillage.Gauche(11);
+				aiguillage.Gauche(12);
+				M[140]++;
+				display();
+			}
 
-                M[7]++;
-                display();
-            }
-            if(M[7] && robot.FinDeplacerPiece(ROBOT_2))
-            {
-            /*!
-                        * \b T7: evacuer produit
-                        * \arg evacuer produit sur POSTE_3
-                        * \arg \b Precondition: M[7] && robot.FinDeplacerPiece(ROBOT_2)
-                        * \arg \b Postcondition: M[8]++
-                        */
-                M[7]--;
+			if (M[140] && capteur.get_CP(1)) // quand la navette arrive à proximité du poste 4, on le fait arrêter au niveau du poste
+			{
+				M[140]--;
+				cmd.Stop_PS(3);
+				M[141]++;
+				M[150]++;
+				display();
+			}
 
+			if(M[141] && capteur.get_PS(2))
+			{
+				M[141]--;
+				M[142]++;
+				display();
+			}
 
-                robot.Evacuer();
-                M[8]++;
-                display();
-            }
-            if(M[8])
-            {
-            /*!
-                        * \b T8: fin rdp
-                        * \arg fin du rdp
-                        * \arg \b Precondition: M[8] && robot.TacheFinie(Prod_seqdeposte[0][1])
-                        * \arg \b Postcondition: M[PlaceFin]++
-                        */
-                M[8]--;
+			if(M[142] && !capteur.get_PS(2))
+			{
+				M[142]--;
+				cmd.Stop_PS(2);
+				display();
+			}
 
+			if (M[150] && capteur.get_PS(3)) // le robot 2 prend le produit B sur la navette et le met sur le poste 4
+			{
+				M[150]--;
+				robot.DeplacerPiece(ROBOT_2,3,4);
+				M[160]++;
+				display();
+			}
 
-                M[PlaceFin]++;
-                display();
-            }
+			if (M[160] && robot.FinDeplacerPiece(ROBOT_2)) // On fait la tache du poste 4 pendant 5s
+			{
+				M[160]--;
+				robot.FaireTache(POSTE_4,5);
+				M[170]++;
+				display();
+			}
 
+			if(M[170] && capteur.get_PS(2))
+			{
+				M[170]--;
+				robot.DeplacerPiece(ROBOT_2,2,1);
+				M[180]++;
+				display();
+			}
 
+			if(M[180] && robot.FinDeplacerPiece(ROBOT_2))
+			{
+				M[180]--;
+				robot.FaireTache(POSTE_3,1);
+				M[182]++;
+				display();
+			}
+			if(M[182] && robot.TacheFinie(POSTE_3))
+			{
+				M[182]--;
+				robot.Evacuer();
+				M[190]++;
+				display();
+			}
 
+			if (M[190] && robot.TacheFinie(POSTE_4)) // le robot 2 prend le reproduit B sur le poste et le met sur le poste 3
+			{
+				M[190]--;
+				robot.DeplacerPiece(ROBOT_2,4,1);
+				M[200]++;
+				display();
+			}
 
+			if (M[200] && robot.FinDeplacerPiece(ROBOT_2)) // On évacue le produit final et redémarre la navette
+			{
+				M[200]--;
+				robot.Evacuer(); // Evacue le produit
+				cmd.Ouvrir_PS(3); // la navette repart
+				cmd.Ouvrir_PS(2);
+				aiguillage.Gauche(3);
+				aiguillage.Gauche(10);
+				M[210]++;
+				display();
+			}
 
+			if(M[210] && capteur.get_PS(6))
+			{
+				M[210]--;
+				M[220]++;
+				display();
+			}
 
+			if(M[220] && !capteur.get_PS(6))
+			{
+				M[220]--;
+				M[230]++;
+				display();
+			}
 
+			if(M[230] && capteur.get_PS(6))
+			{
+				M[230]--;
+				M[240]++;
+				display();
+			}
 
+			if(M[240] && !capteur.get_PS(6))
+			{
+				M[240]--;
+				aiguillage.Gauche(1);
+				aiguillage.Gauche(2);
+				M[PlaceFin]++;
+				display();
+			}
 
-
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////// | Place de fin de Petri ETU | //////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -339,15 +480,15 @@ int main(int argc, char **argv)
                 display();
                 cout << endl << BOLDCYAN << " --[PETRI TERMINE]--" << RESET << endl;
                 cmd.FinPetri();
-                while(rclcpp::ok()) // <-- Changement ROS2
+                while(rclcpp::ok()) 
                 {
-                    rclcpp::spin_some(node); // <-- Changement ROS2
+                    rclcpp::spin_some(node); 
                     loop_rate.sleep();
                 }
             }
         }
 
-        rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées <-- Changement ROS2
+        rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées
         loop_rate.sleep(); //permet de synchroniser la boucle while. Il attend le temps qu'il reste pour faire le 25Hz (ou la fréquence indiquée dans le loop_rate)
     }
 
