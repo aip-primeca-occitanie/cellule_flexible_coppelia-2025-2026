@@ -1,9 +1,10 @@
 # Projet Cellule Flexible MFJA
 
-## 1)Partie informative étudiant
+## 1) Partie informative étudiant
 
 ### 1.1) Vidéo de présentation
 La vidéo suivante montre un exemple de ce que peut faire la simulation sur CoppeliaSim :
+
 https://user-images.githubusercontent.com/84821679/198697250-7861b35a-a503-4246-86e2-939076bb784c.mp4
 
 ### 1.2) Présentation générale du projet
@@ -35,7 +36,7 @@ Nous rappelons les règles à respecter :
 * Interdiction de circuler sur le voies près des postes si ce n'est pour y amener/récupérer un produit
 
 Le schéma suivant permet de repérer les aiguillages, les capteurs, les postes et les robots:
-![Image_Capteurs_et_Actionneurs](../../../Doc/CelluleSchema.png)
+![Image_Capteurs_et_Actionneurs](celluleflexible/Doc/CelluleSchema.png)
 
 
 ### 1.4) Lancement de la simulation
@@ -81,7 +82,32 @@ Après la migration de ROS1 noetic à ROS2 jazzy, nous pensons qu'il serait bon 
     **+ Dire quelles types de modifications cela implique**
     **+ Dire qu'est ce qui changera dans notre simulation**
 
-* Faire le lien entre la maquette réelle et la simulation. **Le lien avait déjà été établi lors d'un projet d'une année précédente, sans pouvoir néanmoins être utilisé, à cause du déménagement à la MFJA. Les anciens packages schneider, schneider103 et schneider104 (ROS1) avaient été créés pour cela. Nous avons également retrouvé des traces de ce lien dans le package commande. En effet, le fichier *communication_baxter.cpp* sert à envoyer des ordres aux robots réels et une partie du fichier *actionneurs.cpp* sert à convertir les ordres pour la simulation réelle. Enfin, dans le package commande_locale, lors de l'affichage du menu, nous avons encore le choix entre Simu ou Atelier, qui change le type de cellule.**
+* Faire le lien entre la maquette réelle et la simulation.
+  
+  Le lien avait déjà été établi lors du projet 2022, sans pouvoir néanmoins être utilisé, à cause du déménagement à la MFJA. Les anciens packages schneider, schneider103 et schneider104 (ROS1) avaient été créés pour cela. Ces fichiers ne servant plus à la simulation, nous ne les avons pas traduit en ROS2 et les avons supprimés. Ils peuvent néanmoins être récupérés sur le GitHub. Ces fichiers s'abonnent à des topics déjà créés comme le topic d'aiguillage droite et gauche, et envoient l'ordre sur des topics propres à eux.
+  
+  Nous avons également retrouvé des traces de ce lien dans le package commande. En effet, le fichier *communication_baxter.cpp* sert à envoyer des ordres aux robots réels et une partie du fichier *actionneurs.cpp* sert à convertir les ordres pour la simulation réelle. Ces deux fichiers sont traduits en ROS2 mais la partie servant à la maquette réelle n'est pas utilisée.
+  
+  Enfin, dans le package commande_locale, lors de l'affichage du menu, nous avons encore le choix entre un mode Simu ou Atelier, qui permet soit une connexion à la simulation CoppeliaSim soit une connexion à l'atelier réel. Cette partie du menu est donc obsolète.
+  
+  Ces remarques ne sont pas une liste exhaustive, car d'autres fichiers doivent contenir également des traces. Pour faire ce lien correctement, il faudrait dans un premier temps enlever tout ce qui ne sert plus dans les codes (appartenant au projet 2022), puis recommencer proprement à intégrer la maquette réelle.
+
+* Rendre libre le choix de quelles navettes on veut en début de simulation
+  
+  Toutes les navettes ont une position de départ attribuée en fonction de leur numéro. Pour le moment nous avons la correspondance : Navette 0 = Shuttle Z, Navette 1 = Shuttle A, Navette 2 = Shuttle B, Navette 3 = Shuttle C, Navette 4 = Shuttle D, Navette 5 = Shuttle E, Navette 6 = Shuttle F. Si à la question "Combien voulez-vous de navettes?", nous répondons 3, alors nous verrons apparaitre Shuttle Z, Shuttle A et Shuttle B. Nous voulons maintenant que, au lieu de voir apparaitre Shuttle Z, Shuttle A et Shuttle B, la simulation nous demande lesquelles parmi les 7 navettes nous voulons faire apparaitre.
+  
+  Les navettes apparaissent après avoir demandé le nombre de navettes. Cela se passe dans le package commande_locale, dans vrepController, dans la fonction vrepController::loadModelInit. Cette fonction ouvre dans CoppeliaSim pour chaque navette un fichier consacré rangé dans CoppeliaSim/models/montrac + Nom de la navette (fichiers .ttm).
+  
+  Pour réaliser cette tâche, il faudrait rajouter une fonction qui, après avoir demandé le nombre de navettes voulues, montre à l'utilisateur les différents emplacements de navettes disponibles et lui demande d'en choisir le nombre correspondant au nombre de navettes demandé. Nous n'aurions donc plus qu'à changer la fonction vrepController::loadModelInit, pour lui dire d'intégrer les navettes voulues par l'utilisateur et non plus de les prendre seulement dans l'ordre. Les fichiers .ttm ne nécessitent pas d'être modifiés.
+  
+  Nous ne pensons pas que d'autres modifications (sur le checker par exemple) soient nécessaires, car celui-ci s'occupe plus spécifiquement de voir si la séquence de tâches a bien été réalisée, mais ne se préocuppe pas de la position des navettes. Il faudrait en revanche modifier le support consignes étudiant (sujet TER).
+
+* Pouvoir déplacer les points de départ des navettes
+
+  En suivant ce que nous disions pour le point précédent, la fonction vrepController::loadModelInit (dans commande_locale/vrepController) ne sert qu'à afficher les navettes aux endroits prédéfinis. Nous ne toucherons donc pas à cette fonction dans cette amélioration là.
+
+  En revanche, ce sont les fichiers situés dans CoppeliaSim/models/montrac que nous allons devoir changer
+
 * **Liste des tâches qu'on a pas eu le temps de faire**
 
 * Faire fonctionner le fichier display, présent dans commande_locale. Ce fichier a pour but d'ouvrir une nouvelle fenêtre pour suivre la simulation sous un autre angle.
@@ -102,8 +128,6 @@ Après la migration de ROS1 noetic à ROS2 jazzy, nous pensons qu'il serait bon 
 Les liens qui nous ont été utiles sont les suivants :
 * *https://www.youtube.com/watch?v=flT3LIIR5qo* et *https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html* sont des fichiers qui nous ont aidé à installer ROS2 Jazzy
 * *https://www.youtube.com/watch?v=FYKHbm4YXkA*, *https://www.youtube.com/watch?v=HJAE5Pk8Nyw* et *https://docs.ros.org/en/jazzy/Tutorials.html* qui nous ont aidé à comprendre comment fonctionnait ROS2
-* *https://docs.ros.org/en/rolling/Releases.html*, qui nous a permis de comprendre les différences entre les versions de ROS2. Nous avons choisit ROS2 JAzzy, étant à ce jour la version ayant la EOL date la plus lointaine (End Of Life date).
+* *https://docs.ros.org/en/rolling/Releases.html*, qui nous a permis de comprendre les différences entre les versions de ROS2. Nous avons choisit ROS2 Jazzy, étant à ce jour la version ayant la EOL date la plus lointaine (End Of Life date).
 * *https://docs.ros.org/en/rolling/Releases.html*, qui nous a aidé à installer l'interface entre ROS2 et CoppeliaSim
 * *https://docs.ros.org/en/rolling/How-To-Guides/Migrating-from-ROS1.html*, qui nous a permis de commencer à migrer quelques fonctions de ROS1 à ROS2
-
-
