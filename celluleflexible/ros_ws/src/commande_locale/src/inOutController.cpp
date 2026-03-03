@@ -142,7 +142,7 @@ void inOutController::init(rclcpp::Node::SharedPtr n)
     VREPsubStopSensor = node->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/StopSensor", 100,
         std::bind(&inOutController::SensorCallbackStop, this, std::placeholders::_1));
 
-    VREPsubSwitchSensor = node->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/SwitchSensor", 100,
+    VREPsubSwitchSensor = node->create_subscription<std_msgs::msg::Int32>("/sim_ros_interface/aig", 100,
         std::bind(&inOutController::SensorCallbackSwitch, this, std::placeholders::_1));
 
     planifSubSwitchState = node->create_subscription<commande_locale::msg::MsgSwitchControl>("/commande/Simulation/Actionneurs_aiguillages", 100,

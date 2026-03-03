@@ -22,7 +22,7 @@ if (sim_call_type==sim.syscb_init) then
         -- Note : En ROS 2, le type complet est souvent requis 'std_msgs/msg/Int32'
         
 
-        pub=simROS2.createPublisher('/sim_ros_interface/SwitchSensor','std_msgs/msg/Int32')
+        pub=simROS2.createPublisher('SwitchSensor','std_msgs/msg/Int32')
     end
 end
 
