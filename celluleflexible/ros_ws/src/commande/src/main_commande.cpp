@@ -19,6 +19,7 @@
 #include "AigsInterface.h"
 #include <rclcpp/rclcpp.hpp>
 #include <unistd.h>
+#include <iostream>
 
 using namespace std;
 
@@ -28,6 +29,7 @@ using namespace std;
 #define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
 #define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
 #define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
+#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
 
 #define PlaceFin 1000 /* Marquage à ne pas dépasser */
 
@@ -58,14 +60,12 @@ const vector<vector<int>> Prod_dureeparposte{   { 4, 5 },
 ///////////  | Exemple configuration produits : fin |  //////////
  ******************************************************** */
 
-
-
 /////////////////////////////////////////////////////////////////////////
 //////////////////// | DEBUT DECLARE ETU | /////////////////
 /////////////////////////////////////////////////////////////////////////
 
-
-
+// Ajout d'un compteur pour l'affichage de debug
+int compteur_debug = 0;
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////  |  FIN DECLARE ETU  |   /////////////////
@@ -99,7 +99,6 @@ int main(int argc, char **argv)
     /* *************************************************
     ///////////  | Debut du Petri plus bas |  //////////
      ************************************************* */
-
 
     rclcpp::init(argc, argv); 
     auto node = rclcpp::Node::make_shared("commande"); 
@@ -174,6 +173,41 @@ int main(int argc, char **argv)
         // Seulement si la simulation est en cours
         if(cmd.getPlay()==true)
         {
+            
+            // =========================================================================
+            // ====================== DEBUG CAPTEURS (1x par seconde) ==================
+            // =========================================================================
+            compteur_debug++;
+            if (compteur_debug >= 25) 
+            {
+                compteur_debug = 0; // Reset du compteur
+                cout << BOLDYELLOW << "\n--- ETAT DES CAPTEURS ACTIFS ---" << RESET << endl;
+                
+                // On boucle sur la taille réelle de chaque tableau selon MsgSensorState
+                cout << "PS (1-24) : "; 
+                for(int i=1; i<25; i++) if(capteur.get_PS(i)) cout << i << " "; 
+                cout << endl;
+
+                cout << "CP (1-10) : "; 
+                for(int i=1; i<11; i++) if(capteur.get_CP(i)) cout << i << " "; 
+                cout << endl;
+
+                cout << "CPI (1-8) : "; 
+                for(int i=1; i<9; i++) if(capteur.get_CPI(i)) cout << i << " "; 
+                cout << endl;
+
+                cout << "DD (1-12) : "; 
+                for(int i=1; i<13; i++) if(capteur.get_DD(i)) cout << i << " "; 
+                cout << endl;
+
+                cout << "DG (1-12) : "; 
+                for(int i=1; i<13; i++) if(capteur.get_DG(i)) cout << i << " "; 
+                cout << endl;
+                
+                cout << "--------------------------------" << endl;
+            }
+            // =========================================================================
+
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////////// | DEBUT PETRI  ETU | /////////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -187,7 +221,6 @@ int main(int argc, char **argv)
                         * \arg \b Postcondition: M[2]++
                         */
                 M[0]--;
-
 
                 aiguillage.Gauche(3);
                 aiguillage.Gauche(10);
@@ -206,7 +239,7 @@ int main(int argc, char **argv)
             }
             if(M[2] && capteur.get_PS(6))
             {
-                /*!
+            /*!
                         * \b T2: aiguillage A02 mise en place
                         * \arg  courte description
                         * \arg \b Precondition: M[2] && capteur.get_PS(6)
@@ -316,14 +349,6 @@ int main(int argc, char **argv)
                 M[PlaceFin]++;
                 display();
             }
-
-
-
-
-
-
-
-
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////// | Place de fin de Petri ETU | //////////////////////////////////////
