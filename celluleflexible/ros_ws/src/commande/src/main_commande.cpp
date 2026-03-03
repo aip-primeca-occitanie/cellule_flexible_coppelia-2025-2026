@@ -19,7 +19,6 @@
 #include "AigsInterface.h"
 #include <rclcpp/rclcpp.hpp>
 #include <unistd.h>
-#include <iostream>
 
 using namespace std;
 
@@ -29,7 +28,6 @@ using namespace std;
 #define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
 #define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
 #define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
-#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
 
 #define PlaceFin 1000 /* Marquage à ne pas dépasser */
 
@@ -60,12 +58,14 @@ const vector<vector<int>> Prod_dureeparposte{   { 4, 5 },
 ///////////  | Exemple configuration produits : fin |  //////////
  ******************************************************** */
 
+
+
 /////////////////////////////////////////////////////////////////////////
 //////////////////// | DEBUT DECLARE ETU | /////////////////
 /////////////////////////////////////////////////////////////////////////
 
-// Ajout d'un compteur pour l'affichage de debug
-int compteur_debug = 0;
+
+
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////  |  FIN DECLARE ETU  |   /////////////////
@@ -91,7 +91,7 @@ void display()
 
 void ShutdownCallback(const std_msgs::msg::Byte::SharedPtr msg)
 {
-        rclcpp::shutdown();
+        rclcpp::shutdown(); // <-- Changement ROS2
 }
 
 int main(int argc, char **argv)
@@ -100,9 +100,11 @@ int main(int argc, char **argv)
     ///////////  | Debut du Petri plus bas |  //////////
      ************************************************* */
 
-    rclcpp::init(argc, argv); 
-    auto node = rclcpp::Node::make_shared("commande"); 
 
+    rclcpp::init(argc, argv); // <-- Changement ROS2
+    auto node = rclcpp::Node::make_shared("commande"); // <-- Changement ROS2
+
+    // <-- Changements ROS2 pour les publishers et subscribers
     auto pub_spawnShuttles = node->create_publisher<std_msgs::msg::Int32>("/commande_locale/nbNavettes",10);
     auto sub_shutdown = node->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, ShutdownCallback);
 
@@ -113,17 +115,17 @@ int main(int argc, char **argv)
     AigsInterface aiguillage(node);
     Capteurs capteur(node);
 
-    rclcpp::Rate loop_rate(25); //fréquence de la boucle
+    rclcpp::Rate loop_rate(25); //fréquence de la boucle <-- Changement ROS2
 
     // On attend la fin de l'initialisation des robots
     while(!robot.RobotInitialise(1) || !robot.RobotInitialise(2))
     {
-        rclcpp::spin_some(node); 
+        rclcpp::spin_some(node); // <-- Changement ROS2
         loop_rate.sleep();
     }
     while(nbRobot==4 && (!robot.RobotInitialise(3) || !robot.RobotInitialise(4)))
     {
-        rclcpp::spin_some(node); 
+        rclcpp::spin_some(node); // <-- Changement ROS2
         loop_rate.sleep();
     }
 
@@ -168,46 +170,11 @@ int main(int argc, char **argv)
     /////////////////////  |  FIN INIT ETU  |  ////////////////////
     ///////////////////////////////////////////////////////////////////
 
-    while (rclcpp::ok()) 
+    while (rclcpp::ok()) // <-- Changement ROS2
     {
         // Seulement si la simulation est en cours
         if(cmd.getPlay()==true)
         {
-            
-            // =========================================================================
-            // ====================== DEBUG CAPTEURS (1x par seconde) ==================
-            // =========================================================================
-            compteur_debug++;
-            if (compteur_debug >= 25) 
-            {
-                compteur_debug = 0; // Reset du compteur
-                cout << BOLDYELLOW << "\n--- ETAT DES CAPTEURS ACTIFS ---" << RESET << endl;
-                
-                // On boucle sur la taille réelle de chaque tableau selon MsgSensorState
-                cout << "PS (1-24) : "; 
-                for(int i=1; i<25; i++) if(capteur.get_PS(i)) cout << i << " "; 
-                cout << endl;
-
-                cout << "CP (1-10) : "; 
-                for(int i=1; i<11; i++) if(capteur.get_CP(i)) cout << i << " "; 
-                cout << endl;
-
-                cout << "CPI (1-8) : "; 
-                for(int i=1; i<9; i++) if(capteur.get_CPI(i)) cout << i << " "; 
-                cout << endl;
-
-                cout << "DD (1-12) : "; 
-                for(int i=1; i<13; i++) if(capteur.get_DD(i)) cout << i << " "; 
-                cout << endl;
-
-                cout << "DG (1-12) : "; 
-                for(int i=1; i<13; i++) if(capteur.get_DG(i)) cout << i << " "; 
-                cout << endl;
-                
-                cout << "--------------------------------" << endl;
-            }
-            // =========================================================================
-
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////////// | DEBUT PETRI  ETU | /////////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -221,6 +188,7 @@ int main(int argc, char **argv)
                         * \arg \b Postcondition: M[2]++
                         */
                 M[0]--;
+
 
                 aiguillage.Gauche(3);
                 aiguillage.Gauche(10);
@@ -239,7 +207,7 @@ int main(int argc, char **argv)
             }
             if(M[2] && capteur.get_PS(6))
             {
-            /*!
+                /*!
                         * \b T2: aiguillage A02 mise en place
                         * \arg  courte description
                         * \arg \b Precondition: M[2] && capteur.get_PS(6)
@@ -350,6 +318,14 @@ int main(int argc, char **argv)
                 display();
             }
 
+
+
+
+
+
+
+
+
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////// | Place de fin de Petri ETU | //////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -359,15 +335,15 @@ int main(int argc, char **argv)
                 display();
                 cout << endl << BOLDCYAN << " --[PETRI TERMINE]--" << RESET << endl;
                 cmd.FinPetri();
-                while(rclcpp::ok()) 
+                while(rclcpp::ok()) // <-- Changement ROS2
                 {
-                    rclcpp::spin_some(node); 
+                    rclcpp::spin_some(node); // <-- Changement ROS2
                     loop_rate.sleep();
                 }
             }
         }
 
-        rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées
+        rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées <-- Changement ROS2
         loop_rate.sleep(); //permet de synchroniser la boucle while. Il attend le temps qu'il reste pour faire le 25Hz (ou la fréquence indiquée dans le loop_rate)
     }
 

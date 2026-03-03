@@ -1,6 +1,4 @@
 #include "capteurs.h"
-#include <rclcpp/rclcpp.hpp>
-
 
 using std::placeholders::_1;
 
@@ -27,7 +25,6 @@ void Capteurs::Callback_capteurs_simulation(const aiguillages::msg::MsgSensorSta
 	for(int i=1;i<13;i++) DxG[i]=msg->dg[i];
 	for(int i=1;i<11;i++) CPx[i]=msg->cp[i];
 	for(int i=1;i<9;i++) CPIx[i]=msg->cpi[i];
-	//RCLCPP_INFO(rclcpp::get_logger("TestCapteurs"), "PS1: %d | Aig1_DD: %d | Aig1_DG: %d", PSx[1], DxD[1], DxG[1]);
 }
 
 bool Capteurs::get_PS(int num_PS)

@@ -135,16 +135,13 @@ int main(int argc, char **argv)
         loop_rate.sleep();
     }
 
-
     // Initialisation des queues (Navettes initiales)
-     for (int i=0; i<NbNavette; i++)
+      for (int i=0; i<NbNavette; i++)
      {
-         int id_navette = i + 1; // <-- On force l'ID à commencer à 1 !
-
-         if (i==0) queue3.push(id_navette);
-         else if (i<4) queue1.push(id_navette);
-         else if (i<6) queue2.push(id_navette);
-     }
+        if (i==0) queue3.push(0);
+        else if (i<4) queue1.push(i);
+        else if (i<6) queue2.push(i);
+      }
 
     // Initialisation liste_file
     liste_file.push_back(0); // Index 0 est NULL/Int
