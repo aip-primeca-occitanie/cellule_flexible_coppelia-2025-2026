@@ -2,8 +2,9 @@
 
 ## 1. Description générale
 Le but de ce package est de faire l'intermédiaire entre la simulation physique (CoppeliaSim), le réseau de Pétri haut niveau complété par les étudiants et l'utilisateur.
+
 Ainsi, il gère le cycle de vie de la simulation, traduit les signaux venant des capteurs et actionneurs et enregistre l'historique de production.
-C'est notamment ce programme qui ouvre CoppeliaSim et charge la scène voulue dedans.
+C'est notamment ce programme qui ouvre CoppeliaSim et charge la scène voulue dedans. Il fait également apparaitre les navettes
 
 ## 2. Composition
 Ce dossier est composé de 5 éléments:
@@ -14,7 +15,7 @@ Ce dossier est composé de 5 éléments:
 * Un dossier src, où se trouve le code source C++ et composé des fichiers suivants :
   * commande_locale.cpp, qui initialise les fonctions, s'assure que Coppelia répond bien et affiche le menu
   * inOutController.cpp et inOutController.h, qui s'occupe de convertir les données des capteurs et des actionneurs entre CoppeliaSim et le réseau de Pétri
-  * vrepController.cpp et vrepController.h, qui contient les opérations élémentaires pour faire fonctionner la simulation
+  * vrepController.cpp et vrepController.h, qui contient les opérations élémentaires pour faire fonctionner la simulation et qui fait apparaitre les navettes
   * display.cpp, qui ouvre une fenêtre OpenCV pour voir la simulation sous un autre point de vue
   * LogManager.cpp, qui permet de garder sur un fichier texte l'historique
 
