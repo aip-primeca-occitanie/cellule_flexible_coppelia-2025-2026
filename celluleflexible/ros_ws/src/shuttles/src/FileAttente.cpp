@@ -23,7 +23,7 @@ int FileAttente::maj(int DD, int DG)
 
 	//on est là suite au front descendant du capteur concerné
 	if (!queue_.empty())
-	{
+	{       
 		if (id_aiguillage_==0){return successeur_droite_;}
 		//appeler service, pour savoir comment est l'aiguillage
 		if(DD)//si l'aiguillage est a droite

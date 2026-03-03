@@ -136,12 +136,12 @@ int main(int argc, char **argv)
     }
 
     // Initialisation des queues (Navettes initiales)
-    for (int i=0; i<NbNavette; i++)
-    {
+      for (int i=0; i<NbNavette; i++)
+     {
         if (i==0) queue3.push(0);
         else if (i<4) queue1.push(i);
         else if (i<6) queue2.push(i);
-    }
+      }
 
     // Initialisation liste_file
     liste_file.push_back(0); // Index 0 est NULL/Int
