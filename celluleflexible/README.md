@@ -11,13 +11,17 @@ Voici le détail du contenu de chaque sous-dossier :
 Ce dossier contient le logiciel de simulation robotique.
 
 * **Version utilisée** : Nous utilisons actuellement la version **V4.3.0 Edu**.
-* **Fichiers clés** :
-* Dans le répertoire `models/montrac`, nous retrouvons les fichiers `.ttm` correspondant aux modèles 3D de nos navettes.
-* À la racine de ce dossier se trouve le plugin `simROS2Interface`. C'est l'élément central qui permet de réaliser la communication et l'échange de messages entre nos scripts `.lua` (dans CoppeliaSim) et notre espace de travail ROS 2 (`ros_ws`).
+* **Fichiers importants pour la simulation** :
+  * Dans le répertoire `models/montrac`, nous retrouvons les fichiers `.ttm` correspondant aux modèles 3D de nos navettes. Ils apparaissent dans la scène CoppeliaSim après avoir rentré le nombre de navettes voulues.
+  * À la racine de ce dossier se trouve le plugin `simROS2Interface`. C'est l'élément central qui permet de réaliser la communication et l'échange de messages entre nos scripts `.lua` (dans CoppeliaSim) et notre espace de travail ROS 2 (`ros_ws`).
+  * Les autres fichiers de ce dossier sont des fichiers natifs Coppelia, qui n'ont très certainement jamais été modifié ni utilisés. La plupart de ces dossiers contiennent surtout des exemples et des aides. Il serait nécessaire de faire un tri.
+* **En cas de mise à jour (MAJ)** : Si vous décidez de passer à une version plus récente de CoppeliaSim (comme la V4.10.0), sachez que l'API Lua a subi de nombreuses modifications. Cela impliquera de devoir réécrire et adapter les codes `.lua` intégrés dans la scène `.ttt` (changement du nom de certaines fonctions natives), ainsi que de recompiler potentiellement le plugin `simROS2Interface` pour l'adapter à la nouvelle architecture du logiciel. De plus, il faudra surement aussi adapter l'ensemble des objets de l'arborescence de la scène de la simulation (robot : joint, actionneur...), ce qui devrait représenter un travail assez important compte tenu de l'exhaustivité des objets physiques de la scène 'simulation4robots'
+* **Protocole pour lancer CoppeliaSim** : En se plaçant dans CoppeliaSim, nous pouvons facilement lancer le logiciel CoppeliaSim par la commande suivante :
 
-
-* **En cas de mise à jour (MAJ)** : Si vous décidez de passer à une version plus récente de CoppeliaSim (comme la V4.10.0), sachez que l'API Lua a subi de nombreuses modifications. Cela impliquera de devoir réécrire et adapter les codes `.lua` intégrés dans la scène `.ttt` (changement du nom de certaines fonctions natives), ainsi que de recompiler potentiellement le plugin `simROS2Interface` pour l'adapter à la nouvelle architecture du logiciel. De plus, il faudra surement aussi adapter l'ensemble des objets de l'arborescence de la scène de la simulation (robot : joint, actionneur...), ce qui devrait représenter un travail assez important contenu de l'exhaustivité des objets physiques de la scène 'simulation4robots'
-*(Pour plus de détails, voir le readme du dossier 'CoppeliaSim')*
+```bash
+   ./coppeliaSim.sh
+```
+Pour visualiser la scène (.ttt) ou les modèles (.ttm), on fait alors un glisser-déposer dans CoppeliaSim.
 
 ### 1.2) sim
 
@@ -26,25 +30,27 @@ C'est ici que se trouve l'environnement de la simulation. On y retrouve la scèn
 
 ### 1.3) Doc
 
-Ce répertoire rassemble la documentation annexe. On y retrouve notamment l'historique complet détaillant comment a été réalisé ce projet au fil des années, ainsi que des photos utiles de la maquette réelle de la MFJA, servant de référence physique pour la simulation.
-*(Pour plus de détails, voir le readme du dossier 'Doc')*
+Ce répertoire rassemble la documentation annexe. On y retrouve notamment l'historique détaillant comment a été réalisé ce projet au fil des années, ainsi que des photos utiles de la maquette réelle de la MFJA. On les met dans ce dossier pour ensuite les appeler et les visualiser dans les ReadMe.
 
 ### 1.4) ros_ws
 
 Il s'agit de l'espace de travail (workspace) ROS 2. Il contient le code source (`src`) des différents packages développés pour la cellule flexible (aiguillages, commande, navettes, robots, etc.) ainsi que les dossiers générés lors de la compilation (`build`, `install`, `log`).
+
+**Point important** : tous les dossiers build, install et log sont créés par la compilation (colcon build), et peuvent donc être supprimés à tout moment, puis recréés par cette commande.
+
 *(Pour plus de détails, voir le readme du dossier 'ros_ws')*
 
 ### 1.5) forTER
 
-Ce dossier contient des outils supplémentaires destinés au projet TER, notamment des scripts d'évaluation de séquences comme `checker.py` ou des fichiers de configuration pour la documentation (`Doxyfile`). A REFAIRE
-*(Pour plus de détails, voir le readme du dossier 'forTER')*
+Ce dossier contient des outils supplémentaires destinés au projet TER, notamment des scripts d'évaluation de séquences comme `checker.py` ou des fichiers de configuration pour la documentation (`Doxyfile`). **A REFAIRE**
 
 ---
 
 ## 2) Protocole complet d'exécution avec ROS 2
 
-Pour lancer la communication ROS 2 et démarrer les nœuds gérant la cellule flexible, vous devez ouvrir un terminal et exécuter les commandes suivantes. Ce protocole d'execution est utile en tant que développeur pour tester les noeuds et les scripts .lua, avant de passer par la procédure d'exuction à partir de scripts dans le dossier 'cellule_flexible_coppelia-2025-2026' (procédure "étudiant").
+Il existe différents moyens de lancer la simulation générale. Ce protocole d'execution est utile en tant que développeur pour tester les noeuds et les scripts .lua sans trop rentrer dans le détail des packages, avant de passer par la procédure d'exécution à partir de scripts dans le dossier 'cellule_flexible_coppelia-2025-2026/etu' (procédure "étudiant", voir ReadMe 'etu').
 
+* Ouvrez un répertoire
 Voici le détail étape par étape et l'utilité de chaque ligne :
 
 ```bash
