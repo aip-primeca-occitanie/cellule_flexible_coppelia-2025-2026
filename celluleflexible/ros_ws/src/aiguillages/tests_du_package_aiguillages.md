@@ -24,7 +24,7 @@ Dans votre code, le capteur est décodé via un masque de bits : pour l'aiguilla
 
 ---
 
-### Phase 2 : test de commande (Corrigé)
+### Phase 2 : test de commande
 
 Pour ce test, on ouvre 4 terminaux à la source du dossier `ros_ws`.
 
