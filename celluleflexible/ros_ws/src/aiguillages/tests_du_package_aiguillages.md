@@ -1,60 +1,83 @@
 Afin de tester l'intégration indépendamment de CoppeliaSim, vous pouvez simuler son comportement en ligne de commande depuis des terminaux : 
 
 * Test du noeud aiguillage sans Coppelia : 
-  * Phase 1 : vérifier la connectivité
+### Phase 1 : vérifier la connectivité
  
     Pour ce test, on ouvre 2 terminaux à la source du dossier ros_ws.
-    Dans un TERMINAL 1, faire :
-    ```bash
-      source /opt/ros/jazzy/setup.bash
-      colcon build --packages-select aiguillages
-      source install/setup.bash
-      ros2 run aiguillages run_Aiguillage 
-    ```
-    Dans un TERMINAL 2, faire :
-    ```bash
-      source /opt/ros/jazzy/setup.bash
-      ros2 topic list
-    ```
+    **Dans un TERMINAL 1**, faire :
+```bash
+  source /opt/ros/jazzy/setup.bash
+  colcon build --packages-select aiguillages
+  source install/setup.bash
+  ros2 run aiguillages run_Aiguillage 
+```
+    **Dans un TERMINAL 2**, faire :
+```bash
+  source /opt/ros/jazzy/setup.bash
+  ros2 topic list
+```
     Vous devriez voir la liste des topics actifs apparaitre. Cela permet de voir si tous les topics ont été correctement créés.
 
+Voici le protocole de test corrigé. La modification principale se trouve au **TERMINAL 4**, où nous envoyons désormais la valeur **256**.
 
-  * Phase 2 : test de commande
-  
-    Pour ce test, on ouvre 4 terminaux à la source du dossier ros_ws.
-    Dans le TERMINAL 1, on run le noeud :
-    ```bash
-      source /opt/ros/jazzy/setup.bash
-      colcon build --packages-select aiguillages
-      source install/setup.bash
-      ros2 run aiguillages run_Aiguillage 
-    ```
+Dans votre code, le capteur est décodé via un masque de bits : pour l'aiguillage **5** à **DROITE**, le bit correspondant est le 8ème ($2 \times 5 - 2 = 8$), ce qui donne une valeur décimale de $2^{8} = \mathbf{256}$.
 
-    Dans le TERMINAL 2, on écoute le topic :
-    ```bash
-      source install/setup.bash
-      ros2 topic echo /commande/Simulation/AiguillageDroite
-    ```
+---
 
-    Dans le TERMINAL 3, on publie un message sur un topic sur lequel on souscrit. On demande de faire tourner l'aiguillage 5 à droite.
-    ```bash
-      source install/setup.bash
-      ros2 topic pub -1 /commande/Simulation/AiguillageDroite std_msgs/msg/Int32 "{data: 5}"
-    ```
-    Vous devriez alors voir apparaitre dans le TERMINAL 2 le message "data: 5".
+### Phase 2 : test de commande
 
-    Dans le TERMINAL 4, on simule un message de réponse de Coppelia, qui renverrait que l'aiguillage 5 a correctement tourné.
-    ```bash
-      source install/setup.bash
-      ros2 topic pub -1 /sim_ros_interface/SwitchSensor aiguillages/msg/MsgSensorState "{header: {frame_id: 'world'}, dd: [false, false, false, false, false, false, false, false, false, false, false, false, false], dg: [false, false, false, false, false, false, false, false, false, false, false, false, false]}"
-      ros2 topic pub -1 /sim_ros_interface/SwitchSensor aiguillages/msg/MsgSensorState "{header: {frame_id: 'world'}, dd: [false, false, false, false, false, true, false, false, false, false, false, false, false]}"
-    ```
+Pour ce test, on ouvre 4 terminaux à la source du dossier `ros_ws`.
 
-    Dans le TERMINAL 5, on écoute le topic de verrouillage.
-    ```bash
-      source install/setup.bash
-      ros2 topic echo /commande/VerouilleAiguillage
-    ```
+**TERMINAL 1 : Lancement du nœud**
+
+```bash
+source /opt/ros/jazzy/setup.bash
+colcon build --packages-select aiguillages
+source install/setup.bash
+ros2 run aiguillages run_Aiguillage 
+
+```
+
+**TERMINAL 2 : Écoute du verrouillage**
+
+```bash
+source install/setup.bash
+ros2 topic echo /sim_ros_interface/SwitchControllerLock
+
+```
+
+**TERMINAL 3 : Envoi de l'ordre de mouvement**
+On demande de faire tourner l'aiguillage **5** à droite.
+
+```bash
+source install/setup.bash
+ros2 topic pub -1 /commande/Simulation/AiguillageDroite std_msgs/msg/Int32 "{data: 5}"
+
+```
+
+> **Note :** Vous verrez `data: 5` apparaître dans le **TERMINAL 2** (pour le déverouillage). Dans le **TERMINAL 1**, le message `DROITE -> Aiguillage 5` s'affiche.
+
+**TERMINAL 4 : Simulation du capteur (Réponse Coppelia)**
+On envoie la valeur correspondant au bitmask de l'aiguillage 5 en position droite ($2^8$).
+
+```bash
+source install/setup.bash
+ros2 topic pub -1 /sim_ros_interface/aig std_msgs/msg/Int32 "{data: 256}"
+
+```
+
+---
+
+### Résultat attendu
+
+Grâce à la valeur **256**, la boucle `while` dans votre code va enfin détecter que l'aiguillage est arrivé à destination.
+
+* **TERMINAL 1 :** Le message `SUCCES : Aiguillage 5 est à DROITE` doit apparaître instantanément.
+* **TERMINAL 2 :** Vous devez recevoir un message `data: 5`, confirmant que le nœud a envoyé l'ordre de verrouillage final.
+
+
+
+
 
 
 
