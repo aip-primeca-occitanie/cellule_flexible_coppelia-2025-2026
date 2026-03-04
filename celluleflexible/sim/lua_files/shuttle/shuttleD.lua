@@ -16,12 +16,62 @@ function sysCall_init()
         produitHandles[i] = sim.callScriptFunction('getHandleInside', sim.scripttype_mainscript, 'Produit'..i..'_'..lettre)
     end
 
-    -- Couleurs (Table simplifiée pour la lisibilité)
+    -- Couleurs (Table complète)
     colors = {
-        base = {200/255, 200/255, 200/255},
-        [10] = {255/255, 153/255, 153/255}, [11] = {255/255, 102/255, 102/255}, [12] = {255/255, 0/255, 0/255},
-        [20] = {102/255, 178/255, 255/255}, [22] = {0/255, 102/255, 255/255},
-        -- (Gardez le reste de vos couleurs ici)
+        -- Couleur de base
+        base = {200/255, 200/255, 200/255},       -- 0
+
+        -- Spectre Rouge (1)
+        [10] = {255/255, 153/255, 153/255},       -- red_0
+        [11] = {255/255, 102/255, 102/255},       -- red_1
+        [12] = {255/255,   0/255,   0/255},       -- red_2
+        [13] = {255/255,   0/255,   0/255},       -- red_3
+        [14] = {230/255,   0/255,   0/255},       -- red_4
+
+        -- Spectre Bleu (2)
+        [20] = {102/255, 178/255, 255/255},       -- blue_0
+        [21] = { 51/255, 153/255, 255/255},       -- blue_1
+        [22] = {  0/255, 102/255, 255/255},       -- blue_2
+        [23] = {  0/255, 102/255, 255/255},       -- blue_3
+        [24] = {  0/255,   0/255, 255/255},       -- blue_4
+
+        -- Spectre Vert (3)
+        [30] = {153/255, 255/255, 153/255},       -- green_0
+        [31] = {102/255, 255/255, 102/255},       -- green_1
+        [32] = {  0/255, 204/255,   0/255},       -- green_2
+        [33] = {  0/255, 204/255,   0/255},       -- green_3
+        [34] = {  0/255, 150/255,   0/255},       -- green_4
+
+        -- Spectre Orange (4)
+        [40] = {255/255, 217/255, 172/255},       -- orange_0
+        [41] = {255/255, 178/255, 102/255},       -- orange_1
+        [42] = {255/255, 128/255,   0/255},       -- orange_2
+        [43] = {255/255, 128/255,   0/255},       -- orange_3
+        [44] = {255/255, 100/255,   0/255},       -- orange_4
+
+        -- Spectre Rose (5)
+        [50] = {255/255, 153/255, 204/255},       -- pink_0
+        [51] = {255/255, 102/255, 178/255},       -- pink_1
+        [52] = {255/255,   0/255, 127/255},       -- pink_2
+        [53] = {255/255,   0/255, 127/255},       -- pink_3
+        [54] = {204/255,   0/255, 102/255},       -- pink_4
+
+        -- Spectre Jaune (6)
+        [60] = {190/255, 180/255,  80/255},       -- yellow_0
+        [61] = {210/255, 200/255,  60/255},       -- yellow_1
+        [62] = {250/255, 240/255,   0/255},       -- yellow_2
+        [63] = {250/255, 240/255,   0/255},       -- yellow_3
+        [64] = {255/255, 255/255,   0/255},       -- yellow_4
+
+        -- Spectre Blanc (7)
+        [72] = {240/255, 240/255, 240/255},       -- white_2
+        [73] = {240/255, 240/255, 240/255},       -- white_3
+        [74] = {255/255, 255/255, 255/255},       -- white_4
+
+        -- Spectre Noir (8)
+        [82] = { 10/255,  10/255,  10/255},       -- black_2
+        [83] = { 10/255,  10/255,  10/255},       -- black_3
+        [84] = {  0/255,   0/255,   0/255}        -- black_4
     }
 
     -- Vérification du plugin ROS 2
@@ -39,6 +89,7 @@ function sysCall_init()
         sim.addLog(sim.verbosity_errors, "ROS2 plugin not found!")
     end
 end
+
 -- Callback appelée quand ROS 2 envoie un message
 function color_callback(msg)
     -- msg.data est un tableau de 6 entiers
@@ -56,9 +107,11 @@ function updateObjectColor(object, code)
     local color = colors[code] or colors.base
     local trans = 1.0
 
-    -- On rétablit la logique de transparence de l'ancien code
+    -- Logique de transparence fidèle au script original
     if code == 0 then
         trans = 0.0 -- 0 = Totalement transparent (invisible) par défaut
+    elseif code == 72 then
+        trans = 0.7 -- Exception pour le blanc 2
     elseif code % 10 == 2 then
         trans = 0.5 -- 0.5 = Semi-transparent pour les codes finissant par 2 (ex: 12, 22...)
     else
@@ -68,6 +121,7 @@ function updateObjectColor(object, code)
     sim.setShapeColor(object, nil, sim.colorcomponent_ambient_diffuse, color)
     sim.setShapeColor(object, nil, sim.colorcomponent_transparency, {trans})
 end
+
 function sysCall_actuation()
     local slow = sim.checkProximitySensor(InductiveSensor, sim.handle_all)
     local stop = sim.checkProximitySensor(UltrasonicSensor, sim.handle_all)
