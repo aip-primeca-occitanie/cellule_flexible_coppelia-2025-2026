@@ -57,6 +57,8 @@ int main(int argc, char **argv)
 
     spin_thread.join();
 
+    cout<<"On est d'accord on vient jamais ici?"<<endl;
+
     rclcpp::shutdown();
     return 0;
 }

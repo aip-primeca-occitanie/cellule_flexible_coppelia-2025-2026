@@ -73,33 +73,23 @@ function sysCall_init()
         [83] = { 10/255,  10/255,  10/255},       -- black_3
         [84] = {  0/255,   0/255,   0/255}        -- black_4
     }
-
-    -- Vérification du plugin ROS 2
-    if simROS2 then
-        
-        -- On définit le nom du topic proprement, par exemple : /ShuttleZ_1/set_colors
-        local topicName = '/' .. myName:gsub("#","_") .. '/set_colors'
-        
-        -- Subscriber pour changer les couleurs via ROS2 (SANS createNode)
-        colorSub = simROS2.createSubscription(topicName, 'std_msgs/msg/Int32MultiArray', 'color_callback')
-        
-        -- État initial des couleurs
-        currentColors = {0, 0, 0, 0, 0, 0}
-    else
-        sim.addLog(sim.verbosity_errors, "ROS2 plugin not found!")
-    end
+    
 end
 
--- Callback appelée quand ROS 2 envoie un message
-function color_callback(msg)
-    -- msg.data est un tableau de 6 entiers
-    currentColors = msg.data
-end
 
 function sysCall_sensing()
     -- Mise à jour des couleurs des produits
     for i=1,6 do
-        updateObjectColor(produitHandles[i], currentColors[i] or 0)
+        -- Les index des signaux vont de 0 à 5 (ex: ShuttleA#0_color, ShuttleA#1_color...)
+        local signalName = 'Shuttle' .. lettre .. '#' .. (i-1) .. '_color'
+        local colorCode = sim.getInt32Signal(signalName)
+        
+        -- Si le signal est vide (nil), ça veut dire qu'il n'y a pas de pièce (couleur 0)
+        if colorCode == nil then 
+            colorCode = 0 
+        end
+        
+        updateObjectColor(produitHandles[i], colorCode)
     end
 end
 
@@ -142,8 +132,5 @@ function sysCall_actuation()
 end
 
 function sysCall_cleanup()
-    -- On ferme proprement la souscription au lieu de détruire un Node
-    if simROS2 and colorSub then
-        simROS2.shutdownSubscription(colorSub)
-    end
+
 end

@@ -137,7 +137,7 @@ int main(int argc, char** argv)
         
         // --- NOUVEAUTÉ : ON LANCE LE MENU DANS UN THREAD SÉPARÉ ---
         std::thread menu_thread([&]() {
-            while(rclcpp::ok() && !petrifinished){
+            while(rclcpp::ok()){
                 std::string choix;
                 std::cout << "\nQue voulez faire ?\n1- Ajouter un produit\n2- Pause simu\n3- Play simu\n4- Fin programme\n5- Simu ou Atelier ?\nChoix : ";
                 std::cin >> choix;
@@ -191,7 +191,7 @@ int main(int argc, char** argv)
 
         // --- LA BOUCLE PRINCIPALE (Capteurs) N'EST PLUS BLOQUÉE ! ---
         rclcpp::Rate rate_spin(25); // On force une lecture à 25 Hz
-        while(rclcpp::ok() && !petrifinished) {
+        while(rclcpp::ok()) {
             rclcpp::spin_some(node); // On avale tous les capteurs en continu
             rate_spin.sleep();
         }

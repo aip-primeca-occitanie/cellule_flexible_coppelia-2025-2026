@@ -21,8 +21,16 @@ float valueSim_getTime;
 time_t tmm = time(0);
 char* dt = ctime(&tmm);
 
-std::string path = ament_index_cpp::get_package_share_directory("commande_locale");
-std::string filepath = path.substr(0, path.length() - (15 + 11)) + "log.txt";
+std::string genererCheminLog() {
+    std::string p = ament_index_cpp::get_package_share_directory("commande_locale");
+    size_t pos = p.find("ros_ws");
+    if (pos != std::string::npos) {
+        return p.substr(0, pos) + "log.txt";
+    }
+    return "log.txt";
+}
+
+std::string filepath = genererCheminLog();
 
 ofstream monFlux(filepath, ios::app);  //On essaye d'ouvrir le fichier
 

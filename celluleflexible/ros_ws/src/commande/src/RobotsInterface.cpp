@@ -454,7 +454,7 @@ void RobotsInterface::Evacuer()
 	std_msgs::msg::Byte msg;
 	pub_evacuer_piece->publish(msg);
 
-	//rclcpp::sleep_for(std::chrono::seconds(1));
+	rclcpp::sleep_for(std::chrono::seconds(1));
 
 	cout << BOLDCYAN << "Evacuation !" << RESET << endl;
 }

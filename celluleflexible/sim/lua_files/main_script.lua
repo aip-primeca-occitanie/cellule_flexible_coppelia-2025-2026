@@ -188,6 +188,7 @@ end
 function GetColorVrepControllerCallback(msg)
     local nameColorSignal=msg.data
     local color=sim.getInt32Signal(nameColorSignal)
+    if color == nil then color = 0 end   -- <--- AJOUTE CETTE LIGNE
     simROS2.publish(pubGetColorVrepController,{data=color})
 end
 
@@ -322,6 +323,7 @@ end
 function GetColor1Callback(msg)
     local nameColorSignal=msg.data
     local color=sim.getInt32Signal(nameColorSignal)
+    if color == nil then color = 0 end   -- <--- AJOUTE CETTE LIGNE
     simROS2.publish(pubGetColor1,{data=color})
 end
 
@@ -420,12 +422,14 @@ end
 function GetColor2Callback(msg)
     local nameColorSignal=msg.data
     local color=sim.getInt32Signal(nameColorSignal)
+    if color == nil then color = 0 end   -- <--- AJOUTE CETTE LIGNE
     simROS2.publish(pubGetColor2,{data=color})
 end
 
 function GetColor2UpdateCallback(msg)
     local nameColorSignal=msg.data
     local color=sim.getInt32Signal(nameColorSignal)
+    if color == nil then color = 0 end   -- <--- AJOUTE CETTE LIGNE
     simROS2.publish(pubGetColor2Update,{data=color})
 end
 
@@ -524,12 +528,14 @@ end
 function GetColor3Callback(msg)
     local nameColorSignal=msg.data
     local color=sim.getInt32Signal(nameColorSignal)
+    if color == nil then color = 0 end   -- <--- AJOUTE CETTE LIGNE
     simROS2.publish(pubGetColor3,{data=color})
 end
 
 function GetColor3UpdateCallback(msg)
     local nameColorSignal=msg.data
     local color=sim.getInt32Signal(nameColorSignal)
+    if color == nil then color = 0 end   -- <--- AJOUTE CETTE LIGNE
     simROS2.publish(pubGetColor3Update,{data=color})
 end
 
@@ -628,12 +634,14 @@ end
 function GetColor4Callback(msg)
     local nameColorSignal=msg.data
     local color=sim.getInt32Signal(nameColorSignal)
+    if color == nil then color = 0 end   -- <--- AJOUTE CETTE LIGNE
     simROS2.publish(pubGetColor4,{data=color})
 end
 
 function GetColor4UpdateCallback(msg)
     local nameColorSignal=msg.data
     local color=sim.getInt32Signal(nameColorSignal)
+    if color == nil then color = 0 end   -- <--- AJOUTE CETTE LIGNE
     simROS2.publish(pubGetColor4Update,{data=color})
 end
 
