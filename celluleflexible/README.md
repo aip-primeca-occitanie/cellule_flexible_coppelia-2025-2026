@@ -42,9 +42,14 @@ Il s'agit de l'espace de travail (workspace) ROS 2. Il contient le code source (
 
 ### 1.5) forTER
 
-Ce dossier contient des outils supplémentaires destinés au projet TER, notamment des scripts d'évaluation de séquences comme `checker.py` ou des fichiers de configuration pour la documentation (`Doxyfile`). **A REFAIRE**
+Ce dossier contient des outils et scripts spécifiquement destinés à l'évaluation du projet TER des étudiants. On y retrouve principalement deux fichiers essentiels :
 
----
+* **`checker.py`** : Il s'agit d'un script d'évaluation écrit en Python. Son rôle est de comparer les données de production attendues (le cahier des charges défini dans un fichier de configuration) avec ce qui a réellement été exécuté lors de la simulation (via la lecture du fichier `.log`).
+* **Ce qu'il vérifie** : Il s'assure qu'il n'y a pas d'erreurs dans l'exécution : respect du bon enchaînement des tâches sur les 8 postes, respect des durées de chaque opération, vérification du nombre de produits créés et évacués (limité à 6 types de produits et 5 tâches max par produit). Il calcule également des métriques de performance comme le *makespan* (temps de production) moyen.
+
+
+* **`XXX_XXX_Doxyfile_config`** : C'est un fichier de configuration conçu pour **Doxygen**, un outil permettant de générer automatiquement une documentation complète et navigable (en HTML) à partir des commentaires du code source C++ de l'espace de travail. Il permet de réaliser le script4 de documentation dans le TER Atelier flexible.
+
 
 ## 2) Protocole complet d'exécution avec ROS 2
 
