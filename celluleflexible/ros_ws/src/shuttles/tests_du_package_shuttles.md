@@ -1,4 +1,4 @@
-# Tests du package robots :
+# Tests du package shuttle :
 
 ## 1) Prérequis
 On doit avoir lancé dans un terminal (1) dans ros_ws:
@@ -13,69 +13,46 @@ On doit avoir un autre terminal (2) dans ros_ws prêt :
        source /opt/ros/jazzy/setup.bash
        source install/setup.bash
 ```
-       
-## 2) Test OK du Shutdown
-EXPLICATIONS : Le but est de tester que la simulation se ferme bien lorsqu'on lui en donne l'ordre.
+
+## 2) Test OK de l'initialisation du Shuttle Manager
+
+EXPLICATIONS : Le but est de tester que le gestionnaire de navettes démarre correctement, sort de sa boucle d'attente à la réception du nombre total de navettes, et place bien ces dernières dans leurs files d'attente initiales (ce que l'on vérifie en activant l'affichage de débogage).
 
 TEST : Dans le terminal 1, on fait :
+
 ```bash
-       ros2 launch robots robotsGauche.launch.py
+       ros2 run shuttles shuttle_manager
+
 ```
 
-Dans le terminal 2, on fait :
+Dans le terminal 2, on fait d'abord pour débloquer l'initialisation :
+
 ```bash
-       ros2 topic pub -n temp_pub --once /commande_locale/shutdown std_msgs/msg/Byte "{}"
+       ros2 topic pub --once /commande_locale/nbNavettes std_msgs/msg/Int32 "{data: 6}"
+
 ```
 
-RESULTAT : On doit voir les deux fenêtres des robots se fermer (terminal 1) et voir apparaitre des messages "process has finished cleanly" (terminal 1)
+Puis toujours dans le terminal 2, on fait pour afficher le contenu des files d'attente en temps réel dans le terminal 1 :
 
-
-## 3) Test KO de l'initialisation (choix du robot)
-EXPLICATIONS : Il y a 4 robots différents. Nous devons donc choisir un numéro de robot compris entre 1 et 4. Si num_robot est 1, 2, 3 ou 4, la simulation doit s'ouvrir correctement (directement dans le terminal). Si num_robot est invalide, la simulation renvoit CHOIX ROBOT INCORRECT.
-
-TEST : Dans le terminal 1, on fait :
 ```bash
-       ros2 run robots robot 8
+       ros2 topic pub --once /commande/ShuttleManagerDisplay std_msgs/msg/Byte "{data: 1}"
+
+```
+RESULTAT : le terminal 1 affiche la file attente 
+
+## 3) Test OK du service de détection de navette
+
+EXPLICATIONS : Le but est de tester la communication client/serveur entre un robot et le gestionnaire de navettes. On simule la requête d'un robot qui interroge le nœud central pour savoir quelle navette se trouve devant son poste de travail. D'après notre initialisation de l'étape 1, la navette "0" se trouve dans la file 3 (qui correspond au robot 2 en position 3).
+
+TEST : Dans le terminal 2 (pendant que le `shuttle_manager` tourne toujours dans le terminal 1), on fait :
+
+```bash
+       ros2 service call /get_id_shuttle_at_poste shuttles/srv/ShuttleId "{robot: 2, position: 3}"
+
 ```
 
-RESULTAT : La console affiche "CHOIX ROBOT INCORRECT".
+RESULTAT : Le terminal 2 devrait alors vous afficher une réponse confirmant la détection, avec la ligne `id_shuttle: 0`
 
+Voici le protocole de test pour un cas d'erreur (KO), rédigé selon le même formalisme.
 
-## 4) Protocole pour finir l'initialisation 
-//Pas besoin si lié à Coppelia, besoin si testé individuellement
-
-EXPLICATIONS : Pour terminer l'initialisation, nous avons besoin d'avoir tous les handles du robot. On demande donc à Coppelia de nous les envoyer. Comme Coppelia n'est pas encore présent, on simule sa réponse par une publication sur le bon topic. 
-
-TEST : Dans le terminal 2, on fait :
-```bash
-       ros2 run robots robot 2
-       ros2 topic pub --times 7 /sim_ros_interface/services/response/robot2/GetObjectHandle std_msgs/msg/Int32 "{data: 1}"
-```
-
-RESULTAT : La console affiche "Robot 2 OK"
-
-## 5) Test OK de la fonction Evacuer (faire le 4=fin initialisation avant)
-EXPLICATIONS : On souscrit dans l'initialisation au topic "/commande/Simulation/Evacuer", de format Byte, qui exécute si activé la fonction Evacuer (dans Robot). On vérifie donc qu'en publiant un message sur ce topic, la fonction Evacuer s'effectue correctement.
-
-TEST : (tout dans le terminal 2)
-* 5.1) Pour rentrer dans la fonction (publier un message sur le topic), on fait :
-
-    ```bash
-    ros2 topic pub -n temp_pub --once /commande/Simulation/Evacuer std_msgs/msg/Byte "{}"
-    ```
-
-* 5.2) Ensuite pour sortir du premier while, on fait :
-
-    ```bash
-    ros2 topic pub --times 6 /sim_ros_interface/services/response/robot2/GetColor std_msgs/msg/Int32 "{data: 1}"
-    ```
-
-* 5.3) Pour sortir de la fonction Evacuer, on fait :
-
-    ```bash
-    ros2 topic pub -n temp_pub --once /sim_ros_interface/services/response/robot2/ChangeColor std_msgs/msg/Byte "{}"
-    ```
-RESULTAT : (visible dans le terminal 1)
-* Pour le 5.1. nous obtenons "Callback Evacuer recu pour robot 2".
-* Pour le 5.2. nous obtenons une liste de couleur "couleur[0]=1, couleur[1]=1, couleur[2]=1, couleur[3]=1, couleur[4]=1, couleur[5]=1"
 

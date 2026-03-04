@@ -44,8 +44,8 @@ Ces fichiers gèrent la détection physique dans la scène et remontent l'inform
 
 ### 3.4. Dossier LBR_iiwa_14_R820
 
-* **`ProduitTransporte_X.lua`** : Attribué à chaque robot. Il écoute un topic booléen (ex: `/commande/Simulation/TransportBras1`). Si la valeur est `true`, il rend le produit virtuel (représentant la pièce tenue par la pince) visible en passant sa transparence à 1. Sinon, il le rend transparent (0).
-* **`RG2_X.lua`** : Gère l'actionnement mécanique des pinces des robots. Il s'abonne à un topic dédié (ex: `/robot/cmdPinceRobot1` de type `std_msgs/msg/Int32`). À la réception d'un message, il applique une force de 20 N au moteur de la pince (`RG2_openCloseJoint`) :
+* **`ProduitTransporte_X.lua`** : Attribué à chaque robot. Il écoute un topic booléen (ex: `/commande/Simulation/TransportBrasX`). Si la valeur est `true`, il rend le produit virtuel (représentant la pièce tenue par la pince) visible en passant sa transparence à 1. Sinon, il le rend transparent (0).
+* **`RG2_X.lua`** : Gère l'actionnement mécanique des pinces des robots. Il s'abonne à un topic dédié (ex: `/robot/cmdPinceRobotX` de type `std_msgs/msg/Int32`). À la réception d'un message, il applique une force de 20 N au moteur de la pince (`RG2_openCloseJoint`) :
 * Si la donnée vaut **1** : Fermeture de la pince (vitesse de -0.10 m/s).
 * Si la donnée vaut **0** : Ouverture de la pince (vitesse de 0.10 m/s).
 
@@ -79,12 +79,3 @@ Si le nœud ROS 2 reçoit la valeur **5** sur le topic `/sim_ros_interface/RailS
 1. Lancez le logiciel CoppeliaSim.
 2. Ouvrez la scène en allant dans `File > Open scene...` et sélectionnez `sim/Simulation4Robots.ttt`.
 3. Appuyez sur le bouton "Play" (Start/Resume Simulation). Les scripts Lua tenteront de s'abonner et de publier sur le réseau ROS 2 via le plugin `simROS2`.
-
-
-* Lancement couplé :
-Pour que la simulation prenne vie, il est nécessaire de lancer les nœuds ROS 2 en parallèle, comme expliqué dans le paquet robots :
-```bash
-  ros2 launch robots robotsGauche.launch.py
-  ros2 launch robots robotsDroite.launch.py
-
-```
