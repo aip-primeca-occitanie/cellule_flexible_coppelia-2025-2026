@@ -91,7 +91,7 @@ void display()
 
 void ShutdownCallback(const std_msgs::msg::Byte::SharedPtr msg)
 {
-        rclcpp::shutdown(); // <-- Changement ROS2
+        rclcpp::shutdown();
 }
 
 int main(int argc, char **argv)
@@ -101,10 +101,9 @@ int main(int argc, char **argv)
      ************************************************* */
 
 
-    rclcpp::init(argc, argv); // <-- Changement ROS2
-    auto node = rclcpp::Node::make_shared("commande"); // <-- Changement ROS2
+    rclcpp::init(argc, argv); 
+    auto node = rclcpp::Node::make_shared("commande"); 
 
-    // <-- Changements ROS2 pour les publishers et subscribers
     auto pub_spawnShuttles = node->create_publisher<std_msgs::msg::Int32>("/commande_locale/nbNavettes",10);
     auto sub_shutdown = node->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, ShutdownCallback);
 
@@ -115,17 +114,17 @@ int main(int argc, char **argv)
     AigsInterface aiguillage(node);
     Capteurs capteur(node);
 
-    rclcpp::Rate loop_rate(25); //fréquence de la boucle <-- Changement ROS2
+    rclcpp::Rate loop_rate(25); //fréquence de la boucle
 
     // On attend la fin de l'initialisation des robots
     while(!robot.RobotInitialise(1) || !robot.RobotInitialise(2))
     {
-        rclcpp::spin_some(node); // <-- Changement ROS2
+        rclcpp::spin_some(node); 
         loop_rate.sleep();
     }
     while(nbRobot==4 && (!robot.RobotInitialise(3) || !robot.RobotInitialise(4)))
     {
-        rclcpp::spin_some(node); // <-- Changement ROS2
+        rclcpp::spin_some(node); 
         loop_rate.sleep();
     }
 
@@ -170,7 +169,7 @@ int main(int argc, char **argv)
     /////////////////////  |  FIN INIT ETU  |  ////////////////////
     ///////////////////////////////////////////////////////////////////
 
-    while (rclcpp::ok()) // <-- Changement ROS2
+    while (rclcpp::ok()) 
     {
         // Seulement si la simulation est en cours
         if(cmd.getPlay()==true)
@@ -335,15 +334,15 @@ int main(int argc, char **argv)
                 display();
                 cout << endl << BOLDCYAN << " --[PETRI TERMINE]--" << RESET << endl;
                 cmd.FinPetri();
-                while(rclcpp::ok()) // <-- Changement ROS2
+                while(rclcpp::ok()) 
                 {
-                    rclcpp::spin_some(node); // <-- Changement ROS2
+                    rclcpp::spin_some(node); 
                     loop_rate.sleep();
                 }
             }
         }
 
-        rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées <-- Changement ROS2
+        rclcpp::spin_some(node); //permet aux fonction callback de ros dans les objets d'êtres appelées
         loop_rate.sleep(); //permet de synchroniser la boucle while. Il attend le temps qu'il reste pour faire le 25Hz (ou la fréquence indiquée dans le loop_rate)
     }
 
