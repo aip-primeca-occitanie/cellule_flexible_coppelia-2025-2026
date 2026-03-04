@@ -55,7 +55,7 @@ ros2 topic pub -1 /commande/Simulation/AiguillageDroite std_msgs/msg/Int32 "{dat
 
 ```
 
-> **Note :** Vous verrez `data: 5` apparaître dans le **TERMINAL 2**. Dans le **TERMINAL 1**, le message `DROITE -> Aiguillage 5` s'affiche.
+> **Note :** Vous verrez `data: 5` apparaître dans le **TERMINAL 2** (pour le déverouillage). Dans le **TERMINAL 1**, le message `DROITE -> Aiguillage 5` s'affiche.
 
 **TERMINAL 4 : Simulation du capteur (Réponse Coppelia)**
 On envoie la valeur correspondant au bitmask de l'aiguillage 5 en position droite ($2^8$).
