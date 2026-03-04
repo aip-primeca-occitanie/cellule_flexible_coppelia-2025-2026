@@ -104,6 +104,6 @@ Il y a deux manières différentes de lancer le code. Il faut préalablement avo
   ```
 
 ## 5. Protocole de Test
-Il a fallu, pour la migration du code de ROS1 à ROS2, tester unitairement ce package. Pour cela, un protocole de test a été établi, à retrouver dans le fichier "tests_du_package_robots".
+Il a fallu, pour la migration du code de ROS1 à ROS 2, tester unitairement ce package. Un protocole de test a été établi pour s'assurer du bon fonctionnement des structures de données (queues) et de la stabilité du nœud (correction des Segmentation Faults).
 
-Ainsi, dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim. Ce protocole n'est donc valable que **si CoppeliaSim n'est pas opérationnel** (n'envoie pas les messages correctement sur les topics).
+Ainsi, dans ce protocole, nous envoyons les messages sur les topics associés à la place de CoppeliaSim (notamment l'état des capteurs et l'initialisation du nombre de navettes). Ce protocole n'est donc pleinement testable manuellement que si CoppeliaSim n'est pas opérationnel (n'envoie pas les messages simultanément sur les topics et ne pollue pas les tests).
