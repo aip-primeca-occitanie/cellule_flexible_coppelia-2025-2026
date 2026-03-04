@@ -11,28 +11,15 @@ Ce dossier est composé de 4 éléments principaux :
 
 * Un fichier `package.xml` définissant les métadonnées et les dépendances du paquet (`rclcpp`, `std_msgs`, `aiguillages`, etc.).
 * Un fichier `CMakeLists.txt` configuré pour ROS 2, gérant la compilation du code C++ et la génération des interfaces personnalisées (messages et services).
-
-
 * Des dossiers `msg` et `srv`, permettant de définir les structures de communication personnalisées :
-* 
-`MsgErreur.msg` 
-
-
-* 
-`MsgShuttleChange.msg` 
-
-
-* 
-`MsgShuttleCreate.msg` 
-
-
-* `ShuttleId.srv` (pour interroger l'ID d'une navette)
-
-
+  * `MsgErreur.msg` 
+  * `MsgShuttleChange.msg` 
+  * `MsgShuttleCreate.msg` 
+  * `ShuttleId.srv` (pour interroger l'ID d'une navette)
 * Un dossier `src`, où se trouve le code source C++ et composé des fichiers suivants :
-* `main_ShuttleManager.cpp`, qui constitue le cœur du programme et la boucle principale.
-* `FileAttente.cpp` et `FileAttente.h`, qui définissent la logique des queues pour modéliser le déplacement des navettes de tronçon en tronçon.
-* `capteurs.cpp` et `capteurs.h`, qui gèrent la récupération et le stockage des états des capteurs de la simulation.
+  * `main_ShuttleManager.cpp`, qui constitue le cœur du programme et la boucle principale.
+  * `FileAttente.cpp` et `FileAttente.h`, qui définissent la logique des queues pour modéliser le déplacement des navettes de tronçon en tronçon.
+  * `capteurs.cpp` et `capteurs.h`, qui gèrent la récupération et le stockage des états des capteurs de la simulation.
 
 
 
@@ -51,8 +38,6 @@ La fonction main est le code principal du package. Elle exécute, dans l'ordre :
 
 ### 3.2. Fichiers FileAttente.cpp et FileAttente.h
 
-#### 3.2.1. Détails des fonctions utilisées
-
 Ces fichiers encapsulent la gestion du trafic des navettes :
 
 * Le constructeur *FileAttente*, qui initialise la file avec son aiguillage associé et ses successeurs (droite et gauche).
@@ -62,8 +47,6 @@ Ces fichiers encapsulent la gestion du trafic des navettes :
 * Les fonctions *get_id_aiguillage* et *get_queue*, qui retournent respectivement l'identifiant de l'aiguillage et la file complète.
 
 ### 3.3. Fichiers capteurs.cpp et capteurs.h
-
-#### 3.3.1. Détails des fonctions utilisées
 
 Ces fichiers s'occupent de l'interface avec la simulation matérielle :
 
@@ -77,35 +60,29 @@ Pendant l'exécution, le code sécurise la simulation à travers plusieurs méca
 
 * **Service Sécurisé** : Dans la fonction `shuttle_at_poste`, si un robot demande l'ID d'une navette à un emplacement invalide ou inexistant, le système renvoie la valeur `66` (ID vide) au lieu de crasher, évitant ainsi un Segmentation Fault.
 * **Erreur d'Aiguillage** : "J'ai perdu une navette [...] car un aiguillage n'était pas en butée...". Se déclenche dans `FileAttente::maj` si une navette passe un aiguillage qui n'a pas fini de tourner (ni totalement à droite, ni totalement à gauche). Renvoie l'ID `-1`.
-* 
-**Signalement ROS 2 d'erreur** : Si le gestionnaire détecte une perte de navette (renvoi de `-1`), il publie un `MsgErreur` avec le `code=4` sur le topic `/commande/Simulation/Erreur_log`.
-
-
+* **Signalement ROS 2 d'erreur** : Si le gestionnaire détecte une perte de navette (renvoi de `-1`), il publie un `MsgErreur` avec le `code=4` sur le topic `/commande/Simulation/Erreur_log`.
 * **Sécurité mémoire** : Protection de l'affichage de débogage (`activate_debug_display`) en utilisant des copies de files d'attente pour l'itération, prévenant les fuites ou les accès concurrents non désirés sur les vecteurs principaux.
 
 ## 4. Utilisation
 
-Il faut préalablement avoir fait les commandes suivantes dans le workspace ROS (par exemple `ros_ws`) :
+Il faut préalablement avoir fait les commandes suivantes dans le workspace ROS (`ros_ws`) :
 
 ```bash
   source /opt/ros/jazzy/setup.bash
-  colcon build --packages-select shuttles
+  colcon build
   source install/setup.bash
-
 ```
 
-* Par un lancement individuel :
+* Pour lancer le noeud :
 Exécuter la ligne suivante permet de lancer le nœud gestionnaire des navettes :
 ```bash
   ros2 run shuttles shuttle_manager
-
 ```
-
+"shuttle_manager" est l'exécutable du package. Il lance main_ShuttleManager, capteurs et FileAttente.
 
 * Pour activer les logs de débogage en temps réel dans le terminal, il faut publier sur le topic dédié :
 ```bash
   ros2 topic pub /commande/ShuttleManagerDisplay std_msgs/msg/Byte "data: 1" -1
-
 ```
 
 
