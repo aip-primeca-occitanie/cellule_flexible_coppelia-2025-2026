@@ -1,4 +1,4 @@
-# Package sim
+# Détail dossier sim
 
 ## 1. Description générale
 
@@ -12,11 +12,11 @@ Ce dossier est composé de 3 éléments principaux à sa racine :
 * Un fichier `Simulation4Robots.ttt` qui est la scène CoppeliaSim physique (14.0 MB).
 * Un fichier `README.md` servant de documentation.
 * Un dossier `lua_files`, où se trouve le code source Lua exécuté par les éléments de la simulation. Il est composé des éléments suivants :
-* `main_script.lua`, qui orchestre la simulation globale.
-* Des scripts liés aux capteurs (`RailSensor.lua`, `StationSensor.lua`, `StopSensor.lua`, `SwitchSensor.lua`, `Vision_sensor.lua`).
-* Des scripts liés aux actionneurs (`aiguillages.lua`, `Stop.lua`).
-* Un sous-dossier `LBR_iiwa_14_R820` pour la logique embarquée sur les bras robotiques.
-* Un sous-dossier `shuttle` pour l'affichage des navettes.
+  * `main_script.lua`, qui orchestre la simulation globale.
+  * Des scripts liés aux capteurs (`RailSensor.lua`, `StationSensor.lua`, `StopSensor.lua`, `SwitchSensor.lua`, `Vision_sensor.lua`).
+  * Des scripts liés aux actionneurs (`aiguillages.lua`, `Stop.lua`).
+  * Un sous-dossier `LBR_iiwa_14_R820` pour la logique embarquée sur les bras robotiques.
+  * Un sous-dossier `shuttle` pour l'affichage des navettes.
 
 
 
@@ -34,7 +34,7 @@ Ce fichier est le chef d'orchestre de la scène. Lors de son initialisation, il 
 
 Ces fichiers gèrent la détection physique dans la scène et remontent l'information à ROS 2 :
 
-* **`RailSensor.lua`, `StationSensor.lua`, `StopSensor.lua`, `SwitchSensor.lua**` : Ces scripts lisent l'état de multiples capteurs de proximité (ex: CP01-CP10 pour les rails, PS01-PS24 pour les stops). Pour optimiser l'envoi, l'état de tous les capteurs d'une même famille est encodé dans un seul entier (somme de puissances de 2) puis publié sur un topic dédié (type `std_msgs/msg/Int32`).
+* **`RailSensor.lua`**, **`StationSensor.lua`**, **`StopSensor.lua`**, **`SwitchSensor.lua`** : Ces scripts lisent l'état de multiples capteurs de proximité (ex: CP01-CP10 pour les rails, PS01-PS24 pour les stops). Pour optimiser l'envoi, l'état de tous les capteurs d'une même famille est encodé dans un seul entier (somme de puissances de 2) puis publié sur un topic dédié (type `std_msgs/msg/Int32`).
 * **`Vision_sensor.lua`** : Il récupère l'image sous forme de chaîne binaire depuis un capteur de vision, la convertit, et formate l'en-tête pour la publier sur `/camera/image_raw` au format `sensor_msgs/msg/Image`.
 
 ### 3.3. Fichiers Actionneurs (Actuators)
@@ -46,16 +46,16 @@ Ces fichiers gèrent la détection physique dans la scène et remontent l'inform
 
 * **`ProduitTransporte_X.lua`** : Attribué à chaque robot. Il écoute un topic booléen (ex: `/commande/Simulation/TransportBrasX`). Si la valeur est `true`, il rend le produit virtuel (représentant la pièce tenue par la pince) visible en passant sa transparence à 1. Sinon, il le rend transparent (0).
 * **`RG2_X.lua`** : Gère l'actionnement mécanique des pinces des robots. Il s'abonne à un topic dédié (ex: `/robot/cmdPinceRobotX` de type `std_msgs/msg/Int32`). À la réception d'un message, il applique une force de 20 N au moteur de la pince (`RG2_openCloseJoint`) :
-* Si la donnée vaut **1** : Fermeture de la pince (vitesse de -0.10 m/s).
-* Si la donnée vaut **0** : Ouverture de la pince (vitesse de 0.10 m/s).
+  * Si la donnée vaut **1** : Fermeture de la pince (vitesse de -0.10 m/s).
+  * Si la donnée vaut **0** : Ouverture de la pince (vitesse de 0.10 m/s).
 
 
 
 ### 3.5. Dossier shuttle
 
 * **`shuttleX.lua`** : Ces scripts rendent les navettes autonomes en vitesse et gèrent leur affichage.
-* **Mouvement** : À l'aide des capteurs, la navette ajuste la vitesse de ses roues (avancer à 20, ralentir à 10, ou s'arrêter à 0 si obstacle détecté).
-* **Affichage** : Le script écoute le topic `/[nom_de_la_navette]/set_colors` attendant un tableau de 6 entiers. Il met alors à jour la couleur et la transparence des 6 emplacements de produits sur la navette grâce à une table de correspondance de couleurs RGB pré-définie.
+* **`Mouvement`** : À l'aide des capteurs, la navette ajuste la vitesse de ses roues (avancer à 20, ralentir à 10, ou s'arrêter à 0 si obstacle détecté).
+* **`Affichage`** : Le script écoute le topic `/[nom_de_la_navette]/set_colors` attendant un tableau de 6 entiers. Il met alors à jour la couleur et la transparence des 6 emplacements de produits sur la navette grâce à une table de correspondance de couleurs RGB pré-définie.
 
 
 
@@ -76,6 +76,6 @@ Si le nœud ROS 2 reçoit la valeur **5** sur le topic `/sim_ros_interface/RailS
 ## 5. Utilisation
 
 * Lancement de la simulation :
-1. Lancez le logiciel CoppeliaSim.
+1. Lancez le logiciel CoppeliaSim (entrez dans la console ./coppeliaSim.sh depuis le fichier CoppeliaSim).
 2. Ouvrez la scène en allant dans `File > Open scene...` et sélectionnez `sim/Simulation4Robots.ttt`.
 3. Appuyez sur le bouton "Play" (Start/Resume Simulation). Les scripts Lua tenteront de s'abonner et de publier sur le réseau ROS 2 via le plugin `simROS2`.
