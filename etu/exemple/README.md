@@ -6,11 +6,11 @@ Le but de ce répertoire est de fournir des fichiers de commande C++ de référe
 
 Comme l'illustre l'arborescence du dossier, ce répertoire est composé des éléments suivants :
 
-* Un fichier `README.txt` (ou `.md`) servant de documentation pour ce dossier spécifique.
+* Un fichier `README.md` servant de documentation pour ce dossier spécifique.
 * Trois scripts de commande C++ :
-* `TeamEMPTY.main_commande.cpp`
-* `TeamSALLAG.main_commande.cpp`
-* `Tuto_Basique.main_commande.cpp`
+  * `TeamEMPTY.main_commande.cpp`
+  * `TeamSALLAG.main_commande.cpp`
+  * `Tuto_Basique.main_commande.cpp`
 
 
 
