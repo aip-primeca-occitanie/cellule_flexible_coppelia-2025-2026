@@ -141,7 +141,7 @@ int main(int argc, char **argv)
 
     cmd.activateShuttleManagerDisplay();
     // cmd.activateAutoRunSimu();
-    int nbNavettes=0;//Mettre 0 pour demander a l'utilisateur
+    int nbNavettes=2;//Mettre 0 pour demander a l'utilisateur
     while(nbNavettes<1||nbNavettes>6)
     {
         cout << "Combien voulez vous de navettes ? [1..6]" << endl;
