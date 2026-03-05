@@ -65,5 +65,3 @@ const vector<vector<int>> Prod_dureeparposte{   { 7, 12 },
 const vector<int> Prod_qte{ 2,
                             3
 };
-
-

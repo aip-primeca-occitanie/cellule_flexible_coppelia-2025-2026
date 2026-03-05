@@ -50,45 +50,40 @@ Ce dossier contient des outils et scripts spécifiquement destinés à l'évalua
 
 * **`XXX_XXX_Doxyfile_config`** : C'est un fichier de configuration conçu pour **Doxygen**, un outil permettant de générer automatiquement une documentation complète et navigable (en HTML) à partir des commentaires du code source C++ de l'espace de travail. Il permet de réaliser le script4 de documentation dans le TER Atelier flexible.
 
+### 1.6) Autres fichiers
+Nous avons également deux autres fichiers dans ce dossier :
+* Le fichier **`log.txt`**, où est écrit à l'aide du fichier LogManager (commande_locale) les différentes étapes de la simulation. On y retrouve par exemple l'arrivée des nouveaux produits, avec le temps d'apparition et le numéro d'identification. Cela permet à la fin de la simulation de vérifier que toutes les actions de la séquence définie ont bien été réalisées.
+* Le fichier **`launch.sh`**, qui permet de lancer la simulation proprement. C'est ce fichier qui va afficher un message de bienvenue lors de l'entrée dans la simulation, et qui va lancer toute la simulation.
 
 ## 2) Protocole complet d'exécution avec ROS 2
 
 Il existe différents moyens de lancer la simulation générale. Ce protocole d'execution est utile en tant que développeur pour tester les noeuds et les scripts .lua sans trop rentrer dans le détail des packages, avant de passer par la procédure d'exécution à partir de scripts dans le dossier 'cellule_flexible_coppelia-2025-2026/etu' (procédure "étudiant", voir ReadMe 'etu').
 
-* Ouvrez un répertoire
-Voici le détail étape par étape et l'utilité de chaque ligne :
+* Ouvrez un terminal
 
-```bash
-cd Desktop/cellule_flexible_coppelia-2025-2026/celluleflexible/ros_ws/
+* Exécutez :
+    ```bash
+        cd ros_ws
+        source /opt/ros/jazzy/setup.bash
+        colcon build
+        source install/setup.bash
+        cd ../
+    ```
 
-```
+   Avec :
+   * **cd ros_ws** : Rentre dans le dossier ros-ws pour compiler les packages.
+   * **`source /opt/ros/jazzy/setup.bash`** : Charge les commandes globales de ROS 2 dans le terminal.
+   * **`colcon build`** : Compile l'ensemble des paquets présents dans le dossier `src`. Cela crée les dossiers build, install et log.
+   * **`source install/setup.bash`** : Rend vos paquets fraîchement compilés exécutables par le terminal courant.
+   * **cd ros_ws** : Retourne dans le dossier initial.
 
->>> Cette commande permet de naviguer dans l'arborescence de votre machine pour vous placer à la racine de l'espace de travail ROS 2 (`ros_ws`), là où se trouvent les sources et où la compilation doit s'effectuer.
 
-```bash
-source /opt/ros/jazzy/setup.bash
+* Exécutez :
+    ```bash
+        ./launch.sh
+    ```
 
-```
+  Cette ligne permet de lancer la simulation comme un étudiant, mais à partir des dossiers bas niveau. En effet, elle affiche un message de lancement dans la console, et exécute ensuite le fichier de démarrage principal (launch_alpha), situé dans le package `launcher`, qui va instancier tous les éléments de la simulation.
+  
+  Pour plus de détails, voir les readme des dossiers `/ros_ws/src` et `/ros_ws/src/launcher`, qui expliquent plus en détails que fait ce script `launch_alpha`.
 
->>> Cette ligne "source" l'installation globale de ROS 2 (version Jazzy). Elle permet à votre terminal de comprendre les commandes spécifiques à ROS 2 (comme `colcon` ou `ros2 run` / `ros2 launch`).
-
-```bash
-colcon build
-
-```
-
->>> Cette commande compile l'intégralité des packages présents dans le dossier `src` de votre `ros_ws`. Elle va générer (ou mettre à jour) les dossiers `build` et `install`.
-
-```bash
-source install/setup.bash
-
-```
-
->>> Une fois la compilation terminée, cette commande ajoute vos propres packages  compilés (situés dans le dossier `install`) à l'environnement de votre terminal. Sans cela, ROS 2 ne saurait pas où trouver vos nœuds et fichiers de lancement locaux.
-
-```bash
-ros2 launch launcher launch_alpha.launch.py
-
-```
-
->>> Cette ligne lance le fichier de démarrage principal (alpha) situé dans le package `launcher`. C'est  lui qui va instancier les éléments de commande globale et l'interface de la simulation.*(Pour plus de détails, voir le readme du dossier '/ros_ws/src/launcherReadme.md')*
