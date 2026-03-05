@@ -88,7 +88,7 @@ Pour vérifier que la simulation Coppelia fonctionne correctement, on utilise le
 
 ```bash
 	cp exemple/Tuto_Basique.main_commande.cpp .
-	./script0_Compile.sh Tuto_Basique dataP2_1_1_n0
+	source script0_Compile.sh Tuto_Basique dataP2_1_1_n0
 	./script1_Run.sh
 	./script2_GetSimuOutput.sh Tuto_Basique dataP2_1_1_n0
 	./script3_Validation.sh Tuto_Basique dataP2_1_1_n0
