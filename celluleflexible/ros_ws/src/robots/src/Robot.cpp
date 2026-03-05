@@ -1061,11 +1061,9 @@ void Robot::transport(bool valeur)
 // On definit qui evacue et comment
 void Robot::Evacuer(const std_msgs::msg::Byte::SharedPtr msg)
 {
-	std::cout << "Callback Evacuer recu pour robot "<< num_robot << std::endl;
 	if(num_robot==2)
 	{
 		int position=1;  // on evacue sur la position 1 du robot 2 <=> poste 3
-
 		int couleur[NB_CUBE];
 		std::string signal=poste_pos_1.get_nom();
 		msg_log_couleur.data.clear();
@@ -1079,12 +1077,17 @@ void Robot::Evacuer(const std_msgs::msg::Byte::SharedPtr msg)
 			fin.append(std::to_string(i));
 			fin.append("_color");
 			msgSim_getColor.data=fin;
-			
+
 			pubSim_getColor->publish(msgSim_getColor);
+			int tentatives_get = 0;
 
 			while(!repSim_getColor&&rclcpp::ok())
 			{
-				loop_rate->sleep();
+				if(tentatives_get++ > 25) {
+					pubSim_getColor->publish(msgSim_getColor);
+					tentatives_get = 0;
+				}
+				rclcpp::sleep_for(std::chrono::milliseconds(40)); 
 			}
 			repSim_getColor=false;
 			couleur[i]=valueSim_getColor;
@@ -1101,10 +1104,17 @@ void Robot::Evacuer(const std_msgs::msg::Byte::SharedPtr msg)
 		for(int i=0; i<NB_CUBE; i++)
 			msgSim_changeColor.data.push_back(0);
 		pubSim_changeColor->publish(msgSim_changeColor);
-		while(!repSim_changeColor&&rclcpp::ok())
-		{
-			loop_rate->sleep();
-		}
+		
+		int tentatives_change = 0; // Compteur pour la demande insistante
+        
+        while(!repSim_changeColor && rclcpp::ok())
+        {
+            if(tentatives_change++ > 25) {
+                pubSim_changeColor->publish(msgSim_changeColor);
+                tentatives_change = 0;
+            }
+            rclcpp::sleep_for(std::chrono::milliseconds(40)); 
+        }
 		repSim_changeColor=false;
 	}
 }
@@ -1238,16 +1248,16 @@ void Robot::init()
 
 	
 	//Subscribers
-	planifSendPosition = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/SendPositionRobot",10,std::bind(&Robot::SendPositionCallback, this, std::placeholders::_1));
-	planifSendJoints = this->create_subscription<commande_locale::msg::RobotJoints>("/commande/Simulation/SendJointsRobot",10,std::bind(&Robot::SendJointsCallback, this, std::placeholders::_1));
-	planifFermerPince = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/FermerPinceRobot",10,std::bind(&Robot::FermerPinceCallback, this, std::placeholders::_1));
-	planifOuvrirPince = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/OuvrirPinceRobot",10,std::bind(&Robot::OuvrirPinceCallback, this, std::placeholders::_1));
-	planifDescendreBras = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/DescendreBras",10,std::bind(&Robot::DescendreBrasCallback, this, std::placeholders::_1));
-	planifMonterBras = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/MonterBras",10,std::bind(&Robot::MonterBrasCallback, this, std::placeholders::_1));
-	planifControlerRobot = this->create_subscription<robots::msg::MoveRobot>("/commande/Simulation/ControlerBras",10,std::bind(&Robot::ControlerRobotCallback, this, std::placeholders::_1));
-	sub_faireTache = this->create_subscription<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache",10,std::bind(&Robot::faireTacheCallback, this, std::placeholders::_1));
-	sub_evacuer= this->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1));
-	subStopTache= this->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1));
+	planifSendPosition = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/SendPositionRobot",10,std::bind(&Robot::SendPositionCallback, this, std::placeholders::_1),options);
+	planifSendJoints = this->create_subscription<commande_locale::msg::RobotJoints>("/commande/Simulation/SendJointsRobot",10,std::bind(&Robot::SendJointsCallback, this, std::placeholders::_1),options);
+	planifFermerPince = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/FermerPinceRobot",10,std::bind(&Robot::FermerPinceCallback, this, std::placeholders::_1),options);
+	planifOuvrirPince = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/OuvrirPinceRobot",10,std::bind(&Robot::OuvrirPinceCallback, this, std::placeholders::_1),options);
+	planifDescendreBras = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/DescendreBras",10,std::bind(&Robot::DescendreBrasCallback, this, std::placeholders::_1),options);
+	planifMonterBras = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/MonterBras",10,std::bind(&Robot::MonterBrasCallback, this, std::placeholders::_1),options);
+	planifControlerRobot = this->create_subscription<robots::msg::MoveRobot>("/commande/Simulation/ControlerBras",10,std::bind(&Robot::ControlerRobotCallback, this, std::placeholders::_1),options);
+	sub_faireTache = this->create_subscription<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache",10,std::bind(&Robot::faireTacheCallback, this, std::placeholders::_1),options);
+	sub_evacuer= this->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1),options);
+	subStopTache= this->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1),options);
 	subDeplacerPiece= this->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1),options);
 
 	//Publishers
