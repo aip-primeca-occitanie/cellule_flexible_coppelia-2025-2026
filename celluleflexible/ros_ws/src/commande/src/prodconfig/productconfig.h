@@ -41,29 +41,19 @@
 
 // Start
 
-// 3 : 3 4 : 7 12 : 2
-// 5 : 4 3 3 4 3 : 2 4 8 14 9 : 3
+// 2 : 4 3 3 4 3 : 10 8 13 7 4 : 1
+
 // End
 
 // ProductConfig
 
 
-const vector<int> Prod_type{    3,
-                                5
-};
+const vector<int> Prod_type{ 2 };
 
-const vector<vector<int>> Prod_seqdeposte{  { POSTE_3, POSTE_4 },
-                                            { POSTE_4, POSTE_3, POSTE_4, POSTE_3, POSTE_4 }
-    
-};
+const vector<vector<int>> Prod_seqdeposte{  { POSTE_4, POSTE_3, POSTE_3, POSTE_4, POSTE_3 } };
 
-const vector<vector<int>> Prod_dureeparposte{   { 7, 12 },
-                                                { 2, 4, 8, 14, 9 }
-    
-};
+const vector<vector<int>> Prod_dureeparposte{  { 10, 8, 13, 7, 4 } };
 
-const vector<int> Prod_qte{ 2,
-                            3
-};
+const vector<int> Prod_qte{ 1 };
 
 

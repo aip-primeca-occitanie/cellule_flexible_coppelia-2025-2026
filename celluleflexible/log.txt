@@ -1,3 +1,11 @@
-Creation fichier log: Wed Feb 23 15:57:40 2022
+Creation fichier log: Thu Mar  5 09:12:52 2026
+
+NouveauProduit: 24 :0.80
+TempoT: 24: 4: 10
+TempoT: 24: 3: 8
+TempoT: 24: 3: 13
+TempoT: 24: 4: 7
+TempoT: 24: 3: 4
+Sortie :24 :43 :33 :33 :41.15
 
 Petri terminé

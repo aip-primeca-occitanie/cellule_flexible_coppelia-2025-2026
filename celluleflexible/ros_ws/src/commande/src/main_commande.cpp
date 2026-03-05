@@ -33,22 +33,23 @@ using namespace std;
 
 int M[PlaceFin+1];
 
+
 /* *****************************************************************
-///////////  | Exemple configuration produits : début |  //////////
+///////////  | Exemple configuration produits : d but |  //////////
  ******************************************************************* */
 
-// type de produit : séquence de POSTES : durée par poste : nombre de produits
+// type de produit : s quence de POSTES : dur e par poste : nombre de produits
 // 2 : 1 4 : 4 5 : 2
 // 6 : 7 6 5 : 3 6 3 : 1
 
 /*
-const vector<int> Prod_type{    2,
+const vector<int> Job_type{    2,
                                 6};
 
 const vector<int> Prod_qte{ 2,
                             1};
 
-const vector<vector<int>> Prod_seqdeposte{  { POSTE_1, POSTE_4 },
+const vector<vector<int>> Job_seqdeposte{  { POSTE_1, POSTE_4 },
                                             { POSTE_7, POSTE_6, POSTE_5 }};
 
 const vector<vector<int>> Prod_dureeparposte{   { 4, 5 },
@@ -68,7 +69,7 @@ const vector<vector<int>> Prod_dureeparposte{   { 4, 5 },
 
 
 /////////////////////////////////////////////////////////////////////////
-/////////////////////  |  FIN DECLARE ETU  |   /////////////////
+/////////////////////  |  FIN DECLARE ETU  |   /////////////////rod_seqdeposte[0][0]
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -194,22 +195,14 @@ int main(int argc, char **argv)
     vector<int> poste{0, 0};
     vector<int> EtatObjet(nb_objets_a_faire, 0);
     for(int i=0;i<PlaceFin;i++) M[i]=0;
+
     /* *************************************************
     ////// | MARQUAGE INITIAL | ////////
     ************************************************* */
     M[0]=1;
+    
     display();
-
-    ///////////////////////////////////////////////////////////////////
-    ///////////////////// | DEBUT INIT ETU | ///////////////////
-    ///////////////////////////////////////////////////////////////////
-
-
-    ///////////////////////////////////////////////////////////////////
-    /////////////////////  |  FIN INIT ETU  |  ////////////////////
-    ///////////////////////////////////////////////////////////////////
-
-    while (rclcpp::ok()) 
+    while (rclcpp::ok())
     {
         // Seulement si la simulation est en cours
         if(cmd.getPlay()==true)
@@ -708,7 +701,7 @@ int main(int argc, char **argv)
 
 
 
-             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////// | Place de fin de Petri ETU | //////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
