@@ -28,8 +28,10 @@ Enfin, exécutez et attendez la fin de la compilation de :
    colcon build --packages-select sim_ros2_interface --symlink-install
 ```
 
+Vous pouvez alors fermer ce terminal.
+
 # 3) Lancement de la simulation :
-Le dossier est maintenant prêt pour lancer la simulation. On répète alors le protocole suivant :
+Le dossier est maintenant prêt pour lancer la simulation. On ouvre un nouveau terminal dans le dossier principal (contenant etu et celluleflexible). On répète alors le protocole suivant :
 ```bash
    cd etu
    cp exemple/Tuto_Basique.main_commande.cpp .
