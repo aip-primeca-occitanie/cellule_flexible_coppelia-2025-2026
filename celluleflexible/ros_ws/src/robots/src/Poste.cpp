@@ -80,3 +80,8 @@ void Poste::stopTask()
 {
 	task_en_cours_=false;
 }
+
+void Poste::decalerTemps(double decalage)
+{
+	temps_debut_task_ += decalage;
+}

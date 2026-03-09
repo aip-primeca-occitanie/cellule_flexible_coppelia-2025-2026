@@ -579,6 +579,8 @@ int Robot::computeTableId(int position)
 
 void Robot::Colorer(int position, int type)//attention c'est forcement quand on transporte !!
 {
+	std::lock_guard<std::mutex> lock(color_mutex_);
+	
 	// type==0 <=> prise /  =1 <=> pose
 	int idNavette=-1;
 	if(position==2 || position==3) // Si navette
@@ -592,15 +594,11 @@ void Robot::Colorer(int position, int type)//attention c'est forcement quand on 
 
 		auto result_future = client->async_send_request(request);
 
-		// --- LA SEULE LIGNE QUI CHANGE PAR RAPPORT À TON CODE ---
-		// On remplace le 'spin_until_future_complete' (qui fait crasher ROS 2) 
-		// par un simple 'wait_for' classique !
 		if (result_future.wait_for(std::chrono::seconds(3)) != std::future_status::ready)
 		{
 			RCLCPP_ERROR(this->get_logger(), "Erreur lors de l'appel du service");
 			return;
 		}
-		// ---------------------------------------------------------
 
 		idNavette = result_future.get()->id_shuttle;
 		RCLCPP_INFO(this->get_logger(), "Navette %d", idNavette);
@@ -752,6 +750,8 @@ void Robot::Colorer(int position, int type)//attention c'est forcement quand on 
 
 int Robot::colorerPosteDebutTask(int positionPoste)
 {
+	std::lock_guard<std::mutex> lock(color_mutex_);
+
 	std::string signal;
 	std::string fin;
 	int couleur[NB_CUBE];
@@ -843,6 +843,8 @@ int Robot::colorerPosteDebutTask(int positionPoste)
 
 int Robot::colorerPosteFinTask(int positionPoste, int duree)
 {
+	std::lock_guard<std::mutex> lock(color_mutex_);
+
 	std::string signal;
 	std::string fin;
 	int couleur[NB_CUBE];
@@ -969,9 +971,12 @@ void Robot::faireTacheCallback(const robots::msg::FaireTacheMsg::SharedPtr msg)
 //Fonction principale de Robot
 void Robot::update()
 {
+	if(is_paused_) return;
+	
 	// Si une tache est en cours
 	if(poste_pos_1.isTaskEnCours() || poste_pos_4.isTaskEnCours())
 	{
+		
 		// On demande le temps à VREP
 		double time = this->now().seconds();
 
@@ -1061,6 +1066,8 @@ void Robot::transport(bool valeur)
 // On definit qui evacue et comment
 void Robot::Evacuer(const std_msgs::msg::Byte::SharedPtr msg)
 {
+	std::lock_guard<std::mutex> lock(color_mutex_);
+
 	if(num_robot==2)
 	{
 		int position=1;  // on evacue sur la position 1 du robot 2 <=> poste 3
@@ -1259,6 +1266,8 @@ void Robot::init()
 	sub_evacuer= this->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1),options);
 	subStopTache= this->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1),options);
 	subDeplacerPiece= this->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1),options);
+	sub_pause = this->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/vrep_controller/PauseSimulation", 10, std::bind(&Robot::pauseCallback, this, std::placeholders::_1), options);
+	sub_play = this->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/vrep_controller/StartSimulation", 10, std::bind(&Robot::playCallback, this, std::placeholders::_1), options);
 
 	//Publishers
 	pub_pince = this->create_publisher<std_msgs::msg::Int32>("/robot/cmdPinceRobot"+std::to_string(num_robot), 10);
@@ -1381,4 +1390,26 @@ void Robot::simGetColorUpdateCallback(const std_msgs::msg::Int32::SharedPtr msg)
 {
 	valueSim_getColorUpdate=msg->data;
 	repSim_getColorUpdate=true;
+}
+
+void Robot::pauseCallback(const std_msgs::msg::Byte::SharedPtr msg)
+{
+	if(!is_paused_) {
+		is_paused_ = true;
+		time_pause_started_ = this->now().seconds(); // On mémorise l'heure exacte de la pause
+	}
+}
+
+void Robot::playCallback(const std_msgs::msg::Byte::SharedPtr msg)
+{
+	if(is_paused_) {
+		// On calcule la durée de la pause dans le monde réel
+		double duree_pause = this->now().seconds() - time_pause_started_;
+		
+		// On décale les tâches en cours pour compenser
+		poste_pos_1.decalerTemps(duree_pause);
+		poste_pos_4.decalerTemps(duree_pause);
+		
+		is_paused_ = false;
+	}
 }

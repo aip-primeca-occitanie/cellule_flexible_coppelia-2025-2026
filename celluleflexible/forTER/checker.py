@@ -470,18 +470,18 @@ try:
                     # produit_final = [P, D1, D2, D3] # on ecrasera cette ligne du tableau apres le test
                     nb_produit_log[P - 1] = nb_produit_log[P - 1] + 1
                     # durée de vie du produit
-                    k = 0  # variable qui compte à quelle ligne dans produit_entree se trouve le plus ancien produit apparu
-                    while (
-                    1):  # On considère que c'est impossible d'avoir dans le log plus de "Sortie" que de "NouveauProduit". Il n'est donc pas nécessaire d'afficher une erreur sur ça car quoique fasse l'étudiant il y aura forcément plus ou le même nombre de NouveauProduit que de Sortie
-                        if produit_entree[k][
-                            0] == P:  # lorsqu'on a trouver la ligne où se trouve le plus ancien produit apparu
-                            produit_duree[P - 1] = produit_duree[P - 1] + (
-                                        time - produit_entree[k][1])  # Somme du temps de présence du produit P
-                            produit_entree[k][
-                                0] = 0.0  # Comme le produit est sortie on initialise sa ligne dans produit_entree à 0 comme ça elle ne pourra plus servir à calculer produit_duree
+                    k = 0  
+                    while k < len(produit_entree):  
+                        if produit_entree[k][0] == P:  
+                            produit_duree[P - 1] = produit_duree[P - 1] + (time - produit_entree[k][1])  
+                            produit_entree[k][0] = 0.0  
                             break
                         else:
                             k = k + 1
+                            
+                    if k >= len(produit_entree):
+                        print("ERREUR GRAVE : Sortie du produit {} détectée, mais il n'a jamais été créé (ou a déjà été évacué) !".format(P))
+                        test = 0
 
                     # Verif sortie
                     nbprodexit[P] = nbprodexit[P] + 1

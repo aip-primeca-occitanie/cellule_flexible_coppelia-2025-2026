@@ -102,3 +102,14 @@ Une fois CoppeliaSim lancé par l'étape 2, le code de `commande_locale` va lui-
 
 L'historique de production et la trace des événements importants (évacuation, apparition de produits, erreurs, fin de séquence) sont gérés par le **`LogManager`**.
 Ce code source (`LogManager.cpp`) se trouve à l'intérieur du paquet **`commande_locale`**. Lorsqu'il est exécuté (automatiquement par le lanceur beta), il crée ou met à jour le fichier texte `log.txt` (situé à la racine du dossier `celluleflexible`), qui sera ensuite utilisé par le script `checker.py` (dans le dossier `forTER`) pour valider le travail des étudiants.
+
+## Dépendances entre packages
+Nous avons identifié les relations de dépendance suivantes :
+— Package aiguillages : ne dépend d’aucun autre
+— Package commande : dépend de shuttles, commande_locale, aiguillages et robots
+— Package commande_locale : dépend de aiguillages
+— Package launcher : dépend de commande_locale, commande, aiguillages, robots et shuttles
+— Package robots : dépend de commande_locale et shuttles
+— Package shuttles : dépend de aiguillages
+
+Dans le cas d'une modification globale à faire sur tous les fichiers (comme une migration), il convient de commencer par le fichier avec le moins de dépendances (aiguillages) et de finir par celui avec le plus de dépendances (launcher).

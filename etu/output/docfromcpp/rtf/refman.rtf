@@ -129,6 +129,405 @@ Version \par\page\page\vertalt
 \sect \sbkpage \pgndec \pgnrestart
 \sect \sectd \sbknone
 {\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\par \pard\plain 
+\par \pard\plain 
+\pard\plain \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Dossier etu\par \pard\plain 
+{\tc\tcl1 \v Dossier etu}
+{\xe \v Dossier etu}
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+ \par
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+1) Composition des dossiers
+\par}
+{\tc\tcl2 \v 1) Composition des dossiers}
+Ce dossier est compos\'E9 de :{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un dossier **{\f2 dataprodconfig} **, contenant des exemples de s\'E9quences pour les \'E9tudiants. Chaque s\'E9quence d\'E9finit :{
+\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un vecteur Prod_type, qui d\'E9finit le type de produits \'E0 faire (d\'E9finit la couleur du premier cube du produit)\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un vecteur Prod_seqdeposte, qui d\'E9finit quel est l'ordre de passage du produit sur les postes\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un vecteur Prod_dureeparposte, qui d\'E9finit combien de temps dure chaque t\'E2che\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un vecteur Prod_qte, qui d\'E9finit combien d'objet de chaque type sont \'E0 produire\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un dossier **{\f2 exemple} **, contenant des exemples de r\'E9seau de P\'E9tri d\'E9j\'E0 fonctionnels. Nous avons alors les trois scripts de commande suivants :{
+\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\f2 TeamEMPTY.main_commande.cpp}  : Ce fichier est une coquille vide. Il a pour vocation de servir de base vierge et peut \'EAtre utilis\'E9 pour r\'E9initialiser le code \'E9tudiant en cas de besoin ou d'erreur majeure dans votre propre fichier de commande.\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\f2 TeamSALLAG.main_commande.cpp}  : Il s'agit d'une impl\'E9mentation "en dur" des d\'E9veloppeurs pr\'E9c\'E9dents, con\'E7ue sp\'E9cifiquement pour l'instance de donn\'E9es {\f2 data4_3_2_n0.prodconfig.h} . Ce fichier a \'E9t\'E9 con\'E7u pour faire la vid\'E9o de pr\'E9sentation du ReadMe g\'E9n\'E9ral. Cependant, il n'est aujourd'hui plus d'actualit\'E9, l'emplacement de d\'E9part des navettes et {\f2 data4_3_2_n0.prodconfig.h}  ayant chang\'E9s entre temps.\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\f2 {\b Tuto_Basique.main_commande.cpp}}  : Ce code correspond au tutoriel du sujet d'atelier flexible. Il met en place un r\'E9seau de Petri tr\'E8s basique et permet de v\'E9rifier que la simulation CoppeliaSim fonctionne correctement de bout en bout (compilation, ex\'E9cution et g\'E9n\'E9ration des r\'E9sultats). Il ne fonctionne pas pour tous les jeux de donn\'E9es, et ne permet que de valider le niveau le plus bas du TER.\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un dossier **{\f2 output} **, contenant de la documentation utile \'E0 la fin d'une simulation. Cette documentation est cr\'E9\'E9e et disponible \'E0 partir du script4 (voir protocole de lancement plus bas).\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un fichier **{\f2 XXX_XXX.main_commande.cpp} **, qui est une copie de {\f2 TeamEMPTY.main_commande.cpp} . Le nom de ce fichier va \'EAtre modifi\'E9 par les \'E9tudiants avec leurs initiales, et va servir de support pour leur r\'E9seau de P\'E9tri. La derni\'E8re partie montre les fonctions \'E0 utiliser par les \'E9tudiants.\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Des scripts \'E0 ex\'E9cuter, qui sont :{
+\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\f2 script0.sh} , qui sert \'E0 compiler la simulation\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\f2 script1.sh} , qui sert \'E0 lancer la simulation\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\f2 script2.sh} , qui sert \'E0 importer les r\'E9sultats de la simulation\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\f2 script3.sh} , qui sert \'E0 valider l'ex\'E9cution de la simulation\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\f2 script4.sh} , qui sert \'E0 cr\'E9er la documentation de l'ex\'E9cution\par}
+Chaque script met une erreur s'il n'est pas correctement appel\'E9. La partie suivante montre comment ex\'E9cuter proprement ces codes depuis un terminal.\par}
+\par
+\par}
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+2) Consigne pour les \'E9tudiants
+\par}
+{\tc\tcl2 \v 2) Consigne pour les \'E9tudiants}
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{{\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+2.1) Fichier \'E0 modifier
+\par}
+{\tc\tcl3 \v 2.1) Fichier \'E0 modifier}
+Lors de la {\b premi\'E8re s\'E9ance du TER uniquement} , renommer le fichier principal XXX_XXX.main_commande.cpp en y mettant vos initiales (majuscule, sans espace, sans accent, sans symboles sp\'E9ciaux) par la commande suivante (ou manuellement): {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid mv XXX_XXX.main_commande.cpp VOS_INITIALES.main_commande.cpp\par
+}
+\par
+Ce fichier sera {\b le seul \'E0 \'EAtre modifi\'E9 par les \'E9tudiants} . Il leur permettra d'\'E9crire leur r\'E9seau de P\'E9tri pour respecter les consignes.\par}
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{{\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+2.2) Consignes pour lancer la simulation
+\par}
+{\tc\tcl3 \v 2.2) Consignes pour lancer la simulation}
+{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Pour compiler la simulation} \par}
+\par
+A {\b chaque nouvelle ouverture d'un terminal}  directement {\b dans le dossier etu} , on fait : {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid source script0_Compile.sh VOS_INITIALES dataprodconfig\par
+}
+\par
+Veillez \'E0 remplacer VOS_INITIALES par le nom du fichier .cpp que vous voulez utiliser. Remplacez \'E9galement dataprodconfig par une des s\'E9quences disponible dans dataprodconfig.\par
+Par exemple, si vos initiales sont SUN_SC (et donc le fichier commande associ\'E9 est SUN_SC.main_commande.cpp), et que le fichier data \'E0 consid\'E9rer est dataP34_1_1_n0.prodconfig.h, alors l'instruction pour compiler sera : {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid source script0_Compile.sh SUN_SC dataP34_1_1_n0\par
+}
+\par
+Il faut veillez \'E0 ex\'E9cuter cette ligne de commande {\b \'E0 chaque nouvelle modification de votre fichier}  VOS_INITIALES.\par
+{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Pour lancer la simulation}  Apr\'E8s avoir v\'E9rifi\'E9 qu'aucune erreur de compilation ne s'est pr\'E9c\'E9demment produite, dans le m\'EAme terminal, ex\'E9cuter : {
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid ./script1_Run.sh \par
+}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Pour importer les r\'E9sultats de la simulation} \par}
+\par
+Apr\'E8s avoir choisi "4-Fin programme" dans le menu de la fen\'EAtre XTERMINAL, on peut faire : {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid ./script2_GetSimuOutput.sh VOS_INITIALES NOM_FICHIER_DATA\par
+}
+\par
+Apr\'E8s chaque ex\'E9cution sans bug de la simulation et apr\'E8s l'import des r\'E9sultats avec le script2, un fichier log nomm\'E9 "VOS_INITIALES_NOM_FICHIER_DATA.log.txt" doit apparaitre dans le dossier "output". Si ce fichier n'existe pas, c'est qu'il y a eu une erreur lors de votre simulation.\par
+Par exemple, si vos initiales sont SUN_SC (et donc le fichier commande associ\'E9 est SUN_SC.main_commande.cpp), et que le fichier data \'E0 consid\'E9rer est dataP34_1_1_n0.prodconfig.h, alors l'instruction pour compiler sera : {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid ./script2_GetSimuOutput.sh SUN_SC dataP34_1_1_n0\par
+}
+\par
+{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Pour v\'E9rifier la validit\'E9 de l'ex\'E9cution de la simulation} \par}
+\par
+Le fichier log pr\'E9c\'E9demment g\'E9n\'E9r\'E9 permet de v\'E9rifier la validit\'E9 de votre simulation par rapport aux donn\'E9es d'entr\'E9e.\par
+Pour ce faire, depuis la racine du dossier "etu", vous pouvez ex\'E9cuter:\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid ./script3_Validation.sh VOS_INITIALES NOM_FICHIER_DATA\par
+}
+\par
+Cela vous dit alors si la simulation s'est pass\'E9e correctement.\par
+{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Pour g\'E9n\'E9rer la documentation} \par}
+\par
+Pour g\'E9n\'E9rer la documentation associ\'E9e \'E0 votre code, depuis la racine du dossier "etu", ex\'E9cuter: {
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid ./script4_Documentation.sh VOS_INITIALES\par
+}
+\par
+Pour acc\'E9der \'E0 la documentation, aller dans le dossier output/docfromcpp/html et ouvrir index.html. A partir de ce fichier, aller dans Files/File List et choisir celui correspondant \'E0 notre fichier. Cela permet d'afficher les d\'E9tails sur la simulation. On y retrouve par exemple les commentaires de chaque \'E9tape du r\'E9seau de P\'E9tri.\par}
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{{\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+2.3) Exemple \'E0 ex\'E9cuter
+\par}
+{\tc\tcl3 \v 2.3) Exemple \'E0 ex\'E9cuter}
+Pour v\'E9rifier que la simulation Coppelia fonctionne correctement, on utilise le fichier Tuto_Basique contenu dans le dossier exemple :\par
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid cp exemple/Tuto_Basique.main_commande.cpp .\par
+source script0_Compile.sh Tuto_Basique dataP2_1_1_n0\par
+./script1_Run.sh\par
+./script2_GetSimuOutput.sh Tuto_Basique dataP2_1_1_n0\par
+./script3_Validation.sh Tuto_Basique dataP2_1_1_n0\par
+./script4_Documentation.sh Tuto_Basique\par
+rm Tuto_Basique.main_commande.cpp\par
+}
+\par}
+\par}
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+3) Cr\'E9ation du r\'E9seau de P\'E9tri
+\par}
+{\tc\tcl2 \v 3) Cr\'E9ation du r\'E9seau de P\'E9tri}
+Pour r\'E9aliser leur r\'E9seau de P\'E9tri, les \'E9tudiants auront recours aux fonctions suivantes :{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i cmd.Stop_PS(actionneur)} , qui permet de fermer un PS, c'est-\'E0-dire que la navette s'arr\'EAtera quand elle arrivera \'E0 cet actionneur\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i cmd.Ouvrir_PS(actionneur)} , qui permet d'ouvrir un PS, c'est-\'E0-dire que la navette passera quand elle arrivera \'E0 cet actionneur\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i capteur.get_CP(capteur)} , qui retourne true si une navette est pr\'E9sente sur le capteur CP\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i capteur.get_CPI(capteur)} , qui retourne true si une navette est pr\'E9sente sur le capteur CPI\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i capteur.get_PS(capteur)} , qui retourne true si une navette est pr\'E9sente sur le capteur PS\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i capteur.get_DG(aiguillage)}  et {\i capteur.get_DD(aiguillage)} , qui permettent de v\'E9rifier qu'un aiguillage est bien \'E0 droite ou \'E0 gauche\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i aiguillage.Droite(aiguillage)}  et {\i aiguillage.Gauche(aiguillage)} , qui permet d'orienter un aiguillage \'E0 droite ou \'E0 gauche\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i robot.DeplacerPiece(robot,position1,position2)} , qui permet de faire d\'E9placer une pi\'E8ce \'E0 un robot d'une position 1 \'E0 une position 2\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i robot.FinDeplacerPiece(robot)} , qui renvoit true lorsque le d\'E9placement est termin\'E9\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i robot.FaireTache(poste,dur\'E9e)} , qui permet de faire une t\'E2che sur un certain poste durant une certaine dur\'E9e\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i robot.TacheFinie(poste)} , qui renvoit true lorsque la t\'E2che est termin\'E9e\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i robot.AjouterProduit(poste,numero_produit)} , qui ajoute sur un poste un produit donn\'E9\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\i robot.Evacuer()} , qui fait disparaitre un produit sur le Poste3\par}
+\par
+On rappelle que :{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Le type du produit doit \'EAtre compris entre 1 et 6\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Le nombre de t\'E2ches \'E0 faire par produit doit \'EAtre compris entre 1 et 5\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+L'\'E9vacuation se fait imp\'E9rativement par le poste 3\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Un poste ne peut faire qu'une seule t\'E2che d'un seul produit en m\'EAme temps\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Interdiction de circuler sur les voies pr\'E8s des postes si ce n'est pour y amener/r\'E9cup\'E9rer un produit \par}
+\par
+\par}
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Index\par \pard\plain 
+{\tc \v File Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+File List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all documented files with brief descriptions:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b Tuto_Basique.main_commande.cpp} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Code correspondant au tuto du sujet de TER atelier flexible })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAA \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Documentation{\tc \v File Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Tuto_Basique.main_commande.cpp File Reference\par \pard\plain 
+{\tc\tcl2 \v Tuto_Basique.main_commande.cpp}
+{\xe \v Tuto_Basique.main_commande.cpp}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+code correspondant au tuto du sujet de TER atelier flexible }}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include "capteurs.h"}\par
+{\f2 #include "actionneurs.h"}\par
+{\f2 #include "commande.h"}\par
+{\f2 #include "RobotsInterface.h"}\par
+{\f2 #include "AigsInterface.h"}\par
+{\f2 #include <rclcpp/rclcpp.hpp>}\par
+{\f2 #include <unistd.h>}\par
+{\f2 #include "prodconfig/productconfig.h"}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Macros\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b RESET}\~ "\\033[0m"{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b BOLDRED}\~ "\\033[1m\\033[31m"      /* Bold Red */{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b BOLDGREEN}\~ "\\033[1m\\033[32m"      /* Bold Green */{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b BOLDCYAN}\~ "\\033[1m\\033[36m"      /* Bold Cyan */{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+#define {\b PlaceFin}\~ 1000 /* Marquage \'E0 ne pas d\'E9passer */{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+void {\b display} (){\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+void {\b ShutdownCallback} (const std_msgs::msg::Byte::SharedPtr msg){\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main} (int argc, char **argv)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b M} [PlaceFin+1]{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+code correspondant au tuto du sujet de TER atelier flexible \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Author\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+Team Tuto_Basique (N7 2023-2024) \par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Version\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+0.1 \par
+}}}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v main\:Tuto_Basique.main_commande.cpp}
+{\xe \v Tuto_Basique.main_commande.cpp\:main}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main (int  {\i argc}, char **  {\i argv})}}
+\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\b T1:}  init aiguillages et produit {
+\par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+positionnement des aiguillages et ajout des produits \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Precondition:}  M[0] \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Postcondition:}  M[2]++\par
+}
+{\b T2:}  aiguillage A02 mise en place {
+\par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+courte description \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Precondition:}  M[2] && capteur.get_PS(6) \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Postcondition:}  M[3]++\par
+}
+{\b T4:}  positionnement aiguillages vers prochain poste 3 {
+\par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+courte description \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Precondition:}  M[3] && robot.TacheFinie(Prod_seqdeposte[0][0]) \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Postcondition:}  M[4]++\par
+}
+{\b T3:}  piece de poste 2 \'E0 navette {
+\par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+deplacement de piece \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Precondition:}  M[4] && capteur.get_PS(21) \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Postcondition:}  M[PlaceAval]++; M[PlaceAvalBis]\par
+}
+{\b T5:}  faire repartir navette PS21 {
+\par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+navette repart de PS21, PS2 stop activ\'E9 \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Precondition:}  M[5] && robot.FinDeplacerPiece(ROBOT_1) \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Postcondition:}  M[6]++\par
+}
+{\b T6:}  deplacement piece navette poste {
+\par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+deplacement piece depuis navette sur PS2 vers poste 3 \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Precondition:}  M[6] && capteur.get_PS(2) \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Postcondition:}  M[7]++\par
+}
+{\b T7:}  evacuer produit {
+\par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+evacuer produit sur POSTE_3 \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Precondition:}  M[7] && robot.FinDeplacerPiece(ROBOT_2) \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Postcondition:}  M[8]++\par
+}
+{\b T8:}  fin rdp {
+\par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+fin du rdp \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Precondition:}  M[8] && robot.TacheFinie(Prod_seqdeposte[0][1]) \par\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Postcondition:}  M[PlaceFin]++\par
+}
+}}
 
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
