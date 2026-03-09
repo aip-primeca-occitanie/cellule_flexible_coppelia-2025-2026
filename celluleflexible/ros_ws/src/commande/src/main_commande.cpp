@@ -42,13 +42,13 @@ int M[PlaceFin+1];
 // 6 : 7 6 5 : 3 6 3 : 1
 
 /*
-const vector<int> Job_type{    2,
+const vector<int> Prod_type{    2,
                                 6};
 
 const vector<int> Prod_qte{ 2,
                             1};
 
-const vector<vector<int>> Job_seqdeposte{  { POSTE_1, POSTE_4 },
+const vector<vector<int>> Prod_seqdeposte{  { POSTE_1, POSTE_4 },
                                             { POSTE_7, POSTE_6, POSTE_5 }};
 
 const vector<vector<int>> Prod_dureeparposte{   { 4, 5 },
@@ -94,15 +94,15 @@ void ShutdownCallback(const std_msgs::msg::Byte::SharedPtr msg)
         rclcpp::shutdown();
 }
 
-// Pour récupérer une tâche non faite //
+// Pour rÃ©cupÃ©rer une tÃ¢che non faite //
 int prendre_objet(vector<int>& EtatObjet)
 {
-    for (size_t i = 0; i < EtatObjet.size(); i++)
+    for (int i = 0; i < EtatObjet.size(); i++)
     {
         if (EtatObjet[i] == 0)
         {
-            EtatObjet[i] = 1;   // on réserve la machine
-            return i;       // numéro du poste
+            EtatObjet[i] = 1;   // on rÃ©serve la machine
+            return i;       // numÃ©ro du poste
         }
     }
     return -1;  // aucune machine libre
@@ -194,14 +194,22 @@ int main(int argc, char **argv)
     vector<int> poste{0, 0};
     vector<int> EtatObjet(nb_objets_a_faire, 0);
     for(int i=0;i<PlaceFin;i++) M[i]=0;
-
     /* *************************************************
     ////// | MARQUAGE INITIAL | ////////
     ************************************************* */
     M[0]=1;
-    
     display();
-    while (rclcpp::ok())
+
+    ///////////////////////////////////////////////////////////////////
+    ///////////////////// | DEBUT INIT ETU | ///////////////////
+    ///////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////////////////////
+    /////////////////////  |  FIN INIT ETU  |  ////////////////////
+    ///////////////////////////////////////////////////////////////////
+
+    while (rclcpp::ok()) 
     {
         // Seulement si la simulation est en cours
         if(cmd.getPlay()==true)
@@ -242,7 +250,7 @@ int main(int argc, char **argv)
 
 
 
-	    if(M[1] && nb_objets_a_faire != static_cast<size_t>(nb_objets_en_cours+nb_objets_finis))
+	    if(M[1] && nb_objets_a_faire != (nb_objets_en_cours+nb_objets_finis))
             {
             /*!
                         * \b T4 : initialisation WIP1
@@ -277,7 +285,7 @@ int main(int argc, char **argv)
                 M[3]++;
                 display();
             }
-        if((M[3] && robot.TacheFinie(Job_seqdeposte[a][n]) && nb_postes>static_cast<size_t>(n+1) && Job_seqdeposte[a][n]!=Job_seqdeposte[a][n+1])||(M[3] && robot.TacheFinie(Job_seqdeposte[a][n]) && nb_postes==static_cast<size_t>(n+1) && Job_seqdeposte[a][n]==4))
+        if((M[3] && robot.TacheFinie(Job_seqdeposte[a][n]) && nb_postes>n+1 && Job_seqdeposte[a][n]!=Job_seqdeposte[a][n+1])||(M[3] && robot.TacheFinie(Job_seqdeposte[a][n]) && nb_postes==n+1 && Job_seqdeposte[a][n]==4))
             {
                 /*!
                         * \b T6: Besoin de déplacement (WIP1)
@@ -291,13 +299,13 @@ int main(int argc, char **argv)
 
                 display();
             }	    
-	    
-        // CORRECTION T7 : Vérifications nb_postes en premier
-        if((M[4] && nb_postes>static_cast<size_t>(n+1) && poste[Job_seqdeposte[a][n+1]-3]==1 && Job_seqdeposte[a][n+1]==3 && M[501]) || (M[4] && nb_postes==static_cast<size_t>(n+1) && poste[0]==1 && M[501]))
+	    if((M[4] && poste[Job_seqdeposte[a][n+1]-3]==1 && Job_seqdeposte[a][n+1]==3 && nb_postes>n+1 && M[501]) || (M[4] && poste[0]==1 && nb_postes==n+1 && M[501]))
             {
                 /*!
                         * \b T7: Poste suivant non libre (WIP1)
                         * \arg  Pas d'actions effectuées, rentre si le poste suivant est le poste 3 et si la navette est prête
+                        * \arg \b Precondition: (M[4] && poste[Job_seqdeposte[a][n+1]-3]==1 && Job_seqdeposte[a][n+1]==3 && nb_postes>n+1 && M[501]) || (M[4] && poste[0]==1 && nb_postes==n+1 && M[501])
+                        * \arg \b Postcondition: M[5]++
                         */
                 M[4]--;
 		
@@ -305,20 +313,20 @@ int main(int argc, char **argv)
 
                 display();
             }	  
-	    
-        // CORRECTION T8 : Vérifications nb_postes en premier et protection des cases tableau
-        if((M[4] && nb_postes>static_cast<size_t>(n+1) && poste[Job_seqdeposte[a][n+1]-3]==0) || (M[4] && nb_postes==static_cast<size_t>(n+1) && poste[0]==0))
+	    if((M[4] && poste[Job_seqdeposte[a][n+1]-3]==0 && nb_postes>n+1) || (M[4] && poste[0]==0 && nb_postes==n+1))
             {
                 /*!
                         * \b T8: Déplacer produit (WIP1)
                         * \arg  Déplace produit de 3 à 4 ou de 4 à 3 (en fonction de où on est et de où on doit aller) si le poste suivant est libre
+                        * \arg \b Precondition: (M[4] && poste[Job_seqdeposte[a][n+1]-3]==0 && nb_postes>n+1) || (M[4] && poste[0]==0 && nb_postes==n+1)
+                        * \arg \b Postcondition: M[6]++
                         */
                 M[4]--;
 
-                if (nb_postes>static_cast<size_t>(n+1) && Job_seqdeposte[a][n+1]==4)  {
+                if (Job_seqdeposte[a][n+1]==4 && nb_postes>n+1)  {
                     poste[1]++;
 		            robot.DeplacerPiece(ROBOT_2, 1, 4);}
-                else if (nb_postes==static_cast<size_t>(n+1) || (nb_postes>static_cast<size_t>(n+1) && Job_seqdeposte[a][n+1]==3))  {
+                else if ((Job_seqdeposte[a][n+1]==3 && nb_postes>n+1)||(nb_postes==n+1))  {
                     poste[0]++;
 		            robot.DeplacerPiece(ROBOT_2, 4, 1);}
 		
@@ -326,8 +334,7 @@ int main(int argc, char **argv)
 
                 display();
             }
-
-	    if((M[3] && robot.TacheFinie(Job_seqdeposte[a][n]) && nb_postes==static_cast<size_t>(n+1) && Job_seqdeposte[a][n]==3)||(M[6] && robot.FinDeplacerPiece(ROBOT_2) && nb_postes==static_cast<size_t>(n+1))||(M[5] && M[507] && robot.FinDeplacerPiece(ROBOT_2) && N==1 && nb_postes==static_cast<size_t>(n+1)))
+	    if((M[3] && robot.TacheFinie(Job_seqdeposte[a][n]) && nb_postes==n+1 && Job_seqdeposte[a][n]==3)||(M[6] && robot.FinDeplacerPiece(ROBOT_2) && nb_postes==n+1)||(M[5] && M[507] && robot.FinDeplacerPiece(ROBOT_2) && N==1 && nb_postes==n+1))
             {
                 /*!
                         * \b T9: Evacuer produit (WIP1)
@@ -357,7 +364,7 @@ int main(int argc, char **argv)
 
                 display();
             }
-	    if((M[3] && robot.TacheFinie(Job_seqdeposte[a][n]) && nb_postes>static_cast<size_t>(n+1) && Job_seqdeposte[a][n]==Job_seqdeposte[a][n+1])||(M[6] && robot.FinDeplacerPiece(ROBOT_2) && nb_postes>static_cast<size_t>(n+1))||(M[5] && M[507] && robot.FinDeplacerPiece(ROBOT_2) && N==1 && nb_postes>static_cast<size_t>(n+1)))
+	    if((M[3] && robot.TacheFinie(Job_seqdeposte[a][n]) && nb_postes>n+1 && Job_seqdeposte[a][n]==Job_seqdeposte[a][n+1])||(M[6] && robot.FinDeplacerPiece(ROBOT_2) && nb_postes>n+1)||(M[5] && M[507] && robot.FinDeplacerPiece(ROBOT_2) && N==1 && nb_postes>n+1))
             {
                 /*!
                         * \b T11: Faire tâche n+1 (WIP1)
@@ -398,7 +405,7 @@ int main(int argc, char **argv)
 
 
 
-	    if(M[101] && nb_objets_a_faire != static_cast<size_t>(nb_objets_en_cours+nb_objets_finis))
+	    if(M[101] && nb_objets_a_faire != (nb_objets_en_cours+nb_objets_finis))
             {
             /*!
                         * \b T12 : initialisation WIP2
@@ -433,7 +440,7 @@ int main(int argc, char **argv)
                 M[103]++;
                 display();
             }
-        if((M[103] && robot.TacheFinie(Job_seqdeposte[b][m]) && nb_postes_2>static_cast<size_t>(m+1) && Job_seqdeposte[b][m]!=Job_seqdeposte[b][m+1])||(M[103] && robot.TacheFinie(Job_seqdeposte[b][m]) && nb_postes_2==static_cast<size_t>(m+1) && Job_seqdeposte[b][m]==4))
+        if((M[103] && robot.TacheFinie(Job_seqdeposte[b][m]) && nb_postes_2>m+1 && Job_seqdeposte[b][m]!=Job_seqdeposte[b][m+1])||(M[103] && robot.TacheFinie(Job_seqdeposte[b][m]) && nb_postes_2==m+1 && Job_seqdeposte[b][m]==4))
             {
                 /*!
                         * \b T14: Besoin de déplacement (WIP2)
@@ -447,13 +454,13 @@ int main(int argc, char **argv)
 
                 display();
             }	    
-
-        // CORRECTION T15 : Vérifications nb_postes_2 en premier
-	    if((M[104] && nb_postes_2>static_cast<size_t>(m+1) && poste[Job_seqdeposte[b][m+1]-3]==1 && Job_seqdeposte[b][m+1]==3 && M[501]) || (M[104] && nb_postes_2==static_cast<size_t>(m+1) && poste[0]==1 && M[501]))
+	    if((M[104] && poste[Job_seqdeposte[b][m+1]-3]==1 && Job_seqdeposte[b][m+1]==3 && nb_postes_2>m+1 && M[501]) || (M[104] && poste[0]==1 && nb_postes_2==m+1 && M[501]))
             {
                 /*!
                         * \b T15: Poste suivant non libre (WIP2)
                         * \arg  Pas d'actions effectuées, rentre si le poste suivant est le poste 3 et si la navette est prête
+                        * \arg \b Precondition: (M[104] && poste[Job_seqdeposte[b][m+1]-3]==1 && Job_seqdeposte[b][m+1]==3 && nb_postes_2>m+1 && M[501]) || (M[104] && poste[0]==1 && nb_postes_2==m+1 && M[501])
+                        * \arg \b Postcondition: M[105]++
                         */
                 M[104]--;
 
@@ -461,20 +468,20 @@ int main(int argc, char **argv)
 
                 display();
             }	  
-
-        // CORRECTION T16 : Vérifications nb_postes_2 en premier et protection des cases tableau
-	    if((M[104] && nb_postes_2>static_cast<size_t>(m+1) && poste[Job_seqdeposte[b][m+1]-3]==0) || (M[104] && nb_postes_2==static_cast<size_t>(m+1) && poste[0]==0))
+	    if((M[104] && poste[Job_seqdeposte[b][m+1]-3]==0 && nb_postes_2>m+1) || (M[104] && poste[0]==0 && nb_postes_2==m+1))
             {
                 /*!
                         * \b T16: Déplacer produit (WIP2)
                         * \arg  Déplace produit de 3 à 4 ou de 4 à 3 (en fonction de où on est et de où on doit aller) si le poste suivant est libre
+                        * \arg \b Precondition: (M[104] && poste[Job_seqdeposte[b][m+1]-3]==0 && nb_postes_2>m+1) || (M[104] && poste[0]==0 && nb_postes_2==m+1)
+                        * \arg \b Postcondition: M[106]++
                         */
                 M[104]--;
 
-                if (nb_postes_2>static_cast<size_t>(m+1) && Job_seqdeposte[b][m+1]==4)  {
+                if (Job_seqdeposte[b][m+1]==4 && nb_postes_2>m+1)  {
                     poste[1]++;
                     robot.DeplacerPiece(ROBOT_2, 1, 4);}
-                else if (nb_postes_2==static_cast<size_t>(m+1) || (nb_postes_2>static_cast<size_t>(m+1) && Job_seqdeposte[b][m+1]==3))  {
+                else if ((Job_seqdeposte[b][m+1]==3 && nb_postes_2>m+1)||(nb_postes_2==m+1))  {
                     poste[0]++;
 		            robot.DeplacerPiece(ROBOT_2, 4, 1);}
 		
@@ -482,8 +489,7 @@ int main(int argc, char **argv)
 
                 display();
             }
-
-	    if((M[103] && robot.TacheFinie(Job_seqdeposte[b][m]) && nb_postes_2==static_cast<size_t>(m+1) && Job_seqdeposte[b][m]==3)||(M[106] && robot.FinDeplacerPiece(ROBOT_2) && nb_postes_2==static_cast<size_t>(m+1))||(M[105] && M[507] && robot.FinDeplacerPiece(ROBOT_2) && P==1 && nb_postes_2==static_cast<size_t>(m+1)))
+	    if((M[103] && robot.TacheFinie(Job_seqdeposte[b][m]) && nb_postes_2==m+1 && Job_seqdeposte[b][m]==3)||(M[106] && robot.FinDeplacerPiece(ROBOT_2) && nb_postes_2==m+1)||(M[105] && M[507] && robot.FinDeplacerPiece(ROBOT_2) && P==1 && nb_postes_2==m+1))
             {
                 /*!
                         * \b T17: Evacuer produit (WIP2)
@@ -512,7 +518,7 @@ int main(int argc, char **argv)
 
                     display();
             }
-	    if((M[103] && robot.TacheFinie(Job_seqdeposte[b][m]) && nb_postes_2>static_cast<size_t>(m+1) && Job_seqdeposte[b][m]==Job_seqdeposte[b][m+1])||(M[106] && robot.FinDeplacerPiece(ROBOT_2) && nb_postes_2>static_cast<size_t>(m+1))||(M[105] && M[507] && robot.FinDeplacerPiece(ROBOT_2) && P==1 && nb_postes_2>static_cast<size_t>(m+1)))
+	    if((M[103] && robot.TacheFinie(Job_seqdeposte[b][m]) && nb_postes_2>m+1 && Job_seqdeposte[b][m]==Job_seqdeposte[b][m+1])||(M[106] && robot.FinDeplacerPiece(ROBOT_2) && nb_postes_2>m+1)||(M[105] && M[507] && robot.FinDeplacerPiece(ROBOT_2) && P==1 && nb_postes_2>m+1))
             {
                 /*!
                         * \b T19: Faire tâche m+1 (WIP2)
@@ -676,7 +682,7 @@ int main(int argc, char **argv)
 
 
 
-	    if(M[900]+M[901]==static_cast<int>(nb_objets_a_faire))
+	    if(M[900]+M[901]==nb_objets_a_faire)
             {
             /*!
                         * \b T28: Finir programme
@@ -702,7 +708,7 @@ int main(int argc, char **argv)
 
 
 
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //////////////////////////////////// | Place de fin de Petri ETU | //////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
