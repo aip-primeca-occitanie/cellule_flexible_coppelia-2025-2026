@@ -156,10 +156,10 @@ int main(int argc, char **argv)
 	auto node = rclcpp::Node::make_shared("log_manager");
 
 	// Subscribers
-    auto subTacheFinie = node->create_subscription<commande_locale::msg::TacheFinieMsg>("/commande/Simulation/TacheFinie", 1, TachefinieCallback);
-    auto subProduitEvac = node->create_subscription<std_msgs::msg::Int32MultiArray>("/commande/Simulation/produitEvac", 1, ProduitEvacCallback);
-    auto subNewProduit = node->create_subscription<commande_locale::msg::MsgAddProduct>("/commande_locale/AddProduct", 1, NewProductCallback);
-    auto subErreur = node->create_subscription<commande_locale::msg::MsgErreur>("/commande/Simulation/Erreur_log", 1, ErreurCallback);
+    auto subTacheFinie = node->create_subscription<commande_locale::msg::TacheFinieMsg>("/commande/Simulation/TacheFinie", 100, TachefinieCallback);
+    auto subProduitEvac = node->create_subscription<std_msgs::msg::Int32MultiArray>("/commande/Simulation/produitEvac", 100, ProduitEvacCallback);
+    auto subNewProduit = node->create_subscription<commande_locale::msg::MsgAddProduct>("/commande_locale/AddProduct", 100, NewProductCallback);
+    auto subErreur = node->create_subscription<commande_locale::msg::MsgErreur>("/commande/Simulation/Erreur_log", 100, ErreurCallback);
     auto sub_shutdown = node->create_subscription<std_msgs::msg::Byte>("/commande_locale/shutdown", 10, ShutdownCallback);
     auto sub_terminee = node->create_subscription<std_msgs::msg::Byte>("/commande/PetriTermine", 10, PetriTermineCallback);
 

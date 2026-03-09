@@ -32,6 +32,7 @@
 #include <iostream>
 #include <string>
 #include <atomic>
+#include <mutex>
 
 
 #include "Poste.h"
@@ -130,7 +131,10 @@ private:
   rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr sub_evacuer;
   rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subStopTache;
   rclcpp::Subscription<commande_locale::msg::DeplacerPieceMsg>::SharedPtr subDeplacerPiece;
-
+  rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr sub_pause;
+  rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr sub_play;
+  
+  
 
   /** Publishers pour retours **/
   rclcpp::Publisher<std_msgs::msg::Int32>::SharedPtr pub_pince;
@@ -147,6 +151,7 @@ private:
 
   shuttles::srv::ShuttleId srv;
   commande_locale::msg::TacheFinieMsg msg_tache_finie;
+  std::mutex color_mutex_;
 
   /** Variables **/
   float pi;
@@ -155,6 +160,8 @@ private:
   int Rints[7];
   int couleur_transportee[NB_CUBE];
   int num_robot;
+  bool is_paused_ = false;
+  double time_pause_started_ = 0.0;
 
   rclcpp::Rate* loop_rate;
   rclcpp::Rate* loop_ok;
@@ -244,6 +251,8 @@ public:
   void simChangeShuttleColorCallback(const std_msgs::msg::Byte::SharedPtr msg);
   void simGetColorCallback(const std_msgs::msg::Int32::SharedPtr msg);
   void simGetColorUpdateCallback(const std_msgs::msg::Int32::SharedPtr msg);
+  void pauseCallback(const std_msgs::msg::Byte::SharedPtr msg);
+  void playCallback(const std_msgs::msg::Byte::SharedPtr msg);
 };
 
 #endif

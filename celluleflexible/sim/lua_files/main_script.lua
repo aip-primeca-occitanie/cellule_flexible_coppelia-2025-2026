@@ -168,12 +168,12 @@ function ChangeColorVrepControllerCallback(msg)
     local colorSignal3 = 'Table#'..id..'#3_color'
     local colorSignal4 = 'Table#'..id..'#4_color'
     local colorSignal5 = 'Table#'..id..'#5_color'
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)
@@ -269,12 +269,12 @@ function ChangeColor1Callback(msg)
     local colorSignal3 = 'Table#'..id..'#3_color'
     local colorSignal4 = 'Table#'..id..'#4_color'
     local colorSignal5 = 'Table#'..id..'#5_color'
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)
@@ -303,12 +303,12 @@ function ChangeShuttleColor1Callback(msg)
     local colorSignal4 = 'Shuttle'..lettre..'#4_color'
     local colorSignal5 = 'Shuttle'..lettre..'#5_color'
     
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)
@@ -368,12 +368,12 @@ function ChangeColor2Callback(msg)
     local colorSignal3 = 'Table#'..id..'#3_color'
     local colorSignal4 = 'Table#'..id..'#4_color'
     local colorSignal5 = 'Table#'..id..'#5_color'
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)
@@ -402,12 +402,12 @@ function ChangeShuttleColor2Callback(msg)
     local colorSignal4 = 'Shuttle'..lettre..'#4_color'
     local colorSignal5 = 'Shuttle'..lettre..'#5_color'
     
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)
@@ -474,12 +474,12 @@ function ChangeColor3Callback(msg)
     local colorSignal3 = 'Table#'..id..'#3_color'
     local colorSignal4 = 'Table#'..id..'#4_color'
     local colorSignal5 = 'Table#'..id..'#5_color'
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)
@@ -508,12 +508,12 @@ function ChangeShuttleColor3Callback(msg)
     local colorSignal4 = 'Shuttle'..lettre..'#4_color'
     local colorSignal5 = 'Shuttle'..lettre..'#5_color'
     
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)
@@ -580,12 +580,12 @@ function ChangeColor4Callback(msg)
     local colorSignal3 = 'Table#'..id..'#3_color'
     local colorSignal4 = 'Table#'..id..'#4_color'
     local colorSignal5 = 'Table#'..id..'#5_color'
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)
@@ -614,12 +614,12 @@ function ChangeShuttleColor4Callback(msg)
     local colorSignal4 = 'Shuttle'..lettre..'#4_color'
     local colorSignal5 = 'Shuttle'..lettre..'#5_color'
     
-    local color0=msg.data[2]
-    local color1=msg.data[3]
-    local color2=msg.data[4]
-    local color3=msg.data[5]
-    local color4=msg.data[6]
-    local color5=msg.data[7]
+    local color0=msg.data[2] or 0
+    local color1=msg.data[3] or 0
+    local color2=msg.data[4] or 0
+    local color3=msg.data[5] or 0
+    local color4=msg.data[6] or 0
+    local color5=msg.data[7] or 0
     
     sim.setInt32Signal(colorSignal0,color0)
     sim.setInt32Signal(colorSignal1,color1)

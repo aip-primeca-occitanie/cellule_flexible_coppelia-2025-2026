@@ -28,6 +28,7 @@ class Poste
 		int get_numero();
 		int get_color();
 		int get_duree();
+		void decalerTemps(double decalage);
 
 		void debutTask(double VREPtime, int duree);
 		bool updateTask(double time);

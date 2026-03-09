@@ -62,17 +62,16 @@ Nous avons plusieurs moyens de lancer la simulation. Cependant, le moyen le plus
    
 ## 2) Partie développement
 
-### 2.1) Contenu de chaque dossier
+### 2.1) Installation
+Le protocole pour l'installation est à retrouver dans le fichier "tutoriel_installation".
+
+### 2.2) Contenu de chaque dossier
 Nous utilisons pour le moment la version **V4.3.0 Edu** de CoppeliaSim et la version **Jazzy** de ROS2.
 
 Dans le dossier celluleflexible, nous retrouvons toute la partie bas niveau de la simulation, ainsi que la communication entre CoppeliaSim et ROS2.
 Dans le dossier etu, nous retrouvons tout le matériel mis à disposition pour les étudiants, à savoir les scripts de lancement, des exemples de séquence de production et des exemples de réseau de Pétri.
 
-Le logiciel CoppeliaSim est récupéré directement lors du téléchargement du dossier GitHub, mais il faut installer ROS2, ainsi que quelques extensions.
-
-Si vous partez d'une machine virtuelle vierge, nous vous invitons à vous référer au "tutoriel_installation_de_0" présent dans ce dossier.
-
-Si vous venez de récupérer le fichier GitHub et voulez l'exécuter, nous vous invitons à vous référer au "tutoriel_installation_depuis_GitHub" présent dans ce dossier.
+Le logiciel CoppeliaSim est récupéré directement lors du téléchargement du dossier GitHub, mais il faut installer ROS2, ainsi que quelques extensions (voir "tutoriel_installation").
 
 
 ### 2.2) Pistes d'amélioration
@@ -95,22 +94,24 @@ Après la migration de ROS1 noetic à ROS2 jazzy, nous pensons qu'il serait bon 
 
   Il faudra aussi songer à faire le tri dans le dossier CoppeliaSim. En effet, nous avons décrit dans le ReadMe celluleflexible les dossiers utilisés, mais il faudrait arriver à enlever les fichiers inutiles du dossier, pour différencier ce qui relève d'exemples introduits par CoppeliaSim et ce qui est vraiment utile à son fonctionnement. Il faudrait ensuite faire un vrai ReadMe du dossier, permettant de comprendre l'utilité de chaque fichier restant.
 
-  
-* **Problème d'arrêt pour les simulations trop longues**
-  
-  Lors du travail sur le TER Atelier Flexible en tant qu'étudiants, nous nous sommes rendus compte que, pour les simulations demandant de produire beaucoup de produits avec beaucoup de tâches (donc les simulations longues), le programme affichait en plein milieu "[INFO] [xterm-1]: process has finished cleanly [pid 23645]", directement dans le menu. A partir de là, la simulation ne fonctionne plus correctement (fait comme si celle-ci s'était arrêtée).
-  
-  Il faudrait donc trouver la source de ce problème et, une fois réglé, vérifier par exemple que la dataprodconfig dataP34_2_3_n1.prodconfig.h fonctionne systématiquement correctement. En effet, c'est lors de l'exécution de ce dataprodconfig que nous nous sommes rendus compte du problème.
+* **Évacuation par n’importe quel poste**
 
-* **Faire le lien entre la maquette réelle et la simulation**
-  
-  Le lien avait déjà été établi lors du projet 2022, sans pouvoir néanmoins être utilisé, à cause du déménagement à la MFJA. Les anciens packages schneider, schneider103 et schneider104 (ROS1) avaient été créés pour cela. Ces fichiers ne servant plus à la simulation, nous ne les avons pas traduits en ROS2 et les avons supprimés. Ils peuvent néanmoins être récupérés sur le GitHub. Ces fichiers s'abonnent à des topics déjà créés comme le topic d'aiguillage droite et gauche, et envoient l'ordre sur des topics propres à eux.
-  
-  Nous avons également retrouvé des traces de ce lien dans le package commande. En effet, le fichier *communication_baxter.cpp* sert à envoyer des ordres aux robots réels et une partie du fichier *actionneurs.cpp* sert à convertir les ordres pour la simulation réelle. Ces deux fichiers sont traduits en ROS2 mais la partie servant à la maquette réelle n'est pas utilisée.
-  
-  Enfin, dans le package commande_locale, lors de l'affichage du menu, nous avons encore le choix entre un mode Simu ou Atelier, qui permet soit une connexion à la simulation CoppeliaSim soit une connexion à l'atelier réel. Cette partie du menu est donc obsolète.
-  
-  Ces remarques ne sont pas une liste exhaustive, car d'autres fichiers doivent contenir également des traces. Pour faire ce lien correctement, il faudrait dans un premier temps enlever tout ce qui ne sert plus dans les codes (appartenant au projet 2022), puis recommencer proprement à intégrer la maquette réelle.
+  Dans l’architecture actuelle, l’évacuation des produits se passe de la manière suivante :
+    * L’étudiant appelle la fonction robot.Evacuer() dans son réseau de Pétri (dossier etu)
+    * Cela exécute la fonction RobotsInterface : :Evacuer() qui se trouve dans le package commande (fichier RobotsInterface.cpp), qui publie un message sur le topic /commande/Simulation/Evacuer.
+    * Le seul recepteur de ce message se trouve dans le package robots, dans le fichier Robot.cpp. La réception de ce message va alors faire rentrer tous les robots dans la fonction Robot : :Evacuer. La condition à l’entrée "if(num_robot==2)" va alors permettre de ne faire exécuter la fonction qu’au robot 2 (les autres robots sortent aussitôt de la fonction). La variable "int position=1" va alors permettre de ne sélectionner que le poste 3.
+    
+  On voit donc que, pour le moment, l’évacuation des produits s’effectue automatiquement par le poste 3.
+  Il faudrait donc changer les 3 codes cités ci-dessus. Nous proposons ici une idée pour permettre l’évacuation de tous les postes possibles, en gardant une architecture similaire :
+    * L’étudiant appelle maintenant la fonction robot.Evacuer(numéro_poste) dans son réseau de Pétri (dossier etu).
+    * Cela exécute la fonction RobotsInterface : :Evacuer(numéro_poste) qui se trouve dans le package
+commande (fichier RobotsInterface.cpp), qui se charge de convertir le numéro de poste en un robot + une position. On envoie alors un message sur un des topics suivants, selon le numéro du robot : /commande/Simulation/Robot1/Evacuer, /commande/Simulation/Robot2/Evacuer,
+/commande/Simulation/Robot3/Evacuer, /commande/Simulation/Robot4/Evacuer. Le message envoyé comporte la position voulue.
+    * Le seul récepteur de ce message se trouve dans le package robots, dans le fichier Robot.cpp. La réception de ce message va alors faire rentrer le robot concerné dans la fonction Robot : :Evacuer(position). Nous aurons alors une condition à l’entrée en fonction de si position=1 ou position=4, ce qui nous permettra finalement d’évacuer sur le bon poste.
+    
+Pour réaliser cette amélioration, il pourrait être bon de tout d’abord réaliser l’évacuation par un autre poste (possiblement le poste conjugué, soit le poste 4), puis quand cela fonctionne, l’étendre à tous les postes.
+
+En plus de toutes ces modifications, il faudrait mettre à jour le checker, pour dire si l’évacuation s’est faite du bon poste (celluleflexible/forTER/checker.py). Il faudrait aussi mettre à jour la vidéo de présentation (celle du ReadMe général) pour montrer aux étudiants qu’une évacuation de n’importe quel poste est possible. Il faudrait enfin mettre à jour les différents ReadMe et les consignes du TER Atelier Flexible.
 
 * **Rendre libre le choix de quelles navettes on veut en début de simulation**
   
@@ -141,12 +142,38 @@ Après la migration de ROS1 noetic à ROS2 jazzy, nous pensons qu'il serait bon 
   Cela va ouvrir un menu. Allez dans le menu "Position" et changez X-coord, Y-coord et Z-coord à votre guise (mettre entrée à chaque fois permet de voir la position de la navette en temps réel dans la scène). Pour sauvegarder, allez dans File/SaveModelAs et écrasez l'ancienne sauvegarde .ttm. Rien ne sert de sauvegarder la scène .ttt.
 
   Répétez cette opération pour toutes les navettes, en changeant les coordonnées de chacune des navettes comme vous le souhaitez. En réouvrant la simulation, les navettes seront alors aux positions désirées.
+  
+* **Faire le lien entre la maquette réelle et la simulation**
+  
+  Le lien avait déjà été établi lors du projet 2022, sans pouvoir néanmoins être utilisé, à cause du déménagement à la MFJA. Les anciens packages schneider, schneider103 et schneider104 (ROS1) avaient été créés pour cela. Ces fichiers ne servant plus à la simulation, nous ne les avons pas traduits en ROS2 et les avons supprimés. Ils peuvent néanmoins être récupérés sur le GitHub. Ces fichiers s'abonnent à des topics déjà créés comme le topic d'aiguillage droite et gauche, et envoient l'ordre sur des topics propres à eux.
+  
+  Nous avons également retrouvé des traces de ce lien dans le package commande. En effet, le fichier *communication_baxter.cpp* sert à envoyer des ordres aux robots réels et une partie du fichier *actionneurs.cpp* sert à convertir les ordres pour la simulation réelle. Ces deux fichiers sont traduits en ROS2 mais la partie servant à la maquette réelle n'est pas utilisée.
+  
+  Enfin, dans le package commande_locale, lors de l'affichage du menu, nous avons encore le choix entre un mode Simu ou Atelier, qui permet soit une connexion à la simulation CoppeliaSim soit une connexion à l'atelier réel. Cette partie du menu est donc obsolète.
+  
+  Ces remarques ne sont pas une liste exhaustive, car d'autres fichiers doivent contenir également des traces. Pour faire ce lien correctement, il faudrait dans un premier temps enlever tout ce qui ne sert plus dans les codes (appartenant au projet 2022), puis recommencer proprement à intégrer la maquette réelle.
 
 * **Faire fonctionner le fichier display**, présent dans commande_locale. Ce fichier a pour but d'ouvrir une nouvelle fenêtre pour suivre la simulation sous un autre angle.
   
   Tout d'abord, l'exécutable de ce noeud est le seul à ne pas être lancé lors de la simulation générale. Néanmoins, en le lançant depuis la machine ROS1 en même temps que la simulation, nous voyons une fenêtre bleue apparaitre, mais sans rien afficher de plus (pas de deuxième vue de la simulation). Nous soupçonnons alors que ce fichier ait été utilisé par le passé mais qu'il ne soit plus en état de fonctionner. Nous l'avons donc traduit en ROS2, sans pour autant le tester correctement.
   
   Nous pouvons seulement dire que ce noeud interfère avec le fichier lua Vision_sensor, présent sous celluleflexible/sim/luafiles. Pour augmenter la rapidité de notre simulation, nous avons été contraints à commenter certaines parties de ce code. En effet, l'ordre envoyé était de publier sur un topic 50 images par secondes pour recréer la vidéo de la simulation sous un autre angle. En ROS2, un tel envoi de donnée n'est plus possible (changement de communication). Pour remettre le fichier display en état, il faudra donc s'occuper ce fichier lua également.
+  
+* **Faire une vidéo scriptée**
+
+  Comme dit précédemment, un point important serait de faire un réseau de Pétri permettant de tester exhaustivement les installations, pour valider définitivement l’ensemble du code (tester les 12 aiguillages, les 6 navettes, tous les capteurs et les 4 robots).
+
+Il faudrait alors filmer la bonne réalisation de ce code, pour remplacer la vidéo de présentation du ReadMe général. Il serait alors intéressant de faire une vidéo scriptée, c’est à dire expliquer ce que le code doit faire, pour que l’utilisateur puisse suivre en temps réel la bonne exécution de la simulation.
+
+Ce réseau de Pétri pourrait être écrit "en dur", pour se faciliter la tâche. Il faudrait alors écrire les conditions initiales dans lesquelles on doit se trouver pour qu’il puisse être testé par la suite comme modèle de référence. Par exemple, comme conditions initiales, il serait bon de préciser les coordonnées des emplacements de navettes, la séquence mise en entrée et les modèles ROS et Coppelia dans lesquels la simulation a été enregistrée.
+
+* **Revoir la création de la documenation (script4)**
+
+Le dossier etu contient 4 scripts différents, avec chacun leur particularité. Le script 4 est censé créer de la documentation liée au code, dans le dossier output/docfromcpp/html. En ouvrant le fichier index.html puis en allant dans Files/File List, nous sommes censés obtenir une liste des codes présents dont nous avons demandé la documentation.
+
+Or, dans le code actuel, malgré la demande de création de documentation pour d'autres codes (via script4), il n'y a toujours que la documentation de Tuto_Basique disponible. Il doit donc y avoir un problème pour aller récupérer le fichier Doxygen créé par le script 4. Le problème est le même en ROS1.
+
+
 
 * **Rajouter des sécurités dans le code**
 
