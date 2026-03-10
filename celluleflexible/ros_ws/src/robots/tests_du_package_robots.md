@@ -46,13 +46,16 @@ RESULTAT : La console affiche "CHOIX ROBOT INCORRECT".
 
 EXPLICATIONS : Pour terminer l'initialisation, nous avons besoin d'avoir tous les handles du robot. On demande donc à Coppelia de nous les envoyer. Comme Coppelia n'est pas encore présent, on simule sa réponse par une publication sur le bon topic. 
 
-TEST : Dans le terminal 2, on fait :
+TEST : Dans le terminal 1, on fait :
 ```bash
        ros2 run robots robot 2
+```
+Dans le terminal 2, on fait :
+```bash
        ros2 topic pub --times 7 /sim_ros_interface/services/response/robot2/GetObjectHandle std_msgs/msg/Int32 "{data: 1}"
 ```
 
-RESULTAT : La console affiche "Robot 2 OK"
+RESULTAT : Le terminal 1 affiche "Robot 2 OK".
 
 ## 5) Test OK de la fonction Evacuer (faire le 4=fin initialisation avant)
 EXPLICATIONS : On souscrit dans l'initialisation au topic "/commande/Simulation/Evacuer", de format Byte, qui exécute si activé la fonction Evacuer (dans Robot). On vérifie donc qu'en publiant un message sur ce topic, la fonction Evacuer s'effectue correctement.
