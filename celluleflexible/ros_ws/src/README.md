@@ -1,6 +1,3 @@
-# Liste INPUT/OUTPUT 
-Ca serait bien que pour chaque paquets on mette les TOPICs abonné, topics publisher (je pense que DIane avait demandé) 
-
 # Espace de travail ROS 2 : ros_ws
 
 Ce répertoire constitue l'espace de travail (workspace) ROS 2 du projet Cellule Flexible. Il contient l'ensemble des paquets (packages) développés pour faire le lien entre la simulation physique sous CoppeliaSim et le Réseau de Pétri.
