@@ -1,8 +1,0 @@
-Creation fichier log: Mon Mar  9 15:29:32 2026
-
-NouveauProduit: 14 :0.90
-TempoT: 14: 3: 7
-TempoT: 14: 4: 12
-Sortie :14 :33 :43 :0 :28.15
-
-Petri terminé
