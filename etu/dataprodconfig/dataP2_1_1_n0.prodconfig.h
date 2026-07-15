@@ -39,7 +39,7 @@
 
 // Start
 
-// 2 : 2 : 13 : 1
+// 2 : 2 : 3 : 1
 
 // End
 
@@ -50,7 +50,7 @@ const vector<int> Prod_type{ 2 };
 
 const vector<vector<int>> Prod_seqdeposte{  { POSTE_2 } };
 
-const vector<vector<int>> Prod_dureeparposte{  { 13 } };
+const vector<vector<int>> Prod_dureeparposte{  { 3 } };
 
 const vector<int> Prod_qte{ 1 };
 
