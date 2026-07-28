@@ -11,6 +11,7 @@
 #include <robots/msg/faire_tache_msg.hpp>
 #include <robots/msg/msg_num_robot.hpp>
 #include <robots/msg/move_robot.hpp>
+#include <robots/msg/evacuer_msg.hpp>
 #include <commande_locale/srv/srv_add_product.hpp>
 #include <commande_locale/msg/msg_add_product.hpp>
 #include <commande_locale/msg/deplacer_piece_msg.hpp>
@@ -59,7 +60,8 @@ private:
     rclcpp::Publisher<robots::msg::MsgNumRobot>::SharedPtr pub_robot_transport2;
     rclcpp::Publisher<robots::msg::MsgNumRobot>::SharedPtr pub_robot_transport3;
     rclcpp::Publisher<robots::msg::MsgNumRobot>::SharedPtr pub_robot_transport4;
-    rclcpp::Publisher<std_msgs::msg::Byte>::SharedPtr pub_evacuer_piece;
+    //rclcpp::Publisher<std_msgs::msg::Byte>::SharedPtr pub_evacuer_piece;
+	rclcpp::Publisher<robots::msg::EvacuerMsg>::SharedPtr pub_evacuer_piece;
     rclcpp::Publisher<commande_locale::msg::MsgAddProduct>::SharedPtr pubProductAdd;
     rclcpp::Publisher<commande_locale::msg::DeplacerPieceMsg>::SharedPtr pub_deplacer_piece;
 
@@ -113,7 +115,8 @@ public:
 	int TacheFinie(int num_poste);
 	void computeFromNumPoste(int num_poste,int tab[2]);
 	int FinDeplacerPiece(int num_robot);
-	void Evacuer();
+	//void Evacuer();
+	void Evacuer(int numero_poste = 3);
 	void AjouterProduit(int poste, int produit);
 	// int AjoutProduitEnAttente(); SUN to delete
 

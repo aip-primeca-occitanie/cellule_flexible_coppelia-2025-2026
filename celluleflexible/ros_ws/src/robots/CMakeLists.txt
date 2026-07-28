@@ -15,6 +15,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/MoveRobot.msg"
   "msg/FaireTacheMsg.msg"
   "msg/MsgNumRobot.msg"
+  "msg/EvacuerMsg.msg"
   DEPENDENCIES std_msgs
 )
 

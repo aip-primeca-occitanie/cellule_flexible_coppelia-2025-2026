@@ -38,7 +38,8 @@ RobotsInterface::RobotsInterface(rclcpp::Node::SharedPtr node, int nombre_robot)
 	pub_monter = node->create_publisher<robots::msg::MsgNumRobot>("/commande/Simulation/MonterBras",10);
 	pub_controler_robot = node->create_publisher<robots::msg::MoveRobot>("/commande/Simulation/ControlerBras",10);
 	pub_faireTache = node->create_publisher<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache", 10);
-	pub_evacuer_piece = node->create_publisher<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10);
+	//pub_evacuer_piece = node->create_publisher<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10);
+	pub_evacuer_piece = node->create_publisher<robots::msg::EvacuerMsg>("/commande/Simulation/Evacuer",10);
 	pubProductAdd = node->create_publisher<commande_locale::msg::MsgAddProduct>("/commande_locale/AddProduct",10);
 	pub_deplacer_piece = node->create_publisher<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10);
 
@@ -449,14 +450,15 @@ void RobotsInterface::FaireTache(int num_poste, int duree)
 		cout <<  BOLDMAGENTA << "Le numero du poste doit etre compris entre 1 et "<< nbRobot*2 << "." << RESET << endl;
 }
 
-void RobotsInterface::Evacuer()
+void RobotsInterface::Evacuer(int numero_poste)
 {
-	std_msgs::msg::Byte msg;
+	robots::msg::EvacuerMsg msg;
+	msg.numero_poste = numero_poste;
 	pub_evacuer_piece->publish(msg);
 
 	rclcpp::sleep_for(std::chrono::seconds(1));
 
-	cout << BOLDCYAN << "Evacuation !" << RESET << endl;
+	cout << BOLDCYAN << "Evacuation du poste " << numero_poste << " !" << RESET << endl;
 }
 
 void RobotsInterface::AjouterProduit(int poste, int produit)
