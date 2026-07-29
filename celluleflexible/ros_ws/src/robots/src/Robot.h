@@ -8,6 +8,7 @@
 #include <robots/msg/move_robot.hpp>
 #include <robots/msg/faire_tache_msg.hpp>
 #include <robots/msg/msg_num_robot.hpp>
+#include <robots/msg/evacuer_msg.hpp>
 
 #include <commande_locale/msg/robot_joints.hpp>
 #include <commande_locale/msg/tache_finie_msg.hpp>
@@ -128,7 +129,8 @@ private:
   rclcpp::Subscription<robots::msg::MsgNumRobot>::SharedPtr planifMonterBras;
   rclcpp::Subscription<robots::msg::MoveRobot>::SharedPtr planifControlerRobot;
   rclcpp::Subscription<robots::msg::FaireTacheMsg>::SharedPtr sub_faireTache;
-  rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr sub_evacuer;
+  //rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr sub_evacuer;
+  rclcpp::Subscription<robots::msg::EvacuerMsg>::SharedPtr sub_evacuer;
   rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subStopTache;
   rclcpp::Subscription<commande_locale::msg::DeplacerPieceMsg>::SharedPtr subDeplacerPiece;
   rclcpp::Subscription<std_msgs::msg::Byte>::SharedPtr sub_pause;
@@ -236,7 +238,8 @@ public:
 
   int colorerPosteDebutTask(int positionPoste);
 	int colorerPosteFinTask(int positionPoste, int duree);
-  void Evacuer(const std_msgs::msg::Byte::SharedPtr msg);
+  //void Evacuer(const std_msgs::msg::Byte::SharedPtr msg);
+  void Evacuer(const robots::msg::EvacuerMsg::SharedPtr msg);
 
   void stopTacheCallback(const std_msgs::msg::Int32::SharedPtr msg);
   void DeplacerPieceCallback(const commande_locale::msg::DeplacerPieceMsg::SharedPtr msg);

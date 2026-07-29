@@ -1064,65 +1064,82 @@ void Robot::transport(bool valeur)
 }
 
 // On definit qui evacue et comment
-void Robot::Evacuer(const std_msgs::msg::Byte::SharedPtr msg)
+void Robot::Evacuer(const robots::msg::EvacuerMsg::SharedPtr msg)
 {
-	std::lock_guard<std::mutex> lock(color_mutex_);
+	std::lock_guard<std::mutex> lock(color_mutex_);   // protege l'acces couleur (multithread)
 
-	if(num_robot==2)
+	int numero_poste = msg->numero_poste;   // poste demande par l'etudiant
+
+	int robot_cible = 0;   // robot responsable de ce poste
+	int position    = 0;   // position du poste chez ce robot (1 ou 4)
+
+	if(numero_poste==1) { robot_cible=1; position=4; }   // poste 1 -> robot 1
+	if(numero_poste==2) { robot_cible=1; position=1; }   // poste 2 -> robot 1
+	if(numero_poste==3) { robot_cible=2; position=1; }   // poste 3 -> robot 2
+	if(numero_poste==4) { robot_cible=2; position=4; }   // poste 4 -> robot 2
+	if(numero_poste==5) { robot_cible=3; position=1; }   // poste 5 -> robot 3
+	if(numero_poste==6) { robot_cible=3; position=4; }   // poste 6 -> robot 3
+	if(numero_poste==7) { robot_cible=4; position=1; }   // poste 7 -> robot 4
+	if(numero_poste==8) { robot_cible=4; position=4; }   // poste 8 -> robot 4
+
+	if(num_robot==robot_cible)   // seul le robot concerne agit
 	{
-		int position=1;  // on evacue sur la position 1 du robot 2 <=> poste 3
 		int couleur[NB_CUBE];
-		std::string signal=poste_pos_1.get_nom();
+
+		std::string signal;
+		if(position==1)
+			signal=poste_pos_1.get_nom();   // nom du poste en position 1
+		else
+			signal=poste_pos_4.get_nom();   // nom du poste en position 4
+
 		msg_log_couleur.data.clear();
 		std::string fin;
-		
-		for(int i=0; i<NB_CUBE; i++)
+
+		for(int i=0; i<NB_CUBE; i++)   // lecture de la couleure de chaque cube
 		{
 			fin.clear();
 			fin.append(signal);
 			fin.append("#");
 			fin.append(std::to_string(i));
 			fin.append("_color");
-			msgSim_getColor.data=fin;
+			msgSim_getColor.data=fin;   // nom du signal couleur du cube i
 
-			pubSim_getColor->publish(msgSim_getColor);
+			pubSim_getColor->publish(msgSim_getColor);   // demande la couleur a Coppelia
 			int tentatives_get = 0;
 
 			while(!repSim_getColor&&rclcpp::ok())
 			{
-				if(tentatives_get++ > 25) {
+				if(tentatives_get++ > 25) {   // pas de reponse -> on redemande
 					pubSim_getColor->publish(msgSim_getColor);
 					tentatives_get = 0;
 				}
-				rclcpp::sleep_for(std::chrono::milliseconds(40)); 
+				rclcpp::sleep_for(std::chrono::milliseconds(40));
 			}
-			repSim_getColor=false;
+			repSim_getColor=false;   // reset pour le cube suivant
 			couleur[i]=valueSim_getColor;
 			msg_log_couleur.data.push_back(couleur[i]);
 			std::cout << "couleur[" << i << "]=" << couleur[i] << std::endl;
 		}
-		
-		//pour le log
-		pub_produitEvac->publish(msg_log_couleur);
 
-		// On fait disparaitre
+		pub_produitEvac->publish(msg_log_couleur);   // envoie les couleurs au log
+
 		msgSim_changeColor.data.clear();
-		msgSim_changeColor.data.push_back(computeTableId(position));
+		msgSim_changeColor.data.push_back(computeTableId(position));   // identifiant table Coppelia
 		for(int i=0; i<NB_CUBE; i++)
-			msgSim_changeColor.data.push_back(0);
+			msgSim_changeColor.data.push_back(0);   // couleur 0 = disparition
 		pubSim_changeColor->publish(msgSim_changeColor);
-		
-		int tentatives_change = 0; // Compteur pour la demande insistante
-        
-        while(!repSim_changeColor && rclcpp::ok())
-        {
-            if(tentatives_change++ > 25) {
-                pubSim_changeColor->publish(msgSim_changeColor);
-                tentatives_change = 0;
-            }
-            rclcpp::sleep_for(std::chrono::milliseconds(40)); 
-        }
-		repSim_changeColor=false;
+
+		int tentatives_change = 0;
+
+		while(!repSim_changeColor && rclcpp::ok())
+		{
+			if(tentatives_change++ > 25) {   // pas de reponse -> on redemande
+				pubSim_changeColor->publish(msgSim_changeColor);
+				tentatives_change = 0;
+			}
+			rclcpp::sleep_for(std::chrono::milliseconds(40));
+		}
+		repSim_changeColor=false;   // reset pour la prochaine evacuation
 	}
 }
 
@@ -1263,7 +1280,8 @@ void Robot::init()
 	planifMonterBras = this->create_subscription<robots::msg::MsgNumRobot>("/commande/Simulation/MonterBras",10,std::bind(&Robot::MonterBrasCallback, this, std::placeholders::_1),options);
 	planifControlerRobot = this->create_subscription<robots::msg::MoveRobot>("/commande/Simulation/ControlerBras",10,std::bind(&Robot::ControlerRobotCallback, this, std::placeholders::_1),options);
 	sub_faireTache = this->create_subscription<robots::msg::FaireTacheMsg>("/commande/Simulation/faireTache",10,std::bind(&Robot::faireTacheCallback, this, std::placeholders::_1),options);
-	sub_evacuer= this->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1),options);
+	//sub_evacuer= this->create_subscription<std_msgs::msg::Byte>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1),options);
+	sub_evacuer= this->create_subscription<robots::msg::EvacuerMsg>("/commande/Simulation/Evacuer",10,std::bind(&Robot::Evacuer, this, std::placeholders::_1),options);
 	subStopTache= this->create_subscription<std_msgs::msg::Int32>("/commande/Simulation/Robot"+std::to_string(num_robot)+"/StopTache",10,std::bind(&Robot::stopTacheCallback, this, std::placeholders::_1),options);
 	subDeplacerPiece= this->create_subscription<commande_locale::msg::DeplacerPieceMsg>("/commande/Simulation/DeplacerPiece",10,std::bind(&Robot::DeplacerPieceCallback, this, std::placeholders::_1),options);
 	sub_pause = this->create_subscription<std_msgs::msg::Byte>("/sim_ros_interface/services/vrep_controller/PauseSimulation", 10, std::bind(&Robot::pauseCallback, this, std::placeholders::_1), options);
