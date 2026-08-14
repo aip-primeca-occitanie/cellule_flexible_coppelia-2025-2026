@@ -39,11 +39,14 @@ void ProduitEvacCallback(const std_msgs::msg::Int32MultiArray::SharedPtr msg)
 	repSim_getTime=false;
 	float temps=valueSim_getTime;
 
+	int poste=msg->data[0];   // le poste evacue est maintenant en 1ere position
+
 	int couleur[4];
 	monFlux<<"Sortie";
+	monFlux<<" :"<<poste;   // on ecrit le poste dans le log
 	for (int i=0;i<4;i++)
 	{
-		couleur[i]=msg->data[i];
+		couleur[i]=msg->data[i+1];   // les couleurs sont decalees d'une case
 		monFlux<<" :" <<couleur[i];
 	}
 	monFlux<<fixed<<setprecision(2)<<" :"<<temps;

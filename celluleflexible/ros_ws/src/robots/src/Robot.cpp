@@ -1093,6 +1093,7 @@ void Robot::Evacuer(const robots::msg::EvacuerMsg::SharedPtr msg)
 			signal=poste_pos_4.get_nom();   // nom du poste en position 4
 
 		msg_log_couleur.data.clear();
+		msg_log_couleur.data.push_back(numero_poste);   // le poste evacue, en 1ere position du tableau
 		std::string fin;
 
 		for(int i=0; i<NB_CUBE; i++)   // lecture de la couleure de chaque cube
